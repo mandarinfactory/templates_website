@@ -8,6 +8,7 @@ header{
   transition: background-color, 1s;
 } 
 header > svg {
+  top: 99%;
   fill: var(--main-color);
 }
 header.active {

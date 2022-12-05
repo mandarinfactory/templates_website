@@ -37,7 +37,7 @@
       <i class="fa-solid fa-file-signature"></i>
       학술 / 출판</em>
     <ul>
-      <li><a class="menu4-1" href="./contact.php">도서관</a></li>
+      <li><a class="menu4-1" href="./library.php">도서관</a></li>
     </ul>
   </li><!-- 1dep li -->
 

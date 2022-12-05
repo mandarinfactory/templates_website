@@ -13,7 +13,7 @@ $(function () {
     category = 2; menu = 2
   } else if (addr.match('gallery')) {
     category = 3; menu = 1
-  } else if (addr.match('contact')) {
+  } else if (addr.match('library')) {
     category = 4; menu = 1
   } else if (addr.match('notice')) {
     category = 5; menu = 1
