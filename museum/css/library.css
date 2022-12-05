@@ -1,0 +1,16 @@
+.library_section .library_title {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+}
+.library_section .library_title img {
+    width: 100%;
+}
+.library_section .library_title figcaption {
+    position: absolute;
+    top: 0;
+    left: 2%;
+    font-size: 3.2em;
+    font-weight: 850;
+    color: rgba(0, 0, 0, 0.9);
+}
