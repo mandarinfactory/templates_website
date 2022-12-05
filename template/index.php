@@ -40,7 +40,7 @@
 </section>
 <section class="home_section home_section1">
   <div class="main_desc">
-    <h2>quick menu</h2>
+    <h2 id="type1"><span>quick menu</span></h2>
     <p>메뉴를 클릭하시면 해당 메뉴로 이동합니다.</p>
   </div>
 </section>
@@ -53,7 +53,7 @@
           <figure>
             <img src="${v.path}" alt>
             <svg viewBox="0 0 300 300">
-            <path d="M224 21.8 76 21.8 2 150 76 278.2 224 278.2 298 150z" />
+            <path pathLength="1" d="M224 21.8 76 21.8 2 150 76 278.2 224 278.2 298 150z" />
             </svg>
           </figure>
           <h3>${v.title}</h3>
