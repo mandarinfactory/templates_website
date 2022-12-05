@@ -19,7 +19,7 @@
     margin-bottom: 7px;
     width: 70px;
     height: 5px;
-    background-color: var(--main-color);
+    background-color: var(--sub-color);
 }
 .main_desc p {
     color: rgba(0, 0, 0, 0.6);
@@ -55,6 +55,21 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    mask-image: url(../img/hexagon.png);
+    mask-size: 100%;
+    mask-position: center;
+}
+.home_section1 ul li figure svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.home_section1 ul li figure svg path {
+    fill: none;
+    stroke: black;
+    stroke-width: 5px;
 }
 .home_section1 ul li h3{
     margin: 7px;
