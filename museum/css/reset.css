@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+li{
+  list-style: none;
+}
+img,svg,iframe{
+  display: block;
+}
+input,textarea,select{
+  box-sizing: border-box;
+}
+table{
+  border-collapse: collapse;
+}
+button{
+  background: none;
+  border:none; 
+  cursor: pointer;
+}
+.hidden{
+  position: fixed;
+  left:-10000px;
+}
+.none {
+  border: none;
+}

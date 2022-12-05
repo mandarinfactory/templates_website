@@ -1,0 +1,60 @@
+.numberbox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: lightgray;
+}
+.numberbox div {
+    width: 140px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 30px;
+    background-color: black;
+    color: white;
+}
+.numberbox div i {
+    color: var(--main-color);
+}
+.numberbox p {
+    width: 75%;
+    line-height: 50px;
+}
+.location_section .map {
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.location_section .map nav {
+    height: 45px;
+    box-sizing: border-box;
+    border-bottom: 3px solid var(--sub-color);
+}
+.location_section .map button {
+    height: 45px;
+    padding: 0 25px;
+    border: 3px solid var(--sub-color);
+    color: var(--sub-color);
+    font-size: 20px;
+}
+.location_section .map button.active {
+    background-color: var(--sub-color);
+    color: white;
+}
+.location_section .map iframe,
+.location_section .map img{
+    width: 100%;
+    height: 400px;
+}
+.location_section .map img {
+    display: none;
+    object-fit: cover;
+    object-position: center;
+}
+
+

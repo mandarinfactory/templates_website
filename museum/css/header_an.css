@@ -1,0 +1,222 @@
+header{
+  position: absolute;
+  z-index: 10;
+  top:0;
+  width: 100%;
+  background: #FFF;
+  border-bottom: 1px solid #CCC;
+}
+
+header nav.member{
+  height: 35px;
+  background: var(--sub-color);
+}
+header nav.member ul{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 95%;
+  max-width: 1100px;
+  height: 35px;
+  margin: 0 auto;
+}
+header nav.member ul li{
+  margin: 0 4px;
+}
+header nav.member ul li a{
+  font-size: 0.9em;
+  color:rgba(255,255,255,0.7);
+  transition: color 0.3s;
+}
+header nav.member ul li a:hover{
+  color:#FFF;
+}
+header div.inner{
+  width: 95%;
+  max-width: 1100px;
+  height: calc(100% - 35px);
+  margin: 0 auto;
+}
+h1 img{
+  height: 100%;
+  margin: 0 auto;
+}
+@media screen and (min-width:1000px){
+  body{
+    padding-top: 150px;
+  }
+  header{
+    height: 150px;
+  }
+  h1{
+    height: 70px;
+    padding:10px 0;
+    box-sizing: border-box;
+  }
+  .mbtn{
+    display: none;
+  }
+}/* lg */
+@media screen and (max-width:1000px){
+  body{
+    padding-top: 90px;
+  }
+  header{
+    height: 90px;
+  }
+  header .inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h1{
+    height: 45px;
+  }
+  .mbtn{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    color:#FFF;
+    background: var(--main-color);
+    transition: all 1s;
+  }
+  .mbtn .close{
+    display: none;
+  }
+  .mbtn.active{
+    background: #FFF;
+    color:var(--main-color);
+  }
+  .mbtn.active .close{
+    display: block;
+  }
+  .mbtn.active .open{
+    display: none;
+  }
+}/* sm */
+
+/*gnb ---------------------------------------------- */
+
+@media screen and (min-width:1000px){
+  .gnb-lg{
+    position: absolute;
+    top:105px;
+    width: 100%;
+  }
+  .gnb-lg::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 45px);
+    bottom: 0;
+    background: rgba(255,255,255,0.9);
+  }
+  .gnb-lg>ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    max-width: 1100px;
+    margin: 0 auto; 
+  }
+  .gnb-lg>ul>li>a{
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 35px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition:all 0.3s;
+  }
+  .gnb-lg>ul>li:hover>a{
+    color:var(--main-color);
+  }
+  .gnb-lg>ul>li>ul>li>a{
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    transition:all 0.3s;
+  }
+  .gnb-lg>ul>li>ul>li>a:hover{
+    background: var(--main-color);
+    color:#FFF;
+  }
+  .gnb-lg>ul>li>ul{
+    display: none;
+    padding: 20px 0;
+  }
+  .gnb-sm{display: none !important;}
+}/* lg */
+@media screen and (max-width:1000px){
+  .mbtn{
+    z-index: 1;
+  }
+  .gnb-sm{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left:0;top:0;
+    background: rgba(0,0,0,0.8);
+  }
+  .gnb-sm.active>ul{
+    transform: translateX(0);
+  }
+  .gnb-sm>ul{
+    position: absolute;
+    right: 0;top:0;
+    width: 70%;
+    max-width: 300px;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 150px;
+    background: var(--sub-color);
+    transform: translateX(100%);
+    transition: all 0.5s;
+  }
+  .gnb-sm>ul>li>a{
+    display: block;
+    padding:10px 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.95em;
+    background: #c95d12;
+    color:#FFF; 
+    border-bottom: 1px dotted var(--sub-color);
+  }
+  .gnb-sm>ul>li>a.active{
+    background: var(--dark-color);
+  }
+  .gnb-sm>ul>li>a.active::after{
+    transform: rotate(180deg);
+  }
+  .gnb-sm>ul>li>a::after{
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f358";
+    float:right;
+  }
+  .gnb-sm>ul>li>ul>li>a{
+    display: block;
+    padding:7px 25px;
+    color:var(--sub-color);
+    background: #FFF;
+    border-bottom: 1px dotted var(--sub-color);
+  }
+  .gnb-sm>ul>li>ul{
+    display: none;
+  }
+  .gnb-lg{
+    display: none;
+  }
+}/* sm */
+
+.gnb li.sns, .gnb em
+{display: none;}
+

@@ -1,0 +1,95 @@
+.sword {
+    position: absolute;
+    opacity: 0.5;
+    top: 20%;
+    left: -40%;
+}
+/* sword ----------------------------------------------------------------------- */
+.permanent_section .permanent_floor {
+    display: flex;
+}
+.permanent_section .permanent_floor figure {
+    margin: 0 20px;
+    z-index: 1;
+}
+.permanent_section .permanent_floor figure figcaption {
+    width: 55px;
+    height: 55px;
+    margin: 10px 0;
+    background-color: var(--sub-color);
+    text-align: center;
+    line-height: 55px;
+    font-size: 1.6em;
+    font-weight: 700;
+    color: white;
+}
+.permanent_section .permanent_floor figure img{
+    width: 100%;
+}
+/* permanent_floor ------------------------------------------------------------------ */
+.array_one,
+.array_two{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.array_three {
+    position: relative;
+}
+.array_one figure,
+.array_two figure{
+    width: 300px;
+    height: 300px;
+    border: 3px solid black;
+    margin: 20px 20px;
+    overflow: hidden;
+}
+.array_three figure {
+    width: 993px;
+    height: 300px;
+    border: 3px solid black;
+    margin: 20px -5px;
+    overflow: hidden;
+}
+.array_one li,
+.array_two li
+{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-weight: 650;
+    font-size: 18px;
+    color: black;
+    margin: 0 20px;
+    background-color: lightgray;
+    width: 305px;
+    height: 150px;
+}
+.array_one figure figcaption,
+.array_two figure figcaption,
+.array_three figure figcaption.think_title {
+    position: absolute;
+    top: 10%;
+    margin-left: 20px;
+    color: white;
+    font-size: 2.0em;
+    font-weight: 750;
+    opacity: 0.8;
+}
+.array_three figure figcaption.think {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    color: white;
+    font-size: 1.0em;
+    font-weight: 800;
+    line-height: 40px;
+    opacity: 0.8;
+}
+.array_one figure img,
+.array_two figure img,
+.array_three figure img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}

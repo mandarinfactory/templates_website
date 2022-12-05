@@ -1,0 +1,62 @@
+.permanent_section .permanent_floor {
+    display: flex;
+}
+.permanent_section .permanent_floor figure figcaption {
+    width: 55px;
+    height: 55px;
+    margin: 10px 0;
+    background-color: var(--sub-color);
+    text-align: center;
+    line-height: 55px;
+    font-size: 1.6em;
+    font-weight: 700;
+    color: white;
+}
+.permanent_section .permanent_floor figure img{
+    width: 100%;
+    margin: 5px 20px 40px 20px;
+}
+/* permanent_floor ------------------------------------------------------------------ */
+.array_one,
+.array_two,
+.array_three{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.array_one figure,
+.array_two figure,
+.array_three figure {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px 20px;
+    overflow: hidden;
+}
+.array_one li,
+.array_two li,
+.array_three li {
+    margin: 0 20px;
+    background-color: lightgray;
+    width: 305px;
+    height: 100px;
+    text-align: left;
+
+}
+.array_one figure figcaption,
+.array_two figure figcaption,
+.array_three figure figcaption {
+    position: absolute;
+    top: 10%;
+    margin-left: 20px;
+    color: white;
+    font-size: 2.0em;
+    font-weight: 750;
+}
+.array_one figure img,
+.array_two figure img,
+.array_three figure img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}

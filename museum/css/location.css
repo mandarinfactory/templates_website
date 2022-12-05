@@ -1,0 +1,222 @@
+.map{
+    border-bottom: 1px solid black;
+    padding-bottom: 30px;
+}
+.map nav {
+    display: flex;
+}
+.map .map_desc {
+    width: 50%;
+    height: 300px;
+    background-color: var(--sub-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.map .map_desc li {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    color: white;
+}
+.map .map_desc li:first-child {
+    font-weight: 750;
+    font-size: 1.8em;
+}
+.map iframe {
+    width: 80%;
+    height: 300px;
+}
+/* map -------------------------------------------------------- */
+.subway {
+    border-bottom: 1px solid black;
+    padding: 30px 0;
+}
+.subway {
+    display: flex;
+}
+.subway > h2 {
+    width: 23.5%;
+} 
+.subway .sub_num {
+    display: flex;
+    flex-direction: column;
+}
+.subway .subway1 {
+    display: flex;
+}
+.subway .subway1 * {
+    margin-right: 10px;
+}
+.subway .subway1 div {
+    height: 50px;
+    color: white;
+    font-size: 1.6em;
+    font-weight: 700;
+}
+.subway .subway1 > div:first-child {
+    width: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgb(44,158,222);
+}
+.subway .subway1 > div:nth-child(2) {
+    width: 100px;
+    border-radius: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgb(91,163,127);
+}
+.subway .subway1 > li {
+    line-height: 50px;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+/* subway1 ------------------------------------------------------ */
+.subway .subway2 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.subway .subway2 li {
+    margin: 5px;
+    margin-bottom: 10px;
+}
+/* subway2 ------------------------------------------------------ */
+.an_subway {
+    display: flex;
+    margin-top: 30px;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+.an_subway > h2 {
+    width: 23.5%;
+    margin-top: 10px;
+}
+.lines {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;    
+}
+.an_subway ul {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin-bottom: 15px;
+}
+.an_subway ul .circle {
+    width: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;
+    height: 50px;
+    color: white;
+    font-size: 1.6em;
+    font-weight: 700;
+}
+.an_subway ul li {
+    margin-left: 10px;
+    line-height: 50px;
+}
+.an_subway ul li:nth-child(2) {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.an_subway .line1 .circle {
+    background-color: rgb(38,60,150);
+}
+.an_subway .line3 .circle {
+    background-color: rgb(255,115,0);
+}
+.an_subway .line6 .circle {
+    background-color: rgb(181,80,11);
+}
+.an_subway .line7 .circle {
+    background-color: rgb(105,114,21);
+}
+.an_subway .line9 .circle {
+    background-color: rgb(206,164,58);
+}
+/* an_subway ---------------------------------------------------- */
+.bus {
+    display: flex;
+    margin: 20px 0 ;
+    padding-bottom: 30px;
+    border-bottom: 1px solid black;
+}
+.bus h2 {
+    width: 23.5%;
+}
+.bus .circle {
+    width: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;
+    height: 50px;
+    color: white;
+    font-size: 1.6em;
+    font-weight: 700;
+    background-color: rgb(42,115,220);
+}
+.bus .bus_name {
+    display: flex;
+    margin-bottom: 15px;
+}
+.bus .bus_name li {
+    margin-left: 10px;
+    line-height: 50px;
+}
+.bus .bus_line .bus_color {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 700;
+    border-radius: 30px;
+    background-color: rgb(42,115,220);
+    color: white;
+}
+.bus .bus_line li{
+    margin-bottom: 10px;
+}
+/* bus ---------------------------------------------------- */
+.parking .place img {
+    width: 100%;
+    margin-top: 15px;
+}
+.parking_desc {
+    display: flex;
+    margin-top: 30px;
+}
+.parking_desc .park_num {
+    width: 23.5%;
+    font-size: 18px;
+    font-weight: 600;
+}
+.parking_desc .park_num li {
+    margin-bottom: 5px;
+}
+.parking_desc .park_car {
+    border-left: 1px solid black;
+}
+.parking_desc .park_car li {
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+.parking_desc .park_car li:first-child {
+    font-size: 18px;
+    font-weight: 600;
+}
+.parking_desc .park_car li:nth-child(even) {
+    display: block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+/* parking ---------------------------------------------------- */

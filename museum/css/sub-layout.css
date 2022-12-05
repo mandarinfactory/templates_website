@@ -1,0 +1,245 @@
+/* sub-visual------------------------------------------- */
+.sub-visual{
+  background: #000;
+}
+
+@media screen and (min-width:1000px){
+  .sub-visual{
+    height: 250px;
+  }
+}
+
+@media screen and (max-width:1000px){
+  .sub-visual{
+    height:150px;
+  }
+}
+/* category visual---- */
+.sub-visual figure{
+  display: none;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.sub-visual figure img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter:brightness(100%);
+}
+.sub-visual figure figcaption{
+  position: absolute;
+  left:50%;
+  top:50%;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  color:#FFF;
+  text-shadow: 2px 2px 0 #000;
+  transform: translate(-50%,-50%);
+}
+.sub-visual figure figcaption em{
+  display: block;
+  position: relative;
+  z-index: 1;
+  font-size: 3em;
+  font-weight: 900;
+}
+@media screen and (max-width:600px){
+  .sub-visual figure figcaption em{
+    font-size: 8vw;
+  }
+}/* sm */
+
+.sub-visual figure figcaption p{
+  margin-top:-25px;
+  padding: 15px;
+  padding-top: 25px;
+  border-radius: 0 20px 0 20px;
+  background: rgba(255,255,255,0.7);
+  border:1px solid #FFF;
+}
+@media screen and (max-width:1000px){
+  .sub-visual figure figcaption p{
+    white-space: nowrap;
+    overflow: hidden ;
+    text-overflow: ellipsis;
+  }
+}/* sm */
+
+/* 모션... */
+.sub-visual figure em,
+.sub-visual figure p{
+  opacity: 0;
+}
+.sub-visual figure em{
+  transform: translateX(-100px);
+}
+.sub-visual figure p{
+  transform: translateX(100px);
+}
+.sub-visual figure img{
+  transform: scale(1.2);
+  filter: brightness(50%);
+}
+
+.sub-visual figure.active em,
+.sub-visual figure.active p{
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 3s;
+}
+.sub-visual figure.active img{
+  transform: scale(1);
+  filter: brightness(100%);
+  transition: transform 30s , filter 10s;
+}
+
+
+
+
+/* slider---- */
+
+
+
+/*sub-center ---------------------------------------------------- */
+div.sub-center{
+  max-width: 1100px;
+}
+main.sub-content{
+  position: relative;
+}
+.snb > ul > li{
+  display: none;
+}
+.snb > ul > li > a{
+  display: none;
+}
+@media screen and (min-width:1200px){
+  div.sub-center{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 50px auto;
+  }
+  aside.sidebar{
+    height: 45px;
+  }
+  .snb{
+    margin-bottom: 100px;
+  }
+  .snb em{
+    display: block;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    font-weight: 800;
+    color:var(--dark-color);
+  }
+  .snb em:first-letter{
+    font-size: 1.3em;
+  }
+  .snb ul li {
+    position: relative;
+  }
+  .snb ul li i {
+    position: absolute;
+    left: -18%;
+    font-size: 1.8em;
+    color: var(--main-color);
+    opacity: 0.3;
+  }
+  .snb > ul > li > ul > li > a{
+    display: block;
+    padding: 10px 0;
+    width: 150px;
+  }
+  
+  .snb > ul > li > ul > li > a::before{
+    content: "- ";
+  }
+  .snb > ul > li > ul > li > a.active{
+    font-weight: 600;
+    color:var(--sub-color);
+  }
+  .snb > ul > li > ul > li > a.active::before{
+    content: "\f00c";
+    display: inline-block;
+    margin-right: 3px;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+  }
+  main.sub-content{
+    margin: 0 auto;
+    width: 90%;
+  }
+  .breadcrumb{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.85em;
+    color:#AAA;
+  }
+  .breadcrumb .menu-label{
+    color:var(--sub-color);
+  }
+  .breadcrumb li::after{
+    content: ">";
+    margin: 0 3px;
+  }
+  .breadcrumb li:last-child::after{
+    display: none;
+  }
+}/* lg */
+
+@media screen and (max-width:1200px){
+  aside.sidebar{
+    height: 45px;
+    background: #333;
+  }
+  .snb>ul>li>ul{
+    display: flex;
+    justify-content: center;
+    height: 45px;
+  }
+  .snb>ul>li>ul>li{
+    flex: 1;
+    max-width: 200px;
+    border-right: 1px solid #666;
+  }
+  .snb>ul>li>ul>li:last-child{
+    border:none;
+  }
+  .snb>ul>li>ul>li>a{
+    display: block;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    background: var(--dark-color);
+    color:#FFF;
+  }
+  .snb>ul>li>ul>li>a.active{
+    background: var(--sub-color);
+  }
+  .snb > ul > li > em{
+    display: none;
+  }
+  a.sub_customer{
+    display: none;
+  }
+  main.sub-content{
+    width: 95%;
+    margin: 40px auto;
+  }
+  .breadcrumb,
+  .smile {
+    display: none;
+  }
+}/* sm */
+

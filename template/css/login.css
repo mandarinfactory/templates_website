@@ -1,0 +1,118 @@
+.personnel {
+    width: 500px;
+    height: 480px;
+    margin: 30px auto;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.personnel .title .sunshine {
+    margin-top: 0 !important;
+}
+.personnel .input {
+    margin-top: 30px ;
+    width: 100%;
+}
+.personnel .input input {
+    margin-top: 30px;
+    display: block;
+    width: 80%;
+    height: 50px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.5s;
+    font-size: 18px;
+}
+input:hover {
+    background-color: black;
+    color: white;
+}
+.find {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.find span {
+    display: block;
+    margin: 10px auto;
+    padding: 0 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border-right: 2px solid black;
+    cursor: pointer;
+}
+.find span:last-child {
+    border: none;
+}
+.enter {
+    width: 100px;
+    height: 40px;
+    margin: 10px auto;
+    border-radius: 5px;
+    border: 3px solid black;
+    font-size: 16px;
+    transition: all 0.5s;
+}
+.enter:hover {
+    background-color: var(--sub-color);
+    border: 3px solid var(--sub-color);
+    color: white;
+}
+.SNS {
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.SNS div {
+    width: 75%;
+    height: 55px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    transition: all 0.5s;
+    cursor: pointer;
+} 
+.SNS div:hover {
+    color: black;
+}
+.SNS .kakao {
+    background-color: rgba(250,225,0,0.7);
+    transition: all 0.5s;
+}
+.SNS .kakao:hover {
+    background-color: rgb(250, 255, 0);
+}
+.SNS .naver {
+    background-color: rgba(3,199,90,0.7);
+    transition: all 0.5s;
+}
+.SNS .naver:hover {
+    background-color: rgb(3,199,90);
+}
+.SNS .kakao:hover {
+    background-color: rgb(250, 255, 0);
+}
+.SNS .facebook {
+    background-color: rgba(24,119,242,0.7);
+    transition: all 0.5s;
+}
+.SNS .facebook:hover {
+    background-color: rgb(24, 119, 242);
+}
+@media screen and (min-width:1000px) {
+  
+}/* lg */
+@media screen and (max-width:1000px) {
+
+}/* sm */

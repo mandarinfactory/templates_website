@@ -1,0 +1,170 @@
+.smile {
+    position: absolute;
+    z-index: -1;
+    top: -20%;
+    left: 10%;
+}
+.smile img {
+    width: 800px;
+    height: 800px;
+    opacity: 0.3;
+}
+.title h1 {
+    background: 
+    -webkit-linear-gradient(120deg,#003964 50%,#ed193a 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.title h3 {
+    display: block;
+    color: var(--sub-color);
+    font-size: 24px;
+    font-weight: 600;
+    padding-top: 20px;
+    border-bottom: 2px solid var(--sub-color);
+}
+.register {
+    width: 80%;
+    height: 75vh;
+    margin: 30px auto;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.register div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 400px;
+    margin: 30px auto;
+    background-color: white;
+    color: var(--sub-color);
+    border: 3px solid black;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.register div:hover {
+    background-color: var(--sub-color);
+    border: 3px solid var(--sub-color);
+    color: white;
+}
+.register div span {
+    font-size: 25px;
+    font-weight: 600;
+}
+.register div span:last-child {
+    font-size: 18px;
+}
+.register div span:hover {
+    color: white;
+}
+nav.container_register,
+.container_register_global {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    z-index: 12;
+}
+.popcard {
+    position: absolute;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 800px;
+    left: calc(50% - 300px);
+    top: calc(50% - 400px);
+    border: 5px solid black;
+    background-color: white;
+    overflow: hidden;
+    z-index: -2;
+    transform: translateX(400%);
+}
+.popcard.active {
+    transform: translateX(0);
+}
+.popcard img {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top: -15%;
+    left: -20%;
+    opacity: 0.4;
+    z-index: -1;
+}
+.popcard .close {
+    position: absolute;
+    right: 4%;
+    top: 2%;
+    font-size: 2.5em;
+    cursor: pointer;
+    z-index: 1;
+}
+.popcard li {
+    width: 90%;
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.popcard .text {
+    margin-left: 120px;
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+}
+.popcard li.bold {
+    top: 10px;
+    left: 90px;
+    position: absolute;
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--sub-color);
+}
+.popcard li input {
+    display: block;
+    width: 80%;
+    height: 50px;
+    margin: 8px auto;
+    padding: 10px;
+    transition: all 0.5s;
+    font-size: 18px;
+}
+.popcard button {
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: white;
+    border: 1px solid black;
+    transition: all 0.5s;
+}
+.popcard button:hover {
+    background-color: var(--sub-color);
+    color: white;
+}
+@media screen and (min-width:900px) and (max-width:1400px){
+    .register div {
+        width: 200px;
+        height: 250px;
+    }
+}
+@media screen and (max-width:900px) {
+    .register div {
+        width: 100px;
+        height: 100px;
+    }
+    .register div span {
+        display: none;
+    }
+}

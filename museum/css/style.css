@@ -1,0 +1,72 @@
+*{
+  font-family: inherit;
+  font-size: inherit;
+  color:inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: inherit;
+}
+body{
+  font-family: 'Montserrat', 'Noto Sans KR',  sans-serif;
+  font-size: 16px;
+  color:#444;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+.serif{
+  font-family: 'Nanum Myeongjo', serif;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1{
+  padding: 20px 0 10px 0;
+  font-size: 40px;
+  font-weight: 800;
+}
+h2 {
+  font-size: 30px;
+  font-weight: 800;
+  color: rgb(27, 27, 27);
+}
+:root{
+  --main-color: darkred;
+  --sub-color:rgb(46,55,76);
+  --dark-color:#212228;
+}
+.sub_title {
+  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--sub-color);
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--sub-color);
+}
+.sub_title::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 24px;
+  vertical-align: middle;
+  background-color: lightgray;
+}
+.sub_title::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 12px;
+  left: 0;
+  top: 7px;
+  background-color: var(--main-color);
+}
+.emphasis {
+  font-size: 1.5em;
+}
+.bold {
+  color: var(--main-color);
+}

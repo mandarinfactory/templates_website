@@ -1,0 +1,66 @@
+.sword {
+    position: absolute;
+    opacity: 0.5;
+    top: 20%;
+    left: -40%;
+    z-index: -10;
+}
+/* sword ----------------------------------------------------------------------- */
+.special_section section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    height: 100%;
+}
+.special_section section figure {
+    display: flex;
+    flex-direction: column;
+}
+.special_section section figure img {
+    width: 95%;
+    margin: 20px 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.special_section section figure img:hover {
+    transform: scale(1.2);
+}
+.special_section section figure .letter * {
+    margin: 10px 0;
+} 
+.special_section section figure .letter figcaption {
+    margin-left: 10px;
+    font-size: 1.3em;
+    font-weight: 800;
+}
+.special_section section figure .letter > span {
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    background-color: var(--sub-color);
+    color: white;
+    text-align: center;
+    line-height: 30px;
+}
+.special_section section figure .letter span:first-child {
+    margin-left: 10px;
+}
+.special_section section figure .letter div span:nth-child(even) {
+    margin-left: 30px;
+}
+@media screen and (min-width:1200px){
+    .special_section section figure {
+        width: 33.33%;
+    }
+}
+@media screen and (min-width:600px) and (max-width:1200px){
+    .special_section section figure {
+        width: 50%;
+    }
+}
+@media screen and (max-width:600px){
+    .special_section section figure {
+        width: 100%;
+    }
+}

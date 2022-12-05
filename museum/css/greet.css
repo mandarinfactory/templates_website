@@ -1,0 +1,58 @@
+.silla {
+    position: absolute;
+    opacity: 0.5;
+    right: -40%;
+    top: 30%;
+    z-index: -10;
+}
+.silla img {
+    width: 500px;
+    height: 1000px;
+}
+.greet figure img {
+    display: block;
+    width: 100%;
+}
+.greet > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 50px 0;
+    border-bottom: 2px solid black;
+}
+.greet div ul li {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin-bottom: 5px;
+}
+.greet_cash {
+    display: flex;
+    position: relative;
+    
+}
+.greet_cash .cashbox {
+    position: absolute;
+    left: 33%;
+}
+.greet_cash .cashbox div {
+    width: 70px;
+    height: 50px;
+    padding: 0;
+    border-bottom: 0;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.3em;
+}
+.cashbox .blue {
+    background-color: var(--sub-color);
+    margin-bottom: 20px;
+}
+.cashbox .red {
+    background-color: var(--main-color);
+}
+.greet_cash > ul > li:first-child {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
