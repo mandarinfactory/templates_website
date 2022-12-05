@@ -54,6 +54,7 @@
   <script src="./js/bubble.js"></script>
   <script src="./js/morphsvg.js"></script>
   <script src="./js/tweenmax.js"></script>
+  <script src="./js/type_effect.js"></script>
   <title>탬플릿사이트제작</title>
 </head>
 

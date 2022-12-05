@@ -6,20 +6,24 @@
     text-align: center;
 }
 .main_desc h2 {
+    position: relative;
     margin-bottom: 15px;
     text-transform: uppercase;
     font-weight: 800;
     font-size: 2em;
     color: black;
 }
-.main_desc h2 span {
-    position: relative;
+.main_desc h2 .addTypeEffectCursor {
+    width: 100%;
+    margin-top: 7px;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
 }
 .main_desc h2::before {
     content: '';
     display: block;
     margin: 0 auto;
-    margin-bottom: 7px;
     width: 70px;
     height: 5px;
     background-color: var(--sub-color);
