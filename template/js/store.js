@@ -240,3 +240,30 @@ window.videoArr = [
     'ZVb_yKMivqo',
     '3vVMQVmatyY',
 ]
+
+window.quickMenuArr = [
+    {
+        url : './biz-intro.php',
+        title : 'BUSINESS INFO',
+        desc : '회사만의 세분화된 사업영역을 바탕으로 최고의 비즈니스를 제안합니다.',
+        path : './img/gallery/1.jpg',
+    },
+    {
+        url : './contact.php',
+        title : 'ONLINE INQUIRY',
+        desc : '온라인 무료상담 및 견적받기로 빠르고 효율적인 상담을 안내해드립니다.',
+        path : './img/gallery/2.jpg',
+    },
+    {
+        url : './gallery_viewbox.php',
+        title : 'PRODUCT INFO',
+        desc : '최고의 기술력과 최상의 품질, 착한 가격으로 보답하여 드리겠습니다.',
+        path : './img/gallery/3.jpg',
+    },
+    {
+        url : './location.php',
+        title : 'LOCATION INFO',
+        desc : '당사로 찾아오시는 길을 상세하게 안내해 드리겠습니다.',
+        path : './img/gallery/4.jpg',
+    },
+]
