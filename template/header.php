@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="./css/login.css">
   <link rel="stylesheet" href="./css/register.css">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/index_desc.css">
   <link rel="stylesheet" href="./css/sub_index.css">
   <link rel="stylesheet" href="./css/greet.css">
   <link rel="stylesheet" href="./css/location.css">

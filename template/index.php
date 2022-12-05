@@ -38,6 +38,10 @@
   }) //forEach}append)
 </script>
 <main>
-  첫페이지 본문
+  <section class="home_section home_section1"></section>
+  <div class="main_desc">
+    <h2>quick menu</h2>
+    <p>메뉴를 클릭하시면 해당 메뉴로 이동합니다.</p>
+  </div>
 </main>
 <?php include "footer.php" ?>

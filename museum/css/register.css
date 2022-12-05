@@ -11,7 +11,7 @@
 }
 .title h1 {
     background: 
-    -webkit-linear-gradient(120deg,#003964 50%,#ed193a 50%);
+    -webkit-linear-gradient(120deg,var(--sub-color) 50%,var(--main-color) 50%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
