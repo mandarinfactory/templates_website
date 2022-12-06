@@ -76,9 +76,11 @@
   window.customerArr.forEach(function(v) {
     $('.home_section2 ul').append(`<li>
       <a href="${v.url}">
+      <div class="textbox">
         ${v.icon}
         <h3>${v.title}</h3>
         <p>${v.desc}</p>
+        </div>
       </a>
     </li>`)
 
