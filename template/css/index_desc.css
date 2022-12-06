@@ -130,6 +130,9 @@
     background-attachment: fixed;
 }
 @media screen and (hover:none) and (pointer:coarse) {
+    .sub_visual iframe {
+        display: none;
+    }
     .home_section2 {
         background-attachment: scroll;
     }
