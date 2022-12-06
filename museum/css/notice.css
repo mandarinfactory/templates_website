@@ -54,3 +54,13 @@
     margin-left: 10px;
     width: 80%;
 }
+.notice_section .notice_desc .notice_sub_desc ul {
+    margin: 30px;
+    border-bottom: 1px solid black;
+}
+.notice_section .notice_desc .notice_sub_desc ul:last-child {
+    border-bottom: none;
+}
+.notice_section .notice_desc .notice_sub_desc ul li {
+    margin-bottom: 15px;
+}

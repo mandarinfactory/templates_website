@@ -120,6 +120,15 @@
     -webkit-mask-size: 100%;
 }
 /* .home_section2 ---------------------------------------------------------------- */
+.home_section2 {
+    background-image: url(../img/home/mono.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+@media screen and (hover:none) and (pointer:coarse) {
+
+}/* 반응형디자인을 위해서, 특히나 iphone에서는 background-attachment가 적용되지 않는다! */
 .home_section2 .inner {
     width: 95%;
     max-width: 1100px;
@@ -147,9 +156,9 @@
     transform: scale(1.15);
 }
 .home_section2 .inner ul li a svg path {
-    fill: white;
-    stroke: var(--main-color);
-    stroke-width: 5px
+    fill: rgba(255, 255, 255, 0.6);
+    stroke: cornflowerblue;
+    stroke-width: 7px
 }
 .home_section2 .inner ul li a::before {
     content: '';
@@ -169,8 +178,6 @@
     box-sizing: border-box;
     text-align: center;
     top: 0;
-    color: white;
-
 }
 .home_section2 .inner ul li a .textbox i {
     font-size: 2.5em;
@@ -198,4 +205,39 @@
         width: 100%;
     }
 }/* sm */
-/* motion ------------------------------------------------------------- */
+/* .home_section2-motion ------------------------------------------------------------- */
+.home_section2 li .textbox * {
+    color: rgba(0, 0, 0, 0.4);
+    transition: all 0.5s;
+}
+.home_section2 li.active .textbox * {
+    color: black;
+}
+.home_section2 li.active .textbox h3,
+.home_section2 li.active .textbox i {
+    background:  
+    -webkit-linear-gradient(-170deg,#eea100 10%, #ed1c24 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.home_section2 li path {
+    fill: rgba(0, 0, 0, 0.4);
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: all 1s;
+    transform-origin: center;
+    animation: rotateBox 10s linear infinite;
+}
+.home_section2 li.active path {
+    stroke-dashoffset: 0;
+    fill: white;
+
+}
+@keyframes rotateBox {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}

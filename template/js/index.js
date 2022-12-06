@@ -5,7 +5,7 @@ $(function () {
 /* carousel -------------------------------------------------------------------- */
 
 function popupBox() {
-    $('.home_section1 li').each(function() {
+    $('.home_section1 li, .home_section2 li').each(function() {
         var t = $(this).offset().top
         if(scrY >= t - winH * 0.8){
                 $(this).addClass('active')
