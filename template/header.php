@@ -61,6 +61,7 @@
 </head>
 
 <body>
+  <?php include "preloader.php" ?>
   <nav class="container_register">
     <ul class="popcard">
       <img src="../template/img/sunset.png" alt="">
