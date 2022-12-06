@@ -129,7 +129,7 @@
     background-position: center;
     background-attachment: fixed;
 }
-@media screen and (hover:none) and (pointer:coarse) {
+@media (hover:none) {
     .sub_visual iframe {
         display: none;
     }
