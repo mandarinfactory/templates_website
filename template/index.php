@@ -60,7 +60,7 @@
           <p>${v.desc}</p>
         </a>
       </li>
-    `)
+    `) //append
   }) //forEach
 </script>
 <section class="home_section home_section2">
@@ -85,9 +85,30 @@
         <p>${v.desc}</p>
         </div>
       </a>
-    </li>`)
-
-  })
+    </li>`) //append
+  }) //forEach
+</script>
+<section class="home-section home_section3">
+  <div class="main_desc">
+    <h2>lastest gallery</h2>
+    <p>선샤인의 최신 소식들을 전해드립니다.</p>
+  </div>
+</section>
+<script>
+  $('.home_section3').append(`<ul></ul>`)
+  window.galleryArr1.forEach(function(v, i) {
+    if (i >= 6) return false
+    $('.home_section3 ul').append(`<li>
+        <a href="#">
+        <div>
+          <figure>
+            <img src="${v.path}" alt>          
+          </figure>
+          <h3>${v.title}</h3>
+        </div>
+        </a>
+      </li>`) //append
+  }) //forEach
 </script>
 </main>
 <?php include "footer.php" ?>

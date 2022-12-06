@@ -2,7 +2,7 @@
     padding: 50px 0;
 }
 .main_desc {
-    margin-bottom: 40px;
+    margin: 20px 0;
     text-align: center;
 }
 .main_desc h2 {
@@ -127,8 +127,10 @@
     background-attachment: fixed;
 }
 @media screen and (hover:none) and (pointer:coarse) {
-
-}/* 반응형디자인을 위해서, 특히나 iphone에서는 background-attachment가 적용되지 않는다! */
+    .home_section2 {
+        background-attachment: scroll;
+    }
+}/* 반응형디자인을 위해서, 특히나 iphone에서는 background-attachment:fixed가 적용되지 않는다! */
 .home_section2 .inner {
     width: 95%;
     max-width: 1100px;
@@ -231,7 +233,7 @@
 .home_section2 li.active path {
     stroke-dashoffset: 0;
     fill: white;
-
+    
 }
 @keyframes rotateBox {
     0% {
@@ -240,4 +242,76 @@
     100% {
         transform: rotate(180deg);
     }
+}
+/* .home_section3 ----------------------------------------------------------------- */
+.home_section3 {
+    width: 95%;
+    max-width: 1100px;
+    margin: 20px auto;
+}
+.home_section3 ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.home_section3 ul li {
+    box-sizing: border-box;
+    padding: 15px;
+}
+.home_section3 ul li a {
+    display: block;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.home_section3 ul li a div {
+    position: relative;
+}
+.home_section3 ul li a div figure img {
+    width: 100%;
+}
+.home_section3 ul li a div h3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    font-weight: 750;
+    font-size: 1.2em;
+    color: white;
+}
+@media screen and (min-width:1000px) {
+    .home_section3 ul li {
+        width: 16.66%;
+    }
+}
+@media screen and (min-width:500px) and (max-width:1000px) {
+    .home_section3 ul li {
+        width: 33.33%;
+    }
+}
+@media screen and (max-width:500px) {
+    .home_section3 ul li {
+        width: 50%;
+    }
+}
+/* motion */
+.home_section3 ul li:hover a div h3 {
+    opacity: 1;
+}
+.home_section3 ul li a div h3 {
+    opacity: 0;
+}
+.home_section3 ul li div {
+    overflow: hidden;
+}
+.home_section3 ul li figure {
+    transition: all 0.5s;
+}
+.home_section3 ul li:hover figure {
+    transform: scale(1.3);
 }
