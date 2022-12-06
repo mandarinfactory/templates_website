@@ -1,4 +1,5 @@
 <?php include "header.php" ?>
+<?php include "popup.php" ?>
 <script src="./js/store.js"></script>
 <section class="home-visual">
   <div class="slider">
