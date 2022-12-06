@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="./css/exhib_permanent.css">
   <link rel="stylesheet" href="./css/exhib_special.css">
   <link rel="stylesheet" href="./css/library.css">
-  <link rel="stylesheet" href="./css/notice.css">
+  <link rel="stylesheet" href="./css/info.css">
   <link rel="stylesheet" href="./css/architect.css">
   <link rel="stylesheet" href="./css/footer.css">
   <link rel="stylesheet" href="./css/sub-layout.css">
@@ -27,6 +27,8 @@
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="./js/header.js"></script>
   <script src="./js/register.js"></script>
+  <script src="./js/store.js"></script>
+  <script src="./js/notice.js"></script>
   <title>탬플릿사이트제작</title>
 </head>
 

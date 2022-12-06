@@ -47,9 +47,9 @@
       <i class="fa-solid fa-volume-high"></i>
       박물관 소개</em>
     <ul>
-      <li><a class="menu5-1" href="./notice.php">인사말</a></li>
+      <li><a class="menu5-1" href="./info.php">인사말</a></li>
       <li><a class="menu5-2" href="./architect.php">시설소개</a></li>
-      <li><a class="menu5-3" href="./qna.php">Q & A</a></li>
+      <li><a class="menu5-3" href="./notice.php">공지사항</a></li>
     </ul>
   </li><!-- 1dep li -->
 

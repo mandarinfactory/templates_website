@@ -15,11 +15,11 @@ $(function () {
     category = 3; menu = 1
   } else if (addr.match('library')) {
     category = 4; menu = 1
-  } else if (addr.match('notice')) {
+  } else if (addr.match('info')) {
     category = 5; menu = 1
   } else if (addr.match('architect')) {
     category = 5; menu = 2
-  } else if (addr.match('qna')) {
+  } else if (addr.match('notice')) {
     category = 5; menu = 3
   }
 

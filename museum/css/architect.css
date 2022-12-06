@@ -1,7 +1,50 @@
 .architect_section figure {
     width: 100%;
     max-width: 1200px;
+    position: relative;
 }
 .architect_section figure img {
     width: 100%;
+}
+.architect_section figure figcaption {
+    position: absolute;
+    width: 600px;
+    height: 200px;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    bottom: -30%;
+    right: 0;
+}
+.architect_section figure figcaption ul:nth-child(odd) {
+    font-size: 18px;
+    color: black;
+}
+.architect_section figure figcaption ul li {
+    margin: 10px;
+}
+.architect_section .architect_desc {
+    margin: 100px 0 50px 0;
+}
+.architect_section .architect_desc ul {
+    display: flex;
+    padding: 30px;
+    border-bottom: 1px solid black;
+}
+.architect_section .architect_desc ul:last-child {
+    border-bottom: 0;
+}
+.architect_section .architect_desc ul li {
+    line-height: 30px;
+}
+.architect_section .architect_desc ul li:first-child {
+    width: 40%;
+    font-size: 18px;
+    color: black;
+    font-weight: 700;
+}
+.architect_section .architect_desc ul li:last-child{
+    width: 100%;
+    font-size: 17px;
 }

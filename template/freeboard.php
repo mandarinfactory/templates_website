@@ -21,15 +21,15 @@
                 <tr>
                     <th scope="col">번호</th>
                     <th scope="col">제목</th>
-                    <th scope="col">작성자</th>
                     <th scope="col">작성일자</th>
+                    <th scope="col">작성자</th>
                     <th scope="col">조회수</th>
                 </tr>
             </thead>
             <tbody>
             </tbody>
         </table>    
-    `) //append
+    `) //prepend
     freeboardArrCopy = [...freeboardArr]
     freeboardArrCopy.reverse().forEach(function(v) {
         $('.freeboard_section .board tbody').prepend(`
@@ -40,7 +40,7 @@
         <td>${v.auth}</td>
         <td>${v.read_count}</td>
         </tr>
-        `) //append 
+        `) //prepend 
     }) //forEach + .reverse()를 통해 내림차순으로 바꾼다! => forEach내에서 바꿀수는 없으니! && 직접적인 array-database를 바꾸면 안된다! => array의 copy를 만들어야한다.[...//hard-copy!]
 </script>
 <?php include "sub-footer.php" ?>

@@ -1,6 +1,9 @@
 .notice_section figure {
     position: relative;
 }
+.notice_section figure img {
+    width: 100%;
+}
 .notice_section figure figcaption {
     display: block;
     padding-left: 10px;
