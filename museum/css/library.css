@@ -1,3 +1,10 @@
+.library_section > ul {
+    padding: 30px;
+    border-bottom: 1px solid black;
+}
+.library_section ul li {
+    margin: 12px 0;
+}
 .library_section .library_title {
     position: relative;
     width: 100%;
@@ -13,4 +20,23 @@
     font-size: 3.2em;
     font-weight: 850;
     color: rgba(0, 0, 0, 0.9);
+}
+.library_section > ul {
+    display: flex;
+    width: 100%;
+}
+.library_section li.li_title {
+    width: 20%;
+}
+.library_section .library_one {
+    flex-direction: column;
+}
+.library_section .library_one * {
+    margin: 10px 0;
+}
+.library_section .library_one h2 {
+    background: 
+    -webkit-linear-gradient(120deg,var(--sub-color) 80%,var(--main-color) 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

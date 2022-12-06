@@ -1,0 +1,29 @@
+.notice_section figure {
+    position: relative;
+}
+.notice_section figure figcaption {
+    display: block;
+    padding-left: 10px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    bottom: -25%;
+    right: 0;
+    width: 600px;
+    height: 250px;
+    background-color: white;
+    font-size: 1.6em;
+    font-weight: 850;
+}
+.notice_section figure figcaption li {
+    margin-bottom: 5px;
+    background: 
+    -webkit-linear-gradient(120deg,var(--sub-color) 70%,var(--main-color) 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.notice_section figure figcaption li:nth-child(3),
+.notice_section figure figcaption li:nth-child(4){
+    font-size: 1.9em;
+}

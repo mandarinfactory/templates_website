@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="./css/exhib_permanent.css">
   <link rel="stylesheet" href="./css/exhib_special.css">
   <link rel="stylesheet" href="./css/library.css">
+  <link rel="stylesheet" href="./css/notice.css">
   <link rel="stylesheet" href="./css/footer.css">
   <link rel="stylesheet" href="./css/sub-layout.css">
   <link rel="shortcut icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/3/3f/Emblem_of_the_Government_of_the_Republic_of_Korea.svg">
