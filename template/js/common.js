@@ -14,13 +14,6 @@
     winInfo();
   })//resize, scroll(window-event)
 /* smooth_wheel_effet -------------------------------------------------------------- */
-
-
-
-
-
-
-
   var scrollSpeed = 0
 
   window.addEventListener('mousewheel',function (e) {
