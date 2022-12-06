@@ -40,7 +40,7 @@
 </section>
 <section class="home_section home_section1">
   <div class="main_desc">
-    <h2 id="type1">quick menu</h2>
+    <h2 id="type1"><span>quick menu</span></h2>
     <p>메뉴를 클릭하시면 해당 메뉴로 이동합니다.</p>
   </div>
 </section>
@@ -66,7 +66,7 @@
 <section class="home_section home_section2">
   <div class="inner">
     <div class="main_desc">
-      <h2>CS CENTER</h2>
+      <h2><span>CS CENTER</span></h2>
       <p>고객의 목소리에 귀 기울이는 션샤인이 되겠습니다.</p>
     </div>
   </div>
@@ -90,7 +90,7 @@
 </script>
 <section class="home-section home_section3">
   <div class="main_desc">
-    <h2>lastest gallery</h2>
+    <h2><span>lastest gallery</span></h2>
     <p>선샤인의 최신 소식들을 전해드립니다.</p>
   </div>
 </section>

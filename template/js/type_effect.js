@@ -10,16 +10,27 @@ function Type_effect(container, type_speed) {
   //----------------------------------------------------------//
   if (this.container_length === 1 && this.obj_length === 1 && this.type_speed > 0) {
     this.container = $(container);
-    this.org = this.container.children("*:only-child")
-    this.obj = this.org.clone();
-    this.container.append(this.obj)
+    var org = this.org = this.container.children("*:only-child")
+    var obj = this.obj = this.org.clone();
     this.obj.addClass("addTypeEffectCursor")
     this.obj.attr("alt", "")
-    this.obj.css({
-      "position": "absolute",
-      "top": this.org.position().top,
-      "left": this.org.position().left
-    })//css
+    function setSize(){
+      obj.css({
+        "position": "absolute",
+        "top": org.position().top,
+        "left": org.position().left,
+        "width": org[0].getBoundingClientRect().width,
+        "height": org[0].getBoundingClientRect().height,
+      })//css
+
+    }
+    setSize()
+    $(window).resize(function(){
+      setSize()
+    }).scroll(function(){
+      setSize()
+    })
+    this.container.append(this.obj)
     this.org.css("opacity", "0")
     this.html = this.org.html()
     this.html = $.parseHTML(this.html)
@@ -71,7 +82,6 @@ Type_effect.prototype.reverse = function (fn) {
   if (this.state === "reverse" || this.state == undefined || this.state === "set") { return false; }
   if (this.state === "play") {
     this.state = "reverse"
-    console.log(this.state);
   }
   if (this.state === "finish") {
     this.state = "reverse";

@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="./css/faq.css">
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/preloader.css">
   <link rel="stylesheet" href="./css/sub-layout.css">
   <link rel="stylesheet" href="./css/animation_template.css">
   <link rel="stylesheet" href="./css/isotope.css">
@@ -55,6 +56,7 @@
   <script src="./js/morphsvg.js"></script>
   <script src="./js/tweenmax.js"></script>
   <script src="./js/type_effect.js"></script>
+  <script src="./js/preloader.js"></script>
   <title>탬플릿사이트제작</title>
 </head>
 

@@ -1,5 +1,7 @@
 .library_section > ul {
+    width: 100%;
     padding: 30px;
+    padding-left: 0;
     border-bottom: 1px solid black;
 }
 .library_section ul li {
@@ -35,6 +37,8 @@
     margin: 10px 0;
 }
 .library_section .library_one h2 {
+    font-size: 2.8em;
+    margin-bottom: 0;
     background: 
     -webkit-linear-gradient(120deg,var(--sub-color) 80%,var(--main-color) 50%);
     -webkit-background-clip: text;

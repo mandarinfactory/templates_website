@@ -21,6 +21,9 @@
     height: 5px;
     background-color: var(--sub-color);
 }
+.main_desc h2 span {
+    position: relative;
+}
 .main_desc p {
     color: rgba(0, 0, 0, 0.6);
 }
