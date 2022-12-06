@@ -31,10 +31,23 @@
     display: flex;
     width: 100%;
     max-width: 1200px;
+    color: black;
 }
-.notice_section .notice_desc > ul{
+.notice_section .notice_desc > ul {
     margin-top: 80px;
     width: 40%;
+}
+.notice_section .notice_desc > ul li:nth-child(1),
+.notice_section .notice_desc > ul li:nth-child(2){
+    font-size: 2.4em;
+    font-weight: 750;
+
+}
+.notice_section .notice_desc > ul li:nth-child(3),
+.notice_section .notice_desc > ul li:nth-child(4) {
+    margin-top: 7px;
+    font-size: 1.2em;
+    font-weight: 600;
 }
 .notice_section .notice_desc .notice_sub_desc {
     margin-top: 150px;
