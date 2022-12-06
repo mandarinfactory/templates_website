@@ -14,12 +14,20 @@
     winInfo();
   })//resize, scroll(window-event)
 /* smooth_wheel_effet -------------------------------------------------------------- */
+
+
+
+
+
+
+
   var scrollSpeed = 0
 
   window.addEventListener('mousewheel',function (e) {
+    if(isMobile) return false
       e.preventDefault();/* browser에서 자동적으로 되는것들을 방지한다.(새로고침등) */
       delta = e.wheelDeltaY / -120;
-      scrollSpeed += 5 * delta;
+      scrollSpeed += 15 * delta;
   },{passive:false})/* jQuery에서는 안되서 무조건 vanila에서만! */
   /* 
   <<vanila JS>>
