@@ -13,7 +13,7 @@
             멀티미디어자료 4천여 점 등을 소장하고 있으며 우리나라 최고의 박물관 전문도서관으로서 역할을 수행하고 있습니다.</li>
     </ul>
     <ul class="library_two">
-        <li class="li_title serif emphasis bold">이용안내</li>
+        <li class="li_title serif emphasis">이용안내</li>
         <ul class="library_info">
             <li class="emphasis">이용시간</li>
             <li>월~금, 10:00~18:00</li>
@@ -28,7 +28,7 @@
         </ul>
     </ul>
     <ul class="library_three">
-        <li class="li_title serif emphasis bold">자료열람</li>
+        <li class="li_title serif emphasis">자료열람</li>
         <ul class="archive_desc">
             <li>열람실 내 단행본 및 연속간행물은 자유롭게 열람 가능합니다.</li>
             <li>멀티미디어자료 및 서고자료는 폐가식으로 운영되며 자료이용은 안내데스크로 문의하시기 바랍니다.</li>
@@ -37,7 +37,7 @@
         </ul>
     </ul>
     <ul class="library_four">
-        <li class="li_title serif emphasis bold">자료복사</li>
+        <li class="li_title serif emphasis">자료복사</li>
         <ul class="copy">
             <li>대상자료: 도서관 소장자료 및 Web DB자료</li>
             <li>* 구독 Web DB: 국회도서관 및 국립중앙도서관 원문DB, DBpia, KISS(한국학술정보), 한국역사문화조사자료, 미술신보</li>

@@ -13,13 +13,6 @@
     font-size: 2em;
     color: black;
 }
-.main_desc h2 .addTypeEffectCursor {
-    width: 100%;
-    margin-top: 7px;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%);
-}
 .main_desc h2::before {
     content: '';
     display: block;

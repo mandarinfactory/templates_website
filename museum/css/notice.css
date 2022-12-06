@@ -10,7 +10,7 @@
     justify-content: center;
     bottom: -25%;
     right: 0;
-    width: 600px;
+    width: 630px;
     height: 250px;
     background-color: white;
     font-size: 1.6em;
@@ -26,4 +26,18 @@
 .notice_section figure figcaption li:nth-child(3),
 .notice_section figure figcaption li:nth-child(4){
     font-size: 1.9em;
+}
+.notice_section .notice_desc {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+}
+.notice_section .notice_desc > ul{
+    margin-top: 80px;
+    width: 40%;
+}
+.notice_section .notice_desc .notice_sub_desc {
+    margin-top: 150px;
+    margin-left: 10px;
+    width: 80%;
 }

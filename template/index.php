@@ -40,7 +40,7 @@
 </section>
 <section class="home_section home_section1">
   <div class="main_desc">
-    <h2 id="type1"><span>quick menu</span></h2>
+    <h2 id="type1">quick menu</h2>
     <p>메뉴를 클릭하시면 해당 메뉴로 이동합니다.</p>
   </div>
 </section>
