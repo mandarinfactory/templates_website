@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/footer.css">
   <link rel="stylesheet" href="./css/preloader.css">
+  <link rel="stylesheet" href="./css/popup.css">
   <link rel="stylesheet" href="./css/sub-layout.css">
   <link rel="stylesheet" href="./css/animation_template.css">
   <link rel="stylesheet" href="./css/isotope.css">
