@@ -34,15 +34,14 @@ function popupBox() {
     })//each(parallex)
 /* popupBox, parallex ----------------------------------------------------------------- */
 $(window).scroll(function () {
-
-    var t2 = $('.home_section2 h2').offset().top
-    var t3 = $('.home_section3 h2').offset().top
-    if (scrY > t2 - winH * 0.8){
+    var t = $('.home_section2 h2').offset().top
+    var t = $('.home_section3 h2').offset().top
+    if (scrY > t - winH * 0.8){
         type2.play()
     } else {
         type2.reverse()
     }//if-else
-    if (scrY > t3 - winH * 0.8){
+    if (scrY > t - winH * 0.8){
         type3.play()
     } else {
         type3.reverse()

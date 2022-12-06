@@ -63,7 +63,6 @@
 </head>
 
 <body>
-  <?php include "preloader.php" ?>
   <nav class="container_register">
     <ul class="popcard">
       <img src="../template/img/sunset.png" alt="">
@@ -145,6 +144,7 @@
     </ul>
   </nav>
   <header>
+    <?php include "preloader.php" ?>
     <nav class="member">
       <ul>
         <li><a href="./index.php">처음으로</a></li>
