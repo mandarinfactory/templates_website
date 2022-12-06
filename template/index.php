@@ -63,5 +63,8 @@
     `)
   }) //forEach
 </script>
+<section class="home_section home_section2">
+
+</section>
 </main>
 <?php include "footer.php" ?>
