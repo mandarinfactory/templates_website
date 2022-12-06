@@ -64,7 +64,10 @@
   }) //forEach
 </script>
 <section class="home_section home_section2">
-
+  <div class="main_desc">
+    <h2>CS CENTER</h2>
+    <p>고객의 목소리에 귀 기울이는 션샤인이 되겠습니다.</p>
+  </div>
 </section>
 </main>
 <?php include "footer.php" ?>
