@@ -267,3 +267,30 @@ window.quickMenuArr = [
         path : './img/gallery/4.jpg',
     },
 ]
+
+window.customerArr = [
+    {
+        icon : '<i class="fa-solid fa-bell"></i>',
+        title : '공지사항',
+        desc : '선샤인에서 전하는 공지사항입니다.',
+        url : './notice.php',
+    },
+    {
+        icon : '<i class="fa-solid fa-ear-listen"></i>',
+        title : '고객문의',
+        desc : '질문을 남겨주시면 답변드리겠습니다.',
+        url : './contact.php',
+    },
+    {
+        icon : '<i class="fa-solid fa-archway"></i>',
+        title : '회사소개',
+        desc : '션샤인은 고객만족을 최우선으로 생각합니다.',
+        url : './greet.php',
+    },
+    {
+        icon : '<i class="fa-solid fa-location-dot"></i>',
+        title : '오시는길',
+        desc : '당사로 오는길을 안내해 드립니다.',
+        url : './location.php',
+    },
+]

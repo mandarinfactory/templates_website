@@ -64,10 +64,25 @@
   }) //forEach
 </script>
 <section class="home_section home_section2">
-  <div class="main_desc">
-    <h2>CS CENTER</h2>
-    <p>고객의 목소리에 귀 기울이는 션샤인이 되겠습니다.</p>
+  <div class="inner">
+    <div class="main_desc">
+      <h2>CS CENTER</h2>
+      <p>고객의 목소리에 귀 기울이는 션샤인이 되겠습니다.</p>
+    </div>
   </div>
 </section>
+<script>
+  $('.home_section2 .inner').append(`<ul></ul>`)
+  window.customerArr.forEach(function(v) {
+    $('.home_section2 ul').append(`<li>
+      <a href="${v.url}">
+        ${v.icon}
+        <h3>${v.title}</h3>
+        <p>${v.desc}</p>
+      </a>
+    </li>`)
+
+  })
+</script>
 </main>
 <?php include "footer.php" ?>

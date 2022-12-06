@@ -119,3 +119,36 @@
     mask-size: 100%;
     -webkit-mask-size: 100%;
 }
+/* section2 ---------------------------------------------------------------- */
+.home_section2 .inner {
+    width: 95%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.home_section2 .inner ul {
+
+}
+.home_section2 .inner ul li {
+
+}
+.home_section2 .inner ul li a {
+
+}
+.home_section2 .inner ul li a i {
+
+}
+.home_section2 .inner ul li a h3 {
+
+}
+.home_section2 .inner ul li a p {
+
+}
+@media screen and (min-width:1000px){
+    
+}/* lg */
+@media screen and (min-width:500px) and (max-width:1000px){
+    
+}/* md */
+@media screen and (max-width:500px){
+    
+}/* sm */
