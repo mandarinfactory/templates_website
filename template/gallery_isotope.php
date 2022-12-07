@@ -3,9 +3,9 @@
 <section class="isotope_gallery_section">
     <div class="btn_grp">
         <button value="*" class="active">all</button>
-        <button value=".category1">category1</button>
-        <button value=".category2">category2</button>
-        <button value=".category3">category3</button>
+        <button value=".category1">ONE</button>
+        <button value=".category2">TWO</button>
+        <button value=".category3">THREE</button>
     </div>
 </section>
 <script>

@@ -1,3 +1,28 @@
 <?php include "sub-header.php" ?>
-갤러리 페이지 본문
+<h2 class="sub_title"> 서화</h2>
+<script src="./js/gallery_masonry.js"></script>
+<script src="./js/store.js"></script>
+<section class="masonry_gallery_section">
+
+</section>
+<script>
+    $('.masonry_gallery_section').prepend(`<ul></ul>`)
+    galleryMasonry2Arr.forEach(function(v) {
+        $('.masonry_gallery_section ul').append(`
+        <li>
+            <figure>
+                <a href="#">
+                    <div>
+                        <img src="${v.path}" alt="">
+                    </div>
+                    <figcaption>
+                        <h3>${v.title}</h3>
+                        <p>${v.desc}</p>
+                    </figcaption>
+                </a>
+            </figure>
+        </li>
+        `) //append
+    }) //forEach
+</script>
 <?php include "sub-footer.php" ?>

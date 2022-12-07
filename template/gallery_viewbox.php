@@ -11,7 +11,7 @@
         <li>
             <figure>
                 <a href="${v.path}">
-                    <img src="${v.path}" alt="">
+                    <img src="${v.path}" alt>
                     <figcaption>
                         <h3>${v.title}</h3>
                         <p>${v.desc}</p>

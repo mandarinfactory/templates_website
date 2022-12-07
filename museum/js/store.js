@@ -1,4 +1,220 @@
-noticeArr = [
+window.galleryViewboxArr = [
+    {
+        title : 'photo1',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/ancient/1.jpg',
+    },
+    {
+        title : 'photo2',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/ancient/2.jpg',
+    },
+    {
+        title : 'photo3',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/ancient/3.jpg',
+    },
+    {
+        title : 'photo4',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/ancient/4.jpg',
+    },
+    {
+        title : 'photo5',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/ancient/5.jpg',
+    },
+    {
+        title : 'photo6',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/ancient/6.jpg',
+    },
+    {
+        title : 'photo7',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/ancient/7.jpg',
+    },
+    {
+        title : 'photo8',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/ancient/8.jpg',
+    },
+    {
+        title : 'photo9',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/ancient/9.jpg',
+    },
+    {
+        title : 'photo10',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/ancient/10.jpg',
+    },
+]
+
+
+window.galleryMasonry1Arr = [
+    {
+        title : 'photo1',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/medival/1.jpg',
+    },
+    {
+        title : 'photo2',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/medival/2.jpg',
+    },
+    {
+        title : 'photo3',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/medival/3.jpg',
+    },
+    {
+        title : 'photo4',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/medival/4.jpg',
+    },
+    {
+        title : 'photo5',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/medival/5.jpg',
+    },
+    {
+        title : 'photo6',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/medival/6.jpg',
+    },
+    {
+        title : 'photo7',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/medival/7.jpg',
+    },
+    {
+        title : 'photo8',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/medival/8.jpg',
+    },
+]
+
+
+window.galleryIsotopeArr = [
+    {
+        title : 'photo1',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/sculpture/1.jpg',
+        category : 'c1 c2',
+    },
+    {
+        title : 'photo2',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/sculpture/2.jpg',
+        category : 'c1 c3',
+    },
+    {
+        title : 'photo3',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/sculpture/3.jpg',
+        category : 'c1 c2 c3',
+    },
+    {
+        title : 'photo4',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/sculpture/4.jpg',
+        category : 'c1 c2 c3',
+    },
+    {
+        title : 'photo5',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/sculpture/5.jpg',
+        category : 'c2 c3',
+    },
+    {
+        title : 'photo6',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/sculpture/6.jpg',
+        category : 'c3',
+    },
+    {
+        title : 'photo7',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/sculpture/7.jpg',
+        category : 'c1',
+    },
+    {
+        title : 'photo8',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/sculpture/8.jpg',
+        category : 'c1 c3',
+    },
+    {
+        title : 'photo9',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/sculpture/9.jpg',
+        category : 'c2 c3',
+    },
+    {
+        title : 'photo10',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/sculpture/10.jpg',
+        category : 'c1 c2',
+    },
+]
+
+
+window.galleryMasonry2Arr = [
+    {
+        title : 'photo1',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/illustration/1.jpg',
+    },
+    {
+        title : 'photo2',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/illustration/2.jpg',
+    },
+    {
+        title : 'photo3',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/illustration/3.jpg',
+    },
+    {
+        title : 'photo4',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/illustration/4.jpg',
+    },
+    {
+        title : 'photo5',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/illustration/5.jpg',
+    },
+    {
+        title : 'photo6',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/illustration/6.jpg',
+    },
+    {
+        title : 'photo7',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/illustration/7.jpg',
+    },
+    {
+        title : 'photo8',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/illustration/8.jpg',
+    },
+    {
+        title : 'photo9',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/illustration/9.jpg',
+    },
+    {
+        title : 'photo10',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+        path : './img/museum/illustration/10.jpg',
+    },
+]
+
+
+window.noticeArr = [
     {
         number : '01',
         title : '홈페이지(누리집) 서비스 일시 중단 안내(2022.12.13.(화) 18:00~12.14.(수) 9:00)',
