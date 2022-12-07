@@ -15,44 +15,32 @@
 }
 .greet > div{
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    border-bottom: 1px solid black;
     padding: 50px 0;
-    border-bottom: 2px solid black;
 }
-.greet div ul li {
-    width: 100%;
-    max-width: 500px;
-    display: block;
-    margin-bottom: 5px;
-}
-.greet_cash {
-    display: flex;
-    position: relative;
-    
-}
-.greet_cash .cashbox {
-    position: absolute;
-    left: 33%;
-}
-.greet_cash .cashbox div {
-    width: 70px;
-    height: 50px;
-    padding: 0;
+.greet > div:last-child {
     border-bottom: 0;
+}
+.greet > div h2 {
+    width: 23.5%;
+}
+.greet > div ul li {
+    line-height: 30px;
+}
+.greet .greet_cash ul {
+    margin-left: 20px;
+}
+.cashbox div {
+    padding: 10px 20px;
     color: white;
-    text-align: center;
-    line-height: 50px;
-    font-size: 1.3em;
+    font-weight: 600;
+    font-size: 19px;
 }
 .cashbox .blue {
     background-color: var(--sub-color);
+    margin-top: 5px;
     margin-bottom: 20px;
 }
 .cashbox .red {
     background-color: var(--main-color);
-}
-.greet_cash > ul > li:first-child {
-    margin-top: 30px;
-    margin-bottom: 40px;
 }
