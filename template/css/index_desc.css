@@ -129,12 +129,9 @@
     background-position: center;
     background-attachment: fixed;
 }
-@media (hover:none) {
-    .sub_visual iframe {
-        display: none;
-    }
-    .home_section2 {
-        background-attachment: scroll;
+@media screen and (hover:none) and (pointer:coarse){
+    .home-section2{
+      background-attachment: scroll;
     }
 }/* 반응형디자인을 위해서, 특히나 iphone에서는 background-attachment:fixed가 적용되지 않는다! */
 .home_section2 .inner {

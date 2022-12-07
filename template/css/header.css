@@ -68,12 +68,12 @@ header div.inner{
 }
 @media screen and (min-width:700px) and (max-width:1000px){
   header div.inner {
-    height: calc(100% - 70px);
+    height: calc(100% - 55px);
   }
 }
 @media screen and (max-width:700px) {
   header div.inner {
-    height: calc(100% - 55px);
+    height: calc(100% - 20px);
   }
 }
 h1 img{
@@ -88,7 +88,7 @@ h1 img{
     height: 200px;
   }
   header.active {
-    top: -150px;
+    top: -160px;
   }
   h1{
     height: 70px;
@@ -145,21 +145,21 @@ h1 img{
 @media screen and (min-width:1000px){
   .gnb-lg{
     position: absolute;
-    top:150px;
+    top: 157px;
     width: 100%;
   }
   .gnb-lg::before{
     content: "";
     position: absolute;
     width: 100%;
-    height: calc(100% - 45px);
+    height: calc(100% - 43.5px);
     bottom: 0;
     background: rgba(255,255,255,0.9);
   }
   .gnb-lg svg {
     position: absolute;
     width: 100%;
-    height: 25px;
+    height: 30px;
     left: 0;
     top: 100%;
   }
