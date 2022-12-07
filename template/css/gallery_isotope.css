@@ -1,6 +1,6 @@
 .isotope_gallery_section .btn_grp {
     position: sticky;
-    z-index: 1;
+    z-index: 5;
     margin-bottom: 30px;
     text-align: center;
 }
