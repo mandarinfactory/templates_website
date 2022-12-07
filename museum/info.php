@@ -1,5 +1,8 @@
 <?php include "sub-header.php" ?>
 <h2 class="sub_title"> 인사말</h2>
+<figure class="bronze">
+    <img src="./img/museum/bronze.jpg" alt="">
+</figure>
 <section class="notice_section">
     <figure>
         <img src="./img/museum/museum_night.jpg" alt="">

@@ -1,3 +1,11 @@
+.bronze img{
+    position: absolute;
+    top: 60%;
+    right: -40%;
+    opacity: 0.3;
+    z-index: -20;
+    width: 100%;
+}
 .notice_section figure {
     position: relative;
 }
