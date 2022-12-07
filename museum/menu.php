@@ -27,7 +27,10 @@
       <i class="fa-solid fa-gem"></i>
       소장품</em>
     <ul>
-      <li><a class="menu3-1" href="./gallery.php">추천 소장품</a></li>
+      <li><a class="menu3-1" href="./gallery_viewbox.php">선사 / 고대</a></li>
+      <li><a class="menu3-2" href="./gallery_masonry1.php">중 / 근세</a></li>
+      <li><a class="menu3-3" href="./gallery_isotope.php">조각 / 공예</a></li>
+      <li><a class="menu3-4" href="./gallery_masonry2.php">서화</a></li>
     </ul>
   </li><!-- 1dep li -->
 

@@ -11,8 +11,14 @@ $(function () {
     category = 2; menu = 1
   } else if (addr.match('exhib_special')) {
     category = 2; menu = 2
-  } else if (addr.match('gallery')) {
+  } else if (addr.match('gallery_viewbox')) {
     category = 3; menu = 1
+  } else if (addr.match('gallery_masonry1')) {
+    category = 3; menu = 2
+  } else if (addr.match('gallery_isotope')) {
+    category = 3; menu = 3
+  } else if (addr.match('gallery_masonry2')) {
+    category = 3; menu = 4
   } else if (addr.match('library')) {
     category = 4; menu = 1
   } else if (addr.match('info')) {
