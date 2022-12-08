@@ -1,4 +1,7 @@
 <?php include "sub-header.php" ?>
+<figure class="bronze">
+    <img src="./img/museum/bronze.jpg" alt="">
+</figure>
 <section class="architect_section">
     <h2 class="sub_title"> 시설소개</h2>
     <figure>
