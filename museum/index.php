@@ -1,7 +1,7 @@
 <?php include "header.php" ?>
 <script src="./js/store.js"></script>
 <section class="home_visual">
-  홈비주얼
+  main_slider
 </section>
 <section class="home_section home_section1">
   <ul>
@@ -26,7 +26,9 @@
     </div>
   </ul>
 </section>
-<section class="home_section home_section2"></section>
+<section class="home_section home_section2">
+  section2_sub_slider
+</section>
 <section class="home_section home_section3">
   <div>
     <h2>
@@ -49,7 +51,7 @@
     }) //forEach
   </script>
   <div>
-
+    section3_slider
   </div>
 </section>
 <?php include "footer.php" ?>
