@@ -1,0 +1,9 @@
+section.home_section .home_section1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+section.home_section .home_section1 ul {
+}
+section.home_section .home_section1 ul li {
+    
+}
