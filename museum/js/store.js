@@ -217,7 +217,7 @@ window.galleryMasonry2Arr = [
 window.noticeArr = [
     {
         number : '01',
-        title : '홈페이지(누리집) 서비스 일시 중단 안내(2022.12.13.(화) 18:00~12.14.(수) 9:00)',
+        title : '홈페이지(누리집) 서비스 일시 중단 안내 ',
         date : '2022-12-06',
         writer : '김태경',
     },

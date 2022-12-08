@@ -1,4 +1,5 @@
-section.home_section1 {
+section.home_section1,
+section.home_section3 {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -20,7 +21,7 @@ section.home_section1 ul:last-child {
     border-bottom: 3px solid black;
 }
 section.home_section1 ul i {
-    margin: 15px 0 15px 20px;
+    margin: 15px 0 15px 0;
     font-size: 1.5em;
     color: black;
 }
@@ -43,3 +44,46 @@ section.home_section1 ul li.linkbox:hover {
     font-weight: 700;
     background-color: var(--main-color);
 }
+section.home_section3 > div {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+/* section1 ----------------------------------------------------- */
+/* section2 ----------------------------------------------------- */
+section.home_section3 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+section.home_section3 > div {
+    width: 100%;
+    max-width: 600px;
+}
+section.home_section3 > div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+section.home_section3 > div:first-child h2 {
+    padding-bottom: 10px;
+    font-size: 2.4em;
+    transition: all 0.3s;
+}
+section.home_section3 > div:first-child h2:hover {
+    color: var(--main-color);
+}
+section.home_section3 > div:first-child .sm_board tbody{
+
+}
+section.home_section3 > div:first-child .sm_board tbody tr{
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+section.home_section3 > div:first-child .sm_board tbody tr td{
+    margin-right: 5px;
+}
+/* section3 ----------------------------------------------------- */

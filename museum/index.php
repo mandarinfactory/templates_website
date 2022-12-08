@@ -28,15 +28,19 @@
 </section>
 <section class="home_section home_section2"></section>
 <section class="home_section home_section3">
-  <h2>공지사항</h2>
-  <div><a href="./notice.php">더보기</a></div>
+  <div>
+    <h2>
+      <i class="fa-solid fa-microphone-lines"></i>
+      <a href="./notice.php">공지사항</a>
+    </h2>
+  </div>
   <script>
-    $('.home_section3').append(`<table class="sm_board">
+    $('.home_section3 > div:first-child').append(`<table class="sm_board">
     <tbody></tbody>
     <table>`)
     noticeArrCopy = [...noticeArr]
     noticeArrCopy.reverse().forEach(function(v) {
-      $('.home_section3 .sm_board tbody').append(` 
+      $('.home_section3 > div:first-child .sm_board tbody').append(` 
       <tr>
       <td>${v.title}</td>
       <td>${v.date}</td>
@@ -44,6 +48,8 @@
       `) //append
     }) //forEach
   </script>
+  <div>
+
+  </div>
 </section>
-<section class="home_section home_section4"></section>
 <?php include "footer.php" ?>
