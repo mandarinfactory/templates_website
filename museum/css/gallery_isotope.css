@@ -1,0 +1,103 @@
+.isotope_gallery_section .btn_grp {
+    position: sticky;
+    z-index: 5;
+    margin-bottom: 30px;
+    text-align: center;
+}
+@media screen and (min-width : 1000px){
+    .isotope_gallery_section .btn_grp {
+        top: 50px;
+    }
+}
+@media screen and (max-width : 1000px){
+    .isotope_gallery_section .btn_grp {
+        top: 90px;
+    }
+}
+.isotope_gallery_section .btn_grp button {
+    padding: 7px 15px;
+    margin: 3px;
+    border: 3px solid var(--main-color);
+    color: var(--main-color);
+    background-color: rgba(255, 255, 255, 0.8);
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 20px;
+}
+.isotope_gallery_section .btn_grp button.active {
+    background-color: var(--main-color);
+    color: white;
+}
+@media screen and (max-width : 600px){
+    .btn_grp button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+.isotope_gallery_section ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.isotope_gallery_section ul li {
+    box-sizing: border-box;
+    padding: 10px;
+}
+.isotope_gallery_section ul li a {
+    display: block;
+}
+.isotope_gallery_section ul li a h3 {
+    padding: 7px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.isotope_gallery_section ul li a p {
+    text-align: center;
+    background-color: lightgray;
+    margin-top: 5px;
+    padding: 5px 0;
+    border-radius: 10px;
+} 
+.isotope_gallery_section ul li:nth-child(even) figure{
+    border-radius: 50%;
+}
+.isotope_gallery_section ul li:nth-child(odd) figure{
+    border-radius: 20px;
+}
+.isotope_gallery_section ul li a figure {
+    position: relative;
+    border: 10px solid var(--sub-color);
+    overflow: hidden;
+}
+.isotope_gallery_section ul li a figure::before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+.isotope_gallery_section ul li a figure img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    top: 0;
+}
+@media screen and (min-width:1000px){
+    .isotope_gallery_section ul li{
+        width: 33.3%;
+    } 
+}/* lg */
+@media screen and (min-width:600px) and (max-width:1000px){
+    .isotope_gallery_section ul li{
+        width: 49.5%;
+    } 
+}/* md */
+@media screen and (max-width:600px){
+    .isotope_gallery_section ul li{
+        width: 100%;
+    } 
+}/* sm */
