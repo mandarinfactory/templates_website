@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/login.css">
-  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/greet.css">
   <link rel="stylesheet" href="./css/location.css">
   <link rel="stylesheet" href="./css/register.css">
