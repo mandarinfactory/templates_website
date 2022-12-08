@@ -18,17 +18,25 @@
   <link rel="stylesheet" href="./css/exhib_permanent.css">
   <link rel="stylesheet" href="./css/exhib_special.css">
   <link rel="stylesheet" href="./css/library.css">
+  <link rel="stylesheet" href="./css/gallery_viewbox.css">
+  <link rel="stylesheet" href="./css/gallery_masonry1.css">
+  <link rel="stylesheet" href="./css/gallery_masonry2.css">
+  <link rel="stylesheet" href="./css/gallery_isotope.css">
   <link rel="stylesheet" href="./css/info.css">
   <link rel="stylesheet" href="./css/architect.css">
+  <link rel="stylesheet" href="./css/notice.css">
   <link rel="stylesheet" href="./css/footer.css">
   <link rel="stylesheet" href="./css/sub-layout.css">
   <link rel="shortcut icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/3/3f/Emblem_of_the_Government_of_the_Republic_of_Korea.svg">
   <script src="https://kit.fontawesome.com/7d1f9ca95d.js" crossorigin="anonymous"></script>
   <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="./js/common.js"></script>
   <script src="./js/header.js"></script>
   <script src="./js/register.js"></script>
   <script src="./js/store.js"></script>
   <script src="./js/notice.js"></script>
+  <script src="./js/gallery_viewbox.js"></script>
+  <script src="./js/jquery.viewbox.js "></script>
   <title>탬플릿사이트제작</title>
 </head>
 

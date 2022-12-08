@@ -1,0 +1,82 @@
+.viewbox_gallery_section ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.viewbox_gallery_section ul li {
+    box-sizing: border-box;
+    padding: 20px;
+}
+.viewbox_gallery_section ul li figure {
+    padding: 9px;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+}
+.viewbox_gallery_section ul li figure a {
+    display: block;
+    position: relative;
+}
+.viewbox_gallery_section ul li figure a img {
+    width: 100%;
+}
+.viewbox_gallery_section ul li figure a figcaption {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.viewbox_gallery_section ul li figure a figcaption h3{
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.viewbox_gallery_section ul li figure a figcaption p{
+    width: 70%;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2em;
+}
+@media screen and (min-width:1000px) {
+    .viewbox_gallery_section ul li {
+        width: 33.33%;
+    }
+}/* lg */
+@media screen and (min-width:600px) and (max-width:1000px) {
+    .viewbox_gallery_section ul li {
+        width: 50%;
+    }
+}/* md */
+@media screen and (max-width:600px) {
+    .viewbox_gallery_section ul li {
+        width: 100%;
+    }
+}/* sm */
+/* motion ------------------------------------- */
+.viewbox_gallery_section ul li figure a {
+    overflow: hidden;
+}
+.viewbox_gallery_section figcaption {
+    opacity: 0;
+    transition: all 0.5s;
+}
+.viewbox_gallery_section img {
+    transition: all 0.5s;
+}
+.viewbox_gallery_section a:hover figcaption {
+    opacity: 1;
+}
+.viewbox_gallery_section a:hover img {
+    transform: scale(1.4);
+}
+.viewbox_gallery_section li figure {
+    transform: scale(0);
+    transition: all 0.5s;
+}
+.viewbox_gallery_section li.active figure {
+    transform: scale(1);
+}
