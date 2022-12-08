@@ -3,9 +3,9 @@
 <section class="isotope_gallery_section">
     <div class="btn_grp">
         <button value="*" class="active">모두</button>
-        <button value=".c1">갑</button>
-        <button value=".c2">을</button>
-        <button value=".c3">병</button>
+        <button value=".category1">갑</button>
+        <button value=".category2">을</button>
+        <button value=".category3">병</button>
     </div>
 </section>
 <script>
