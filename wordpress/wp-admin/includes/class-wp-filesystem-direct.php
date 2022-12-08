@@ -399,11 +399,11 @@ class WP_Filesystem_Direct extends WP_Filesystem_Base {
 	 *
 	 * @since 2.5.0
 	 *
-	 * @param string $path Path to file or directory.
-	 * @return bool Whether $path exists or not.
+	 * @param string $file Path to file or directory.
+	 * @return bool Whether $file exists or not.
 	 */
-	public function exists( $path ) {
-		return @file_exists( $path );
+	public function exists( $file ) {
+		return @file_exists( $file );
 	}
 
 	/**
@@ -447,11 +447,11 @@ class WP_Filesystem_Direct extends WP_Filesystem_Base {
 	 *
 	 * @since 2.5.0
 	 *
-	 * @param string $path Path to file or directory.
-	 * @return bool Whether $path is writable.
+	 * @param string $file Path to file or directory.
+	 * @return bool Whether $file is writable.
 	 */
-	public function is_writable( $path ) {
-		return @is_writable( $path );
+	public function is_writable( $file ) {
+		return @is_writable( $file );
 	}
 
 	/**

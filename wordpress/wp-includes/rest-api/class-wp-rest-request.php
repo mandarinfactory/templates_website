@@ -26,7 +26,6 @@
  *
  * @link https://www.php.net/manual/en/class.arrayaccess.php
  */
-#[AllowDynamicProperties]
 class WP_REST_Request implements ArrayAccess {
 
 	/**

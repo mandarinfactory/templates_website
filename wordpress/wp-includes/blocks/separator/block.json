@@ -17,7 +17,6 @@
 		"anchor": true,
 		"align": [ "center", "wide", "full" ],
 		"color": {
-			"enableContrastChecker": false,
 			"__experimentalSkipSerialization": true,
 			"gradients": true,
 			"background": true,
@@ -25,9 +24,6 @@
 			"__experimentalDefaultControls": {
 				"background": true
 			}
-		},
-		"spacing": {
-			"margin": [ "top", "bottom" ]
 		}
 	},
 	"styles": [

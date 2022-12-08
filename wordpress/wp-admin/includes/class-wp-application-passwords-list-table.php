@@ -11,6 +11,7 @@
  * Class for displaying the list of application password items.
  *
  * @since 5.6.0
+ * @access private
  *
  * @see WP_List_Table
  */

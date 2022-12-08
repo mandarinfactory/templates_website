@@ -11,6 +11,7 @@
  * Core class used to implement displaying comments in a list table.
  *
  * @since 3.1.0
+ * @access private
  *
  * @see WP_List_Table
  */
@@ -292,6 +293,12 @@ class WP_Comments_List_Table extends WP_List_Table {
 		}
 
 		foreach ( $stati as $status => $label ) {
+			$current_link_attributes = '';
+
+			if ( $status === $comment_status ) {
+				$current_link_attributes = ' class="current" aria-current="page"';
+			}
+
 			if ( 'mine' === $status ) {
 				$current_user_id    = get_current_user_id();
 				$num_comments->mine = get_comments(
@@ -322,18 +329,14 @@ class WP_Comments_List_Table extends WP_List_Table {
 				$link = add_query_arg( 's', esc_attr( wp_unslash( $_REQUEST['s'] ) ), $link );
 			*/
 
-			$status_links[ $status ] = array(
-				'url'     => esc_url( $link ),
-				'label'   => sprintf(
-					translate_nooped_plural( $label, $num_comments->$status ),
-					sprintf(
-						'<span class="%s-count">%s</span>',
-						( 'moderated' === $status ) ? 'pending' : $status,
-						number_format_i18n( $num_comments->$status )
-					)
-				),
-				'current' => $status === $comment_status,
-			);
+			$status_links[ $status ] = "<a href='$link'$current_link_attributes>" . sprintf(
+				translate_nooped_plural( $label, $num_comments->$status ),
+				sprintf(
+					'<span class="%s-count">%s</span>',
+					( 'moderated' === $status ) ? 'pending' : $status,
+					number_format_i18n( $num_comments->$status )
+				)
+			) . '</a>';
 		}
 
 		/**
@@ -345,7 +348,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 		 * @param string[] $status_links An associative array of fully-formed comment status links. Includes 'All', 'Mine',
 		 *                              'Pending', 'Approved', 'Spam', and 'Trash'.
 		 */
-		return apply_filters( 'comment_status_links', $this->get_views_links( $status_links ) );
+		return apply_filters( 'comment_status_links', $status_links );
 	}
 
 	/**
@@ -544,7 +547,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 	}
 
 	/**
-	 * Gets the name of the default primary column.
+	 * Get the name of the default primary column.
 	 *
 	 * @since 4.3.0
 	 *
@@ -645,7 +648,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 	}
 
 	/**
-	 * Generates and displays row actions links.
+	 * Generate and display row actions links.
 	 *
 	 * @since 4.3.0
 	 * @since 5.9.0 Renamed `$comment` to `$item` to match parent class for PHP 8 named parameter support.
@@ -674,7 +677,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 		$comment            = $item;
 		$the_comment_status = wp_get_comment_status( $comment );
 
-		$output = '';
+		$out = '';
 
 		$del_nonce     = esc_html( '_wpnonce=' . wp_create_nonce( "delete-comment_$comment->comment_ID" ) );
 		$approve_nonce = esc_html( '_wpnonce=' . wp_create_nonce( "approve-comment_$comment->comment_ID" ) );
@@ -829,7 +832,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 			$always_visible = true;
 		}
 
-		$output .= '<div class="' . ( $always_visible ? 'row-actions visible' : 'row-actions' ) . '">';
+		$out .= '<div class="' . ( $always_visible ? 'row-actions visible' : 'row-actions' ) . '">';
 
 		$i = 0;
 
@@ -839,9 +842,9 @@ class WP_Comments_List_Table extends WP_List_Table {
 			if ( ( ( 'approve' === $action || 'unapprove' === $action ) && 2 === $i )
 				|| 1 === $i
 			) {
-				$separator = '';
+				$sep = '';
 			} else {
-				$separator = ' | ';
+				$sep = ' | ';
 			}
 
 			// Reply and quickedit need a hide-if-no-js span when not added with Ajax.
@@ -857,14 +860,14 @@ class WP_Comments_List_Table extends WP_List_Table {
 				}
 			}
 
-			$output .= "<span class='$action'>{$separator}{$link}</span>";
+			$out .= "<span class='$action'>$sep$link</span>";
 		}
 
-		$output .= '</div>';
+		$out .= '</div>';
 
-		$output .= '<button type="button" class="toggle-row"><span class="screen-reader-text">' . __( 'Show more details' ) . '</span></button>';
+		$out .= '<button type="button" class="toggle-row"><span class="screen-reader-text">' . __( 'Show more details' ) . '</span></button>';
 
-		return $output;
+		return $out;
 	}
 
 	/**
@@ -914,8 +917,8 @@ class WP_Comments_List_Table extends WP_List_Table {
 			?>
 		<div id="inline-<?php echo $comment->comment_ID; ?>" class="hidden">
 			<textarea class="comment" rows="1" cols="1"><?php echo esc_textarea( $comment_content ); ?></textarea>
-			<div class="author-email"><?php echo esc_html( $comment->comment_author_email ); ?></div>
-			<div class="author"><?php echo esc_html( $comment->comment_author ); ?></div>
+			<div class="author-email"><?php echo esc_attr( $comment->comment_author_email ); ?></div>
+			<div class="author"><?php echo esc_attr( $comment->comment_author ); ?></div>
 			<div class="author-url"><?php echo esc_url( $comment->comment_author_url ); ?></div>
 			<div class="comment_status"><?php echo $comment->comment_approved; ?></div>
 		</div>

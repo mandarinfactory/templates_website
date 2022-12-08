@@ -11,7 +11,6 @@
  *
  * @since 5.2.0
  */
-#[AllowDynamicProperties]
 final class WP_Recovery_Mode_Key_Service {
 
 	/**

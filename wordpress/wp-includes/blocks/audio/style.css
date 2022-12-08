@@ -75,7 +75,7 @@
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 .wp-block-audio {
-  box-sizing: border-box;
+  margin: 0 0 1em 0;
 }
 .wp-block-audio figcaption {
   margin-top: 0.5em;

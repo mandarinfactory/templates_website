@@ -11,7 +11,6 @@
  *
  * @since 2.5.0
  */
-#[AllowDynamicProperties]
 class WP_Filesystem_Base {
 
 	/**
@@ -263,7 +262,7 @@ class WP_Filesystem_Base {
 
 		if ( $this->verbose ) {
 			/* translators: 1: Folder to locate, 2: Folder to start searching from. */
-			printf( "\n" . __( 'Looking for %1$s in %2$s' ) . "<br />\n", $folder, $base );
+			printf( "\n" . __( 'Looking for %1$s in %2$s' ) . "<br/>\n", $folder, $base );
 		}
 
 		$folder_parts     = explode( '/', $folder );
@@ -292,7 +291,7 @@ class WP_Filesystem_Base {
 
 				if ( $this->verbose ) {
 					/* translators: %s: Directory name. */
-					printf( "\n" . __( 'Changing to %s' ) . "<br />\n", $newdir );
+					printf( "\n" . __( 'Changing to %s' ) . "<br/>\n", $newdir );
 				}
 
 				// Only search for the remaining path tokens in the directory, not the full path again.
@@ -310,7 +309,7 @@ class WP_Filesystem_Base {
 		if ( isset( $files[ $last_path ] ) ) {
 			if ( $this->verbose ) {
 				/* translators: %s: Directory name. */
-				printf( "\n" . __( 'Found %s' ) . "<br />\n", $base . $last_path );
+				printf( "\n" . __( 'Found %s' ) . "<br/>\n", $base . $last_path );
 			}
 
 			return trailingslashit( $base . $last_path );
@@ -664,10 +663,10 @@ class WP_Filesystem_Base {
 	 * @since 2.5.0
 	 * @abstract
 	 *
-	 * @param string $path Path to file or directory.
-	 * @return bool Whether $path exists or not.
+	 * @param string $file Path to file or directory.
+	 * @return bool Whether $file exists or not.
 	 */
-	public function exists( $path ) {
+	public function exists( $file ) {
 		return false;
 	}
 
@@ -716,10 +715,10 @@ class WP_Filesystem_Base {
 	 * @since 2.5.0
 	 * @abstract
 	 *
-	 * @param string $path Path to file or directory.
-	 * @return bool Whether $path is writable.
+	 * @param string $file Path to file or directory.
+	 * @return bool Whether $file is writable.
 	 */
-	public function is_writable( $path ) {
+	public function is_writable( $file ) {
 		return false;
 	}
 

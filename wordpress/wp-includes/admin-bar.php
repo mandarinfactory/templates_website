@@ -724,7 +724,7 @@ function wp_admin_bar_shortlink_menu( $wp_admin_bar ) {
 		return;
 	}
 
-	$html = '<input class="shortlink-input" type="text" readonly="readonly" value="' . esc_attr( $short ) . '" aria-label="' . __( 'Shortlink' ) . '" />';
+	$html = '<input class="shortlink-input" type="text" readonly="readonly" value="' . esc_attr( $short ) . '" />';
 
 	$wp_admin_bar->add_node(
 		array(
@@ -809,7 +809,7 @@ function wp_admin_bar_edit_menu( $wp_admin_bar ) {
 			);
 		} elseif ( 'term' === $current_screen->base && isset( $tag ) && is_object( $tag ) && ! is_wp_error( $tag ) ) {
 			$tax = get_taxonomy( $tag->taxonomy );
-			if ( is_term_publicly_viewable( $tag ) ) {
+			if ( is_taxonomy_viewable( $tax ) ) {
 				$wp_admin_bar->add_node(
 					array(
 						'id'    => 'view',

@@ -16,7 +16,6 @@
  *
  * @see WP_Customize_Manager
  */
-#[AllowDynamicProperties]
 final class WP_Customize_Widgets {
 
 	/**

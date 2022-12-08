@@ -90,7 +90,6 @@ if ( $tab ) {
 	 *
 	 * Possible hook names include:
 	 *
-	 *  - `install_themes_pre_block-themes`
 	 *  - `install_themes_pre_dashboard`
 	 *  - `install_themes_pre_featured`
 	 *  - `install_themes_pre_new`
@@ -99,7 +98,6 @@ if ( $tab ) {
 	 *  - `install_themes_pre_upload`
 	 *
 	 * @since 2.8.0
-	 * @since 6.1.0 Added the `install_themes_pre_block-themes` hook name.
 	 */
 	do_action( "install_themes_pre_{$tab}" );
 }
@@ -138,23 +136,9 @@ get_current_screen()->add_help_tab(
 	)
 );
 
-// Help tab: Block themes.
-$help_block_themes =
-	'<p>' . __( 'A block theme is a theme that uses blocks for all parts of a site including navigation menus, header, content, and site footer. These themes are built for the features that allow you to edit and customize all parts of your site.' ) . '</p>' .
-	'<p>' . __( 'With a block theme, you can place and edit blocks without affecting your content by customizing or creating new templates.' ) . '</p>';
-
-get_current_screen()->add_help_tab(
-	array(
-		'id'      => 'block_themes',
-		'title'   => __( 'Block themes' ),
-		'content' => $help_block_themes,
-	)
-);
-
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
 	'<p>' . __( '<a href="https://wordpress.org/support/article/appearance-themes-screen/#install-themes">Documentation on Adding New Themes</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://wordpress.org/support/article/block-themes/">Documentation on Block Themes</a>' ) . '</p>' .
 	'<p>' . __( '<a href="https://wordpress.org/support/">Support</a>' ) . '</p>'
 );
 
@@ -201,7 +185,6 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 		<ul class="filter-links">
 			<li><a href="#" data-sort="popular"><?php _ex( 'Popular', 'themes' ); ?></a></li>
 			<li><a href="#" data-sort="new"><?php _ex( 'Latest', 'themes' ); ?></a></li>
-			<li><a href="#" data-sort="block-themes"><?php _ex( 'Block Themes', 'themes' ); ?></a></li>
 			<li><a href="#" data-sort="favorites"><?php _ex( 'Favorites', 'themes' ); ?></a></li>
 		</ul>
 
@@ -280,7 +263,6 @@ if ( $tab ) {
 	 *
 	 * Possible hook names include:
 	 *
-	 *  - `install_themes_block-themes`
 	 *  - `install_themes_dashboard`
 	 *  - `install_themes_featured`
 	 *  - `install_themes_new`
@@ -289,7 +271,6 @@ if ( $tab ) {
 	 *  - `install_themes_upload`
 	 *
 	 * @since 2.8.0
-	 * @since 6.1.0 Added the `install_themes_block-themes` hook name.
 	 *
 	 * @param int $paged Number of the current page of results being viewed.
 	 */

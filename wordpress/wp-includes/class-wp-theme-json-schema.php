@@ -17,7 +17,6 @@
  * @since 5.9.0
  * @access private
  */
-#[AllowDynamicProperties]
 class WP_Theme_JSON_Schema {
 
 	/**

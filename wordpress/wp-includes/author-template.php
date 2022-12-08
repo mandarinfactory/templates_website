@@ -450,80 +450,44 @@ function wp_list_authors( $args = '' ) {
 		'include'       => '',
 	);
 
-	$parsed_args = wp_parse_args( $args, $defaults );
+	$args = wp_parse_args( $args, $defaults );
 
 	$return = '';
 
-	$query_args           = wp_array_slice_assoc( $parsed_args, array( 'orderby', 'order', 'number', 'exclude', 'include' ) );
+	$query_args           = wp_array_slice_assoc( $args, array( 'orderby', 'order', 'number', 'exclude', 'include' ) );
 	$query_args['fields'] = 'ids';
+	$authors              = get_users( $query_args );
 
-	/**
-	 * Filters the query arguments for the list of all authors of the site.
-	 *
-	 * @since 6.1.0
-	 *
-	 * @param array $query_args  The query arguments for get_users().
-	 * @param array $parsed_args The arguments passed to wp_list_authors() combined with the defaults.
-	 */
-	$query_args = apply_filters( 'wp_list_authors_args', $query_args, $parsed_args );
-
-	$authors     = get_users( $query_args );
-	$post_counts = array();
-
-	/**
-	 * Filters whether to short-circuit performing the query for author post counts.
-	 *
-	 * @since 6.1.0
-	 *
-	 * @param int[]|false $post_counts Array of post counts, keyed by author ID.
-	 * @param array       $parsed_args The arguments passed to wp_list_authors() combined with the defaults.
-	 */
-	$post_counts = apply_filters( 'pre_wp_list_authors_post_counts_query', false, $parsed_args );
-
-	if ( ! is_array( $post_counts ) ) {
-		$post_counts = $wpdb->get_results(
-			"SELECT DISTINCT post_author, COUNT(ID) AS count
-			FROM $wpdb->posts
-			WHERE " . get_private_posts_cap_sql( 'post' ) . '
-			GROUP BY post_author'
-		);
-
-		foreach ( (array) $post_counts as $row ) {
-			$post_counts[ $row->post_author ] = $row->count;
-		}
+	$author_count = array();
+	foreach ( (array) $wpdb->get_results( "SELECT DISTINCT post_author, COUNT(ID) AS count FROM $wpdb->posts WHERE " . get_private_posts_cap_sql( 'post' ) . ' GROUP BY post_author' ) as $row ) {
+		$author_count[ $row->post_author ] = $row->count;
 	}
-
 	foreach ( $authors as $author_id ) {
-		$posts = isset( $post_counts[ $author_id ] ) ? $post_counts[ $author_id ] : 0;
+		$posts = isset( $author_count[ $author_id ] ) ? $author_count[ $author_id ] : 0;
 
-		if ( ! $posts && $parsed_args['hide_empty'] ) {
+		if ( ! $posts && $args['hide_empty'] ) {
 			continue;
 		}
 
 		$author = get_userdata( $author_id );
 
-		if ( $parsed_args['exclude_admin'] && 'admin' === $author->display_name ) {
+		if ( $args['exclude_admin'] && 'admin' === $author->display_name ) {
 			continue;
 		}
 
-		if ( $parsed_args['show_fullname'] && $author->first_name && $author->last_name ) {
-			$name = sprintf(
-				/* translators: 1: User's first name, 2: Last name. */
-				_x( '%1$s %2$s', 'Display name based on first name and last name' ),
-				$author->first_name,
-				$author->last_name
-			);
+		if ( $args['show_fullname'] && $author->first_name && $author->last_name ) {
+			$name = "$author->first_name $author->last_name";
 		} else {
 			$name = $author->display_name;
 		}
 
-		if ( ! $parsed_args['html'] ) {
+		if ( ! $args['html'] ) {
 			$return .= $name . ', ';
 
 			continue; // No need to go further to process HTML.
 		}
 
-		if ( 'list' === $parsed_args['style'] ) {
+		if ( 'list' === $args['style'] ) {
 			$return .= '<li>';
 		}
 
@@ -535,46 +499,46 @@ function wp_list_authors( $args = '' ) {
 			$name
 		);
 
-		if ( ! empty( $parsed_args['feed_image'] ) || ! empty( $parsed_args['feed'] ) ) {
+		if ( ! empty( $args['feed_image'] ) || ! empty( $args['feed'] ) ) {
 			$link .= ' ';
-			if ( empty( $parsed_args['feed_image'] ) ) {
+			if ( empty( $args['feed_image'] ) ) {
 				$link .= '(';
 			}
 
-			$link .= '<a href="' . get_author_feed_link( $author->ID, $parsed_args['feed_type'] ) . '"';
+			$link .= '<a href="' . get_author_feed_link( $author->ID, $args['feed_type'] ) . '"';
 
 			$alt = '';
-			if ( ! empty( $parsed_args['feed'] ) ) {
-				$alt  = ' alt="' . esc_attr( $parsed_args['feed'] ) . '"';
-				$name = $parsed_args['feed'];
+			if ( ! empty( $args['feed'] ) ) {
+				$alt  = ' alt="' . esc_attr( $args['feed'] ) . '"';
+				$name = $args['feed'];
 			}
 
 			$link .= '>';
 
-			if ( ! empty( $parsed_args['feed_image'] ) ) {
-				$link .= '<img src="' . esc_url( $parsed_args['feed_image'] ) . '" style="border: none;"' . $alt . ' />';
+			if ( ! empty( $args['feed_image'] ) ) {
+				$link .= '<img src="' . esc_url( $args['feed_image'] ) . '" style="border: none;"' . $alt . ' />';
 			} else {
 				$link .= $name;
 			}
 
 			$link .= '</a>';
 
-			if ( empty( $parsed_args['feed_image'] ) ) {
+			if ( empty( $args['feed_image'] ) ) {
 				$link .= ')';
 			}
 		}
 
-		if ( $parsed_args['optioncount'] ) {
+		if ( $args['optioncount'] ) {
 			$link .= ' (' . $posts . ')';
 		}
 
 		$return .= $link;
-		$return .= ( 'list' === $parsed_args['style'] ) ? '</li>' : ', ';
+		$return .= ( 'list' === $args['style'] ) ? '</li>' : ', ';
 	}
 
 	$return = rtrim( $return, ', ' );
 
-	if ( $parsed_args['echo'] ) {
+	if ( $args['echo'] ) {
 		echo $return;
 	} else {
 		return $return;

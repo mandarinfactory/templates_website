@@ -14,7 +14,6 @@
  *
  * @since 5.5.0
  */
-#[AllowDynamicProperties]
 class WP_Sitemaps {
 	/**
 	 * The main index of supported sitemaps.

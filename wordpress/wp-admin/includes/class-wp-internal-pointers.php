@@ -12,7 +12,6 @@
  *
  * @since 3.3.0
  */
-#[AllowDynamicProperties]
 final class WP_Internal_Pointers {
 	/**
 	 * Initializes the new feature pointers.

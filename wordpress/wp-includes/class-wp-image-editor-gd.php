@@ -425,20 +425,10 @@ class WP_Image_Editor_GD extends WP_Image_Editor {
 	 * @since 3.5.0
 	 * @since 5.9.0 Renamed `$filename` to `$destfilename` to match parent class
 	 *              for PHP 8 named parameter support.
-	 * @since 6.0.0 The `$filesize` value was added to the returned array.
 	 *
 	 * @param string|null $destfilename Optional. Destination filename. Default null.
 	 * @param string|null $mime_type    Optional. The mime-type. Default null.
-	 * @return array|WP_Error {
-	 *     Array on success or WP_Error if the file failed to save.
-	 *
-	 *     @type string $path      Path to the image file.
-	 *     @type string $file      Name of the image file.
-	 *     @type int    $width     Image width.
-	 *     @type int    $height    Image height.
-	 *     @type string $mime-type The mime type of the image.
-	 *     @type int    $filesize  File size of the image.
-	 * }
+	 * @return array|WP_Error {'path'=>string, 'file'=>string, 'width'=>int, 'height'=>int, 'mime-type'=>string}
 	 */
 	public function save( $destfilename = null, $mime_type = null ) {
 		$saved = $this->_save( $this->image, $destfilename, $mime_type );
@@ -452,22 +442,10 @@ class WP_Image_Editor_GD extends WP_Image_Editor {
 	}
 
 	/**
-	 * @since 3.5.0
-	 * @since 6.0.0 The `$filesize` value was added to the returned array.
-	 *
 	 * @param resource|GdImage $image
 	 * @param string|null      $filename
 	 * @param string|null      $mime_type
-	 * @return array|WP_Error {
-	 *     Array on success or WP_Error if the file failed to save.
-	 *
-	 *     @type string $path      Path to the image file.
-	 *     @type string $file      Name of the image file.
-	 *     @type int    $width     Image width.
-	 *     @type int    $height    Image height.
-	 *     @type string $mime-type The mime type of the image.
-	 *     @type int    $filesize  File size of the image.
-	 * }
+	 * @return array|WP_Error
 	 */
 	protected function _save( $image, $filename = null, $mime_type = null ) {
 		list( $filename, $extension, $mime_type ) = $this->get_output_format( $filename, $mime_type );

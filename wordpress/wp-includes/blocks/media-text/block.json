@@ -17,23 +17,20 @@
 			"source": "attribute",
 			"selector": "figure img",
 			"attribute": "alt",
-			"default": "",
-			"__experimentalRole": "content"
+			"default": ""
 		},
 		"mediaPosition": {
 			"type": "string",
 			"default": "left"
 		},
 		"mediaId": {
-			"type": "number",
-			"__experimentalRole": "content"
+			"type": "number"
 		},
 		"mediaUrl": {
 			"type": "string",
 			"source": "attribute",
 			"selector": "figure video,figure img",
-			"attribute": "src",
-			"__experimentalRole": "content"
+			"attribute": "src"
 		},
 		"mediaLink": {
 			"type": "string"
@@ -51,8 +48,7 @@
 			"type": "string",
 			"source": "attribute",
 			"selector": "figure a",
-			"attribute": "href",
-			"__experimentalRole": "content"
+			"attribute": "href"
 		},
 		"rel": {
 			"type": "string",
@@ -67,8 +63,7 @@
 			"attribute": "class"
 		},
 		"mediaType": {
-			"type": "string",
-			"__experimentalRole": "content"
+			"type": "string"
 		},
 		"mediaWidth": {
 			"type": "number",
@@ -101,23 +96,6 @@
 			"__experimentalDefaultControls": {
 				"background": true,
 				"text": true
-			}
-		},
-		"spacing": {
-			"margin": true,
-			"padding": true
-		},
-		"typography": {
-			"fontSize": true,
-			"lineHeight": true,
-			"__experimentalFontFamily": true,
-			"__experimentalFontWeight": true,
-			"__experimentalFontStyle": true,
-			"__experimentalTextTransform": true,
-			"__experimentalTextDecoration": true,
-			"__experimentalLetterSpacing": true,
-			"__experimentalDefaultControls": {
-				"fontSize": true
 			}
 		}
 	},

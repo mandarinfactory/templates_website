@@ -74,9 +74,6 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-.wp-block-table {
-  margin: "0 0 1em 0";
-}
 .wp-block-table thead {
   border-bottom: 3px solid;
 }
@@ -85,6 +82,8 @@
 }
 .wp-block-table td,
 .wp-block-table th {
+  padding: 0.5em;
+  border: 1px solid;
   word-break: normal;
 }
 .wp-block-table figcaption {

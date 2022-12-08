@@ -11,10 +11,6 @@
 			"type": "boolean",
 			"default": false
 		},
-		"showLabel": {
-			"type": "boolean",
-			"default": true
-		},
 		"showPostCounts": {
 			"type": "boolean",
 			"default": false
@@ -26,24 +22,7 @@
 	},
 	"supports": {
 		"align": true,
-		"html": false,
-		"spacing": {
-			"margin": true,
-			"padding": true
-		},
-		"typography": {
-			"fontSize": true,
-			"lineHeight": true,
-			"__experimentalFontFamily": true,
-			"__experimentalFontWeight": true,
-			"__experimentalFontStyle": true,
-			"__experimentalTextTransform": true,
-			"__experimentalTextDecoration": true,
-			"__experimentalLetterSpacing": true,
-			"__experimentalDefaultControls": {
-				"fontSize": true
-			}
-		}
+		"html": false
 	},
 	"editorStyle": "wp-block-archives-editor"
 }

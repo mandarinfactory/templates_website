@@ -11,7 +11,6 @@
  *
  * @since 3.0.0
  */
-#[AllowDynamicProperties]
 class Custom_Background {
 
 	/**
@@ -39,7 +38,7 @@ class Custom_Background {
 	private $updated;
 
 	/**
-	 * Constructor - Registers administration header callback.
+	 * Constructor - Register administration header callback.
 	 *
 	 * @since 3.0.0
 	 * @param callable $admin_header_callback
@@ -58,7 +57,7 @@ class Custom_Background {
 	}
 
 	/**
-	 * Sets up the hooks for the Custom Background admin page.
+	 * Set up the hooks for the Custom Background admin page.
 	 *
 	 * @since 3.0.0
 	 */
@@ -78,7 +77,7 @@ class Custom_Background {
 	}
 
 	/**
-	 * Sets up the enqueue for the CSS & JavaScript files.
+	 * Set up the enqueue for the CSS & JavaScript files.
 	 *
 	 * @since 3.0.0
 	 */
@@ -107,7 +106,7 @@ class Custom_Background {
 	}
 
 	/**
-	 * Executes custom background modification.
+	 * Execute custom background modification.
 	 *
 	 * @since 3.0.0
 	 */
@@ -223,7 +222,7 @@ class Custom_Background {
 	}
 
 	/**
-	 * Displays the custom background page.
+	 * Display the custom background page.
 	 *
 	 * @since 3.0.0
 	 */
@@ -251,7 +250,7 @@ class Custom_Background {
 	<p>
 			<?php
 			/* translators: %s: Home URL. */
-			printf( __( 'Background updated. <a href="%s">Visit your site</a> to see how it looks.' ), esc_url( home_url( '/' ) ) );
+			printf( __( 'Background updated. <a href="%s">Visit your site</a> to see how it looks.' ), home_url( '/' ) );
 			?>
 	</p>
 </div>
@@ -307,7 +306,7 @@ class Custom_Background {
 <td>
 <form method="post">
 			<?php wp_nonce_field( 'custom-background-remove', '_wpnonce-custom-background-remove' ); ?>
-			<?php submit_button( __( 'Remove Background Image' ), '', 'remove-background', false ); ?><br />
+			<?php submit_button( __( 'Remove Background Image' ), '', 'remove-background', false ); ?><br/>
 			<?php _e( 'This will remove the background image. You will not be able to restore any customizations.' ); ?>
 </form>
 </td>
@@ -321,7 +320,7 @@ class Custom_Background {
 <td>
 <form method="post">
 			<?php wp_nonce_field( 'custom-background-reset', '_wpnonce-custom-background-reset' ); ?>
-			<?php submit_button( __( 'Restore Original Image' ), '', 'reset-background', false ); ?><br />
+			<?php submit_button( __( 'Restore Original Image' ), '', 'reset-background', false ); ?><br/>
 			<?php _e( 'This will restore the original background image. You will not be able to restore any customizations.' ); ?>
 </form>
 </td>
@@ -481,7 +480,7 @@ class Custom_Background {
 	}
 
 	/**
-	 * Handles an Image upload for the background image.
+	 * Handle an Image upload for the background image.
 	 *
 	 * @since 3.0.0
 	 */
@@ -527,10 +526,10 @@ class Custom_Background {
 		wp_update_attachment_metadata( $id, wp_generate_attachment_metadata( $id, $file ) );
 		update_post_meta( $id, '_wp_attachment_is_custom_background', get_option( 'stylesheet' ) );
 
-		set_theme_mod( 'background_image', sanitize_url( $url ) );
+		set_theme_mod( 'background_image', esc_url_raw( $url ) );
 
 		$thumbnail = wp_get_attachment_image_src( $id, 'thumbnail' );
-		set_theme_mod( 'background_image_thumb', sanitize_url( $thumbnail[0] ) );
+		set_theme_mod( 'background_image_thumb', esc_url_raw( $thumbnail[0] ) );
 
 		/** This action is documented in wp-admin/includes/class-custom-image-header.php */
 		do_action( 'wp_create_file_in_uploads', $file, $id ); // For replication.
@@ -538,7 +537,7 @@ class Custom_Background {
 	}
 
 	/**
-	 * Handles Ajax request for adding custom background context to an attachment.
+	 * Ajax handler for adding custom background context to an attachment.
 	 *
 	 * Triggers when the user adds a new background image from the
 	 * Media Manager.
@@ -619,8 +618,8 @@ class Custom_Background {
 
 		$url       = wp_get_attachment_image_src( $attachment_id, $size );
 		$thumbnail = wp_get_attachment_image_src( $attachment_id, 'thumbnail' );
-		set_theme_mod( 'background_image', sanitize_url( $url[0] ) );
-		set_theme_mod( 'background_image_thumb', sanitize_url( $thumbnail[0] ) );
+		set_theme_mod( 'background_image', esc_url_raw( $url[0] ) );
+		set_theme_mod( 'background_image_thumb', esc_url_raw( $thumbnail[0] ) );
 		exit;
 	}
 }

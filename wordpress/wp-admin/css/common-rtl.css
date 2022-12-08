@@ -950,7 +950,6 @@ a#remove-post-thumbnail:hover,
 	padding: 6px 10px 8px;
 }
 
-.word-wrap-break-word,
 .misc-pub-filename {
 	word-wrap: break-word;
 }
@@ -1576,9 +1575,6 @@ div.error {
 .wrap .notice p:before,
 .import-php .updating-message:before {
 	margin-left: 6px;
-}
-
-.import-php .updating-message:before {
 	vertical-align: bottom;
 }
 

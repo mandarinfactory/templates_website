@@ -18,6 +18,10 @@
 		},
 		"textAlign": {
 			"type": "string"
+		},
+		"fontSize": {
+			"type": "string",
+			"default": "small"
 		}
 	},
 	"usesContext": [ "commentId" ],
@@ -43,11 +47,7 @@
 			"__experimentalFontWeight": true,
 			"__experimentalFontStyle": true,
 			"__experimentalTextTransform": true,
-			"__experimentalTextDecoration": true,
-			"__experimentalLetterSpacing": true,
-			"__experimentalDefaultControls": {
-				"fontSize": true
-			}
+			"__experimentalLetterSpacing": true
 		}
 	}
 }

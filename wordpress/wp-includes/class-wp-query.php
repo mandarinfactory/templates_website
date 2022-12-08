@@ -15,7 +15,6 @@
  * @since 1.5.0
  * @since 4.5.0 Removed the `$comments_popup` property.
  */
-#[AllowDynamicProperties]
 class WP_Query {
 
 	/**
@@ -446,14 +445,6 @@ class WP_Query {
 	public $thumbnails_cached = false;
 
 	/**
-	 * Controls whether an attachment query should include filenames or not.
-	 *
-	 * @since 6.0.3
-	 * @var bool
-	 */
-	protected $allow_query_attachment_by_filename = false;
-
-	/**
 	 * Cached list of search stopwords.
 	 *
 	 * @since 3.7.0
@@ -636,7 +627,6 @@ class WP_Query {
 	 * @since 4.9.0 Introduced the `$comment_count` parameter.
 	 * @since 5.1.0 Introduced the `$meta_compare_key` parameter.
 	 * @since 5.3.0 Introduced the `$meta_type_key` parameter.
-	 * @since 6.1.0 Introduced the `$update_menu_item_cache` parameter.
 	 *
 	 * @param string|array $query {
 	 *     Optional. Array or string of Query parameters.
@@ -674,19 +664,19 @@ class WP_Query {
 	 *                                                    excludes stickies from 'post__in'. Accepts 1|true, 0|false.
 	 *                                                    Default false.
 	 *     @type int             $m                       Combination YearMonth. Accepts any four-digit year and month
-	 *                                                    numbers 01-12. Default empty.
+	 *                                                    numbers 1-12. Default empty.
 	 *     @type string|string[] $meta_key                Meta key or keys to filter by.
 	 *     @type string|string[] $meta_value              Meta value or values to filter by.
 	 *     @type string          $meta_compare            MySQL operator used for comparing the meta value.
-	 *                                                    See WP_Meta_Query::__construct() for accepted values and default value.
+	 *                                                    See WP_Meta_Query::__construct for accepted values and default value.
 	 *     @type string          $meta_compare_key        MySQL operator used for comparing the meta key.
-	 *                                                    See WP_Meta_Query::__construct() for accepted values and default value.
+	 *                                                    See WP_Meta_Query::__construct for accepted values and default value.
 	 *     @type string          $meta_type               MySQL data type that the meta_value column will be CAST to for comparisons.
-	 *                                                    See WP_Meta_Query::__construct() for accepted values and default value.
+	 *                                                    See WP_Meta_Query::__construct for accepted values and default value.
 	 *     @type string          $meta_type_key           MySQL data type that the meta_key column will be CAST to for comparisons.
-	 *                                                    See WP_Meta_Query::__construct() for accepted values and default value.
+	 *                                                    See WP_Meta_Query::__construct for accepted values and default value.
 	 *     @type array           $meta_query              An associative array of WP_Meta_Query arguments.
-	 *                                                    See WP_Meta_Query::__construct() for accepted values.
+	 *                                                    See WP_Meta_Query::__construct for accepted values.
 	 *     @type int             $menu_order              The menu order of the posts.
 	 *     @type int             $minute                  Minute of the hour. Default empty. Accepts numbers 0-59.
 	 *     @type int             $monthnum                The two-digit month. Default empty. Accepts numbers 1-12.
@@ -762,11 +752,10 @@ class WP_Query {
 	 *     @type string[]        $tag_slug__in            An array of tag slugs (OR in). unless 'ignore_sticky_posts' is
 	 *                                                    true. Note: a string of comma-separated IDs will NOT work.
 	 *     @type array           $tax_query               An associative array of WP_Tax_Query arguments.
-	 *                                                    See WP_Tax_Query::__construct().
+	 *                                                    See WP_Tax_Query->__construct().
 	 *     @type string          $title                   Post title.
 	 *     @type bool            $update_post_meta_cache  Whether to update the post meta cache. Default true.
 	 *     @type bool            $update_post_term_cache  Whether to update the post term cache. Default true.
-	 *     @type bool            $update_menu_item_cache  Whether to update the menu item cache. Default false.
 	 *     @type bool            $lazy_load_term_meta     Whether to lazy-load term meta. Setting to false will
 	 *                                                    disable cache priming for term meta, so that each
 	 *                                                    get_term_meta() call will hit the database.
@@ -801,41 +790,29 @@ class WP_Query {
 			$qv['p'] = (int) $qv['p'];
 		}
 
-		$qv['page_id']  = is_scalar( $qv['page_id'] ) ? absint( $qv['page_id'] ) : 0;
-		$qv['year']     = is_scalar( $qv['year'] ) ? absint( $qv['year'] ) : 0;
-		$qv['monthnum'] = is_scalar( $qv['monthnum'] ) ? absint( $qv['monthnum'] ) : 0;
-		$qv['day']      = is_scalar( $qv['day'] ) ? absint( $qv['day'] ) : 0;
-		$qv['w']        = is_scalar( $qv['w'] ) ? absint( $qv['w'] ) : 0;
+		$qv['page_id']  = absint( $qv['page_id'] );
+		$qv['year']     = absint( $qv['year'] );
+		$qv['monthnum'] = absint( $qv['monthnum'] );
+		$qv['day']      = absint( $qv['day'] );
+		$qv['w']        = absint( $qv['w'] );
 		$qv['m']        = is_scalar( $qv['m'] ) ? preg_replace( '|[^0-9]|', '', $qv['m'] ) : '';
-		$qv['paged']    = is_scalar( $qv['paged'] ) ? absint( $qv['paged'] ) : 0;
-		$qv['cat']      = preg_replace( '|[^0-9,-]|', '', $qv['cat'] ); // Array or comma-separated list of positive or negative integers.
-		$qv['author']   = is_scalar( $qv['author'] ) ? preg_replace( '|[^0-9,-]|', '', $qv['author'] ) : ''; // Comma-separated list of positive or negative integers.
-		$qv['pagename'] = is_scalar( $qv['pagename'] ) ? trim( $qv['pagename'] ) : '';
-		$qv['name']     = is_scalar( $qv['name'] ) ? trim( $qv['name'] ) : '';
-		$qv['title']    = is_scalar( $qv['title'] ) ? trim( $qv['title'] ) : '';
-
-		if ( is_scalar( $qv['hour'] ) && '' !== $qv['hour'] ) {
+		$qv['paged']    = absint( $qv['paged'] );
+		$qv['cat']      = preg_replace( '|[^0-9,-]|', '', $qv['cat'] );    // Comma-separated list of positive or negative integers.
+		$qv['author']   = preg_replace( '|[^0-9,-]|', '', $qv['author'] ); // Comma-separated list of positive or negative integers.
+		$qv['pagename'] = trim( $qv['pagename'] );
+		$qv['name']     = trim( $qv['name'] );
+		$qv['title']    = trim( $qv['title'] );
+		if ( '' !== $qv['hour'] ) {
 			$qv['hour'] = absint( $qv['hour'] );
-		} else {
-			$qv['hour'] = '';
 		}
-
-		if ( is_scalar( $qv['minute'] ) && '' !== $qv['minute'] ) {
+		if ( '' !== $qv['minute'] ) {
 			$qv['minute'] = absint( $qv['minute'] );
-		} else {
-			$qv['minute'] = '';
 		}
-
-		if ( is_scalar( $qv['second'] ) && '' !== $qv['second'] ) {
+		if ( '' !== $qv['second'] ) {
 			$qv['second'] = absint( $qv['second'] );
-		} else {
-			$qv['second'] = '';
 		}
-
-		if ( is_scalar( $qv['menu_order'] ) && '' !== $qv['menu_order'] ) {
+		if ( '' !== $qv['menu_order'] ) {
 			$qv['menu_order'] = absint( $qv['menu_order'] );
-		} else {
-			$qv['menu_order'] = '';
 		}
 
 		// Fairly large, potentially too large, upper bound for search string lengths.
@@ -844,14 +821,14 @@ class WP_Query {
 		}
 
 		// Compat. Map subpost to attachment.
-		if ( is_scalar( $qv['subpost'] ) && '' != $qv['subpost'] ) {
+		if ( '' != $qv['subpost'] ) {
 			$qv['attachment'] = $qv['subpost'];
 		}
-		if ( is_scalar( $qv['subpost_id'] ) && '' != $qv['subpost_id'] ) {
+		if ( '' != $qv['subpost_id'] ) {
 			$qv['attachment_id'] = $qv['subpost_id'];
 		}
 
-		$qv['attachment_id'] = is_scalar( $qv['attachment_id'] ) ? absint( $qv['attachment_id'] ) : 0;
+		$qv['attachment_id'] = absint( $qv['attachment_id'] );
 
 		if ( ( '' !== $qv['attachment'] ) || ! empty( $qv['attachment_id'] ) ) {
 			$this->is_single     = true;
@@ -1437,13 +1414,8 @@ class WP_Query {
 				$q['search_orderby_title'][] = $wpdb->prepare( "{$wpdb->posts}.post_title LIKE %s", $like );
 			}
 
-			$like = $n . $wpdb->esc_like( $term ) . $n;
-
-			if ( ! empty( $this->allow_query_attachment_by_filename ) ) {
-				$search .= $wpdb->prepare( "{$searchand}(({$wpdb->posts}.post_title $like_op %s) $andor_op ({$wpdb->posts}.post_excerpt $like_op %s) $andor_op ({$wpdb->posts}.post_content $like_op %s) $andor_op (sq1.meta_value $like_op %s))", $like, $like, $like, $like );
-			} else {
-				$search .= $wpdb->prepare( "{$searchand}(({$wpdb->posts}.post_title $like_op %s) $andor_op ({$wpdb->posts}.post_excerpt $like_op %s) $andor_op ({$wpdb->posts}.post_content $like_op %s))", $like, $like, $like );
-			}
+			$like      = $n . $wpdb->esc_like( $term ) . $n;
+			$search   .= $wpdb->prepare( "{$searchand}(({$wpdb->posts}.post_title $like_op %s) $andor_op ({$wpdb->posts}.post_excerpt $like_op %s) $andor_op ({$wpdb->posts}.post_content $like_op %s))", $like, $like, $like );
 			$searchand = ' AND ';
 		}
 
@@ -1838,16 +1810,6 @@ class WP_Query {
 		// Fill again in case 'pre_get_posts' unset some vars.
 		$q = $this->fill_query_vars( $q );
 
-		/**
-		 * Filters whether an attachment query should include filenames or not.
-		 *
-		 * @since 6.0.3
-		 *
-		 * @param bool $allow_query_attachment_by_filename Whether or not to include filenames.
-		 */
-		$this->allow_query_attachment_by_filename = apply_filters( 'wp_allow_query_attachment_by_filename', false );
-		remove_all_filters( 'wp_allow_query_attachment_by_filename' );
-
 		// Parse meta query.
 		$this->meta_query = new WP_Meta_Query();
 		$this->meta_query->parse_query_vars( $q );
@@ -1898,15 +1860,15 @@ class WP_Query {
 		}
 
 		if ( ! isset( $q['cache_results'] ) ) {
-			$q['cache_results'] = true;
+			if ( wp_using_ext_object_cache() ) {
+				$q['cache_results'] = false;
+			} else {
+				$q['cache_results'] = true;
+			}
 		}
 
 		if ( ! isset( $q['update_post_term_cache'] ) ) {
 			$q['update_post_term_cache'] = true;
-		}
-
-		if ( ! isset( $q['update_menu_item_cache'] ) ) {
-			$q['update_menu_item_cache'] = false;
 		}
 
 		if ( ! isset( $q['lazy_load_term_meta'] ) ) {
@@ -2279,7 +2241,7 @@ class WP_Query {
 			}
 		}
 
-		if ( ! empty( $this->tax_query->queries ) || ! empty( $this->meta_query->queries ) || ! empty( $this->allow_query_attachment_by_filename ) ) {
+		if ( ! empty( $this->tax_query->queries ) || ! empty( $this->meta_query->queries ) ) {
 			$groupby = "{$wpdb->posts}.ID";
 		}
 
@@ -2355,10 +2317,6 @@ class WP_Query {
 			$whichmimetype = wp_post_mime_type_where( $q['post_mime_type'], $wpdb->posts );
 		}
 		$where .= $search . $whichauthor . $whichmimetype;
-
-		if ( ! empty( $this->allow_query_attachment_by_filename ) ) {
-			$join .= " LEFT JOIN {$wpdb->postmeta} AS sq1 ON ( {$wpdb->posts}.ID = sq1.post_id AND sq1.meta_key = '_wp_attached_file' )";
-		}
 
 		if ( ! empty( $this->meta_query->queries ) ) {
 			$clauses = $this->meta_query->get_sql( 'post', $wpdb->posts, 'ID', $this );
@@ -3096,74 +3054,6 @@ class WP_Query {
 		 */
 		$this->posts = apply_filters_ref_array( 'posts_pre_query', array( null, &$this ) );
 
-		/*
-		 * Ensure the ID database query is able to be cached.
-		 *
-		 * Random queries are expected to have unpredictable results and
-		 * cannot be cached. Note the space before `RAND` in the string
-		 * search, that to ensure against a collision with another
-		 * function.
-		 *
-		 * If `$fields` has been modified by the `posts_fields`,
-		 * `posts_fields_request`, `post_clauses` or `posts_clauses_request`
-		 * filters, then caching is disabled to prevent caching collisions.
-		 */
-		$id_query_is_cacheable = ! str_contains( strtoupper( $orderby ), ' RAND(' );
-
-		$cacheable_field_values = array(
-			"{$wpdb->posts}.*",
-			"{$wpdb->posts}.ID, {$wpdb->posts}.post_parent",
-			"{$wpdb->posts}.ID",
-		);
-
-		if ( ! in_array( $fields, $cacheable_field_values, true ) ) {
-			$id_query_is_cacheable = false;
-		}
-
-		if ( $q['cache_results'] && $id_query_is_cacheable ) {
-			$new_request = str_replace( $fields, "{$wpdb->posts}.*", $this->request );
-			$cache_key   = $this->generate_cache_key( $q, $new_request );
-
-			$cache_found = false;
-			if ( null === $this->posts ) {
-				$cached_results = wp_cache_get( $cache_key, 'posts', false, $cache_found );
-
-				if ( $cached_results ) {
-					if ( 'ids' === $q['fields'] ) {
-						/** @var int[] */
-						$this->posts = array_map( 'intval', $cached_results['posts'] );
-					} else {
-						_prime_post_caches( $cached_results['posts'], $q['update_post_term_cache'], $q['update_post_meta_cache'] );
-						/** @var WP_Post[] */
-						$this->posts = array_map( 'get_post', $cached_results['posts'] );
-					}
-
-					$this->post_count    = count( $this->posts );
-					$this->found_posts   = $cached_results['found_posts'];
-					$this->max_num_pages = $cached_results['max_num_pages'];
-
-					if ( 'ids' === $q['fields'] ) {
-						return $this->posts;
-					} elseif ( 'id=>parent' === $q['fields'] ) {
-						/** @var int[] */
-						$post_parents = array();
-
-						foreach ( $this->posts as $key => $post ) {
-							$obj              = new stdClass();
-							$obj->ID          = (int) $post->ID;
-							$obj->post_parent = (int) $post->post_parent;
-
-							$this->posts[ $key ] = $obj;
-
-							$post_parents[ $obj->ID ] = $obj->post_parent;
-						}
-
-						return $post_parents;
-					}
-				}
-			}
-		}
-
 		if ( 'ids' === $q['fields'] ) {
 			if ( null === $this->posts ) {
 				$this->posts = $wpdb->get_col( $this->request );
@@ -3173,16 +3063,6 @@ class WP_Query {
 			$this->posts      = array_map( 'intval', $this->posts );
 			$this->post_count = count( $this->posts );
 			$this->set_found_posts( $q, $limits );
-
-			if ( $q['cache_results'] && $id_query_is_cacheable ) {
-				$cache_value = array(
-					'posts'         => $this->posts,
-					'found_posts'   => $this->found_posts,
-					'max_num_pages' => $this->max_num_pages,
-				);
-
-				wp_cache_set( $cache_key, $cache_value, 'posts' );
-			}
 
 			return $this->posts;
 		}
@@ -3196,28 +3076,15 @@ class WP_Query {
 			$this->set_found_posts( $q, $limits );
 
 			/** @var int[] */
-			$post_parents = array();
-			$post_ids     = array();
-
+			$r = array();
 			foreach ( $this->posts as $key => $post ) {
 				$this->posts[ $key ]->ID          = (int) $post->ID;
 				$this->posts[ $key ]->post_parent = (int) $post->post_parent;
 
-				$post_parents[ (int) $post->ID ] = (int) $post->post_parent;
-				$post_ids[]                      = (int) $post->ID;
+				$r[ (int) $post->ID ] = (int) $post->post_parent;
 			}
 
-			if ( $q['cache_results'] && $id_query_is_cacheable ) {
-				$cache_value = array(
-					'posts'         => $post_ids,
-					'found_posts'   => $this->found_posts,
-					'max_num_pages' => $this->max_num_pages,
-				);
-
-				wp_cache_set( $cache_key, $cache_value, 'posts' );
-			}
-
-			return $post_parents;
+			return $r;
 		}
 
 		if ( null === $this->posts ) {
@@ -3259,12 +3126,12 @@ class WP_Query {
 				 */
 				$this->request = apply_filters( 'posts_request_ids', $this->request, $this );
 
-				$post_ids = $wpdb->get_col( $this->request );
+				$ids = $wpdb->get_col( $this->request );
 
-				if ( $post_ids ) {
-					$this->posts = $post_ids;
+				if ( $ids ) {
+					$this->posts = $ids;
 					$this->set_found_posts( $q, $limits );
-					_prime_post_caches( $post_ids, $q['update_post_term_cache'], $q['update_post_meta_cache'] );
+					_prime_post_caches( $ids, $q['update_post_term_cache'], $q['update_post_meta_cache'] );
 				} else {
 					$this->posts = array();
 				}
@@ -3278,18 +3145,6 @@ class WP_Query {
 		if ( $this->posts ) {
 			/** @var WP_Post[] */
 			$this->posts = array_map( 'get_post', $this->posts );
-		}
-
-		if ( $q['cache_results'] && $id_query_is_cacheable && ! $cache_found ) {
-			$post_ids = wp_list_pluck( $this->posts, 'ID' );
-
-			$cache_value = array(
-				'posts'         => $post_ids,
-				'found_posts'   => $this->found_posts,
-				'max_num_pages' => $this->max_num_pages,
-			);
-
-			wp_cache_set( $cache_key, $cache_value, 'posts' );
 		}
 
 		if ( ! $q['suppress_filters'] ) {
@@ -3324,14 +3179,14 @@ class WP_Query {
 
 			$comments_request = "SELECT {$wpdb->comments}.comment_ID FROM {$wpdb->comments} $cjoin $cwhere $cgroupby $corderby $climits";
 
-			$comment_key          = md5( $comments_request );
-			$comment_last_changed = wp_cache_get_last_changed( 'comment' );
+			$key          = md5( $comments_request );
+			$last_changed = wp_cache_get_last_changed( 'comment' );
 
-			$comment_cache_key = "comment_feed:$comment_key:$comment_last_changed";
-			$comment_ids       = wp_cache_get( $comment_cache_key, 'comment' );
+			$cache_key   = "comment_feed:$key:$last_changed";
+			$comment_ids = wp_cache_get( $cache_key, 'comment' );
 			if ( false === $comment_ids ) {
 				$comment_ids = $wpdb->get_col( $comments_request );
-				wp_cache_add( $comment_cache_key, $comment_ids, 'comment' );
+				wp_cache_add( $cache_key, $comment_ids, 'comment' );
 			}
 			_prime_comment_caches( $comment_ids, false );
 
@@ -3475,8 +3330,7 @@ class WP_Query {
 			$this->posts = array_map( 'get_post', $this->posts );
 
 			if ( $q['cache_results'] ) {
-				$post_ids = wp_list_pluck( $this->posts, 'ID' );
-				_prime_post_caches( $post_ids, $q['update_post_term_cache'], $q['update_post_meta_cache'] );
+				update_post_caches( $this->posts, $post_type, $q['update_post_term_cache'], $q['update_post_meta_cache'] );
 			}
 
 			/** @var WP_Post */
@@ -3484,10 +3338,6 @@ class WP_Query {
 		} else {
 			$this->post_count = 0;
 			$this->posts      = array();
-		}
-
-		if ( ! empty( $this->posts ) && $q['update_menu_item_cache'] ) {
-			update_menu_item_cache( $this->posts );
 		}
 
 		if ( $q['lazy_load_term_meta'] ) {
@@ -3584,19 +3434,6 @@ class WP_Query {
 	 */
 	public function the_post() {
 		global $post;
-
-		if ( ! $this->in_the_loop ) {
-			// Only prime the post cache for queries limited to the ID field.
-			$post_ids = array_filter( $this->posts, 'is_numeric' );
-			// Exclude any falsey values, such as 0.
-			$post_ids = array_filter( $post_ids );
-			if ( $post_ids ) {
-				_prime_post_caches( $post_ids, $this->query_vars['update_post_term_cache'], $this->query_vars['update_post_meta_cache'] );
-			}
-			$post_objects = array_map( 'get_post', $this->posts );
-			update_post_author_caches( $post_objects );
-		}
-
 		$this->in_the_loop = true;
 
 		if ( -1 == $this->current_post ) { // Loop has just started.
@@ -3967,10 +3804,6 @@ class WP_Query {
 		}
 		$post_type_object = get_post_type_object( $post_type );
 
-		if ( ! $post_type_object ) {
-			return false;
-		}
-
 		return in_array( $post_type_object->name, (array) $post_types, true );
 	}
 
@@ -3995,9 +3828,6 @@ class WP_Query {
 		$attachment = array_map( 'strval', (array) $attachment );
 
 		$post_obj = $this->get_queried_object();
-		if ( ! $post_obj ) {
-			return false;
-		}
 
 		if ( in_array( (string) $post_obj->ID, $attachment, true ) ) {
 			return true;
@@ -4031,9 +3861,6 @@ class WP_Query {
 		}
 
 		$author_obj = $this->get_queried_object();
-		if ( ! $author_obj ) {
-			return false;
-		}
 
 		$author = array_map( 'strval', (array) $author );
 
@@ -4070,9 +3897,6 @@ class WP_Query {
 		}
 
 		$cat_obj = $this->get_queried_object();
-		if ( ! $cat_obj ) {
-			return false;
-		}
 
 		$category = array_map( 'strval', (array) $category );
 
@@ -4109,9 +3933,6 @@ class WP_Query {
 		}
 
 		$tag_obj = $this->get_queried_object();
-		if ( ! $tag_obj ) {
-			return false;
-		}
 
 		$tag = array_map( 'strval', (array) $tag );
 
@@ -4359,9 +4180,6 @@ class WP_Query {
 		}
 
 		$page_obj = $this->get_queried_object();
-		if ( ! $page_obj ) {
-			return false;
-		}
 
 		$page = array_map( 'strval', (array) $page );
 
@@ -4469,9 +4287,6 @@ class WP_Query {
 		}
 
 		$post_obj = $this->get_queried_object();
-		if ( ! $post_obj ) {
-			return false;
-		}
 
 		$post = array_map( 'strval', (array) $post );
 
@@ -4519,9 +4334,6 @@ class WP_Query {
 		}
 
 		$post_obj = $this->get_queried_object();
-		if ( ! $post_obj ) {
-			return false;
-		}
 
 		return in_array( $post_obj->post_type, (array) $post_types, true );
 	}
@@ -4745,62 +4557,6 @@ class WP_Query {
 
 		return $elements;
 	}
-
-	/**
-	 * Generate cache key.
-	 *
-	 * @since 6.1.0
-	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
-	 *
-	 * @param array  $args Query arguments.
-	 * @param string $sql  SQL statement.
-	 *
-	 * @return string Cache key.
-	 */
-	protected function generate_cache_key( array $args, $sql ) {
-		global $wpdb;
-
-		unset(
-			$args['cache_results'],
-			$args['fields'],
-			$args['lazy_load_term_meta'],
-			$args['update_post_meta_cache'],
-			$args['update_post_term_cache'],
-			$args['update_menu_item_cache'],
-			$args['suppress_filters']
-		);
-
-		$placeholder = $wpdb->placeholder_escape();
-		array_walk_recursive(
-			$args,
-			/*
-			 * Replace wpdb placeholders with the string used in the database
-			 * query to avoid unreachable cache keys. This is necessary because
-			 * the placeholder is randomly generated in each request.
-			 *
-			 * $value is passed by reference to allow it to be modified.
-			 * array_walk_recursive() does not return an array.
-			 */
-			function ( &$value ) use ( $wpdb, $placeholder ) {
-				if ( is_string( $value ) && str_contains( $value, $placeholder ) ) {
-					$value = $wpdb->remove_placeholder_escape( $value );
-				}
-			}
-		);
-
-		// Replace wpdb placeholder in the SQL statement used by the cache key.
-		$sql = $wpdb->remove_placeholder_escape( $sql );
-		$key = md5( serialize( $args ) . $sql );
-
-		$last_changed = wp_cache_get_last_changed( 'posts' );
-		if ( ! empty( $this->tax_query->queries ) ) {
-			$last_changed .= wp_cache_get_last_changed( 'terms' );
-		}
-
-		return "wp_query:$key:$last_changed";
-	}
-
 	/**
 	 * After looping through a nested query, this function
 	 * restores the $post global to the current post in this query.

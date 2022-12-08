@@ -13,7 +13,6 @@
  *
  * @since 4.7.0
  */
-#[AllowDynamicProperties]
 class WP_List_Util {
 	/**
 	 * The input array.

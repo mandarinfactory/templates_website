@@ -12,7 +12,6 @@
  *
  * @since 4.7.0
  */
-#[AllowDynamicProperties]
 final class WP_Taxonomy {
 	/**
 	 * Taxonomy key.

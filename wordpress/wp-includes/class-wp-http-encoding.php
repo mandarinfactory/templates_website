@@ -14,7 +14,6 @@
  *
  * @since 2.8.0
  */
-#[AllowDynamicProperties]
 class WP_Http_Encoding {
 
 	/**

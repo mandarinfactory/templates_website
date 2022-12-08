@@ -15,7 +15,6 @@
  *
  * @since 4.4.0
  */
-#[AllowDynamicProperties]
 final class WP_oEmbed_Controller {
 	/**
 	 * Register the oEmbed REST API route.

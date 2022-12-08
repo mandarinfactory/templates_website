@@ -16,7 +16,6 @@
  *
  * @since 2.7.0
  */
-#[AllowDynamicProperties]
 class WP_Http_Curl {
 
 	/**

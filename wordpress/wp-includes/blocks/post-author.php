@@ -15,11 +15,10 @@
  */
 function render_block_core_post_author( $attributes, $content, $block ) {
 	if ( ! isset( $block->context['postId'] ) ) {
-		$author_id = get_query_var( 'author' );
-	} else {
-		$author_id = get_post_field( 'post_author', $block->context['postId'] );
+		return '';
 	}
 
+	$author_id = get_post_field( 'post_author', $block->context['postId'] );
 	if ( empty( $author_id ) ) {
 		return '';
 	}
