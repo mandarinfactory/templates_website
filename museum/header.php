@@ -35,7 +35,6 @@
   <script src="./js/header.js"></script>
   <script src="./js/register.js"></script>
   <script src="./js/store.js"></script>
-  <script src="./js/notice.js"></script>
   <script src="./js/gallery_viewbox.js"></script>
   <script src="./js/jquery.viewbox.js "></script>
   <script src="./js/gallery_isotope.js "></script>

@@ -1,4 +1,5 @@
 <?php include "header.php" ?>
+<script src="./js/store.js"></script>
 <section class="home_visual">
   홈비주얼
 </section>
@@ -21,17 +22,28 @@
     </div>
     <div>
       <li class="linkbox"><a href="./biz-intro.php">관람안내</a></li>
-      <li class="linkbox"><a href="./biz-intro.php">오시는길</a></li>
+      <li class="linkbox"><a href="./location.php">오시는길</a></li>
     </div>
   </ul>
 </section>
 <section class="home_section home_section2"></section>
-<section class="home_section home_section3"></section>
-<section class="home_section home_section4">
+<section class="home_section home_section3">
   <h2>공지사항</h2>
-  <div>더보기</div>
+  <div><a href="./notice.php">더보기</a></div>
   <script>
-    $('.home_section4').append(`<table class="sm_board"><table>`)
+    $('.home_section3').append(`<table class="sm_board">
+    <tbody></tbody>
+    <table>`)
+    noticeArrCopy = [...noticeArr]
+    noticeArrCopy.reverse().forEach(function(v) {
+      $('.home_section3 .sm_board tbody').append(` 
+      <tr>
+      <td>${v.title}</td>
+      <td>${v.date}</td>
+      </tr>
+      `) //append
+    }) //forEach
   </script>
 </section>
+<section class="home_section home_section4"></section>
 <?php include "footer.php" ?>
