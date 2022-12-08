@@ -37,6 +37,10 @@
   <script src="./js/notice.js"></script>
   <script src="./js/gallery_viewbox.js"></script>
   <script src="./js/jquery.viewbox.js "></script>
+  <script src="./js/gallery_isotope.js "></script>
+  <script src="./js/jquery.isotope.js "></script>
+  <script src="./js/gallery_masonry.js "></script>
+  <script src="./js/masonry-docs.min.js "></script>
   <title>탬플릿사이트제작</title>
 </head>
 
