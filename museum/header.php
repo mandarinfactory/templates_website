@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/login.css">
+  <link rel="stylesheet" href="./css/home.css">
   <link rel="stylesheet" href="./css/greet.css">
   <link rel="stylesheet" href="./css/location.css">
   <link rel="stylesheet" href="./css/register.css">
@@ -27,7 +28,6 @@
   <link rel="stylesheet" href="./css/notice.css">
   <link rel="stylesheet" href="./css/footer.css">
   <link rel="stylesheet" href="./css/sub-layout.css">
-  <link rel="stylesheet" href="./css/home.css">
   <link rel="shortcut icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/3/3f/Emblem_of_the_Government_of_the_Republic_of_Korea.svg">
   <script src="https://kit.fontawesome.com/7d1f9ca95d.js" crossorigin="anonymous"></script>
   <script src="http://code.jquery.com/jquery-latest.js"></script>

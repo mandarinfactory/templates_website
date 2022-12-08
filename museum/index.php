@@ -4,7 +4,7 @@
 </section>
 <section class="home_section home_section1">
   <ul>
-    <i class="fa-solid fa-clock fa-3x"></i>
+    <i class="fa-solid fa-clock"></i>
     <li>관람시간</li>
     <li>월 / 화 / 목 / 금 / 일</li>
     <li>10:00 ~ 18:00</li>
@@ -13,7 +13,7 @@
     <li>* 입장 마감은 폐관30분 전까지</li>
   </ul>
   <ul>
-    <i class="fa-solid fa-ticket fa-3x"></i>
+    <i class="fa-solid fa-ticket"></i>
     <li>관람료</li>
     <li>무료</li>
     <li>특별전시는 유료</li>
