@@ -27,11 +27,12 @@
     height: 100%;
     object-fit: contain;
     object-position: center;
+    cursor: pointer;;
 }
 .home_visual .slider .indicator {
     position: absolute;
     display: flex;
-    bottom: 9%;
+    bottom: 4%;
     right: 1%;
 }
 .home_visual .slider .indicator button {
@@ -145,9 +146,6 @@ section.home_section3 > div:first-child h2 {
 }
 section.home_section3 > div:first-child h2:hover {
     color: var(--main-color);
-}
-section.home_section3 > div:first-child .sm_board tbody{
-
 }
 section.home_section3 > div:first-child .sm_board tbody tr{
     display: block;
