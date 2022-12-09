@@ -25,13 +25,13 @@
 </section>
 <script>
   $('.home_visual .col_width').append(`<ul class="img_container"></ul>`)
-  mainSliderArr.forEach(function (v) {
+  mainSliderArr.forEach(function(v) {
     $('.home_visual .col_width ul').append(`
     <li> 
         <img src="./img/museum/main_slider/${v.pic}" alt>
     </li>
-    `)//append
-  })//forEach
+    `) //append
+  }) //forEach
 </script>
 <section class="home_section home_section1">
   <ul>
@@ -51,13 +51,13 @@
       <li>특별전시는 유료</li>
     </div>
     <div>
-      <li class="linkbox"><a href="./biz-intro.php">관람안내</a></li>
+      <li class="linkbox"><a href="./exhib_permanent.php">전시안내</a></li>
       <li class="linkbox"><a href="./location.php">오시는길</a></li>
     </div>
   </ul>
 </section>
 <section class="home_section home_section2">
-  section2_sub_slider
+  <h2>전시</h2>
 </section>
 <section class="home_section home_section3">
   <div>
