@@ -124,6 +124,16 @@ section.home_section3 > div {
     margin: 20px 0;
 }
 /* section1 ----------------------------------------------------- */
+.home_section2 {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.home_section2 h2 {
+    font-size: 2.4em;
+    color: black;
+}
 /* section2 ----------------------------------------------------- */
 section.home_section3 {
     display: flex;
