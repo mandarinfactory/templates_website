@@ -178,6 +178,15 @@ section.home_section3 > div {
     object-position: center;
     cursor: pointer;
 }
+.home_section2 .slider .col_width .img_container li figure figcaption p:first-child,
+.home_section2 .slider .col_width .img_container li figure figcaption p:nth-child(2){
+    display: inline-block;
+    margin-top: 5px;
+    padding: 5px 20px;
+    background-color: var(--sub-color);
+    color: white;
+    text-align: center; 
+}
 /* section2 ----------------------------------------------------- */
 section.home_section3 {
     display: flex;
