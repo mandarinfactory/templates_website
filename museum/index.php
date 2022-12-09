@@ -73,16 +73,18 @@
 <script>
   $('.home_section2 .col_width').append(`<ul class="img_container"></ul>`)
   section2SliderArr.forEach(function(v) {
-    $('.home_section2 .col_width ul').append(`
-    <figure>
+    $('.home_section2 .col_width .img_container').append(`
       <li> 
+        <figure>
           <img src="./img/museum/section2_slider/${v.pic}" alt>
+          <figcaption>
+            <p>${v.now}</p>
+            <p>${v.location}</p>
+            <h3>${v.title}</h3>
+            <p>${v.date}</p>
+          </figcaption>
+        </figure>
       </li>
-        <p>${v.now}</p>
-        <p>${v.location}</p>
-        <h3>${v.title}</h3>
-        <p>${v.date}</p>
-    </figure>
     `) //append
   }) //forEach
 </script>

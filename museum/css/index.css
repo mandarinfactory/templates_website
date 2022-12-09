@@ -128,6 +128,7 @@ section.home_section3 > div {
     width: 100%;
     max-width: 1200px;
     margin: 20px auto;
+    margin-bottom: 50px;
     height: 60%;
 }
 .home_section2 h2 {
@@ -164,13 +165,17 @@ section.home_section3 > div {
     height: 100%;
     display: flex;
 }
+.home_section2 .slider .col_width .img_container figure {
+    padding: 5px;
+    box-sizing: border-box;
+}
 .home_section2 .slider .col_width .img_container figure li {
     width: 25%; /* 100% 나누기 img의 갯수! */
 }
-.home_section2 .slider .col_width .img_container figure li img {
+.home_section2 .slider .col_width .img_container figure img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     cursor: pointer;
 }

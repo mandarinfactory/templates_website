@@ -35,7 +35,7 @@ window.section2SliderArr = [
         date : '2022.10.05 - 2023.01.29'
     },
     {
-        pic : '3.png',
+        pic : '3.jpg',
         now : '현재전시',
         location : '경주',
         title : '금령총 금관',
@@ -63,14 +63,14 @@ window.section2SliderArr = [
         date : '2022.10.05 - 2023.01.29'
     },
     {
-        pic : '7.png',
+        pic : '7.jpg',
         now : '현재전시',
         location : '나주',
         title : '고대 영산강 사람과 동물',
         date : '2022.10.05 - 2023.01.29'
     },
     {
-        pic : '8.png',
+        pic : '8.jpg',
         now : '현재전시',
         location : '부여',
         title : '백제 기술, 흙에 담다',
