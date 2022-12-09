@@ -2,7 +2,7 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    height: 70%;
+    height: 80%;
 }
 .home_visual .slider {
     height: 100%;
@@ -32,7 +32,7 @@
 .home_visual .slider .indicator {
     position: absolute;
     display: flex;
-    bottom: 4%;
+    bottom: 10%;
     right: 1%;
 }
 .home_visual .slider .indicator button {
