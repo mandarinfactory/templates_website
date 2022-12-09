@@ -78,6 +78,10 @@
       <li> 
           <img src="./img/museum/section2_slider/${v.pic}" alt>
       </li>
+      <p>${v.now}</p>
+      <p>${v.location}</p>
+      <h3>${v.title}</h3>
+      <p>${v.date}</p>
     </figure>
     `) //append
   }) //forEach
