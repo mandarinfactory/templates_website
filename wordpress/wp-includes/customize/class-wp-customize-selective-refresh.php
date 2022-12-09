@@ -12,7 +12,6 @@
  *
  * @since 4.5.0
  */
-#[AllowDynamicProperties]
 final class WP_Customize_Selective_Refresh {
 
 	/**

@@ -415,13 +415,13 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 	 *
 	 * @since 2.5.0
 	 *
-	 * @param string $path Path to file or directory.
-	 * @return bool Whether $path exists or not.
+	 * @param string $file Path to file or directory.
+	 * @return bool Whether $file exists or not.
 	 */
-	public function exists( $path ) {
-		$list = $this->ftp->nlist( $path );
+	public function exists( $file ) {
+		$list = $this->ftp->nlist( $file );
 
-		if ( empty( $list ) && $this->is_dir( $path ) ) {
+		if ( empty( $list ) && $this->is_dir( $file ) ) {
 			return true; // File is an empty directory.
 		}
 
@@ -485,10 +485,10 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 	 *
 	 * @since 2.5.0
 	 *
-	 * @param string $path Path to file or directory.
-	 * @return bool Whether $path is writable.
+	 * @param string $file Path to file or directory.
+	 * @return bool Whether $file is writable.
 	 */
-	public function is_writable( $path ) {
+	public function is_writable( $file ) {
 		return true;
 	}
 

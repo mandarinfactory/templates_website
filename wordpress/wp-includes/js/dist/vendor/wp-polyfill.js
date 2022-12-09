@@ -98,7 +98,8 @@ __webpack_require__(1);
 __webpack_require__(67);
 __webpack_require__(68);
 __webpack_require__(72);
-module.exports = __webpack_require__(79);
+__webpack_require__(79);
+module.exports = __webpack_require__(85);
 
 
 /***/ }),
@@ -1896,9 +1897,177 @@ module.exports = function (argument) {
 /* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+var global = __webpack_require__(3);
+var uncurryThis = __webpack_require__(12);
+var fails = __webpack_require__(6);
+var aCallable = __webpack_require__(27);
+var internalSort = __webpack_require__(80);
+var ArrayBufferViewCore = __webpack_require__(73);
+var FF = __webpack_require__(82);
+var IE_OR_EDGE = __webpack_require__(83);
+var V8 = __webpack_require__(24);
+var WEBKIT = __webpack_require__(84);
+
+var Array = global.Array;
+var aTypedArray = ArrayBufferViewCore.aTypedArray;
+var exportTypedArrayMethod = ArrayBufferViewCore.exportTypedArrayMethod;
+var Uint16Array = global.Uint16Array;
+var un$Sort = Uint16Array && uncurryThis(Uint16Array.prototype.sort);
+
+// WebKit
+var ACCEPT_INCORRECT_ARGUMENTS = !!un$Sort && !(fails(function () {
+  un$Sort(new Uint16Array(2), null);
+}) && fails(function () {
+  un$Sort(new Uint16Array(2), {});
+}));
+
+var STABLE_SORT = !!un$Sort && !fails(function () {
+  // feature detection can be too slow, so check engines versions
+  if (V8) return V8 < 74;
+  if (FF) return FF < 67;
+  if (IE_OR_EDGE) return true;
+  if (WEBKIT) return WEBKIT < 602;
+
+  var array = new Uint16Array(516);
+  var expected = Array(516);
+  var index, mod;
+
+  for (index = 0; index < 516; index++) {
+    mod = index % 4;
+    array[index] = 515 - index;
+    expected[index] = index - 2 * mod + 3;
+  }
+
+  un$Sort(array, function (a, b) {
+    return (a / 4 | 0) - (b / 4 | 0);
+  });
+
+  for (index = 0; index < 516; index++) {
+    if (array[index] !== expected[index]) return true;
+  }
+});
+
+var getSortCompare = function (comparefn) {
+  return function (x, y) {
+    if (comparefn !== undefined) return +comparefn(x, y) || 0;
+    // eslint-disable-next-line no-self-compare -- NaN check
+    if (y !== y) return -1;
+    // eslint-disable-next-line no-self-compare -- NaN check
+    if (x !== x) return 1;
+    if (x === 0 && y === 0) return 1 / x > 0 && 1 / y < 0 ? 1 : -1;
+    return x > y;
+  };
+};
+
+// `%TypedArray%.prototype.sort` method
+// https://tc39.es/ecma262/#sec-%typedarray%.prototype.sort
+exportTypedArrayMethod('sort', function sort(comparefn) {
+  if (comparefn !== undefined) aCallable(comparefn);
+  if (STABLE_SORT) return un$Sort(this, comparefn);
+
+  return internalSort(aTypedArray(this), getSortCompare(comparefn));
+}, !STABLE_SORT || ACCEPT_INCORRECT_ARGUMENTS);
+
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arraySlice = __webpack_require__(81);
+
+var floor = Math.floor;
+
+var mergeSort = function (array, comparefn) {
+  var length = array.length;
+  var middle = floor(length / 2);
+  return length < 8 ? insertionSort(array, comparefn) : merge(
+    array,
+    mergeSort(arraySlice(array, 0, middle), comparefn),
+    mergeSort(arraySlice(array, middle), comparefn),
+    comparefn
+  );
+};
+
+var insertionSort = function (array, comparefn) {
+  var length = array.length;
+  var i = 1;
+  var element, j;
+
+  while (i < length) {
+    j = i;
+    element = array[i];
+    while (j && comparefn(array[j - 1], element) > 0) {
+      array[j] = array[--j];
+    }
+    if (j !== i++) array[j] = element;
+  } return array;
+};
+
+var merge = function (array, left, right, comparefn) {
+  var llength = left.length;
+  var rlength = right.length;
+  var lindex = 0;
+  var rindex = 0;
+
+  while (lindex < llength || rindex < rlength) {
+    array[lindex + rindex] = (lindex < llength && rindex < rlength)
+      ? comparefn(left[lindex], right[rindex]) <= 0 ? left[lindex++] : right[rindex++]
+      : lindex < llength ? left[lindex++] : right[rindex++];
+  } return array;
+};
+
+module.exports = mergeSort;
+
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var uncurryThis = __webpack_require__(12);
+
+module.exports = uncurryThis([].slice);
+
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var userAgent = __webpack_require__(25);
+
+var firefox = userAgent.match(/firefox\/(\d+)/i);
+
+module.exports = !!firefox && +firefox[1];
+
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var UA = __webpack_require__(25);
+
+module.exports = /MSIE|Trident/.test(UA);
+
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var userAgent = __webpack_require__(25);
+
+var webkit = userAgent.match(/AppleWebKit\/(\d+)\./);
+
+module.exports = !!webkit && +webkit[1];
+
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var $ = __webpack_require__(2);
 var global = __webpack_require__(3);
-var task = __webpack_require__(80);
+var task = __webpack_require__(86);
 
 var FORCED = !global.setImmediate || !global.clearImmediate;
 
@@ -1914,20 +2083,20 @@ $({ global: true, bind: true, enumerable: true, forced: FORCED }, {
 
 
 /***/ }),
-/* 80 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(3);
-var apply = __webpack_require__(81);
-var bind = __webpack_require__(82);
+var apply = __webpack_require__(87);
+var bind = __webpack_require__(88);
 var isCallable = __webpack_require__(18);
 var hasOwn = __webpack_require__(35);
 var fails = __webpack_require__(6);
 var html = __webpack_require__(66);
-var arraySlice = __webpack_require__(83);
+var arraySlice = __webpack_require__(81);
 var createElement = __webpack_require__(39);
-var IS_IOS = __webpack_require__(84);
-var IS_NODE = __webpack_require__(85);
+var IS_IOS = __webpack_require__(89);
+var IS_NODE = __webpack_require__(90);
 
 var set = global.setImmediate;
 var clear = global.clearImmediate;
@@ -2033,7 +2202,7 @@ module.exports = {
 
 
 /***/ }),
-/* 81 */
+/* 87 */
 /***/ (function(module, exports) {
 
 var FunctionPrototype = Function.prototype;
@@ -2048,7 +2217,7 @@ module.exports = typeof Reflect == 'object' && Reflect.apply || (bind ? call.bin
 
 
 /***/ }),
-/* 82 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var uncurryThis = __webpack_require__(12);
@@ -2066,16 +2235,7 @@ module.exports = function (fn, that) {
 
 
 /***/ }),
-/* 83 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var uncurryThis = __webpack_require__(12);
-
-module.exports = uncurryThis([].slice);
-
-
-/***/ }),
-/* 84 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var userAgent = __webpack_require__(25);
@@ -2084,7 +2244,7 @@ module.exports = /(?:ipad|iphone|ipod).*applewebkit/i.test(userAgent);
 
 
 /***/ }),
-/* 85 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var classof = __webpack_require__(13);

@@ -29,16 +29,14 @@
 	},
 	"supports": {
 		"anchor": true,
-		"__experimentalOnEnter": true,
+		"__experimentalSlashInserter": true,
 		"typography": {
 			"fontSize": true,
 			"lineHeight": true,
-			"__experimentalFontFamily": true,
-			"__experimentalFontWeight": true,
 			"__experimentalFontStyle": true,
-			"__experimentalTextTransform": true,
-			"__experimentalTextDecoration": true,
+			"__experimentalFontWeight": true,
 			"__experimentalLetterSpacing": true,
+			"__experimentalTextTransform": true,
 			"__experimentalDefaultControls": {
 				"fontSize": true,
 				"fontAppearance": true

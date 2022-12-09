@@ -48,7 +48,6 @@ require_once ABSPATH . 'wp-admin/includes/class-wp-ajax-upgrader-skin.php';
  *
  * @since 2.8.0
  */
-#[AllowDynamicProperties]
 class WP_Upgrader {
 
 	/**

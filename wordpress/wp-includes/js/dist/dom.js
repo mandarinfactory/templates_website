@@ -4,18 +4,6 @@
 /******/ 	var __webpack_require__ = {};
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	!function() {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = function(module) {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				function() { return module['default']; } :
-/******/ 				function() { return module; };
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	}();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
@@ -218,10 +206,17 @@ function find(context) {
   });
 }
 
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dom/build-module/tabbable.js
+/**
+ * External dependencies
+ */
+
 /**
  * Internal dependencies
  */
+
 
 /**
  * Returns the tab index of the given element. In contrast with the tabIndex
@@ -295,7 +290,7 @@ function createStatefulCollapseRadioGroup() {
 
     if (hasChosen) {
       const hadChosenElement = CHOSEN_RADIO_BY_NAME[name];
-      result = result.filter(e => e !== hadChosenElement);
+      result = (0,external_lodash_namespaceObject.without)(result, hadChosenElement);
     }
 
     CHOSEN_RADIO_BY_NAME[name] = element;
@@ -396,16 +391,13 @@ function findPrevious(element) {
 
 
   focusables.length = index;
-  const tabbable = filterTabbable(focusables);
-  return tabbable[tabbable.length - 1];
+  return (0,external_lodash_namespaceObject.last)(filterTabbable(focusables));
 }
 /**
  * Given a focusable element, find the next tabbable element.
  *
  * @param {Element} element The focusable element after which to look. Defaults
  *                          to the active element.
- *
- * @return {Element|undefined} Next tabbable element.
  */
 
 function findNext(element) {
@@ -413,7 +405,7 @@ function findNext(element) {
   const index = focusables.indexOf(element); // Remove all focusables before and including `element`.
 
   const remaining = focusables.slice(index + 1);
-  return filterTabbable(remaining)[0];
+  return (0,external_lodash_namespaceObject.first)(filterTabbable(remaining));
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dom/build-module/utils/assert-is-defined.js
@@ -427,12 +419,11 @@ function assertIsDefined(val, name) {
  */
 
 /**
- * Get the rectangle of a given Range. Returns `null` if no suitable rectangle
- * can be found.
+ * Get the rectangle of a given Range.
  *
  * @param {Range} range The range.
  *
- * @return {DOMRect?} The rectangle.
+ * @return {DOMRect} The rectangle.
  */
 
 function getRectangleFromRange(range) {
@@ -505,14 +496,7 @@ function getRectangleFromRange(range) {
     range.setEnd(parentNode, index);
   }
 
-  const rects = range.getClientRects(); // If we have multiple rectangles for a collapsed range, there's no way to
-  // know which it is, so don't return anything.
-
-  if (rects.length > 1) {
-    return null;
-  }
-
-  let rect = rects[0]; // If the collapsed range starts (and therefore ends) at an element node,
+  let rect = range.getClientRects()[0]; // If the collapsed range starts (and therefore ends) at an element node,
   // `getClientRects` can be empty in some browsers. This can be resolved
   // by adding a temporary text node with zero-width space to the range.
   //
@@ -592,7 +576,7 @@ function documentHasTextSelection(doc) {
  */
 function isHTMLInputElement(node) {
   /* eslint-enable jsdoc/valid-types */
-  return (node === null || node === void 0 ? void 0 : node.nodeName) === 'INPUT';
+  return !!node && node.nodeName === 'INPUT';
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dom/build-module/dom/is-text-field.js
@@ -614,10 +598,31 @@ function isHTMLInputElement(node) {
 
 function isTextField(node) {
   /* eslint-enable jsdoc/valid-types */
-  const nonTextInputs = ['button', 'checkbox', 'hidden', 'file', 'radio', 'image', 'range', 'reset', 'submit', 'number', 'email', 'time'];
+  const nonTextInputs = ['button', 'checkbox', 'hidden', 'file', 'radio', 'image', 'range', 'reset', 'submit', 'number'];
   return isHTMLInputElement(node) && node.type && !nonTextInputs.includes(node.type) || node.nodeName === 'TEXTAREA' ||
   /** @type {HTMLElement} */
   node.contentEditable === 'true';
+}
+
+;// CONCATENATED MODULE: ./node_modules/@wordpress/dom/build-module/dom/is-number-input.js
+/**
+ * Internal dependencies
+ */
+
+/* eslint-disable jsdoc/valid-types */
+
+/**
+ * Check whether the given element is an input field of type number
+ * and has a valueAsNumber
+ *
+ * @param {Node} node The HTML node.
+ *
+ * @return {node is HTMLInputElement} True if the node is input and holds a number.
+ */
+
+function isNumberInput(node) {
+  /* eslint-enable jsdoc/valid-types */
+  return isHTMLInputElement(node) && node.type === 'number' && !!node.valueAsNumber;
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dom/build-module/dom/input-field-has-uncollapsed-selection.js
@@ -627,17 +632,13 @@ function isTextField(node) {
 
 
 /**
- * Check whether the given input field or textarea contains a (uncollapsed)
- * selection of text.
+ * Check whether the given element, assumed an input field or textarea,
+ * contains a (uncollapsed) selection of text.
  *
- * CAVEAT: Only specific text-based HTML inputs support the selection APIs
- * needed to determine whether they have a collapsed or uncollapsed selection.
- * This function defaults to returning `true` when the selection cannot be
- * inspected, such as with `<input type="time">`. The rationale is that this
- * should cause the block editor to defer to the browser's native selection
- * handling (e.g. copying and pasting), thereby reducing friction for the user.
+ * Note: this is perhaps an abuse of the term "selection", since these elements
+ * manage selection differently and aren't covered by Selection#collapsed.
  *
- * See: https://html.spec.whatwg.org/multipage/input.html#do-not-apply
+ * See: https://developer.mozilla.org/en-US/docs/Web/API/Window/getSelection#Related_objects.
  *
  * @param {Element} element The HTML element.
  *
@@ -645,12 +646,9 @@ function isTextField(node) {
  */
 
 function inputFieldHasUncollapsedSelection(element) {
-  if (!isHTMLInputElement(element) && !isTextField(element)) {
+  if (!isTextField(element) && !isNumberInput(element)) {
     return false;
-  } // Safari throws a type error when trying to get `selectionStart` and
-  // `selectionEnd` on non-text <input> elements, so a try/catch construct is
-  // necessary.
-
+  }
 
   try {
     const {
@@ -659,16 +657,17 @@ function inputFieldHasUncollapsedSelection(element) {
     } =
     /** @type {HTMLInputElement | HTMLTextAreaElement} */
     element;
-    return (// `null` means the input type doesn't implement selection, thus we
-      // cannot determine whether the selection is collapsed, so we
-      // default to true.
-      selectionStart === null || // when not null, compare the two points
-      selectionStart !== selectionEnd
-    );
+    return selectionStart !== null && selectionStart !== selectionEnd;
   } catch (error) {
-    // This is Safari's way of saying that the input type doesn't implement
-    // selection, so we default to true.
-    return true;
+    // Safari throws an exception when trying to get `selectionStart`
+    // on non-text <input> elements (which, understandably, don't
+    // have the text selection API). We catch this via a try/catch
+    // block, as opposed to a more explicit check of the element's
+    // input types, because of Safari's non-standard behavior. This
+    // also means we don't have to worry about the list of input
+    // types that support `selectionStart` changing as the HTML spec
+    // evolves over time.
+    return false;
   }
 }
 
@@ -679,13 +678,13 @@ function inputFieldHasUncollapsedSelection(element) {
 
 
 /**
- * Check whether the current document has any sort of (uncollapsed) selection.
- * This includes ranges of text across elements and any selection inside
- * textual `<input>` and `<textarea>` elements.
+ * Check whether the current document has any sort of selection. This includes
+ * ranges of text across elements and any selection inside `<input>` and
+ * `<textarea>` elements.
  *
  * @param {Document} doc The document to check.
  *
- * @return {boolean} Whether there is any recognizable text selection in the document.
+ * @return {boolean} Whether there is any sort of "selection" in the document.
  */
 
 function documentHasUncollapsedSelection(doc) {
@@ -700,8 +699,8 @@ function documentHasUncollapsedSelection(doc) {
 
 
 /**
- * Check whether the current document has a selection. This includes focus in
- * input fields, textareas, and general rich-text selection.
+ * Check whether the current document has a selection. This checks for both
+ * focus in an input field and general text selection.
  *
  * @param {Document} doc The document to check.
  *
@@ -709,7 +708,7 @@ function documentHasUncollapsedSelection(doc) {
  */
 
 function documentHasSelection(doc) {
-  return !!doc.activeElement && (isHTMLInputElement(doc.activeElement) || isTextField(doc.activeElement) || documentHasTextSelection(doc));
+  return !!doc.activeElement && (isTextField(doc.activeElement) || isNumberInput(doc.activeElement) || documentHasTextSelection(doc));
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dom/build-module/dom/get-computed-style.js
@@ -758,10 +757,6 @@ function getScrollContainer(node) {
     if (/(auto|scroll)/.test(overflowY)) {
       return node;
     }
-  }
-
-  if (node.ownerDocument === node.parentNode) {
-    return node;
   } // Continue traversing.
 
 
@@ -929,10 +924,6 @@ function isDeepChild(query, container, propName) {
  */
 
 function isFormElement(element) {
-  if (!element) {
-    return false;
-  }
-
   const {
     tagName
   } = element;
@@ -1254,39 +1245,6 @@ function isHorizontalEdge(container, isReverse) {
   return isEdge(container, isReverse);
 }
 
-;// CONCATENATED MODULE: external ["wp","deprecated"]
-var external_wp_deprecated_namespaceObject = window["wp"]["deprecated"];
-var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external_wp_deprecated_namespaceObject);
-;// CONCATENATED MODULE: ./node_modules/@wordpress/dom/build-module/dom/is-number-input.js
-/**
- * WordPress dependencies
- */
-
-/**
- * Internal dependencies
- */
-
-
-/* eslint-disable jsdoc/valid-types */
-
-/**
- * Check whether the given element is an input field of type number.
- *
- * @param {Node} node The HTML node.
- *
- * @return {node is HTMLInputElement} True if the node is number input.
- */
-
-function isNumberInput(node) {
-  external_wp_deprecated_default()('wp.dom.isNumberInput', {
-    since: '6.1',
-    version: '6.5'
-  });
-  /* eslint-enable jsdoc/valid-types */
-
-  return isHTMLInputElement(node) && node.type === 'number' && !isNaN(node.valueAsNumber);
-}
-
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dom/build-module/dom/is-vertical-edge.js
 /**
  * Internal dependencies
@@ -1331,15 +1289,9 @@ function getRange(container, isReverse, x) {
   const isReverseDir = isRTL(container) ? !isReverse : isReverse;
   const containerRect = container.getBoundingClientRect(); // When placing at the end (isReverse), find the closest range to the bottom
   // right corner. When placing at the start, to the top left corner.
-  // Ensure x is defined and within the container's boundaries. When it's
-  // exactly at the boundary, it's not considered within the boundaries.
 
   if (x === undefined) {
     x = isReverse ? containerRect.right - 1 : containerRect.left + 1;
-  } else if (x <= containerRect.left) {
-    x = containerRect.left + 1;
-  } else if (x >= containerRect.right) {
-    x = containerRect.right - 1;
   }
 
   const y = isReverseDir ? containerRect.bottom - 1 : containerRect.top + 1;
@@ -1666,6 +1618,10 @@ function isEmpty(element) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dom/build-module/phrasing-content.js
 /**
+ * External dependencies
+ */
+
+/**
  * All phrasing content elements.
  *
  * @see https://www.w3.org/TR/2011/WD-html5-20110525/content-models.html#phrasing-content-0
@@ -1688,6 +1644,7 @@ function isEmpty(element) {
  *
  * @type {ContentSchema}
  */
+
 const textContentSchema = {
   strong: {},
   em: {},
@@ -1741,13 +1698,8 @@ const textContentSchema = {
 // Possible: strong > em > strong.
 // Impossible: strong > strong.
 
-const excludedElements = ['#text', 'br'];
-Object.keys(textContentSchema).filter(element => !excludedElements.includes(element)).forEach(tag => {
-  const {
-    [tag]: removedTag,
-    ...restSchema
-  } = textContentSchema;
-  textContentSchema[tag].children = restSchema;
+(0,external_lodash_namespaceObject.without)(Object.keys(textContentSchema), '#text', 'br').forEach(tag => {
+  textContentSchema[tag].children = (0,external_lodash_namespaceObject.omit)(textContentSchema, tag);
 });
 /**
  * Embedded content elements.
@@ -1801,28 +1753,8 @@ function getPhrasingContentSchema(context) {
   if (context !== 'paste') {
     return phrasingContentSchema;
   }
-  /**
-   * @type {Partial<ContentSchema>}
-   */
 
-
-  const {
-    u,
-    // Used to mark misspelling. Shouldn't be pasted.
-    abbr,
-    // Invisible.
-    data,
-    // Invisible.
-    time,
-    // Invisible.
-    wbr,
-    // Invisible.
-    bdi,
-    // Invisible.
-    bdo,
-    // Invisible.
-    ...remainingContentSchema
-  } = { ...phrasingContentSchema,
+  return (0,external_lodash_namespaceObject.omit)({ ...phrasingContentSchema,
     // We shouldn't paste potentially sensitive information which is not
     // visible to the user when pasted, so strip the attributes.
     ins: {
@@ -1831,8 +1763,14 @@ function getPhrasingContentSchema(context) {
     del: {
       children: phrasingContentSchema.del.children
     }
-  };
-  return remainingContentSchema;
+  }, ['u', // Used to mark misspelling. Shouldn't be pasted.
+  'abbr', // Invisible.
+  'data', // Invisible.
+  'time', // Invisible.
+  'wbr', // Invisible.
+  'bdi', // Invisible.
+  'bdo' // Invisible.
+  ]);
 }
 /**
  * Find out whether or not the given node is phrasing content.
@@ -1872,6 +1810,10 @@ function isElement(node) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dom/build-module/dom/clean-node-list.js
 /**
+ * External dependencies
+ */
+
+/**
  * Internal dependencies
  */
 
@@ -1881,7 +1823,6 @@ function isElement(node) {
 
 
 
-const noop = () => {};
 /* eslint-disable jsdoc/valid-types */
 
 /**
@@ -1907,7 +1848,6 @@ const noop = () => {};
  * @param {Schema}   schema   An array of functions that can mutate with the provided node.
  * @param {boolean}  inline   Whether to clean for inline mode.
  */
-
 
 function cleanNodeList(nodeList, doc, schema, inline) {
   Array.from(nodeList).forEach((
@@ -1941,7 +1881,7 @@ function cleanNodeList(nodeList, doc, schema, inline) {
               name
             } = _ref;
 
-            if (name !== 'class' && !attributes.includes(name)) {
+            if (name !== 'class' && !(0,external_lodash_namespaceObject.includes)(attributes, name)) {
               node.removeAttribute(name);
             }
           }); // Strip invalid classes.
@@ -1960,7 +1900,7 @@ function cleanNodeList(nodeList, doc, schema, inline) {
                 className) => item.test(className);
               }
 
-              return noop;
+              return external_lodash_namespaceObject.noop;
             });
             Array.from(node.classList).forEach(name => {
               if (!mattchers.some(isMatch => isMatch(name))) {

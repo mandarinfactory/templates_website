@@ -22,6 +22,7 @@
 			"type": "string",
 			"default": "_self"
 		}
+
 	},
 	"usesContext": [ "postType", "postId", "commentId" ],
 	"supports": {
@@ -29,8 +30,7 @@
 		"align": true,
 		"alignWide": false,
 		"spacing": {
-			"margin": true,
-			"padding": true
+			"margin": true
 		},
 		"__experimentalBorder": {
 			"__experimentalSkipSerialization": true,

@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/4.0.0-alpha.3\n"
+"X-Generator: GlotPress/4.0.0-alpha.1\n"
 "Language: ko_KR\n"
 "Project-Id-Version: Themes - Twenty Twenty-One\n"
 
@@ -17,7 +17,7 @@ msgid "Twenty Twenty-One is a blank canvas for your ideas and it makes the block
 msgstr "Twenty Twenty-One은 생각에 대한 빈 캔버스입니다. 블록 편집기를 최고의 붓으로 만듭니다. 새 블록 양식으로, 아름다운 배치 문제를 부차적으로 만들도록 해 줍니다. 이 테마의 부드러운 색상과 눈을 사로잡는 설계(여전히 변함없이)은 작업이 빛나게 해 줄 것입니다. 한 번 해 보세요! 이공이일이 포트폴리오, 사업 웹사이트, 또는 개인 블로그를 어떻게 좋게하는지 보세요."
 
 #. Theme Name of the theme
-#: classes/class-twenty-twenty-one-dark-mode.php:381 inc/block-patterns.php:24
+#: inc/block-patterns.php:24
 #, gp-priority: high
 msgid "Twenty Twenty-One"
 msgstr "Twenty Twenty-One"
@@ -88,22 +88,22 @@ msgctxt "Added to posts and pages that are missing titles"
 msgid "Untitled"
 msgstr "제목없음"
 
-#: inc/block-patterns.php:136
+#: inc/block-patterns.php:131
 msgctxt "Block pattern sample content"
 msgid "Cambridge, MA, 02139"
 msgstr "캠브릿지, 메사추세츠, 02139"
 
-#: inc/block-patterns.php:136
+#: inc/block-patterns.php:131
 msgctxt "Block pattern sample content"
 msgid "123 Main Street"
 msgstr "123 메인 거리"
 
-#: inc/block-patterns.php:136
+#: inc/block-patterns.php:131
 msgctxt "Block pattern sample content"
 msgid "123-456-7890"
 msgstr "123-456-7890"
 
-#: inc/block-patterns.php:136
+#: inc/block-patterns.php:131
 msgctxt "Block pattern sample content"
 msgid "example@example.com"
 msgstr "example@example.com"
@@ -196,19 +196,19 @@ msgstr "이 콘텐츠는 비밀번호로 보호됩니다. 열람하려면 비밀
 msgid "Open menu"
 msgstr "메뉴 열기"
 
-#: inc/block-patterns.php:125
+#: inc/block-patterns.php:121
 msgid "&#8220;Reading&#8221; by Berthe Morisot"
 msgstr "베르트 모리조의 &#8220;독서&#8221;"
 
-#: inc/block-patterns.php:101
+#: inc/block-patterns.php:98
 msgid "&#8220;Self portrait&#8221; by Berthe Morisot"
 msgstr "베르트 모리조의 &#8220;자화상&#8221;"
 
-#: inc/block-patterns.php:101
+#: inc/block-patterns.php:98
 msgid "&#8220;Daffodils&#8221; by Berthe Morisot"
 msgstr "베르트 모리조의 &#8220;수선화&#8221;"
 
-#: inc/block-patterns.php:89 inc/block-patterns.php:125
+#: inc/block-patterns.php:86 inc/block-patterns.php:121
 #: inc/starter-content.php:43
 msgid "&#8220;Roses Trémières&#8221; by Berthe Morisot"
 msgstr "베르트 모리조의 &#8220;접시꽃&#8221;"
@@ -268,61 +268,61 @@ msgctxt "Theme starter content"
 msgid "Create your website with blocks"
 msgstr "블록으로 웹사이트 만들기"
 
-#: inc/block-patterns.php:125
+#: inc/block-patterns.php:121
 msgid "Reading"
 msgstr "읽기"
 
-#: inc/block-patterns.php:125
+#: inc/block-patterns.php:121
 msgid "Young Woman in Mauve"
 msgstr "자줏빛의 젊은 여인"
 
-#: inc/block-patterns.php:125
+#: inc/block-patterns.php:121
 msgid "The Garden at Bougival"
 msgstr "부지발 정원"
 
-#: inc/block-patterns.php:125
+#: inc/block-patterns.php:121
 msgid "In the Bois de Boulogne"
 msgstr "불로뉴 숲"
 
-#: inc/block-patterns.php:125
+#: inc/block-patterns.php:121
 msgid "Villa with Orange Trees, Nice"
 msgstr "오렌지 나무와 저택, 니스"
 
-#: inc/block-patterns.php:125
+#: inc/block-patterns.php:121
 msgid "Roses Trémières"
 msgstr "접시꽃"
 
-#: inc/block-patterns.php:114
+#: inc/block-patterns.php:110
 msgid "&#8220;Villa with Orange Trees, Nice&#8221; by Berthe Morisot"
 msgstr "베르트 모리조의 &quot;오렌지 나무와 저택&quot;"
 
-#: inc/block-patterns.php:114
+#: inc/block-patterns.php:110
 msgid "Beautiful gardens painted by Berthe Morisot in the late 1800s"
 msgstr "베르트 모리조가 1800년대 후반에 그린 아름다운 정원"
 
-#: inc/block-patterns.php:114 inc/block-patterns.php:125
+#: inc/block-patterns.php:110 inc/block-patterns.php:121
 msgid "&#8220;The Garden at Bougival&#8221; by Berthe Morisot"
 msgstr "베르트 모리조의 &quot;부지발 정원&quot;"
 
-#: inc/block-patterns.php:89 inc/block-patterns.php:125
+#: inc/block-patterns.php:86 inc/block-patterns.php:121
 #: inc/starter-content.php:61
 msgid "&#8220;Young Woman in Mauve&#8221; by Berthe Morisot"
 msgstr "베르트 모리조의 &quot;자줏빛의 젊은 여인&quot;"
 
-#: inc/block-patterns.php:89 inc/block-patterns.php:125
+#: inc/block-patterns.php:86 inc/block-patterns.php:121
 #: inc/starter-content.php:51
 msgid "&#8220;In the Bois de Boulogne&#8221; by Berthe Morisot"
 msgstr "베르트 모리조의 &quot;불로뉴 숲&quot;"
 
-#: inc/block-patterns.php:76
+#: inc/block-patterns.php:74
 msgid "Berthe Morisot<br>(French, 1841-1895)"
 msgstr "베르트 모리조<br>(프랑스, 1841-1895)"
 
-#: inc/block-patterns.php:76
+#: inc/block-patterns.php:74
 msgid "Playing in the Sand"
 msgstr "모래놀이"
 
-#: inc/block-patterns.php:76
+#: inc/block-patterns.php:74
 msgid "&#8220;Playing in the Sand&#8221; by Berthe Morisot"
 msgstr "베르트 모리조의 &quot;모래놀이&quot;"
 
@@ -446,90 +446,90 @@ msgstr "테두리"
 msgid "Overlap"
 msgstr "오버랩"
 
-#: inc/block-patterns.php:135
+#: inc/block-patterns.php:130
 msgctxt "Block pattern description"
 msgid "A block with 3 columns that display contact information and social media links."
 msgstr "연락 정보와 소셜 미디어 링크가 있는 3 컬럼이 있는 블록."
 
-#: inc/block-patterns.php:132
+#: inc/block-patterns.php:128
 msgid "Contact information"
 msgstr "연락 정보"
 
-#: inc/block-patterns.php:124
+#: inc/block-patterns.php:120
 msgctxt "Block pattern description"
 msgid "A list of projects with thumbnail images."
 msgstr "썸네일 이미지가 있는 프로젝트 목록."
 
-#: inc/block-patterns.php:122
+#: inc/block-patterns.php:118
 msgid "Portfolio list"
 msgstr "포트폴리오 목록"
 
-#: inc/block-patterns.php:113
+#: inc/block-patterns.php:109
 msgctxt "Block pattern description"
 msgid "An overlapping columns block with two images and a text description."
 msgstr "두 개의 이미지와 텍스트 설명이 있는 오버랩 컬럼 블록."
 
-#: inc/block-patterns.php:109
+#: inc/block-patterns.php:106
 msgid "Overlapping images and text"
 msgstr "오버랩 이미지와 텍스트"
 
-#: inc/block-patterns.php:100
+#: inc/block-patterns.php:97
 msgctxt "Block pattern description"
 msgid "A media & text block with a big image on the left and a smaller one with bordered frame on the right."
 msgstr "왼쪽에 큰 이미지가 있고 오른쪽에 테두리의 작은 이미지가 있는 미디어 및 텍스트 블록."
 
-#: inc/block-patterns.php:97
+#: inc/block-patterns.php:94
 msgid "Two images showcase"
 msgstr "두 이미지 쇼케이스"
 
-#: inc/block-patterns.php:88
+#: inc/block-patterns.php:85
 msgctxt "Block pattern description"
 msgid "Three images inside an overlapping columns block."
 msgstr "오버랩 컬럼 블록 안의 세 개의 이미지."
 
-#: inc/block-patterns.php:84
+#: inc/block-patterns.php:82
 msgid "Overlapping images"
 msgstr "오버랩 이미지"
 
-#: inc/block-patterns.php:75
+#: inc/block-patterns.php:73
 msgctxt "Block pattern description"
 msgid "A Media & Text block with a big image on the left and a heading on the right. The heading is followed by a separator and a description paragraph."
 msgstr "왼쪽에 큰 이미지와 오른쪽에 제목이 있는 미디어 및 텍스트 블록. 제목 아래에 분리자와 설명 문단이 있음."
 
-#: inc/block-patterns.php:72
+#: inc/block-patterns.php:70
 msgid "Media and text article title"
 msgstr "미디어와 텍스트 글 제목"
 
-#: inc/block-patterns.php:64
+#: inc/block-patterns.php:62
 msgid "example@example.com"
 msgstr "example@example.com"
 
-#: inc/block-patterns.php:64
+#: inc/block-patterns.php:62
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: inc/block-patterns.php:64
+#: inc/block-patterns.php:62
 msgid "Instagram"
 msgstr "인스타그램"
 
-#: inc/block-patterns.php:64
+#: inc/block-patterns.php:62
 msgid "Twitter"
 msgstr "트위터"
 
-#: inc/block-patterns.php:64
+#: inc/block-patterns.php:62
 msgid "Let&#8217;s Connect."
 msgstr "연결하기"
 
-#: inc/block-patterns.php:63
+#: inc/block-patterns.php:61
 msgctxt "Block pattern description"
 msgid "A huge text followed by social networks and email address links."
 msgstr "큰 텍스트 아래에 소셜 네트워크 및 이메일 주소 링크."
 
-#: inc/block-patterns.php:59
+#: inc/block-patterns.php:58
 msgid "Links area"
 msgstr "링크 영역"
 
-#: inc/block-patterns.php:51
+#: inc/block-patterns.php:50
 msgid "A new portfolio default theme for WordPress"
 msgstr "워드프레스용 새 포트폴리오 기본 테마"
 

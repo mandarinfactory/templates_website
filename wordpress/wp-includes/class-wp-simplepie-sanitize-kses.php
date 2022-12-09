@@ -17,7 +17,6 @@
  *
  * @see SimplePie_Sanitize
  */
-#[AllowDynamicProperties]
 class WP_SimplePie_Sanitize_KSES extends SimplePie_Sanitize {
 
 	/**

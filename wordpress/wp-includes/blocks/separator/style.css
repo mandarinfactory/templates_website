@@ -78,8 +78,6 @@
 .wp-block-separator {
   border-top: 1px solid currentColor;
   border-bottom: 1px solid currentColor;
-  border-left: none;
-  border-right: none;
 }
 .wp-block-separator.is-style-dots {
   background: none !important;

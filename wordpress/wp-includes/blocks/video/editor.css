@@ -103,6 +103,10 @@
   z-index: 159990;
 }
 
+.block-library-video-tracks-editor > .components-popover__content {
+  width: 360px;
+}
+
 .block-library-video-tracks-editor__track-list-track {
   display: flex;
   place-content: space-between;
@@ -141,8 +145,7 @@
   display: block;
 }
 
-.block-library-video-tracks-editor > .components-popover__content {
-  width: 360px;
+.block-library-video-tracks-editor > .components-popover__content > div {
   padding: 0;
 }
 

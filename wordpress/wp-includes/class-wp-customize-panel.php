@@ -16,7 +16,6 @@
  *
  * @see WP_Customize_Manager
  */
-#[AllowDynamicProperties]
 class WP_Customize_Panel {
 
 	/**
@@ -73,7 +72,7 @@ class WP_Customize_Panel {
 	 * Theme features required to support the panel.
 	 *
 	 * @since 4.0.0
-	 * @var mixed[]
+	 * @var string|string[]
 	 */
 	public $theme_supports = '';
 
@@ -147,7 +146,7 @@ class WP_Customize_Panel {
 	 *                                            of panels and sections. Default 160.
 	 *     @type string          $capability      Capability required for the panel.
 	 *                                            Default `edit_theme_options`.
-	 *     @type mixed[]         $theme_supports  Theme features required to support the panel.
+	 *     @type string|string[] $theme_supports  Theme features required to support the panel.
 	 *     @type string          $title           Title of the panel to show in UI.
 	 *     @type string          $description     Description to show in the UI.
 	 *     @type string          $type            Type of the panel.

@@ -75,14 +75,15 @@
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 .wp-block-video {
-  box-sizing: border-box;
+  margin: 0 0 1em 0;
 }
 .wp-block-video video {
   width: 100%;
 }
 @supports (position: sticky) {
   .wp-block-video [poster] {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 .wp-block-video.aligncenter {

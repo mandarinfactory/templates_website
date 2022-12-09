@@ -56,19 +56,9 @@
 				"type": "flex"
 			}
 		},
-		"color": {
-			"enableContrastChecker": false,
-			"background": true,
-			"gradients": true,
-			"text": false,
-			"__experimentalDefaultControls": {
-				"background": false
-			}
-		},
 		"spacing": {
 			"blockGap": [ "horizontal", "vertical" ],
-			"margin": true,
-			"padding": true,
+			"margin": [ "top", "bottom" ],
 			"units": [ "px", "em", "rem", "vh", "vw" ],
 			"__experimentalDefaultControls": {
 				"blockGap": true

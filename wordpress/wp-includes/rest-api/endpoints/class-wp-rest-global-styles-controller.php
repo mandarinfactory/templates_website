@@ -126,34 +126,6 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 	}
 
 	/**
-	 * Get the post, if the ID is valid.
-	 *
-	 * @since 5.9.0
-	 *
-	 * @param int $id Supplied ID.
-	 * @return WP_Post|WP_Error Post object if ID is valid, WP_Error otherwise.
-	 */
-	protected function get_post( $id ) {
-		$error = new WP_Error(
-			'rest_global_styles_not_found',
-			__( 'No global styles config exist with that id.' ),
-			array( 'status' => 404 )
-		);
-
-		$id = (int) $id;
-		if ( $id <= 0 ) {
-			return $error;
-		}
-
-		$post = get_post( $id );
-		if ( empty( $post ) || empty( $post->ID ) || $this->post_type !== $post->post_type ) {
-			return $error;
-		}
-
-		return $post;
-	}
-
-	/**
 	 * Checks if a given request has access to read a single global style.
 	 *
 	 * @since 5.9.0
@@ -392,20 +364,47 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 		// Wrap the data in a response object.
 		$response = rest_ensure_response( $data );
 
-		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
-			$links = $this->prepare_links( $post->ID );
-			$response->add_links( $links );
-			if ( ! empty( $links['self']['href'] ) ) {
-				$actions = $this->get_available_actions();
-				$self    = $links['self']['href'];
-				foreach ( $actions as $rel ) {
-					$response->add_link( $rel, $self );
-				}
+		$links = $this->prepare_links( $post->ID );
+		$response->add_links( $links );
+		if ( ! empty( $links['self']['href'] ) ) {
+			$actions = $this->get_available_actions();
+			$self    = $links['self']['href'];
+			foreach ( $actions as $rel ) {
+				$response->add_link( $rel, $self );
 			}
 		}
 
 		return $response;
 	}
+
+	/**
+	 * Get the post, if the ID is valid.
+	 *
+	 * @since 5.9.0
+	 *
+	 * @param int $id Supplied ID.
+	 * @return WP_Post|WP_Error Post object if ID is valid, WP_Error otherwise.
+	 */
+	protected function get_post( $id ) {
+		$error = new WP_Error(
+			'rest_global_styles_not_found',
+			__( 'No global styles config exist with that id.' ),
+			array( 'status' => 404 )
+		);
+
+		$id = (int) $id;
+		if ( $id <= 0 ) {
+			return $error;
+		}
+
+		$post = get_post( $id );
+		if ( empty( $post ) || empty( $post->ID ) || $this->post_type !== $post->post_type ) {
+			return $error;
+		}
+
+		return $post;
+	}
+
 
 	/**
 	 * Prepares links for the request.
@@ -564,7 +563,7 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 	 * @return WP_REST_Response|WP_Error
 	 */
 	public function get_theme_item( $request ) {
-		if ( get_stylesheet() !== $request['stylesheet'] ) {
+		if ( wp_get_theme()->get_stylesheet() !== $request['stylesheet'] ) {
 			// This endpoint only supports the active theme for now.
 			return new WP_Error(
 				'rest_theme_not_found',
@@ -592,14 +591,13 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 
 		$response = rest_ensure_response( $data );
 
-		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
-			$links = array(
-				'self' => array(
-					'href' => rest_url( sprintf( '%s/%s/themes/%s', $this->namespace, $this->rest_base, $request['stylesheet'] ) ),
-				),
-			);
-			$response->add_links( $links );
-		}
+		$links = array(
+			'self' => array(
+				'href' => rest_url( sprintf( '%s/%s/themes/%s', $this->namespace, $this->rest_base, $request['stylesheet'] ) ),
+			),
+		);
+
+		$response->add_links( $links );
 
 		return $response;
 	}
@@ -638,7 +636,7 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 	 * @return WP_REST_Response|WP_Error
 	 */
 	public function get_theme_items( $request ) {
-		if ( get_stylesheet() !== $request['stylesheet'] ) {
+		if ( wp_get_theme()->get_stylesheet() !== $request['stylesheet'] ) {
 			// This endpoint only supports the active theme for now.
 			return new WP_Error(
 				'rest_theme_not_found',

@@ -16,7 +16,6 @@
  * @access private
  * @since 2.6.0
  */
-#[AllowDynamicProperties]
 class _WP_Dependency {
 	/**
 	 * The handle name.
@@ -126,7 +125,7 @@ class _WP_Dependency {
 	 * @param string $path   Optional. The full file path to the directory containing translation files.
 	 * @return bool False if $domain is not a string, true otherwise.
 	 */
-	public function set_translations( $domain, $path = '' ) {
+	public function set_translations( $domain, $path = null ) {
 		if ( ! is_string( $domain ) ) {
 			return false;
 		}

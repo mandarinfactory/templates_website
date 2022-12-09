@@ -5671,12 +5671,7 @@ EmbedUrl = View.extend(/** @lends wp.media.view.EmbedUrl.prototype */{
 			return;
 		}
 
-		if ( this.model.get( 'url' ) ) {
-			this.input.value = this.model.get('url');
-		} else {
-			this.input.setAttribute( 'placeholder', 'https://' );
-		}
-
+		this.input.value = this.model.get('url') || 'http://';
 		/**
 		 * Call `render` directly on parent class with passed arguments
 		 */

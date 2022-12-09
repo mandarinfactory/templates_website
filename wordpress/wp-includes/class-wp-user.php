@@ -36,7 +36,6 @@
  * @property string $syntax_highlighting
  * @property string $use_ssl
  */
-#[AllowDynamicProperties]
 class WP_User {
 	/**
 	 * User data container.

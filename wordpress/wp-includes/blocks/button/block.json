@@ -68,13 +68,7 @@
 		},
 		"typography": {
 			"fontSize": true,
-			"lineHeight": true,
 			"__experimentalFontFamily": true,
-			"__experimentalFontWeight": true,
-			"__experimentalFontStyle": true,
-			"__experimentalTextTransform": true,
-			"__experimentalTextDecoration": true,
-			"__experimentalLetterSpacing": true,
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}
@@ -94,7 +88,7 @@
 				"radius": true
 			}
 		},
-		"__experimentalSelector": ".wp-block-button .wp-block-button__link"
+		"__experimentalSelector": ".wp-block-button__link"
 	},
 	"styles": [
 		{ "name": "fill", "label": "Fill", "isDefault": true },

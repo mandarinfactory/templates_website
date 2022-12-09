@@ -94,6 +94,7 @@
 }
 
 .wp-block-embed {
+  margin: 0 0 1em 0;
   overflow-wrap: break-word;
 }
 .wp-block-embed figcaption {

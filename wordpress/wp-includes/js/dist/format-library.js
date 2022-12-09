@@ -192,17 +192,13 @@ const code_code = {
       onFocus();
     }
 
-    return (0,external_wp_element_namespaceObject.createElement)(external_wp_element_namespaceObject.Fragment, null, (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.RichTextShortcut, {
-      type: "access",
-      character: "x",
-      onUse: onClick
-    }), (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.RichTextToolbarButton, {
+    return (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.RichTextToolbarButton, {
       icon: library_code,
       title: code_title,
       onClick: onClick,
       isActive: isActive,
       role: "menuitemcheckbox"
-    }));
+    });
   }
 
 };
@@ -268,15 +264,15 @@ function InlineUI(_ref) {
     style
   } = activeObjectAttributes;
   const [width, setWidth] = (0,external_wp_element_namespaceObject.useState)(style === null || style === void 0 ? void 0 : style.replace(/\D/g, ''));
-  const popoverAnchor = (0,external_wp_richText_namespaceObject.useAnchor)({
-    editableContentElement: contentRef.current,
+  const anchorRef = (0,external_wp_richText_namespaceObject.useAnchorRef)({
+    ref: contentRef,
     value,
     settings: image_image
   });
   return (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Popover, {
     position: "bottom center",
     focusOnMount: false,
-    anchor: popoverAnchor,
+    anchorRef: anchorRef,
     className: "block-editor-format-toolbar__image-popover"
   }, (0,external_wp_element_namespaceObject.createElement)("form", {
     className: "block-editor-format-toolbar__image-container-content",
@@ -488,10 +484,17 @@ const link_link = (0,external_wp_element_namespaceObject.createElement)(external
 var external_wp_a11y_namespaceObject = window["wp"]["a11y"];
 ;// CONCATENATED MODULE: external ["wp","data"]
 var external_wp_data_namespaceObject = window["wp"]["data"];
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/format-library/build-module/link/utils.js
+/**
+ * External dependencies
+ */
+
 /**
  * WordPress dependencies
  */
+
 
 /**
  * Check for issues with the provided href.
@@ -522,7 +525,7 @@ function isValidHref(href) {
     // This ensures URIs with an http protocol have exactly two forward slashes following the protocol.
 
 
-    if (protocol.startsWith('http') && !/^https?:\/\/[^\/\s]/i.test(trimmedHref)) {
+    if ((0,external_lodash_namespaceObject.startsWith)(protocol, 'http') && !/^https?:\/\/[^\/\s]/i.test(trimmedHref)) {
       return false;
     }
 
@@ -552,7 +555,7 @@ function isValidHref(href) {
   } // Validate anchor links.
 
 
-  if (trimmedHref.startsWith('#') && !(0,external_wp_url_namespaceObject.isValidFragment)(trimmedHref)) {
+  if ((0,external_lodash_namespaceObject.startsWith)(trimmedHref, '#') && !(0,external_wp_url_namespaceObject.isValidFragment)(trimmedHref)) {
     return false;
   }
 
@@ -609,8 +612,6 @@ function createLinkFormat(_ref) {
 /* eslint-enable jsdoc/no-undefined-types */
 
 function getFormatBoundary(value, format) {
-  var _newFormats$startInde, _newFormats$endIndex, _newFormats;
-
   let startIndex = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : value.start;
   let endIndex = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : value.end;
   const EMPTY_BOUNDARIES = {
@@ -629,23 +630,14 @@ function getFormatBoundary(value, format) {
 
 
   const newFormats = formats.slice();
-  const formatAtStart = (_newFormats$startInde = newFormats[startIndex]) === null || _newFormats$startInde === void 0 ? void 0 : _newFormats$startInde.find(_ref2 => {
-    let {
-      type
-    } = _ref2;
-    return type === format.type;
+  const formatAtStart = (0,external_lodash_namespaceObject.find)(newFormats[startIndex], {
+    type: format.type
   });
-  const formatAtEnd = (_newFormats$endIndex = newFormats[endIndex]) === null || _newFormats$endIndex === void 0 ? void 0 : _newFormats$endIndex.find(_ref3 => {
-    let {
-      type
-    } = _ref3;
-    return type === format.type;
+  const formatAtEnd = (0,external_lodash_namespaceObject.find)(newFormats[endIndex], {
+    type: format.type
   });
-  const formatAtEndMinusOne = (_newFormats = newFormats[endIndex - 1]) === null || _newFormats === void 0 ? void 0 : _newFormats.find(_ref4 => {
-    let {
-      type
-    } = _ref4;
-    return type === format.type;
+  const formatAtEndMinusOne = (0,external_lodash_namespaceObject.find)(newFormats[endIndex - 1], {
+    type: format.type
   });
 
   if (!!formatAtStart) {
@@ -713,22 +705,8 @@ function walkToBoundary(formats, initialIndex, targetFormatRef, formatIndex, dir
   return index;
 }
 
-const partialRight = function (fn) {
-  for (var _len = arguments.length, partialArgs = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-    partialArgs[_key - 1] = arguments[_key];
-  }
-
-  return function () {
-    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-      args[_key2] = arguments[_key2];
-    }
-
-    return fn(...args, ...partialArgs);
-  };
-};
-
-const walkToStart = partialRight(walkToBoundary, 'backwards');
-const walkToEnd = partialRight(walkToBoundary, 'forwards');
+const walkToStart = (0,external_lodash_namespaceObject.partialRight)(walkToBoundary, 'backwards');
+const walkToEnd = (0,external_lodash_namespaceObject.partialRight)(walkToBoundary, 'forwards');
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/format-library/build-module/link/use-link-instance-key.js
 // Weakly referenced map allows unused ids to be garbage collected.
@@ -921,8 +899,8 @@ function InlineLinkUI(_ref) {
     }
   }
 
-  const popoverAnchor = (0,external_wp_richText_namespaceObject.useAnchor)({
-    editableContentElement: contentRef.current,
+  const anchorRef = (0,external_wp_richText_namespaceObject.useAnchorRef)({
+    ref: contentRef,
     value,
     settings: build_module_link_link
   }); // Generate a string based key that is unique to this anchor reference.
@@ -930,7 +908,7 @@ function InlineLinkUI(_ref) {
   // potential stale state bugs caused by the component not being remounted
   // See https://github.com/WordPress/gutenberg/pull/34742.
 
-  const forceRemountKey = use_link_instance_key(popoverAnchor); // The focusOnMount prop shouldn't evolve during render of a Popover
+  const forceRemountKey = use_link_instance_key(anchorRef); // The focusOnMount prop shouldn't evolve during render of a Popover
   // otherwise it causes a render of the content.
 
   const focusOnMount = (0,external_wp_element_namespaceObject.useRef)(addingLink ? 'firstElement' : false);
@@ -958,11 +936,10 @@ function InlineLinkUI(_ref) {
   }
 
   return (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Popover, {
-    anchor: popoverAnchor,
+    anchorRef: anchorRef,
     focusOnMount: focusOnMount.current,
     onClose: stopAddingLink,
-    position: "bottom center",
-    shift: true
+    position: "bottom center"
   }, (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.__experimentalLinkControl, {
     key: forceRemountKey,
     value: linkValue,
@@ -1194,17 +1171,13 @@ const strikethrough = {
       onFocus();
     }
 
-    return (0,external_wp_element_namespaceObject.createElement)(external_wp_element_namespaceObject.Fragment, null, (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.RichTextShortcut, {
-      type: "access",
-      character: "d",
-      onUse: onClick
-    }), (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.RichTextToolbarButton, {
+    return (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.RichTextToolbarButton, {
       icon: format_strikethrough,
       title: strikethrough_title,
       onClick: onClick,
       isActive: isActive,
       role: "menuitemcheckbox"
-    }));
+    });
   }
 
 };
@@ -1310,8 +1283,13 @@ const textColor = (0,external_wp_element_namespaceObject.createElement)(external
 
 
 /**
+ * External dependencies
+ */
+
+/**
  * WordPress dependencies
  */
+
 
 
 
@@ -1412,12 +1390,10 @@ function ColorPicker(_ref) {
     onChange
   } = _ref;
   const colors = (0,external_wp_data_namespaceObject.useSelect)(select => {
-    var _getSettings$colors;
-
     const {
       getSettings
     } = select(external_wp_blockEditor_namespaceObject.store);
-    return (_getSettings$colors = getSettings().colors) !== null && _getSettings$colors !== void 0 ? _getSettings$colors : [];
+    return (0,external_lodash_namespaceObject.get)(getSettings(), ['colors'], []);
   }, []);
   const onColorChange = (0,external_wp_element_namespaceObject.useCallback)(color => {
     onChange(setColors(value, name, colors, {
@@ -1440,22 +1416,22 @@ function InlineColorUI(_ref2) {
     contentRef
   } = _ref2;
 
-  /*
+  /* 
    As you change the text color by typing a HEX value into a field,
    the return value of document.getSelection jumps to the field you're editing,
-   not the highlighted text. Given that useAnchor uses document.getSelection,
+   not the highlighted text. Given that useAnchorRef uses document.getSelection,
    it will return null, since it can't find the <mark> element within the HEX input.
    This caches the last truthy value of the selection anchor reference.
    */
-  const popoverAnchor = (0,external_wp_blockEditor_namespaceObject.useCachedTruthy)((0,external_wp_richText_namespaceObject.useAnchor)({
-    editableContentElement: contentRef.current,
+  const anchorRef = (0,external_wp_blockEditor_namespaceObject.useCachedTruthy)((0,external_wp_richText_namespaceObject.useAnchorRef)({
+    ref: contentRef,
     value,
     settings: text_color_textColor
   }));
   return (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Popover, {
     onClose: onClose,
     className: "components-inline-color-popover",
-    anchor: popoverAnchor
+    anchorRef: anchorRef
   }, (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.TabPanel, {
     tabs: [{
       name: 'color',
@@ -1476,8 +1452,13 @@ function InlineColorUI(_ref2) {
 
 
 /**
+ * External dependencies
+ */
+
+/**
  * WordPress dependencies
  */
+
 
 
 
@@ -1542,7 +1523,7 @@ function TextColorEdit(_ref2) {
   const enableIsAddingColor = (0,external_wp_element_namespaceObject.useCallback)(() => setIsAddingColor(true), [setIsAddingColor]);
   const disableIsAddingColor = (0,external_wp_element_namespaceObject.useCallback)(() => setIsAddingColor(false), [setIsAddingColor]);
   const colorIndicatorStyle = (0,external_wp_element_namespaceObject.useMemo)(() => fillComputedColors(contentRef.current, getActiveColors(value, text_color_name, colors)), [value, colors]);
-  const hasColorsToChoose = colors.length || !allowCustomControl;
+  const hasColorsToChoose = !(0,external_lodash_namespaceObject.isEmpty)(colors) || !allowCustomControl;
 
   if (!hasColorsToChoose && !isActive) {
     return null;

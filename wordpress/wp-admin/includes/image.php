@@ -190,7 +190,6 @@ function wp_update_image_subsizes( $attachment_id ) {
  * Updates the attached file and image meta data when the original image was edited.
  *
  * @since 5.3.0
- * @since 6.0.0 The `$filesize` value was added to the returned array.
  * @access private
  *
  * @param array  $saved_data    The data returned from WP_Image_Editor after successfully saving an image.
@@ -212,11 +211,11 @@ function _wp_image_meta_replace_original( $saved_data, $original_file, $image_me
 	// Make the file path relative to the upload dir.
 	$image_meta['file'] = _wp_relative_upload_path( $new_file );
 
-	// Add image file size.
-	$image_meta['filesize'] = wp_filesize( $new_file );
-
 	// Store the original image file name in image_meta.
 	$image_meta['original_image'] = wp_basename( $original_file );
+
+	// Add image file size.
+	$image_meta['filesize'] = wp_filesize( $new_file );
 
 	return $image_meta;
 }
@@ -475,10 +474,9 @@ function _wp_make_subsizes( $new_sizes, $file, $image_meta, $attachment_id ) {
 }
 
 /**
- * Generates attachment meta data and create image sub-sizes for images.
+ * Generate attachment meta data and create image sub-sizes for images.
  *
  * @since 2.1.0
- * @since 6.0.0 The `$filesize` value was added to the returned array.
  *
  * @param int    $attachment_id Attachment ID to process.
  * @param string $file          Filepath of the attached image.
@@ -659,7 +657,7 @@ function wp_generate_attachment_metadata( $attachment_id, $file ) {
 }
 
 /**
- * Converts a fraction string to a decimal.
+ * Convert a fraction string to a decimal.
  *
  * @since 2.5.0
  *
@@ -700,7 +698,7 @@ function wp_exif_frac2dec( $str ) {
 }
 
 /**
- * Converts the exif date format to a unix timestamp.
+ * Convert the exif date format to a unix timestamp.
  *
  * @since 2.5.0
  *
@@ -715,7 +713,7 @@ function wp_exif_date2ts( $str ) {
 }
 
 /**
- * Gets extended image metadata, exif or iptc as available.
+ * Get extended image metadata, exif or iptc as available.
  *
  * Retrieves the EXIF metadata aperture, credit, camera, caption, copyright, iso
  * created_timestamp, focal_length, shutter_speed, and title.
@@ -949,7 +947,7 @@ function wp_read_image_metadata( $file ) {
 }
 
 /**
- * Validates that file is an image.
+ * Validate that file is an image.
  *
  * @since 2.5.0
  *
@@ -962,7 +960,7 @@ function file_is_valid_image( $path ) {
 }
 
 /**
- * Validates that file is suitable for displaying within a web page.
+ * Validate that file is suitable for displaying within a web page.
  *
  * @since 2.5.0
  *
@@ -993,7 +991,7 @@ function file_is_displayable_image( $path ) {
 }
 
 /**
- * Loads an image resource for editing.
+ * Load an image resource for editing.
  *
  * @since 2.9.0
  *
@@ -1054,7 +1052,7 @@ function load_image_to_edit( $attachment_id, $mime_type, $size = 'full' ) {
 }
 
 /**
- * Retrieves the path or URL of an attachment's attached file.
+ * Retrieve the path or URL of an attachment's attached file.
  *
  * If the attached file is not present on the local filesystem (usually due to replication plugins),
  * then the URL of the file is returned if `allow_url_fopen` is supported.
@@ -1122,7 +1120,7 @@ function _load_image_to_edit_path( $attachment_id, $size = 'full' ) {
 }
 
 /**
- * Copies an existing image file.
+ * Copy an existing image file.
  *
  * @since 3.4.0
  * @access private

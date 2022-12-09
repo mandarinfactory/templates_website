@@ -17,7 +17,6 @@
  * @since 2.8.0
  * @since 4.4.0 Moved to its own file from wp-includes/widgets.php
  */
-#[AllowDynamicProperties]
 class WP_Widget {
 
 	/**
@@ -613,16 +612,12 @@ class WP_Widget {
 		$settings = get_option( $this->option_name );
 
 		if ( false === $settings ) {
-			$settings = array();
 			if ( isset( $this->alt_option_name ) ) {
-				// Get settings from alternative (legacy) option.
-				$settings = get_option( $this->alt_option_name, array() );
-
-				// Delete the alternative (legacy) option as the new option will be created using `$this->option_name`.
-				delete_option( $this->alt_option_name );
+				$settings = get_option( $this->alt_option_name );
+			} else {
+				// Save an option so it can be autoloaded next time.
+				$this->save_settings( array() );
 			}
-			// Save an option so it can be autoloaded next time.
-			$this->save_settings( $settings );
 		}
 
 		if ( ! is_array( $settings ) && ! ( $settings instanceof ArrayObject || $settings instanceof ArrayIterator ) ) {

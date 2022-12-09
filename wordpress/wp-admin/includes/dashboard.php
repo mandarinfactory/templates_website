@@ -20,18 +20,17 @@
 function wp_dashboard_setup() {
 	global $wp_registered_widgets, $wp_registered_widget_controls, $wp_dashboard_control_callbacks;
 
-	$screen = get_current_screen();
+	$wp_dashboard_control_callbacks = array();
+	$screen                         = get_current_screen();
 
 	/* Register Widgets and Controls */
-	$wp_dashboard_control_callbacks = array();
 
-	// Browser version
-	$check_browser = wp_check_browser_version();
+	$response = wp_check_browser_version();
 
-	if ( $check_browser && $check_browser['upgrade'] ) {
+	if ( $response && $response['upgrade'] ) {
 		add_filter( 'postbox_classes_dashboard_dashboard_browser_nag', 'dashboard_browser_nag_class' );
 
-		if ( $check_browser['insecure'] ) {
+		if ( $response['insecure'] ) {
 			wp_add_dashboard_widget( 'dashboard_browser_nag', __( 'You are using an insecure browser!' ), 'wp_dashboard_browser_nag' );
 		} else {
 			wp_add_dashboard_widget( 'dashboard_browser_nag', __( 'Your browser is out of date!' ), 'wp_dashboard_browser_nag' );
@@ -39,19 +38,14 @@ function wp_dashboard_setup() {
 	}
 
 	// PHP Version.
-	$check_php = wp_check_php_version();
+	$response = wp_check_php_version();
 
-	if ( $check_php && current_user_can( 'update_php' ) ) {
-		// If "not acceptable" the widget will be shown.
-		if ( isset( $check_php['is_acceptable'] ) && ! $check_php['is_acceptable'] ) {
-			add_filter( 'postbox_classes_dashboard_dashboard_php_nag', 'dashboard_php_nag_class' );
+	if ( $response && isset( $response['is_acceptable'] ) && ! $response['is_acceptable']
+		&& current_user_can( 'update_php' )
+	) {
+		add_filter( 'postbox_classes_dashboard_dashboard_php_nag', 'dashboard_php_nag_class' );
 
-			if ( $check_php['is_lower_than_future_minimum'] ) {
-				wp_add_dashboard_widget( 'dashboard_php_nag', __( 'PHP Update Required' ), 'wp_dashboard_php_nag' );
-			} else {
-				wp_add_dashboard_widget( 'dashboard_php_nag', __( 'PHP Update Recommended' ), 'wp_dashboard_php_nag' );
-			}
-		}
+		wp_add_dashboard_widget( 'dashboard_php_nag', __( 'PHP Update Recommended' ), 'wp_dashboard_php_nag' );
 	}
 
 	// Site Health.
@@ -805,9 +799,9 @@ function _wp_dashboard_recent_comments_row( &$comment, $show_date = true ) {
 			if ( ( ( 'approve' === $action || 'unapprove' === $action ) && 2 === $i )
 				|| 1 === $i
 			) {
-				$separator = '';
+				$sep = '';
 			} else {
-				$separator = ' | ';
+				$sep = ' | ';
 			}
 
 			// Reply and quickedit need a hide-if-no-js span.
@@ -819,7 +813,7 @@ function _wp_dashboard_recent_comments_row( &$comment, $show_date = true ) {
 				$action .= ' hidden';
 			}
 
-			$actions_string .= "<span class='$action'>{$separator}{$link}</span>";
+			$actions_string .= "<span class='$action'>$sep$link</span>";
 		}
 	}
 	?>
@@ -1735,7 +1729,7 @@ function wp_dashboard_browser_nag() {
 	 *
 	 * @param string      $notice   The notice content.
 	 * @param array|false $response An array containing web browser information, or
-	 *                              false on failure. See wp_check_browser_version().
+	 *                              false on failure. See `wp_check_browser_version()`.
 	 */
 	echo apply_filters( 'browse-happy-notice', $notice, $response ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 }
@@ -1831,48 +1825,29 @@ function wp_dashboard_php_nag() {
 	}
 
 	if ( isset( $response['is_secure'] ) && ! $response['is_secure'] ) {
-		// The `is_secure` array key name doesn't actually imply this is a secure version of PHP. It only means it receives security updates.
-
-		if ( $response['is_lower_than_future_minimum'] ) {
-			$message = sprintf(
-				/* translators: %s: The server PHP version. */
-				__( 'Your site is running on an outdated version of PHP (%s), which does not receive security updates and soon will not be supported by WordPress. Ensure that PHP is updated on your server as soon as possible. Otherwise you will not be able to upgrade WordPress.' ),
-				PHP_VERSION
-			);
-		} else {
-			$message = sprintf(
-				/* translators: %s: The server PHP version. */
-				__( 'Your site is running on an outdated version of PHP (%s), which does not receive security updates. It should be updated.' ),
-				PHP_VERSION
-			);
-		}
-	} elseif ( $response['is_lower_than_future_minimum'] ) {
-		$message = sprintf(
+		$msg = sprintf(
 			/* translators: %s: The server PHP version. */
-			__( 'Your site is running on an outdated version of PHP (%s), which soon will not be supported by WordPress. Ensure that PHP is updated on your server as soon as possible. Otherwise you will not be able to upgrade WordPress.' ),
+			__( 'Your site is running an insecure version of PHP (%s), which should be updated.' ),
 			PHP_VERSION
 		);
 	} else {
-		$message = sprintf(
+		$msg = sprintf(
 			/* translators: %s: The server PHP version. */
-			__( 'Your site is running on an outdated version of PHP (%s), which should be updated.' ),
+			__( 'Your site is running an outdated version of PHP (%s), which should be updated.' ),
 			PHP_VERSION
 		);
 	}
 	?>
-	<p class="bigger-bolder-text"><?php echo $message; ?></p>
+	<p><?php echo $msg; ?></p>
 
-	<p><?php _e( 'What is PHP and how does it affect my site?' ); ?></p>
+	<h3><?php _e( 'What is PHP and how does it affect my site?' ); ?></h3>
 	<p>
-		<?php _e( 'PHP is one of the programming languages used to build WordPress. Newer versions of PHP receive regular security updates and may increase your site&#8217;s performance.' ); ?>
 		<?php
-		if ( ! empty( $response['recommended_version'] ) ) {
-			printf(
-				/* translators: %s: The minimum recommended PHP version. */
-				__( 'The minimum recommended version of PHP is %s.' ),
-				$response['recommended_version']
-			);
-		}
+		printf(
+			/* translators: %s: The minimum recommended PHP version. */
+			__( 'PHP is the programming language used to build and maintain WordPress. Newer versions of PHP are created with increased performance in mind, so you may see a positive effect on your site&#8217;s performance. The minimum recommended version of PHP is %s.' ),
+			$response ? $response['recommended_version'] : ''
+		);
 		?>
 	</p>
 
@@ -1904,14 +1879,8 @@ function wp_dashboard_php_nag() {
 function dashboard_php_nag_class( $classes ) {
 	$response = wp_check_php_version();
 
-	if ( ! $response ) {
-		return $classes;
-	}
-
-	if ( isset( $response['is_secure'] ) && ! $response['is_secure'] ) {
-		$classes[] = 'php-no-security-updates';
-	} elseif ( $response['is_lower_than_future_minimum'] ) {
-		$classes[] = 'php-version-lower-than-future-minimum';
+	if ( $response && isset( $response['is_secure'] ) && ! $response['is_secure'] ) {
+		$classes[] = 'php-insecure';
 	}
 
 	return $classes;
@@ -2042,10 +2011,7 @@ function wp_welcome_panel() {
 	</div>
 	<div class="welcome-panel-column-container">
 		<div class="welcome-panel-column">
-			<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-				<rect width="48" height="48" rx="4" fill="#1E1E1E"/>
-				<path fill-rule="evenodd" clip-rule="evenodd" d="M32.0668 17.0854L28.8221 13.9454L18.2008 24.671L16.8983 29.0827L21.4257 27.8309L32.0668 17.0854ZM16 32.75H24V31.25H16V32.75Z" fill="white"/>
-			</svg>
+			<div class="welcome-panel-icon-pages"></div>
 			<div class="welcome-panel-column-content">
 				<h3><?php _e( 'Author rich content with blocks and patterns' ); ?></h3>
 				<p><?php _e( 'Block patterns are pre-configured block layouts. Use them to get inspired or create new pages in a flash.' ); ?></p>
@@ -2053,10 +2019,7 @@ function wp_welcome_panel() {
 			</div>
 		</div>
 		<div class="welcome-panel-column">
-			<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-				<rect width="48" height="48" rx="4" fill="#1E1E1E"/>
-				<path fill-rule="evenodd" clip-rule="evenodd" d="M18 16h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H18a2 2 0 0 1-2-2V18a2 2 0 0 1 2-2zm12 1.5H18a.5.5 0 0 0-.5.5v3h13v-3a.5.5 0 0 0-.5-.5zm.5 5H22v8h8a.5.5 0 0 0 .5-.5v-7.5zm-10 0h-3V30a.5.5 0 0 0 .5.5h2.5v-8z" fill="#fff"/>
-			</svg>
+			<div class="welcome-panel-icon-layout"></div>
 			<div class="welcome-panel-column-content">
 			<?php if ( $is_block_theme ) : ?>
 				<h3><?php _e( 'Customize your entire site with block themes' ); ?></h3>
@@ -2072,10 +2035,7 @@ function wp_welcome_panel() {
 			</div>
 		</div>
 		<div class="welcome-panel-column">
-			<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-				<rect width="48" height="48" rx="4" fill="#1E1E1E"/>
-				<path fill-rule="evenodd" clip-rule="evenodd" d="M31 24a7 7 0 0 1-7 7V17a7 7 0 0 1 7 7zm-7-8a8 8 0 1 1 0 16 8 8 0 0 1 0-16z" fill="#fff"/>
-			</svg>
+			<div class="welcome-panel-icon-styles"></div>
 			<div class="welcome-panel-column-content">
 			<?php if ( $is_block_theme ) : ?>
 				<h3><?php _e( 'Switch up your site&#8217;s look & feel with Styles' ); ?></h3>
