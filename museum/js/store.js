@@ -18,6 +18,17 @@ window.mainSliderArr = [
         pic : '6.jpg'
     },
 ]
+window.section3SliderArr = [
+    {
+        pic : '1.jpg'
+    },
+    {
+        pic : '2.jpg'
+    },
+    {
+        pic : '3.jpg'
+    },
+]
 
 window.galleryViewboxArr = [
     {

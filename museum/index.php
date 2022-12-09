@@ -66,22 +66,40 @@
       <a href="./notice.php">공지사항</a>
     </h2>
   </div>
-  <script>
-    $('.home_section3 > div:first-child').append(`<table class="sm_board">
+  <div class="slider">
+    <div class="col_height">
+      <!-- ul
+              li
+                img-->
+    </div>
+    <div class="indicator">
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+</section>
+<script>
+  $('.home_section3 > div:first-child').append(`<table class="sm_board">
     <tbody></tbody>
     <table>`)
-    noticeArrCopy = [...noticeArr]
-    noticeArrCopy.reverse().forEach(function(v) {
-      $('.home_section3 > div:first-child .sm_board tbody').append(` 
+  noticeArrCopy = [...noticeArr]
+  noticeArrCopy.reverse().forEach(function(v) {
+    $('.home_section3 > div:first-child .sm_board tbody').append(` 
       <tr>
       <td>${v.title}</td>
       <td>${v.date}</td>
       </tr>
       `) //append
-    }) //forEach
-  </script>
-  <div>
-    section3_slider
-  </div>
-</section>
+  }) //forEach
+</script>
+<script>
+  $('.home_section3 .col_height').append(`<ul class="img_container"></ul>`)
+  section3SliderArr.forEach(function(v) {
+    $('.home_section3 .col_height ul').append(`
+    <li> 
+        <img src="./img/museum/section3_slider/${v.pic}" alt>
+    </li>
+    `) //append
+  }) //forEach
+</script>
 <?php include "footer.php" ?>

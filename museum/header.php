@@ -44,6 +44,7 @@
   <script src="./js/gallery_masonry.js "></script>
   <script src="./js/masonry-docs.min.js "></script>
   <script src="./js/responsive_carousel_horz.js "></script>
+  <script src="./js/responsive_carousel_vert.js "></script>
   <title>탬플릿사이트제작</title>
 </head>
 
