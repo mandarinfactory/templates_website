@@ -1,8 +1,38 @@
 <?php include "header.php" ?>
 <script src="./js/store.js"></script>
 <section class="home_visual">
-  main_slider
+  <div class="slider">
+    <div class="col_width">
+      <!-- ul
+              li
+                img-->
+    </div>
+    <div class="indicator">
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+    <button class="prev">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="next">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
 </section>
+<script>
+  $('.home_visual .col_width').append(`<ul class="img_container"></ul>`)
+  mainSliderArr.forEach(function (v) {
+    $('.home_visual .col_width ul').append(`
+    <li> 
+        <img src="./img/museum/main_slider/${v.pic}" alt>
+    </li>
+    `)//append
+  })//forEach
+</script>
 <section class="home_section home_section1">
   <ul>
     <i class="fa-solid fa-clock"></i>
