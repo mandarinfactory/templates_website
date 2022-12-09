@@ -58,7 +58,9 @@
 </section>
 <section class="home_section home_section2">
   <h2>기타 전시</h2>
-  section2_main_slider
+  <div class="slider">
+
+  </div>
 </section>
 <section class="home_section home_section3">
   <div>
