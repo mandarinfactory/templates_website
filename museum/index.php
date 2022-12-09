@@ -59,9 +59,29 @@
 <section class="home_section home_section2">
   <h2>기타 전시</h2>
   <div class="slider">
+    <div class="col_width">
 
+    </div>
+    <button class="prev">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="next">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
   </div>
 </section>
+<script>
+  $('.home_section2 .col_width').append(`<ul class="img_container"></ul>`)
+  section2SliderArr.forEach(function(v) {
+    $('.home_section2 .col_width ul').append(`
+    <figure>
+      <li> 
+          <img src="./img/museum/section2_slider/${v.pic}" alt>
+      </li>
+    </figure>
+    `) //append
+  }) //forEach
+</script>
 <section class="home_section home_section3">
   <div>
     <h2>

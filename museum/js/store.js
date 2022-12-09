@@ -18,6 +18,67 @@ window.mainSliderArr = [
         pic : '6.jpg'
     },
 ]
+
+window.section2SliderArr = [
+    {
+        pic : '1.jpg',
+        now : '현재전시',
+        location : '광주',
+        title : '고 이건희 회장 기증 특별전',
+        date : '2022.10.05 - 2023.01.29'
+    },
+    {
+        pic : '2.jpg',
+        now : '현재전시',
+        location : '춘천',
+        title : '미물지생, 옛 풀벌레 그림 속 세상',
+        date : '2022.10.05 - 2023.01.29'
+    },
+    {
+        pic : '3.png',
+        now : '현재전시',
+        location : '경주',
+        title : '금령총 금관',
+        date : '2022.10.05 - 2023.01.29'
+    },
+    {
+        pic : '4.jpg',
+        now : '현재전시',
+        location : '전주',
+        title : '깨달은 수행자, 나한',
+        date : '2022.10.05 - 2023.01.29'
+    },
+    {
+        pic : '5.jpg',
+        now : '현재전시',
+        location : '나주',
+        title : '어린이박물관 개관',
+        date : '2022.10.05 - 2023.01.29'
+    },
+    {
+        pic : '6.jpg',
+        now : '현재전시',
+        location : '김해',
+        title : '야금:위대한 지혜',
+        date : '2022.10.05 - 2023.01.29'
+    },
+    {
+        pic : '7.png',
+        now : '현재전시',
+        location : '나주',
+        title : '고대 영산강 사람과 동물',
+        date : '2022.10.05 - 2023.01.29'
+    },
+    {
+        pic : '8.png',
+        now : '현재전시',
+        location : '부여',
+        title : '백제 기술, 흙에 담다',
+        date : '2022.10.05 - 2023.01.29'
+    },
+]
+
+
 window.section3SliderArr = [
     {
         pic : '1.jpg'
@@ -29,6 +90,7 @@ window.section3SliderArr = [
         pic : '3.jpg'
     },
 ]
+
 
 window.galleryViewboxArr = [
     {
