@@ -23,10 +23,6 @@
   position: relative;
 }
 .sub-visual .slider h2 {
-  display: none;
-  transition: all 10s
-}
-.sub-visual .slider h2.active {
   display: block;
   color: rgba(0, 0, 0, 0.8);
   font-weight: 750;
@@ -36,8 +32,8 @@
   .sub-visual .slider h2 {
    font-size: 4.8em;
  }
- .sub-visual .slider h2.active:first-child li,
-.sub-visual .slider h2.active:nth-child(2) li {
+ .sub-visual .slider h2:first-child li,
+.sub-visual .slider h2:nth-child(2) li {
   line-height: 72px;
 }
 }
@@ -45,8 +41,8 @@
   .sub-visual .slider h2 {
    font-size: 2.8em;
   }
-  .sub-visual .slider h2.active:first-child li,
-.sub-visual .slider h2.active:nth-child(2) li {
+  .sub-visual .slider h2:first-child li,
+.sub-visual .slider h2:nth-child(2) li {
   line-height: 50px;
 }
 }
@@ -54,18 +50,18 @@
   .sub-visual .slider h2 {
     font-size: 1.5em;
   }
-  .sub-visual .slider h2.active:first-child li,
-  .sub-visual .slider h2.active:nth-child(2) li {
+  .sub-visual .slider h2:first-child li,
+  .sub-visual .slider h2:nth-child(2) li {
   line-height: 24px;
   }  
 }
-.sub-visual .slider h2.active:first-child {
+.sub-visual .slider h2:first-child {
   position: absolute;
   top: 3%;
   right: 3%;
   text-align: right;
 }
-.sub-visual .slider h2.active:nth-child(2) {
+.sub-visual .slider h2:nth-child(2) {
   position: absolute;
   bottom: 2%;
   left: 3%;
