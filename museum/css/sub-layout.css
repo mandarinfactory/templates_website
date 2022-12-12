@@ -28,10 +28,7 @@
 }
 .sub-visual .slider h2.active {
   display: block;
-  position: absolute;
-  width: 90%;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   font-weight: 750;
   z-index: 1; 
 }
@@ -41,7 +38,7 @@
  }
  .sub-visual .slider h2.active:first-child li,
 .sub-visual .slider h2.active:nth-child(2) li {
-  line-height: 74px;
+  line-height: 72px;
 }
 }
 @media screen and (min-width:600px)and (max-width:1000px) {
@@ -65,16 +62,18 @@
 .sub-visual .slider h2.active:first-child {
   position: absolute;
   top: 3%;
-  left: 45%;
+  right: 3%;
+  text-align: right;
 }
 .sub-visual .slider h2.active:nth-child(2) {
   position: absolute;
   bottom: 2%;
-  right: 40%;
+  left: 3%;
 }
 .sub-visual .slider h2 li:first-child {
   color: var(--main-color);
   opacity: 0.8;
+  left: 48%;
 }
 .sub-visual .slider h2 li:nth-child(2) {
   color: var(--sub-color);
