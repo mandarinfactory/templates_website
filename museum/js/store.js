@@ -19,62 +19,97 @@ window.mainSliderArr = [
     },
 ]
 
+window.subVisualArr = [
+    {
+        pic : '1.jpg'
+    },
+    {
+        pic : '2.jpg'
+    },
+    {
+        pic : '3.jpg'
+    },
+    {
+        pic : '4.jpg'
+    },
+    {
+        pic : '5.jpg'
+    },
+    {
+        pic : '6.jpg'
+    },
+    {
+        pic : '7.jpg'
+    },
+    {
+        pic : '8.jpg'
+    },
+]
+
 window.section2SliderArr = [
     {
         pic : '1.jpg',
         now : '현재전시',
         location : '광주',
         title : '고 이건희 회장 기증 특별전',
-        date : '2022.10.05 - 2023.01.29'
+        date : '2022.10.05 - 2023.01.29',
+        museum : '국립광주박물관'
     },
     {
         pic : '2.jpg',
         now : '현재전시',
         location : '춘천',
         title : '미물지생, 옛 풀벌레 그림 속 세상',
-        date : '2022.10.05 - 2023.01.29'
+        date : '2022.10.05 - 2023.01.29',
+        museum : '국립춘천박물관'
     },
     {
         pic : '3.jpg',
         now : '현재전시',
         location : '경주',
         title : '금령총 금관',
-        date : '2022.10.05 - 2023.01.29'
+        date : '2022.10.05 - 2023.01.29',
+        museum : '국립경주박물관'
     },
     {
         pic : '4.jpg',
         now : '현재전시',
         location : '전주',
         title : '깨달은 수행자, 나한',
-        date : '2022.10.05 - 2023.01.29'
+        date : '2022.10.05 - 2023.01.29',
+        museum : '국립전주박물관'
     },
     {
         pic : '5.jpg',
         now : '현재전시',
         location : '나주',
         title : '어린이박물관 개관',
-        date : '2022.10.05 - 2023.01.29'
+        date : '2022.10.05 - 2023.01.29',
+        museum : '국립나주박물관'
     },
     {
         pic : '6.jpg',
         now : '현재전시',
         location : '김해',
         title : '야금:위대한 지혜',
-        date : '2022.10.05 - 2023.01.29'
+        date : '2022.10.05 - 2023.01.29',
+        museum : '국립김해박물관'
     },
     {
         pic : '7.jpg',
         now : '현재전시',
         location : '나주',
         title : '고대 영산강 사람과 동물',
-        date : '2022.10.05 - 2023.01.29'
+        date : '2022.10.05 - 2023.01.29',
+        museum : '국립나주박물관'
     },
     {
         pic : '8.jpg',
         now : '현재전시',
         location : '부여',
         title : '백제 기술, 흙에 담다',
-        date : '2022.10.05 - 2023.01.29'
+        date : '2022.10.05 - 2023.01.29',
+        museum : '국립부여박물관'
     },
 ]
 

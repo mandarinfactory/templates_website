@@ -128,7 +128,6 @@ section.home_section3 > div {
     width: 100%;
     max-width: 1200px;
     margin: 20px auto;
-    height: 80%;
 }
 .home_section2 h2 {
     font-size: 2.4em;
@@ -144,15 +143,15 @@ section.home_section3 > div {
         width: 25%;
     }
 }
-@media screen and (min-width : 700px)and (max-width : 1000px) {
+@media screen and (min-width : 700px) and (max-width : 1000px) {
+    .home_section2 .slider .col_width {
+        width: 33.334%; 
+    }  
+}
+@media screen and (min-width : 600px) and (max-width : 700px) {
     .home_section2 .slider .col_width {
         width: 50%; 
     }  
-}
-@media screen and (max-width : 700px) {
-    .home_section2 .slider .col_width {
-        width: 100%;
-    }
 }
 .home_section2 .slider .col_width {
     margin: 0 auto;
@@ -169,7 +168,13 @@ section.home_section3 > div {
 }
 .home_section2 .slider .col_width .img_container li figure {
     padding: 20px;
+    padding: 10px 10px;
     box-sizing: border-box;
+    transition: all 0.5s;
+    position: relative;
+}
+.home_section2 .slider .col_width .img_container li figure img.active {
+    filter: brightness(50%);
 }
 .home_section2 .slider .col_width .img_container li figure img {
     width: 100%;
@@ -177,6 +182,19 @@ section.home_section3 > div {
     object-fit: cover;
     object-position: center;
     cursor: pointer;
+}
+.home_section2 .slider .col_width .img_container li figure span {
+    display: none;
+}
+.home_section2 .slider .col_width .img_container li figure span.active {
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
 }
 .home_section2 .slider .col_width .img_container li figure figcaption p:first-child,
 .home_section2 .slider .col_width .img_container li figure figcaption p:nth-child(2){
@@ -186,12 +204,20 @@ section.home_section3 > div {
     background-color: var(--sub-color);
     color: white;
     text-align: center; 
+    font-weight: 650;
+}
+.home_section2 .slider .col_width .img_container li figure figcaption h3 {
+    margin: 5px 0;
+    font-size: 23px;
+    font-weight: 700;
+    color: black;
 }
 /* section2 ----------------------------------------------------- */
 section.home_section3 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    margin-top: 40px;
 }
 section.home_section3 > div {
     width: 90%;
@@ -273,5 +299,26 @@ section.home_section3 > div:first-child .sm_board tbody tr td{
     opacity: 1;
     background-color: var(--main-color);
     transform: scale(1.1);
+}
+@media screen and (min-width : 1200px) {
+    section.home_section3 > div:first-child,
+    .home_section3 .slider {
+        width: 100%;
+    }
+}
+@media screen and (min-width : 800px) and (max-width : 1200px) {
+    section.home_section3 > div:first-child,
+    .home_section3 .slider {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+@media screen and (min-width : 600px) and (max-width : 800px) {
+    section.home_section3 > div:first-child,
+    .home_section3 .slider {
+        width: 100%;
+        max-width: 380px;
+    }
+    
 }
 /* section3-slider----------------------------------------------- */

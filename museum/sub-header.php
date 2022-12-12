@@ -1,7 +1,33 @@
 <?php include "header.php" ?>
 <script src="./js/sub.js"></script>
 <section class="sub-visual">
-</section>
+  <div class="slider">
+    <h2>
+      <li>국립</li>
+      <li>중앙</li>
+      <li>박물관</li>
+    </h2>
+    <h2>
+      <li>National</li>
+      <li>Museum</li>
+      <li>of Korea</li>
+    </h2>
+    <div class="col_width">
+      </div>
+    </div>
+  </section>
+  <script>
+    $('.sub-visual .slider .col_width').append(`<ul class="img_container"></ul>`)
+    subVisualArr.forEach(function (v) {
+      $('.sub-visual .slider .col_width .img_container').append(`
+      <li>      
+      <figure>
+        <img src="./img/museum/sub_visual/${v.pic}" alt>
+      </figure>
+      </li>
+      `)//append
+    })//forEach
+</script>
 <div class="sub-center">
   <aside class="sidebar">
     <nav class="snb">

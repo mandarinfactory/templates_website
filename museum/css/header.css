@@ -53,6 +53,7 @@ h1{
     padding-top: 150px;
   }
   header {
+    position: fixed;
     height: 150px;
   }
   h1 img{
@@ -119,6 +120,7 @@ h1{
   }
   header {
     height: 150px;
+    position: fixed;
   }
   h1 img{
     margin-top: 30px;
@@ -197,6 +199,7 @@ h1{
   }
   header {
     height: 100px;
+    position: fixed;
   }
   h1 img{
     height: 70%;
@@ -268,7 +271,7 @@ h1{
   .gnb-sm > ul > li > ul{display: none;}
   .gnb-sm{display: none;}
   .gnb-lg{ display: none; }
-  .sub-center{ display: none; }
+
 }/* sm */
 
 .gnb > ul > li.sns{

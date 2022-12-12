@@ -16,7 +16,6 @@
 }
 .architect_section figure figcaption {
     position: absolute;
-    width: 600px;
     height: 200px;
     background-color: white;
     display: flex;
@@ -25,6 +24,27 @@
     bottom: -30%;
     right: 0;
 }
+@media screen and (min-width:1000px){
+    .architect_section figure figcaption{
+        width: 600px;
+    }
+    
+} 
+@media screen and (min-width:900px) and (max-width:1000px){
+    .architect_section figure figcaption{
+        width: 550px;
+    }
+} 
+@media screen and (min-width:800px)and (max-width:900px){
+    .architect_section figure figcaption{
+        width: 480px;
+    }
+} 
+@media screen and (max-width:800px){
+    .bronze {
+        display: none;
+    }
+} 
 .architect_section figure figcaption ul:nth-child(odd) {
     font-size: 18px;
     color: black;

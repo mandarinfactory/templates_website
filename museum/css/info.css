@@ -13,7 +13,6 @@
     width: 100%;
 }
 .notice_section figure figcaption {
-    display: block;
     padding-left: 10px;
     position: absolute;
     display: flex;
@@ -21,12 +20,36 @@
     justify-content: center;
     bottom: -25%;
     right: 0;
-    width: 600px;
     height: 200px;
     background-color: white;
     font-size: 1.6em;
     font-weight: 850;
 }
+@media screen and (min-width:1000px){
+    .notice_section figure figcaption{
+        width: 600px;
+    }
+    
+} 
+@media screen and (min-width:900px) and (max-width:1000px){
+    .notice_section figure figcaption{
+        width: 550px;
+    }
+} 
+@media screen and (min-width:800px)and (max-width:900px){
+    .notice_section figure figcaption{
+        width: 480px;
+    }
+} 
+@media screen and (max-width:800px){
+    .notice_section figure figcaption{
+        width: 410px;
+        font-size: 1.2em;
+    }
+    .bronze {
+        display: none;
+    }
+} 
 .notice_section figure figcaption li {
     color: black;
 }
@@ -71,6 +94,11 @@
     margin-left: 10px;
     width: 80%;
 }
+@media screen and (max-width:800px){
+    .notice_section .notice_desc .notice_sub_desc {
+        margin-top: 50px;
+    }
+} 
 .notice_section .notice_desc .notice_sub_desc ul {
     margin: 30px;
     border-bottom: 1px solid black;

@@ -60,14 +60,7 @@
   <h2>기타 전시</h2>
   <div class="slider">
     <div class="col_width">
-
     </div>
-    <button class="prev">
-      <i class="fa-solid fa-chevron-left"></i>
-    </button>
-    <button class="next">
-      <i class="fa-solid fa-chevron-right"></i>
-    </button>
   </div>
 </section>
 <script>
@@ -77,6 +70,7 @@
       <li> 
         <figure>
           <img src="./img/museum/section2_slider/${v.pic}" alt>
+          <span>${v.museum}</span>
           <figcaption>
             <p>${v.now}</p>
             <p>${v.location}</p>

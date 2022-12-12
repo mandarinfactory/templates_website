@@ -21,8 +21,19 @@
 .greet > div:last-child {
     border-bottom: 0;
 }
-.greet > div h2 {
-    width: 23.5%;
+@media screen and (min-width:700px) {
+    .greet > div h2 {
+        width: 23.5%;
+    }
+    
+}
+@media screen and (max-width:700px) {
+    .greet > div h2 {
+        width: 35%;
+    }
+    .silla {
+        display: none;
+    }
 }
 .greet > div ul li {
     line-height: 30px;

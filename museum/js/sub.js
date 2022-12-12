@@ -1,4 +1,26 @@
 $(function () {
+  
+  var offT
+  function viewLetter () {
+      var scrY = $(window).scrollTop()
+      var winH = $(window).innerHeight();
+
+      $('.sub-visual .slider').each(function () {
+          offT = $(this).offset().top
+          if(scrY >= offT - winH && scrY <= offT - winH * 0.01){
+              $(this).children('h2').addClass('active')
+            } else {
+              $(this).children('h2').removeClass('active')
+          }
+      })
+  }//function
+  $(window).resize(function () {
+      viewLetter();
+  }).scroll(function () {
+      viewLetter();
+  })//window-event
+
+
   var addr = location.href
   var category
   var menu

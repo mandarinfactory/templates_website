@@ -1,11 +1,3 @@
-.sword {
-    position: absolute;
-    opacity: 0.5;
-    top: 20%;
-    left: -40%;
-    z-index: -10;
-}
-/* sword ----------------------------------------------------------------------- */
 .special_section section {
     display: flex;
     align-items: center;
@@ -62,5 +54,27 @@
 @media screen and (max-width:600px){
     .special_section section figure {
         width: 100%;
+    }
+}
+@media screen and (min-width:850px){
+    .sword {
+        position: absolute;
+        opacity: 0.5;
+        top: 20%;
+        left: -40%;
+        z-index: -10;
+    }
+} 
+@media screen and (min-width:750px) and (max-width:850px){
+    .sword {
+        display: none;
+    }
+    .special_section section figure .letter div span:nth-child(even) {
+        margin-left: 0;
+    }
+}
+@media screen and (max-width:750px) {
+    .special_section section figure .letter div span {
+        display: none;
     }
 }
