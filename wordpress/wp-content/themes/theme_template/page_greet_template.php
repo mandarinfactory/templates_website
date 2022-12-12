@@ -1,5 +1,5 @@
 <?/*
-    Template Name: greet_design
+    Template Name: 인사말디자인
     Template Post Type: page, greet_template
 */ ?>
 <?php include 'sub_header.php' ?>
