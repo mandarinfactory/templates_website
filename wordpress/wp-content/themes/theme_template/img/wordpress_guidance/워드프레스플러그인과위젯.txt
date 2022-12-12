@@ -30,6 +30,9 @@
       · delete thumb... 체크, 
       · 버튼클릭
 
+■ Contact form 7
+  ● 관리자(대시보드 -> 설정 -> 일반 -> 관리자 이메일 주소로 보내짐)에게 mail 보내기!
+
 ■ 위젯설정
   ● functions.php 
     register_sidebar( array(
