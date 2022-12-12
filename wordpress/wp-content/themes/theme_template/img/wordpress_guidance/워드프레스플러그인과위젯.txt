@@ -40,10 +40,26 @@
   ● 사용법
     - 설치 후 대시보드에 연락처 메뉴(contact)가 추가됨
     - 제공되는 Shortcode를 해당 페이지에서 출력 
-
 ■ Kboard
   ● 게시판 plugin
-
+  ● 대시보드 -> kboard 메뉴 생성됨
+    - 게시판 목록 및 관리
+      · 출력될 페이지 선택
+      · 스킨(디자인)
+      · 최근게시물 코드(아래 코드로 사용한다!)
+          <?php 
+            $homeURL = home_url(bloginfo('url'));
+            $kboardID = "1" ;		
+            $kboardPAGE = "notice";
+            $kboardCnt = "3";
+            $kboardSTR = '[kboard_latest id="1" url="'.$homeURL.$kboardPAGE.'" rpp="'.$kboardCnt.'"]'; 
+            echo do_shortcode( $kboardSTR ); 
+          ?>
+    - 게시판 생성
+      · 기본 설정
+      · 권한 설정
+        ▲ 읽기, 쓰기 권한을 설정한다.
+        ▲ 제한없음, 로그인 사용자, 직접설정(관리자, 편집자, 글쓴이 등등 개별적으로 선택가능)
 ■ 위젯설정
   ● functions.php 
     register_sidebar( array(
