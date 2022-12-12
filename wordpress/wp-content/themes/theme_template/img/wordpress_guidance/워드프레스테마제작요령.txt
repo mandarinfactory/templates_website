@@ -51,6 +51,12 @@
       · 요소검사를 통해 메뉴구조 파악 후 css나 script를 적용
       · 메뉴출력함수
         <?php wp_nav_menu( array('theme_location' => 'menu'));?>
+    - header.php, footer.php 제작
+    - index.php와 동일한 구조로 home.php 제작
+    - home.php(main_template)
+    - sub_template 중 하나를 제작 후 sub_header, footer.php 제작
+    - 남은 기타 template들(page.php, category.php, single.php, search.php, 404.php)을 만들어줌
+    
 
 ■ 링크관련     
   ● 메뉴 구현
