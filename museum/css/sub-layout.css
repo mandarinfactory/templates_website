@@ -24,36 +24,43 @@
 }
 .sub-visual .slider h2 {
   display: block;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 750;
   z-index: 1; 
+  text-shadow: 0 0 5px black;
 }
 @media screen and (min-width:1000px) {
   .sub-visual .slider h2 {
    font-size: 4.8em;
  }
- .sub-visual .slider h2:first-child li,
-.sub-visual .slider h2:nth-child(2) li {
+ .sub-visual .slider h2:first-child li{
   line-height: 72px;
+}
+.sub-visual .slider h2:nth-child(2) li {
+  line-height: 58px;
 }
 }
 @media screen and (min-width:600px)and (max-width:1000px) {
   .sub-visual .slider h2 {
-   font-size: 2.8em;
+    font-size: 2.8em;
   }
-  .sub-visual .slider h2:first-child li,
-.sub-visual .slider h2:nth-child(2) li {
-  line-height: 50px;
-}
+  .sub-visual .slider h2:first-child li{
+    line-height: 42px;
+  }
+  .sub-visual .slider h2:nth-child(2) li {
+    line-height: 32px;
+  }
 }
 @media screen and (max-width:600px) {
   .sub-visual .slider h2 {
     font-size: 1.5em;
   }
-  .sub-visual .slider h2:first-child li,
-  .sub-visual .slider h2:nth-child(2) li {
-  line-height: 24px;
+  .sub-visual .slider h2:first-child li {
+    line-height: 24px;
   }  
+  .sub-visual .slider h2:nth-child(2) li {
+    line-height: 18px;
+  }
 }
 .sub-visual .slider h2:first-child {
   position: absolute;
