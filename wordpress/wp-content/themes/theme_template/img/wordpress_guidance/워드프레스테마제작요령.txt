@@ -56,8 +56,54 @@
     - home.php(main_template)
     - sub_template 중 하나를 제작 후 sub_header, footer.php 제작
     - 남은 기타 template들(page.php, category.php, single.php, search.php, 404.php)을 만들어줌
-    
 
+■ 별도의 독립된 template 제작요령
+  ● page
+  - 예시)
+    1. page.php를 다른이름으로 저장
+    2. page-몰?루.php
+      //.php파일 생성
+    3. '몰?루'만 저장함
+      // 파일 생성시, 이미 사용되고 있는 주소명이랑 이름이 겹치면 안됨!!!!!!!!!!
+      // 파일의 최상단에 아래의 코드를 추가함
+    4. 대시보드 -> 페이지 -> 페이지메뉴 -> 템플릿 선택
+      <?
+        /*
+        Template Name: 양식이름
+        Template Post Type: page, 몰?루(파일명 / .php는 안적음)
+        */
+      ?>
+  ● category
+  - 예시)
+    1. category.php를 다른이름으로 저장
+    2. category-몰?루.php
+      //.php파일 생성
+    3. '몰?루'만 저장함
+      // 파일 생성시, 이미 사용되고 있는 주소명이랑 이름이 겹치면 안됨!!!!!!!!!!
+      // 파일의 최상단에 아래의 코드를 추가함
+    4. 대시보드 -> 페이지 -> 페이지메뉴 -> 템플릿 선택
+      <?
+        /*
+        Template Name: 양식이름
+        Template Post Type: post, 파일명
+        */
+      ?>
+  ● single
+  - 예시)
+    1. single.php를 다른이름으로 저장
+    2. single-몰?루.php
+      //.php파일 생성
+    3. '몰?루'만 저장함
+      // 파일 생성시, 이미 사용되고 있는 주소명이랑 이름이 겹치면 안됨!!!!!!!!!!
+      // 파일의 최상단에 아래의 코드를 추가함
+    4. 대시보드 -> 페이지 -> 페이지메뉴 -> 템플릿 선택
+      <?
+        /*
+        Template Name: 양식이름
+        Template Post Type: post, 파일명
+        */
+      ?>
+  
 ■ 링크관련     
   ● 메뉴 구현
     ○ page또는 category주소일경우
