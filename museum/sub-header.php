@@ -13,25 +13,26 @@
       <li>of Korea</li>
     </h2>
     <div class="col_width">
-      </div>
     </div>
-  </section>
-  <script>
-    $('.sub-visual .slider .col_width').append(`<ul class="img_container"></ul>`)
-    subVisualArr.forEach(function (v) {
-      $('.sub-visual .slider .col_width .img_container').append(`
+  </div>
+</section>
+<script>
+  $('.sub-visual .slider .col_width').append(`<ul class="img_container"></ul>`)
+  subVisualArr.forEach(function(v) {
+    $('.sub-visual .slider .col_width .img_container').append(`
       <li>      
       <figure>
         <img src="./img/museum/sub_visual/${v.pic}" alt>
+        <figcaption></figcaption>
       </figure>
       </li>
-      `)//append
-    })//forEach
+      `) //append
+  }) //forEach
 </script>
 <div class="sub-center">
   <aside class="sidebar">
     <nav class="snb">
-      <?php include "menu.php"?>
+      <?php include "menu.php" ?>
     </nav>
   </aside>
   <main class="sub-content">

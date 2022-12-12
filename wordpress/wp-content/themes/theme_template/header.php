@@ -18,3 +18,4 @@
     <b>GNB_메뉴</b>
     <?php wp_nav_menu(array('theme_location' => 'sitemap')); ?>
   </nav>
+  <hr>
