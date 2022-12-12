@@ -32,7 +32,7 @@
 .home_visual .slider .indicator {
     position: absolute;
     display: flex;
-    bottom: 10%;
+    bottom: 3%;
     right: 1%;
 }
 .home_visual .slider .indicator button {
