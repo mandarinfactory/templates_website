@@ -7,8 +7,7 @@
  * @since Twenty Twenty 1.0
  */
 
-if ( (bool) get_the_author_meta( 'description' ) && (bool) get_theme_mod( 'show_author_bio', true ) ) :
-	?>
+if ( (bool) get_the_author_meta( 'description' ) && (bool) get_theme_mod( 'show_author_bio', true ) ) : ?>
 <div class="author-bio">
 	<div class="author-title-wrapper">
 		<div class="author-avatar vcard">
@@ -31,5 +30,4 @@ if ( (bool) get_the_author_meta( 'description' ) && (bool) get_theme_mod( 'show_
 		</a>
 	</div><!-- .author-description -->
 </div><!-- .author-bio -->
-	<?php
-endif;
+<?php endif; ?>
