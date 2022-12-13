@@ -2,7 +2,21 @@
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    height: 80%;
+}
+@media screen and (min-width:1000px){
+    .home_visual {
+        height: 80%;
+    }
+}
+@media screen and (min-width:700px)and (max-width:1000px){
+    .home_visual {
+        height: 60%;
+    }
+}
+@media screen and (max-width:700px){
+    .home_visual {
+        height: 50%;
+    }
 }
 .home_visual .slider {
     height: 100%;
@@ -25,14 +39,13 @@
 .home_visual .slider .col_width .img_container li img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     cursor: pointer;
 }
 .home_visual .slider .indicator {
     position: absolute;
     display: flex;
-    bottom: 3%;
     right: 1%;
 }
 .home_visual .slider .indicator button {
@@ -42,6 +55,31 @@
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+@media screen and (min-width:1000px){
+    .home_visual .slider .indicator {
+        bottom: 3%;
+    }
+}
+@media screen and (min-width:700px)and (max-width:1000px){
+    .home_visual .slider .indicator {
+        bottom: 9%;
+    }
+    .home_visual .slider .indicator button {
+        width: 15px;
+        height: 15px;
+        margin-left: 7px;
+    }
+}
+@media screen and (max-width:700px){
+    .home_visual .slider .indicator {
+        bottom: 17%;
+    }
+    .home_visual .slider .indicator button {
+        width: 10px;
+        height: 10px;
+        margin-left: 5px;
+    }
 }
 .home_visual .prev,
 .home_visual .next {
