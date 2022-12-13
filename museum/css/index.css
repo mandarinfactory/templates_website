@@ -132,6 +132,7 @@ section.home_section1 ul li.title {
 }
 @media screen and (min-width:900px)and (max-width:1100px){
     section.home_section1 ul i {
+        margin-left: 15px;
         font-size: 1.3em;
     }
     section.home_section1 ul li {
@@ -143,6 +144,7 @@ section.home_section1 ul li.title {
 }
 @media screen and (min-width:800px)and (max-width:900px){
     section.home_section1 ul i {
+        margin-left: 15px;
         font-size: 1.1em;
     }
     section.home_section1 ul li {
@@ -155,6 +157,7 @@ section.home_section1 ul li.title {
 
 @media screen and (max-width:800px){
     section.home_section1 ul i {
+        margin-left: 15px;
         font-size: 0.9em;
     }
     section.home_section1 ul li {
