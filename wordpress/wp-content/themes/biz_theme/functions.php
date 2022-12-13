@@ -26,8 +26,8 @@ function your_prefix_meta_boxes($meta_boxes)
             ),
             array(
                 'id'   => 'date',
-                'name' => '가격',
-                'type' => 'number',
+                'name' => '제작일자',
+                'type' => 'text',
             ),
             array(
                 'id'   => 'price',
