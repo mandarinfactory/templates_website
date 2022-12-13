@@ -119,7 +119,6 @@ function responsive_carousel_vert(obj,useWheel,intervalDelay, timeoutDelay) {
       }
       $(this).css("top", (n - 1) * -100 + "%")
       change_flag = true
-      console.log(n);
     })//aniamtion
     $(obj).find(".img_container li").removeClass("active")
     $(obj).find(".indicator button").removeClass("active")
