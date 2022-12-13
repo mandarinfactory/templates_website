@@ -56,31 +56,6 @@
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-@media screen and (min-width:1000px){
-    .home_visual .slider .indicator {
-        bottom: 3%;
-    }
-}
-@media screen and (min-width:700px)and (max-width:1000px){
-    .home_visual .slider .indicator {
-        bottom: 9%;
-    }
-    .home_visual .slider .indicator button {
-        width: 15px;
-        height: 15px;
-        margin-left: 7px;
-    }
-}
-@media screen and (max-width:700px){
-    .home_visual .slider .indicator {
-        bottom: 17%;
-    }
-    .home_visual .slider .indicator button {
-        width: 10px;
-        height: 10px;
-        margin-left: 5px;
-    }
-}
 .home_visual .prev,
 .home_visual .next {
     position: absolute;

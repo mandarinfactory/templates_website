@@ -63,6 +63,51 @@
         · 제한없음, 로그인사용자, 직접선택(관리자선택가능)
     - 게시판목록 및 관리
 
+■ Meta Box(Metabox.io)
+  ● 글의 메타정보를 추가로 설정할 수 있는 플러그인
+  ● function.php
+  add_filter( 'rwmb_meta_boxes', 'your_prefix_meta_boxes' );
+
+function your_prefix_meta_boxes( $meta_boxes ) {
+  ● 함수!
+  add_filter( 'rwmb_meta_boxes', 'your_prefix_meta_boxes' );
+  function your_prefix_meta_boxes( $meta_boxes ) {
+  $meta_boxes[] = array(
+    'title'      => '상품세부정보',
+    'post_types' => 'post',
+    'fields'     => array(
+      array(
+      'id'   => 'producer',
+      'name' => '제작사',
+      'type' => 'text',
+      ),
+      array(
+        'id'   => 'model-id',
+        'name' => '모델명',
+        'type' => 'text',
+      ),  
+      array(
+        'id'   => 'date',
+        'name' => '가격',
+        'type' => 'number',
+      ),
+      array(
+        'id'   => 'price',
+        'name' => '가격',
+        'type' => 'number',
+      ),
+      array(
+        'id'   => 'desc',
+        'name' => '상품설명',
+        'type' => 'text',
+      ),
+    ),
+  );
+  return $meta_boxes;
+  ● 출력함수
+<?php echo rwmb_meta( '출력하고 싶은 목록의 아이디' );?>
+}
+
 ■ 위젯설정
   ● functions.php 
     register_sidebar( array(
