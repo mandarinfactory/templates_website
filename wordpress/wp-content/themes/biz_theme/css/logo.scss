@@ -7,7 +7,6 @@ h1{
   z-index: 11;
   left:5%;
   height: 50px;
-  border:1px solid red;
   transition: filter 1s;
   @media screen and (min-width:1000px){
     top: 65px;
@@ -32,47 +31,44 @@ h1{
       width:50px;
       height: 50px;
       figure{
-        position: relative;
-        width: inherit;
-        height: inherit;
-        transform-style: preserve-3d;
+          position: relative;
+          width: inherit;
+          height: inherit;
+          transform-style: preserve-3d;
         transform: rotateX(-135deg) rotateY(-45deg) rotateZ(-90deg);  
         animation : rotate 20s linear infinite;
         transition: all 1s;
         img{
-          position: absolute;
-          width: inherit;
-          height: inherit;
-          backface-visibility: hidden;
-          &.front{
-             transform: translateZ(25px); 
-          }  
-          &.back{ 
-            transform: rotateY(180deg) translateZ(25px);
-          }
-          &.left{
-            transform: rotateY(90deg) translateZ(25px);
-          }  
-          &.right{
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            backface-visibility: hidden;
+            &.front{
+                transform: translateZ(25px); 
+            }  
+            &.back{ 
+                transform: rotateY(180deg) translateZ(25px);
+            }
+            &.left{
+                transform: rotateY(90deg) translateZ(25px);
+            }  
+            &.right{
             transform: rotateY(-90deg) translateZ(25px);
           }  
           &.top{
             transform: rotateX(90deg) translateZ(25px);
-          }  
-          &.bottom{
+        }  
+        &.bottom{
             transform: rotateX(-90deg) translateZ(25px);
-          }  
-        }//img
-      }//figure
-    }//logo 
-    b{
-      margin-left: 20px;
-      font-style: italic;
-      text-transform: uppercase;
-      font-weight: 900;
-      font-size: 10em;
-    }//b   
-  }//a
+        }  
+            }//img
+        }//figure
+    }//logo   
+.logo_type {
+  margin-left: 20px;
+  width: 150px;
+        }//.logo_type
+    }//a
 }//h1
 @keyframes rotate{
   0%{

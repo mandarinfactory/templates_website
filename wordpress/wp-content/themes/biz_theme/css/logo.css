@@ -1,11 +1,10 @@
-@charset "UTF-8";
 body {
-  background-color: white;
+  background: #FFF;
 }
 
 h1 {
   position: fixed;
-  z-index: 15;
+  z-index: 11;
   left: 5%;
   height: 50px;
   transition: filter 1s;
@@ -29,59 +28,58 @@ h1:hover figure {
   animation-iteration-count: 1 !important;
   animation-duration: 1.5s !important;
 }
-h1 div.logo {
-  perspective: 500px;
-  width: 50px;
-  height: 50px;
-}
-h1 div.logo figure {
-  width: inherit; /* 100%로 해도 무방하다! */
-  height: inherit;
-  position: relative;
-  transform-style: preserve-3d;
-  transform: rotateX(315deg) rotateY(0deg) rotateZ(225deg);
-  animation: rotateCube 30s linear infinite;
-}
-h1 div.logo figure img {
-  width: inherit;
-  height: inherit;
-  position: absolute;
-  backface-visibility: hidden;
-}
-h1 div.logo figure img.front {
-  transform: translateZ(25px);
-}
-h1 div.logo figure img.back {
-  transform: rotateY(180deg) translateZ(25px);
-}
-h1 div.logo figure img.left {
-  transform: rotateX(-90deg) translateZ(25px);
-}
-h1 div.logo figure img.right {
-  transform: rotateX(90deg) translateZ(25px);
-}
-h1 div.logo figure img.top {
-  transform: rotateY(90deg) translateZ(25px);
-}
-h1 div.logo figure img.bottom {
-  transform: rotateY(-90deg) translateZ(25px);
-}
 h1 a {
   display: flex;
   align-items: flex-end;
 }
-h1 a div.logo b {
+h1 a div.logo {
+  perspective: 500px;
+  width: 50px;
+  height: 50px;
+}
+h1 a div.logo figure {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  transform-style: preserve-3d;
+  transform: rotateX(-135deg) rotateY(-45deg) rotateZ(-90deg);
+  animation: rotate 20s linear infinite;
+  transition: all 1s;
+}
+h1 a div.logo figure img {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  backface-visibility: hidden;
+}
+h1 a div.logo figure img.front {
+  transform: translateZ(25px);
+}
+h1 a div.logo figure img.back {
+  transform: rotateY(180deg) translateZ(25px);
+}
+h1 a div.logo figure img.left {
+  transform: rotateY(90deg) translateZ(25px);
+}
+h1 a div.logo figure img.right {
+  transform: rotateY(-90deg) translateZ(25px);
+}
+h1 a div.logo figure img.top {
+  transform: rotateX(90deg) translateZ(25px);
+}
+h1 a div.logo figure img.bottom {
+  transform: rotateX(-90deg) translateZ(25px);
+}
+h1 a .logo_type {
   margin-left: 20px;
-  font-style: italic;
-  text-transform: uppercase;
-  font-weight: 700;
+  width: 150px;
 }
 
-@keyframes rotateCube {
+@keyframes rotate {
   0% {
-    transform: rotateX(315deg) rotateY(0deg) rotateZ(225deg);
+    transform: rotateX(-135deg) rotateY(-45deg) rotateZ(-90deg);
   }
   100% {
-    transform: rotateX(-45deg) rotateY(360deg) rotateZ(-135deg);
+    transform: rotateX(225deg) rotateY(315deg) rotateZ(275deg);
   }
 }/*# sourceMappingURL=logo.css.map */
