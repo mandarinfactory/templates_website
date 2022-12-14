@@ -1,1 +1,5 @@
-/*# sourceMappingURL=logo.css.map */
+h1 {
+  position: fixed;
+  z-index: 15;
+  height: 50px;
+}/*# sourceMappingURL=logo.css.map */

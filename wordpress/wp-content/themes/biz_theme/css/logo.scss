@@ -1,6 +1,9 @@
 @import 'mixin';
 
 h1 {
+    position: fixed;
+    z-index: 15;
+    height: 50px;
     a {
         div.logo {
             figure {
