@@ -1,0 +1,30 @@
+@import 'mixin';
+
+h1 {
+    a {
+        div.logo {
+            figure {
+                img {
+                    &.front {
+
+                    }
+                    &.back {
+
+                    }
+                    &.left {
+
+                    }
+                    &.right {
+
+                    }
+                    &.top {
+
+                    }
+                    &.bottom {
+
+                    }
+                }//img
+            }//figure
+        }//logo
+    }//a
+}//h1

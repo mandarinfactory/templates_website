@@ -25,7 +25,12 @@
     <a href="<?php bloginfo('url'); ?>">
       <div class="logo">
         <figure class="cube">
-
+          <img class="front" src="./img/img/icon&logo/logo-front.png" alt>
+          <img class="back" src="./img/img/icon&logo/logo-back.png" alt>
+          <img class="left" src="./img/img/icon&logo/logo-left.png" alt>
+          <img class="right" src="./img/img/icon&logo/logo-right.png" alt>
+          <img class="top" src="./img/img/icon&logo/logo-top-bottom.png" alt>
+          <img class="bottom" src="./img/img/icon&logo/logo-top-bottom.png" alt>
         </figure>
       </div>
       <b>Website_Logo</b>
