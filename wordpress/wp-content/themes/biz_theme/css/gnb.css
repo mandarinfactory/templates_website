@@ -28,6 +28,7 @@
   box-sizing: border-box;
   border: 7px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  /* motion --------------------------------------- */
 }
 .gnb > div > ul > li > a {
   display: block;
@@ -64,6 +65,9 @@
   float: right;
   font-size: 0.8em;
 }
+.gnb > div > ul > li > a:hover {
+  color: var(--blue);
+}
 .gnb > div > ul > li > ul {
   display: none;
   padding-bottom: 2px;
@@ -71,11 +75,17 @@
 .gnb > div > ul > li > ul > li > a {
   display: block;
   padding: 7px 20px;
-  color: rgb(206, 204, 204);
+  color: rgba(182, 178, 178, 0.8);
   font-size: 1.1em;
   font-weight: 650;
 }
 .gnb > div > ul > li > ul > li > a::before {
   content: "· ";
-  color: rgb(206, 204, 204);
+  color: rgba(182, 178, 178, 0.8);
+}
+.gnb > div > ul > li > ul > li > a:hover {
+  color: white;
+}
+.gnb > div > ul > li > a.active {
+  color: var(--orange);
 }/*# sourceMappingURL=gnb.css.map */

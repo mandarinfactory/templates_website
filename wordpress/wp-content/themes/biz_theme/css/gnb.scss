@@ -59,6 +59,9 @@
                         float: right;
                         font-size: 0.8em;
                       }
+                    &:hover {
+                        color: var(--blue);
+                    }
                 }//1dep a
                 > ul {
                     display: none;
@@ -67,17 +70,24 @@
                         > a {
                             display: block;
                             padding: 7px 20px;
-                            color: rgb(206, 204, 204);
+                            color: rgba(182, 178, 178, 0.8);
                             font-size: 1.1em;
                             font-weight: 650;
                             &::before {
                                 content:'· ';
-                                color: rgb(206, 204, 204);
+                                color: rgba(182, 178, 178, 0.8);
+                            }
+                            &:hover {
+                                color: white;
                             }
                         }//2dep a
                     }//2dep li
                 }//2dep ul
             }//1dep li
         }//1dep ul
+        /* motion --------------------------------------- */
+        > ul > li > a.active {
+            color: var(--orange);
+        }
     }//div
 }//gnb

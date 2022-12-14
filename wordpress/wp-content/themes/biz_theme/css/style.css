@@ -32,7 +32,7 @@ body {
 :root {
   --orange:#f68e56;
   --blue:#0272bc;
-  --dark-color:#212228;
+  --darkblue:rgb(16,56,92) ;
 }
 
 .sub-title {
