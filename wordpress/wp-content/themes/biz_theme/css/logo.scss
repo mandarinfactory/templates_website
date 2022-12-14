@@ -1,5 +1,4 @@
 @import 'mixin';
-
 h1 {
     position: fixed;
     z-index: 15;
@@ -12,6 +11,13 @@ h1 {
         top: 25px;
     }//h1 sm
     a {
+        &:hover {
+            figure {
+                animation-direction: reverse !important;
+                animation-iteration-count: 1 !important;
+                animation-duration: 1.5s !important;
+            }
+        }
         div.logo {
             perspective: 500px;
             width: 50px;
@@ -21,7 +27,8 @@ h1 {
                 height: inherit;
                 position: relative;
                 transform-style: preserve-3d;
-                transform: rotate(-45deg);
+                transform: rotateX(315deg) rotateY(0deg) rotateZ(225deg);
+                animation: rotateCube 30s linear infinite;
                 img {
                     width: inherit;
                     height: inherit;
@@ -34,10 +41,10 @@ h1 {
                         transform: rotateY(180deg) translateZ(25px);
                     }
                     &.left {
-                        transform: rotateY(90deg) translateZ(25px);
+                        transform: rotateX(-90deg) translateZ(25px);
                     }
                     &.right {
-                        transform: rotateY(-90deg) translateZ(25px);
+                        transform: rotateX(90deg) translateZ(25px);
                     }
                     &.top {
                         transform: rotateY(90deg) translateZ(25px);
@@ -50,3 +57,11 @@ h1 {
         }//logo
     }//a
 }//h1
+@keyframes rotateCube {
+    0% {
+        transform: rotateX(315deg) rotateY(0deg) rotateZ(225deg);
+    }
+    100% {
+        transform: rotateX(-45deg) rotateY(360deg) rotateZ(-135deg);
+    }
+}
