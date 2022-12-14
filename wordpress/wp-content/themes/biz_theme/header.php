@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/mixin.css">
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/header.css">
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/logo.css">
+  <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/menu_btn.css">
   <script src="https://kit.fontawesome.com/7d1f9ca95d.js" crossorigin="anonymous"></script>
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/common.js"></script>
@@ -39,5 +40,10 @@
     </a>
   </h1>
   <header>
-    header
+    <button class="menu_btn">
+      <i class="bar1"></i>
+      <i class="bar2"></i>
+      <i class="bar3"></i>
+      <b>menu</b>
+    </button>
   </header>

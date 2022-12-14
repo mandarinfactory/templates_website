@@ -1,0 +1,30 @@
+.menu_btn {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: crimson;
+}
+@media screen and (min-width: 1100px) {
+  .menu_btn {
+    top: 50px;
+    left: 18px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .menu_btn {
+    position: absolute;
+    right: 5%;
+    top: 5px;
+    mix-blend-mode: difference;
+  }
+}
+.menu_btn b {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  color: black;
+  font-size: 0.85em;
+  font-weight: 700;
+  text-transform: uppercase;
+}/*# sourceMappingURL=menu_btn.css.map */
