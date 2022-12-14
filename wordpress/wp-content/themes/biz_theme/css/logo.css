@@ -1,9 +1,14 @@
 @charset "UTF-8";
+body {
+  background-color: white;
+}
+
 h1 {
   position: fixed;
   z-index: 15;
   left: 5%;
   height: 50px;
+  transition: filter 1s;
 }
 @media screen and (min-width: 1000px) {
   h1 {
@@ -15,17 +20,21 @@ h1 {
     top: 25px;
   }
 }
-h1 a:hover figure {
+h1:hover {
+  filter: brightness(0) invert(1);
+  mix-blend-mode: difference;
+}
+h1:hover figure {
   animation-direction: reverse !important;
   animation-iteration-count: 1 !important;
   animation-duration: 1.5s !important;
 }
-h1 a div.logo {
+h1 div.logo {
   perspective: 500px;
   width: 50px;
   height: 50px;
 }
-h1 a div.logo figure {
+h1 div.logo figure {
   width: inherit; /* 100%로 해도 무방하다! */
   height: inherit;
   position: relative;
@@ -33,29 +42,39 @@ h1 a div.logo figure {
   transform: rotateX(315deg) rotateY(0deg) rotateZ(225deg);
   animation: rotateCube 30s linear infinite;
 }
-h1 a div.logo figure img {
+h1 div.logo figure img {
   width: inherit;
   height: inherit;
   position: absolute;
   backface-visibility: hidden;
 }
-h1 a div.logo figure img.front {
+h1 div.logo figure img.front {
   transform: translateZ(25px);
 }
-h1 a div.logo figure img.back {
+h1 div.logo figure img.back {
   transform: rotateY(180deg) translateZ(25px);
 }
-h1 a div.logo figure img.left {
+h1 div.logo figure img.left {
   transform: rotateX(-90deg) translateZ(25px);
 }
-h1 a div.logo figure img.right {
+h1 div.logo figure img.right {
   transform: rotateX(90deg) translateZ(25px);
 }
-h1 a div.logo figure img.top {
+h1 div.logo figure img.top {
   transform: rotateY(90deg) translateZ(25px);
 }
-h1 a div.logo figure img.bottom {
+h1 div.logo figure img.bottom {
   transform: rotateY(-90deg) translateZ(25px);
+}
+h1 a {
+  display: flex;
+  align-items: flex-end;
+}
+h1 a div.logo b {
+  margin-left: 20px;
+  font-style: italic;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 @keyframes rotateCube {

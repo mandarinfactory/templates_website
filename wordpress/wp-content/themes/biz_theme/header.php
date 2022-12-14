@@ -33,8 +33,8 @@
           <img class="top" src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/img/img/icon&logo/logo-top-bottom.png" alt>
           <img class="bottom" src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/img/img/icon&logo/logo-top-bottom.png" alt>
         </figure>
+        <b>Website_Logo</b>
       </div>
-      <b>Website_Logo</b>
     </a>
   </h1>
   <header>

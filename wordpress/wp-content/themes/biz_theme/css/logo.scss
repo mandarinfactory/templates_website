@@ -1,67 +1,84 @@
 @import 'mixin';
-h1 {
-    position: fixed;
-    z-index: 15;
-    left: 5%;
-    height: 50px;
-    @media screen and (min-width:1000px){
-        top: 65px;
-    }//h1 lg
-    @media screen and (max-width:1000px){
-        top: 25px;
-    }//h1 sm
-    a {
-        &:hover {
-            figure {
-                animation-direction: reverse !important;
-                animation-iteration-count: 1 !important;
-                animation-duration: 1.5s !important;
-            }
-        }
-        div.logo {
-            perspective: 500px;
-            width: 50px;
-            height: 50px;
-            figure {
-                width: inherit;/* 100%로 해도 무방하다! */
-                height: inherit;
-                position: relative;
-                transform-style: preserve-3d;
-                transform: rotateX(315deg) rotateY(0deg) rotateZ(225deg);
-                animation: rotateCube 30s linear infinite;
-                img {
-                    width: inherit;
-                    height: inherit;
-                    position: absolute;
-                    backface-visibility: hidden;
-                    &.front {
-                        transform: translateZ(25px);
-                    }
-                    &.back {
-                        transform: rotateY(180deg) translateZ(25px);
-                    }
-                    &.left {
-                        transform: rotateX(-90deg) translateZ(25px);
-                    }
-                    &.right {
-                        transform: rotateX(90deg) translateZ(25px);
-                    }
-                    &.top {
-                        transform: rotateY(90deg) translateZ(25px);
-                    }
-                    &.bottom {
-                        transform: rotateY(-90deg) translateZ(25px);
-                    }
-                }//img
-            }//figure
-        }//logo
-    }//a
+body{
+  background: #FFF;
+}
+h1{
+  position: fixed;
+  z-index: 11;
+  left:5%;
+  height: 50px;
+  border:1px solid red;
+  transition: filter 1s;
+  @media screen and (min-width:1000px){
+    top: 65px;
+  }//h1 lg
+  @media screen and (max-width:1000px){
+    top : 25px;
+  }//h1 sm
+  &:hover{
+    filter: brightness(0) invert(1);
+    mix-blend-mode: difference;
+    figure{
+      animation-direction: reverse !important;   
+      animation-iteration-count: 1 !important;
+      animation-duration: 1.5s !important;
+    }//figure
+  }//a:hover
+  a{ 
+    display: flex;
+    align-items: flex-end;
+    div.logo{
+      perspective: 500px;
+      width:50px;
+      height: 50px;
+      figure{
+        position: relative;
+        width: inherit;
+        height: inherit;
+        transform-style: preserve-3d;
+        transform: rotateX(-135deg) rotateY(-45deg) rotateZ(-90deg);  
+        animation : rotate 20s linear infinite;
+        transition: all 1s;
+        img{
+          position: absolute;
+          width: inherit;
+          height: inherit;
+          backface-visibility: hidden;
+          &.front{
+             transform: translateZ(25px); 
+          }  
+          &.back{ 
+            transform: rotateY(180deg) translateZ(25px);
+          }
+          &.left{
+            transform: rotateY(90deg) translateZ(25px);
+          }  
+          &.right{
+            transform: rotateY(-90deg) translateZ(25px);
+          }  
+          &.top{
+            transform: rotateX(90deg) translateZ(25px);
+          }  
+          &.bottom{
+            transform: rotateX(-90deg) translateZ(25px);
+          }  
+        }//img
+      }//figure
+    }//logo 
+    b{
+      margin-left: 20px;
+      font-style: italic;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 10em;
+    }//b   
+  }//a
 }//h1
-@keyframes rotateCube {
-    0% {
-        transform: rotateX(315deg) rotateY(0deg) rotateZ(225deg);
-    }
-    100% {
-        transform: rotateX(-45deg) rotateY(360deg) rotateZ(-135deg);
-    }
+@keyframes rotate{
+  0%{
+    transform: rotateX(-135deg) rotateY(-45deg) rotateZ(-90deg);  
+  }
+  100%{
+    transform: rotateX(225deg) rotateY(315deg) rotateZ(275deg);  
+  }
 }
