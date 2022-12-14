@@ -23,6 +23,7 @@
 
 <body <?php body_class(); ?>>
   <h1>
+    <span class="hidden">logo</span>
     <a href="<?php bloginfo('url'); ?>">
       <div class="logo">
         <figure class="cube">
