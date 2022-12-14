@@ -17,12 +17,44 @@
         height: calc(100% - 70px);
     }//sm
     > div {
+        width: 80%;
+        max-width: 300px;
+        padding: 20px;
+        box-sizing: border-box;
+        border: 7px solid rgba(#FFF, 0.1);
+        box-shadow: 0 0 30px rgba(#FFF, 0.1);
         > ul {
             > li {
                 > a {
+                    display: block;
+                    font-size: 2em;
+                    color: white;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    i {
+                        font-size: 0.9em;
+                        margin-right: 10px;
+                    }
                     span.kr {
                         display: none;
                     }
+                    &::after {
+                        display: inline-block;
+                        font-style: normal;
+                        font-variant: normal;
+                        text-rendering: auto;
+                        -webkit-font-smoothing: antialiased;
+                        font-family: "Font Awesome 5 Free"; 
+                        font-weight: 900; 
+                        content: "\2b";
+                        margin-left: 15px;
+                      }
+                      &.active:after {
+                        content: '\f068';
+                      }
                 }//1dep a
                 > ul {
                     > li {
