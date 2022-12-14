@@ -1,5 +1,53 @@
+@charset "UTF-8";
 h1 {
   position: fixed;
   z-index: 15;
+  left: 5%;
   height: 50px;
+}
+@media screen and (min-width: 1000px) {
+  h1 {
+    top: 65px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  h1 {
+    top: 25px;
+  }
+}
+h1 a div.logo {
+  perspective: 500px;
+  width: 50px;
+  height: 50px;
+}
+h1 a div.logo figure {
+  width: inherit; /* 100%로 해도 무방하다! */
+  height: inherit;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotate(-45deg);
+}
+h1 a div.logo figure img {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  backface-visibility: hidden;
+}
+h1 a div.logo figure img.front {
+  transform: translateZ(25px);
+}
+h1 a div.logo figure img.back {
+  transform: rotateY(180deg) translateZ(25px);
+}
+h1 a div.logo figure img.left {
+  transform: rotateY(90deg) translateZ(25px);
+}
+h1 a div.logo figure img.right {
+  transform: rotateY(-90deg) translateZ(25px);
+}
+h1 a div.logo figure img.top {
+  transform: rotateY(90deg) translateZ(25px);
+}
+h1 a div.logo figure img.bottom {
+  transform: rotateY(-90deg) translateZ(25px);
 }/*# sourceMappingURL=logo.css.map */
