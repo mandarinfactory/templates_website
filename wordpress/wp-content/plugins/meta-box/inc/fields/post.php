@@ -96,12 +96,14 @@ class RWMB_Post_Field extends RWMB_Object_Choice_Field {
 		return $field;
 	}
 
-	protected static function query( $meta, array $field ) : array {
+	public static function query( $meta, array $field ) : array {
 		$args = wp_parse_args( $field['query_args'], [
 			'no_found_rows'          => true,
 			'update_post_meta_cache' => false,
 			'update_post_term_cache' => false,
 		] );
+
+		$meta = wp_parse_id_list( (array) $meta );
 
 		// Query only selected items.
 		if ( ! empty( $field['ajax'] ) && ! empty( $meta ) ) {

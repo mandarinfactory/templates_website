@@ -106,12 +106,14 @@ class RWMB_Taxonomy_Field extends RWMB_Object_Choice_Field {
 		return $field;
 	}
 
-	protected static function query( $meta, array $field ) : array {
+	public static function query( $meta, array $field ) : array {
 		$args = wp_parse_args( $field['query_args'], [
 			'hide_empty'             => false,
 			'count'                  => false,
 			'update_term_meta_cache' => false,
 		] );
+
+		$meta = wp_parse_id_list( (array) $meta );
 
 		// Query only selected items.
 		if ( ! empty( $field['ajax'] ) && ! empty( $meta ) ) {
@@ -149,7 +151,7 @@ class RWMB_Taxonomy_Field extends RWMB_Object_Choice_Field {
 	public static function value( $new, $old, $post_id, $field ) {
 		$new   = (array) $new;
 		$new[] = self::add_term( $field );
-		$new   = array_unique( array_map( 'intval', array_filter( $new ) ) );
+		$new   = array_filter( wp_parse_id_list( $new ) );
 
 		return $new;
 	}

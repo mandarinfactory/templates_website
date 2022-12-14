@@ -7,7 +7,7 @@
 class RWMB_Loader {
 	protected function constants() {
 		// Script version, used to add version for scripts and styles.
-		define( 'RWMB_VER', '5.6.13' );
+		define( 'RWMB_VER', '5.6.14' );
 
 		list( $path, $url ) = self::get_path( dirname( __DIR__ ) );
 
@@ -59,6 +59,9 @@ class RWMB_Loader {
 	public function init() {
 		$this->constants();
 
+		// PSR-4 autoload.
+		require dirname( __DIR__ ) . '/vendor/autoload.php';
+
 		// Register autoload for classes.
 		require_once RWMB_INC_DIR . 'autoloader.php';
 		$autoloader = new RWMB_Autoloader();
@@ -94,12 +97,12 @@ class RWMB_Loader {
 		$wpml->init();
 
 		// Update.
-		$update_option  = new RWMB_Update_Option();
-		$update_checker = new RWMB_Update_Checker( $update_option );
+		$update_option  = new \MetaBox\Updater\Option();
+		$update_checker = new \MetaBox\Updater\Checker( $update_option );
 		$update_checker->init();
-		$update_settings = new RWMB_Update_Settings( $update_checker, $update_option );
+		$update_settings = new \MetaBox\Updater\Settings( $update_checker, $update_option );
 		$update_settings->init();
-		$update_notification = new RWMB_Update_Notification( $update_checker, $update_option );
+		$update_notification = new \MetaBox\Updater\Notification( $update_checker, $update_option );
 		$update_notification->init();
 
 		if ( is_admin() ) {
