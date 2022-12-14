@@ -14,12 +14,17 @@
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/reset.css">
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/style.css">
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/mixin.css">
+  <!-- root_CSS -->
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/header.css">
+  <!-- layout_CSS -->
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/logo.css">
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/menu_btn.css">
+  <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/gnb.css">
+  <!-- etc(mark,button,logo)_CSS -->
   <script src="https://kit.fontawesome.com/7d1f9ca95d.js" crossorigin="anonymous"></script>
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/common.js"></script>
+  <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/header.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -47,3 +52,6 @@
       <b>menu</b>
     </button>
   </header>
+  <nav class="gnb">
+    <?php wp_nav_menu(array('theme_location' => 'menu')); ?>
+  </nav>

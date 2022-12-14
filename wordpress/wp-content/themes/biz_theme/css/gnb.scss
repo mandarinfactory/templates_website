@@ -1,0 +1,37 @@
+@import 'mixin';
+.gnb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 9;
+    background-color: black;
+    @media screen and (min-width:1100px){
+        right: 95px;
+        width: calc(100% - 95px);
+        height: 100%;
+    }//lg
+    @media screen and (max-width:1100px){
+        top: 70px;
+        width: 100%;
+        height: calc(100% - 70px);
+    }//sm
+    > div {
+        > ul {
+            > li {
+                > a {
+                    span.kr {
+                        display: none;
+                    }
+                }//1dep a
+                > ul {
+                    > li {
+                        > a {
+
+                        }//2dep a
+                    }//2dep li
+                }//2dep ul
+            }//1dep li
+        }//1dep ul
+    }//div
+}//gnb
