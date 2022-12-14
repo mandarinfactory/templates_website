@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .gnb {
   display: flex;
   align-items: center;
@@ -23,18 +24,20 @@
 .gnb > div {
   width: 80%;
   max-width: 300px;
-  padding: 20px;
+  padding: 25px;
   box-sizing: border-box;
   border: 7px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
 }
 .gnb > div > ul > li > a {
   display: block;
-  font-size: 2em;
+  font-size: 1.3em;
   color: white;
   font-weight: 900;
   text-transform: uppercase;
+  padding: 10px 0;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: flex-start;
 }
@@ -46,6 +49,7 @@
   display: none;
 }
 .gnb > div > ul > li > a::after {
+  content: "+";
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -53,9 +57,25 @@
   -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  content: "+";
-  margin-left: 15px;
+  margin-left: auto;
 }
 .gnb > div > ul > li > a.active:after {
   content: "\f068";
+  float: right;
+  font-size: 0.8em;
+}
+.gnb > div > ul > li > ul {
+  display: none;
+  padding-bottom: 2px;
+}
+.gnb > div > ul > li > ul > li > a {
+  display: block;
+  padding: 7px 20px;
+  color: rgb(206, 204, 204);
+  font-size: 1.1em;
+  font-weight: 650;
+}
+.gnb > div > ul > li > ul > li > a::before {
+  content: "· ";
+  color: rgb(206, 204, 204);
 }/*# sourceMappingURL=gnb.css.map */
