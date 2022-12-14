@@ -6,6 +6,19 @@
     position: fixed;
     z-index: 9;
     background-color: black;
+    -webkit-mask-image: url(../img/img/icon&logo/gnb-mask-left.png),url(../img/img/icon&logo/gnb-mask-right.png);
+    -webkit-mask-size: 0% 100%,0% 100%;
+    -webkit-mask-position: left 0, right 0;
+    -webkit-mask-repeat: no-repeat;
+    mask-image: url(../img/img/icon&logo/gnb-mask-left.png),url(../img/img/icon&logo/gnb-mask-right.png);
+    mask-size: 0% 100%,0% 100%;
+    mask-position: left 0, right 0;
+    mask-repeat: no-repeat;
+    transition: all 1s;
+    &.active {
+        -webkit-mask-size: 100% 100%,100% 100%;
+        mask-size: 100% 100%,100% 100%;
+    }
     @media screen and (min-width:1100px){
         right: 95px;
         width: calc(100% - 95px);
@@ -16,7 +29,37 @@
         width: 100%;
         height: calc(100% - 70px);
     }//sm
+    svg {
+        position: absolute;
+        width: 95%;
+        max-width: 700px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.03;
+        path {
+            fill: none;
+            stroke: white;
+            stroke-width: 5px;
+            stroke-dashoffset: 1;
+            stroke-dasharray: 1;
+            animation: drawRect 10s linear infinite;
+            &.rect {
+                stroke: none;
+                fill: rgba(#FFF, 0);
+            }//rect
+        }//path
+        @keyframes drawRect {
+            0% {
+                stroke-dashoffset: 1;       
+            }
+            100% {
+                stroke-dashoffset: -1;
+            }
+        }//drawRect_keyframes
+    }//svg
     > div {
+        position: relative;
         width: 80%;
         max-width: 300px;
         padding: 25px;

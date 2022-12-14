@@ -2,6 +2,9 @@ $(function () {
     /* menu_btn ------------------------------------------------- */
     $('.menu_btn').click(function () {
         $(this).addClass('active')
+        $('.gnb').toggleClass('active')
+        $('.gnb > div > ul > li > ul').stop().slideUp()
+        $('.gnb > div > ul > li > a').removeClass('active')
 
     })//click
     /* gnb_1dep ------------------------------------------------- */
