@@ -17,7 +17,6 @@
   var scrollSpeed = 0
 
   window.addEventListener('mousewheel',function (e) {
-    alert();
       e.preventDefault();/* browser에서 자동적으로 되는것들을 방지한다.(새로고침등) */
       delta = e.wheelDeltaY / -12;
       scrollSpeed += 15 * delta;

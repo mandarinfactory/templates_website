@@ -1,1 +1,181 @@
 /*# sourceMappingURL=style.css.map */
+* {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: inherit;
+}
+
+html {
+  margin-top: 0 !important;
+}
+
+#wpadminbar {
+  display: none;
+}
+
+body {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  color: #444;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.serif {
+  font-family: "Nanum Myeongjo", serif;
+}
+
+:root {
+  --orange:#f68e56;
+  --blue:#0272bc;
+  --dark-color:#212228;
+}
+
+.sub-title {
+  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  font-size: 1.5em;
+  font-weight: 900;
+  color: var(--sub-color);
+  border-bottom: 1px solid var(--sub-color);
+}
+
+.sub-title::before {
+  content: "";
+  margin-right: 10px;
+  display: inline-block;
+  width: 3px;
+  height: 20px;
+  vertical-align: middle;
+  background: rgb(51, 180, 255);
+}
+
+.sub-title::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  left: -1px;
+  top: 5px;
+  background: var(--main-color);
+}
+
+.em {
+  font-size: 1.15em;
+  font-weight: 600;
+}
+
+.point {
+  color: var(--main-color);
+}
+
+/* -------------------- */
+.form-btn {
+  padding: 5px 25px;
+  transition: all 0.3s;
+  color: #FFF;
+}
+
+.btn-style1 {
+  color: #FFF;
+  background: var(--sub-color);
+}
+
+.btn-style1:hover {
+  background: var(--main-color);
+}
+
+.btn-style2 {
+  color: #FFF;
+  background: #666;
+}
+
+.btn-style2:hover {
+  background: var(--dark-color);
+}
+
+/* -------------------- */
+table.board {
+  width: 100%;
+}
+
+table.board td,
+table.board th {
+  text-align: center;
+  padding: 7px;
+  border-bottom: 1px solid #CCC;
+}
+
+table.board th {
+  background: var(--dark-color);
+  color: #FFF;
+}
+
+table.board td:nth-child(2) {
+  text-align: left;
+  width: 50%;
+}
+
+table.board tr:nth-child(even) {
+  background: #EEE;
+}
+
+table.board a:hover {
+  color: var(--main-color);
+}
+
+@media screen and (max-width: 800px) {
+  table.board,
+table.board > * {
+    display: block;
+  }
+  table.board tr {
+    width: 100%;
+    display: flex;
+  }
+  table.board tr > * {
+    display: block;
+  }
+  table.board tr > *:nth-child(1) {
+    width: 40px;
+  }
+  table.board tr > *:nth-child(2) {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  table.board tr > *:nth-child(4) {
+    width: 80px;
+  }
+  table.board td:nth-child(3),
+table.board th:nth-child(3),
+table.board td:nth-child(5),
+table.board th:nth-child(5) {
+    display: none;
+  }
+} /* sm */
+/* -------------------- */
+form.serch-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  border-top: 1px solid #CCC;
+}
+
+form.serch-form > * {
+  padding: 5px 15px;
+  margin: 10px 5px;
+}
+
+@media screen and (max-width: 600px) {
+  form.serch-form > * {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
