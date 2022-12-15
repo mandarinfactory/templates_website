@@ -56,6 +56,7 @@
       <i class="bar3"></i>
       <b>menu</b>
     </button>
+    <?php include "lang_menu.php" ?>
   </header>
   <nav class="gnb">
     <?php include "img/img/icon&logo/logo.php" ?>

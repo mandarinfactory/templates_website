@@ -1,1 +1,19 @@
 @import 'mixin';
+
+.lang {
+    width: 50px;
+    height: 150px;
+    position: absolute;
+    background-color: firebrick;
+    bottom: 10px;
+    left: 50%;
+}//.lang
+header .lang {
+    transform: translateX(-50%);
+    @media screen and (max-width:1100px){
+        display: none;
+    }
+}//header .lang
+.gnb .lang {
+    transform: translateX(-50%) rotate(-90deg);
+}//.gnb .lang

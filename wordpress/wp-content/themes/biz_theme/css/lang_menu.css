@@ -1,1 +1,21 @@
-/*# sourceMappingURL=lang_menu.css.map */
+.lang {
+  width: 50px;
+  height: 150px;
+  position: absolute;
+  background-color: firebrick;
+  bottom: 10px;
+  left: 50%;
+}
+
+header .lang {
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 1100px) {
+  header .lang {
+    display: none;
+  }
+}
+
+.gnb .lang {
+  transform: translateX(-50%) rotate(-90deg);
+}/*# sourceMappingURL=lang_menu.css.map */
