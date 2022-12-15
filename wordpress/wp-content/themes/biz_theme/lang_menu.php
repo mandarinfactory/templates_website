@@ -1,11 +1,10 @@
 <script>
     $(function() {
         $('.lang button').click(function() {
-            var n = $(this).val()
-            $('.lang').removeClass('.lang .active1 active2 active3')
-            $('.lang').addClass(`active${n}`)
-        })
-    })
+            var n = $(this).val();
+            $('.lang').removeClass('active1 active2 active3').addClass('active' + n);
+        })//click_event
+    })//document.ready
 </script>
 <nav class="lang active1 title=" 해당 UI는 디자인설계까지만 구현되어있습니다.">
     <button value="1">KR</button>
