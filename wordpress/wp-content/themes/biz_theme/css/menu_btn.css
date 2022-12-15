@@ -7,7 +7,7 @@
 }
 @media screen and (min-width: 1100px) {
   .menu_btn {
-    top: 30px;
+    top: 10px;
     left: 30px;
   }
   .menu_btn i {
