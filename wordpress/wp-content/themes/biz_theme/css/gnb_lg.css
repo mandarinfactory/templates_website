@@ -5,7 +5,26 @@
   transform: translate(-50%, -50%);
 }
 .gnb_lg > div > ul > li > a {
+  display: flex;
+  /*   flex-direction: column; */
+  position: relative;
+  width: 40px;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  background-color: lightgray;
+}
+.gnb_lg > div > ul > li > a i {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  transform: rotate(90deg);
+}
+.gnb_lg > div > ul > li > a span {
   writing-mode: vertical-lr;
+}
+.gnb_lg > div > ul > li > a span.kr {
+  text-orientation: sideways;
 }
 .gnb_lg div > ul > li > ul {
   display: none;

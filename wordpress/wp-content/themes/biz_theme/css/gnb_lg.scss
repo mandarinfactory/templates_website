@@ -8,7 +8,29 @@
         > ul {
             > li {
                 > a {
-                  writing-mode: vertical-lr;
+                    display: flex;
+                  /*   flex-direction: column; */
+                    position: relative;
+                    width: 40px;
+                    text-align: center;
+                    padding-top: 30px;
+                    padding-bottom: 15px;
+                    background-color: lightgray;
+                    i {
+                        position: absolute;
+                        top: 10px;
+                        left: 15px;
+                        transform: rotate(90deg);
+                    }//i
+                    span{
+                        writing-mode: vertical-lr;
+                        &.en {
+
+                        }//span.en
+                        &.kr {
+                            text-orientation: sideways;
+                        }//span.kr
+                    }//span
                 }//a
             }//li
         }//ul
