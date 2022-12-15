@@ -1,3 +1,15 @@
+.gnb_lg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.gnb_lg > div > ul > li > a {
+  writing-mode: vertical-lr;
+}
+.gnb_lg div > ul > li > ul {
+  display: none;
+}
 @media screen and (max-width: 1100px) {
   .gnb_lg {
     display: none;
