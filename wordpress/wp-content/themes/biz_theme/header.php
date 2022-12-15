@@ -60,4 +60,5 @@
   <nav class="gnb">
     <?php include "img/img/icon&logo/logo.php" ?>
     <?php wp_nav_menu(array('theme_location' => 'menu')); ?>
+    <?php include "lang_menu.php" ?>
   </nav>
