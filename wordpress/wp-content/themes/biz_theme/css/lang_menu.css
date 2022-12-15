@@ -1,10 +1,48 @@
 .lang {
+  position: absolute;
   width: 50px;
   height: 150px;
-  position: absolute;
-  background-color: firebrick;
   bottom: 10px;
   left: 50%;
+  border-radius: 50px;
+  overflow: hidden;
+  border: 3px solid black;
+  background-color: white;
+}
+.lang button {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  font-weight: 700;
+  color: black;
+}
+.lang::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: firebrick;
+  transform: scale(0.95);
+  transition: all 0.3s;
+}
+.lang.active1 button:nth-child(1) {
+  color: white;
+}
+.lang.active1::before {
+  top: 0;
+}
+.lang.active2 button:nth-child(2) {
+  color: white;
+}
+.lang.active2::before {
+  top: 33.334;
+}
+.lang.active3 button:nth-child(3) {
+  color: white;
+}
+.lang.active3::before {
+  top: 66.667;
 }
 
 header .lang {
@@ -18,4 +56,7 @@ header .lang {
 
 .gnb .lang {
   transform: translateX(-50%) rotate(-90deg);
+}
+.gnb .lang button {
+  transform: rotate(90deg);
 }/*# sourceMappingURL=lang_menu.css.map */
