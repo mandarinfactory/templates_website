@@ -1,0 +1,6 @@
+@import 'mixin';
+.gnb_lg {
+    @media screen and (max-width:1100px){
+        display: none;
+    }//sm
+}//gnb
