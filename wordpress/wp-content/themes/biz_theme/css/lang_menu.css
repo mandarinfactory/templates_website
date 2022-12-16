@@ -36,13 +36,13 @@
   color: white;
 }
 .lang.active2::before {
-  top: 33.334;
+  top: 48px;
 }
 .lang.active3 button:nth-child(3) {
   color: white;
 }
 .lang.active3::before {
-  top: 66.667;
+  top: 99px;
 }
 
 header .lang {
@@ -55,7 +55,7 @@ header .lang {
 }
 
 .gnb .lang {
-  transform: translateX(-50%) rotate(-90deg);
+  transform: translateX(-50%) translateY(40%) rotate(-90deg);
 }
 .gnb .lang button {
   transform: rotate(90deg);
