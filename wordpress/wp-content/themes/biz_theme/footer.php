@@ -18,7 +18,7 @@
       </address>
     </div>
     <nav class="sitemap">
-
+      <?php wp_nav_menu(array('theme_location' => 'menu')); ?>
     </nav>
   </div><!-- footer_top -->
   <div class="footer_bottom">

@@ -22,14 +22,35 @@ footer {
         padding: 30px;
         box-sizing: border-box;
         background-color: rgb(31, 31, 31);
+        @media screen and (min-width:1200px){
+            display: flex;
+            justify-content: space-between;
+        }//lg
+        @media screen and (max-width:1200px){
+            text-align: center;
+        }//sm
         .company {
             h6 {
                 @include logo;
                 margin-bottom: 20px;
                 transform: scale(0.7);
                 filter: brightness(0) invert(1);
+                @media screen and (max-width:1200px){
+                    display: inline-block;
+                   transform-origin: center;
+                }//sm
             }//h6
             address {
+                @media screen and (max-width:1200px){
+                    max-width: 500px;
+                    width: 100%;
+                    margin: 0 auto;
+                    margin-bottom: 20px;
+                    padding: 15px 0;
+                    border: 1px dotted #666;
+                    border-left: 0;
+                    border-right: 0;
+                }//sm
                 p:first-child {
                     margin-bottom: 15px;
                 }
@@ -45,6 +66,44 @@ footer {
                 }//p
             }//address
         }//company
+        .sitemap {
+            > div {
+                > ul {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    > li {
+                        text-align: center;
+                        a:hover {
+                            color: var(--blue);
+                        }
+                        > a {
+                            i {
+                                margin-right: 5px;
+                                margin-bottom: 10px;
+                            }
+                            .kr {
+                                display: none;
+                                }
+                                display: block;
+                                padding: 0 15px;
+                                text-transform: uppercase;
+                                font-weight: 600;
+                            }//1dep a
+                            > ul {
+                                @media screen and (max-width:1200px){
+                                    display: none;
+                                }
+                                > li {
+                                    > a {
+                                        
+                                    }//2dep a
+                                }//2dep li
+                            }//2dep ul
+                    }//1dep li
+                }//1dep ul
+            }//div
+        }//sitemap
     }//footer_top
     .footer_bottom {
         position: relative;

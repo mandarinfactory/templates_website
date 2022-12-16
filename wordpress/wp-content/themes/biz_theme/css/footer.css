@@ -27,6 +27,17 @@ footer .footer_top {
   box-sizing: border-box;
   background-color: rgb(31, 31, 31);
 }
+@media screen and (min-width: 1200px) {
+  footer .footer_top {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 1200px) {
+  footer .footer_top {
+    text-align: center;
+  }
+}
 footer .footer_top .company h6 {
   transition: filter 1s;
   transform-origin: left top;
@@ -89,6 +100,24 @@ footer .footer_top .company h6 a .logo_type {
   margin-left: 20px;
   width: 150px;
 }
+@media screen and (max-width: 1200px) {
+  footer .footer_top .company h6 {
+    display: inline-block;
+    transform-origin: center;
+  }
+}
+@media screen and (max-width: 1200px) {
+  footer .footer_top .company address {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 15px 0;
+    border: 1px dotted #666;
+    border-left: 0;
+    border-right: 0;
+  }
+}
 footer .footer_top .company address p:first-child {
   margin-bottom: 15px;
 }
@@ -101,6 +130,35 @@ footer .footer_top .company address p a {
 }
 footer .footer_top .company address p a:hover {
   text-decoration: underline;
+}
+footer .footer_top .sitemap > div > ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+footer .footer_top .sitemap > div > ul > li {
+  text-align: center;
+}
+footer .footer_top .sitemap > div > ul > li a:hover {
+  color: var(--blue);
+}
+footer .footer_top .sitemap > div > ul > li > a {
+  display: block;
+  padding: 0 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+footer .footer_top .sitemap > div > ul > li > a i {
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+footer .footer_top .sitemap > div > ul > li > a .kr {
+  display: none;
+}
+@media screen and (max-width: 1200px) {
+  footer .footer_top .sitemap > div > ul > li > ul {
+    display: none;
+  }
 }
 footer .footer_bottom {
   position: relative;
