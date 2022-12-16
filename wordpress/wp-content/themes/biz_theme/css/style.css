@@ -35,6 +35,11 @@ body {
     padding-top: 70px;
   }
 }
+body .body_wrap {
+  position: relative;
+  z-index: 1;
+  background-color: aquamarine;
+}
 
 .serif {
   font-family: "Nanum Myeongjo", serif;

@@ -28,6 +28,7 @@
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/common.js"></script>
   <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/header.js"></script>
+  <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/footer.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
