@@ -14,7 +14,7 @@
   mask-size: 0% 100%, 0% 100%;
   mask-position: left 0, right 0;
   mask-repeat: no-repeat;
-  transition: all 1s;
+  transition: -webkit-mask-size 1s, mask-size 1s;
 }
 .gnb.active {
   -webkit-mask-size: 100% 100%, 100% 100%;
