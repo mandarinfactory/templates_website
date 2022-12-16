@@ -13,7 +13,7 @@
     <ul class="search_widget">
       <li></li>
     </ul>
-    <p class="copyright">Copyright © web-site wordpress.</p>
+    <p class="copyright">Copyright &copy; web-site wordpress.</p>
   </div>
 </footer>
 <!--site-footer -->
