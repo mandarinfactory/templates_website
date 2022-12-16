@@ -2,6 +2,8 @@ footer {
   position: fixed;
   left: 0;
   bottom: 0;
+  font-size: 0.85em;
+  color: #888;
   background-color: #272727;
 }
 @media screen and (min-width: 1100px) {
@@ -21,5 +23,137 @@ footer > div {
   padding: 30px 0;
 }
 footer .footer_top {
+  padding: 30px;
+  box-sizing: border-box;
   background-color: rgb(31, 31, 31);
+}
+footer .footer_top .company h6 {
+  transition: filter 1s;
+  transform-origin: left top;
+  margin-bottom: 20px;
+  transform: scale(0.7);
+  filter: brightness(0) invert(1);
+}
+footer .footer_top .company h6:hover {
+  filter: brightness(0) invert(1);
+  mix-blend-mode: difference;
+}
+footer .footer_top .company h6:hover figure {
+  animation-direction: reverse !important;
+  animation-iteration-count: 1 !important;
+  animation-duration: 1.5s !important;
+}
+footer .footer_top .company h6 a {
+  display: flex;
+  align-items: flex-end;
+}
+footer .footer_top .company h6 a div.logo {
+  perspective: 500px;
+  width: 50px;
+  height: 50px;
+}
+footer .footer_top .company h6 a div.logo figure {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  transform-style: preserve-3d;
+  transform: rotateX(-135deg) rotateY(-45deg) rotateZ(-90deg);
+  animation: rotate 20s linear infinite;
+  transition: all 1s;
+}
+footer .footer_top .company h6 a div.logo figure img {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  backface-visibility: hidden;
+}
+footer .footer_top .company h6 a div.logo figure img.front {
+  transform: translateZ(25px);
+}
+footer .footer_top .company h6 a div.logo figure img.back {
+  transform: rotateY(180deg) translateZ(25px);
+}
+footer .footer_top .company h6 a div.logo figure img.left {
+  transform: rotateY(90deg) translateZ(25px);
+}
+footer .footer_top .company h6 a div.logo figure img.right {
+  transform: rotateY(-90deg) translateZ(25px);
+}
+footer .footer_top .company h6 a div.logo figure img.top {
+  transform: rotateX(90deg) translateZ(25px);
+}
+footer .footer_top .company h6 a div.logo figure img.bottom {
+  transform: rotateX(-90deg) translateZ(25px);
+}
+footer .footer_top .company h6 a .logo_type {
+  margin-left: 20px;
+  width: 150px;
+}
+footer .footer_top .company address p:first-child {
+  margin-bottom: 15px;
+}
+footer .footer_top .company address p {
+  font-weight: 600;
+  margin-top: 7px;
+}
+footer .footer_top .company address p a {
+  color: var(--orange);
+}
+footer .footer_top .company address p a:hover {
+  text-decoration: underline;
+}
+footer .footer_bottom {
+  position: relative;
+}
+@media screen and (min-width: 1100px) {
+  footer .footer_bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+  footer .footer_bottom .search_widget {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    max-width: 300px;
+    transform: translate(-50%, -50%);
+  }
+}
+@media screen and (max-width: 1100px) {
+  footer .footer_bottom {
+    text-align: center;
+  }
+  footer .footer_bottom .search_widget {
+    margin: 10px auto !important;
+  }
+}
+footer .footer_bottom .search_widget div {
+  height: 35px;
+  border: none;
+}
+footer .footer_bottom .search_widget div input {
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
+}
+footer .footer_bottom .search_widget div input:focus {
+  background-color: white;
+}
+footer .footer_bottom .search_widget div button {
+  background-color: #272727;
+  transition: all 0.3s;
+  border: 0;
+}
+footer .footer_bottom .search_widget div button :hover {
+  color: var(--orange);
+}
+footer .footer_bottom nav.terms a:hover {
+  color: white;
+}
+footer .footer_bottom nav.terms a:first-child::after {
+  content: "|";
+  margin: 0 7px;
+}
+footer .footer_bottom nav.terms p {
+  font-weight: 600;
+  text-transform: uppercase;
 }/*# sourceMappingURL=footer.css.map */

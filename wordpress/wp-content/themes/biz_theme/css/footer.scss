@@ -1,11 +1,10 @@
 @import 'mixin';
-.footer_height {
-  
-}
 footer {
     position: fixed;
     left: 0;
     bottom: 0;
+    font-size: 0.85em;
+    color: #888;        
     background-color: #272727;
     @media screen and (min-width:1100px){
         width: calc(100% - 120px);
@@ -15,13 +14,93 @@ footer {
     }
     > div {
         width: 95%;
-        max-width: 1200px;
+        max-width: 1200px;  
         margin: 0 auto;
         padding: 30px 0;
     }//footer div
     .footer_top {
+        padding: 30px;
+        box-sizing: border-box;
         background-color: rgb(31, 31, 31);
-    }
+        .company {
+            h6 {
+                @include logo;
+                margin-bottom: 20px;
+                transform: scale(0.7);
+                filter: brightness(0) invert(1);
+            }//h6
+            address {
+                p:first-child {
+                    margin-bottom: 15px;
+                }
+                p {
+                    font-weight: 600;
+                    margin-top: 7px;
+                    a {
+                        color: var(--orange);
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }//a
+                }//p
+            }//address
+        }//company
+    }//footer_top
     .footer_bottom {
-    }
+        position: relative;
+        @media screen and (min-width:1100px){
+            display: flex;
+            justify-content: space-between;
+            .search_widget {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 50%;
+                max-width: 300px;
+                transform: translate(-50%, -50%);
+            }//search_widget
+        }//lg
+        @media screen and (max-width:1100px){
+            text-align: center;
+            .search_widget {
+                margin: 10px auto !important;
+            }
+        }//sm
+        .search_widget {
+            div {
+                height: 35px;
+                border: none;
+                input {
+                    background-color: rgba($color: #000000, $alpha: 0.3);
+                    transition: background-color 0.3s;
+                    &:focus {
+                        background-color: white;
+                    }
+                }
+                button{
+                    background-color: #272727;
+                    transition: all 0.3s;
+                    border: 0;
+                    :hover {
+                        color: var(--orange);    
+                    }
+                }
+            }
+        }//search_widget
+        nav.terms {
+            a {
+                &:hover {
+                    color: white;
+                }
+                &:first-child::after {
+                    content: '|';
+                    margin: 0 7px;
+            }
+        }
+        p {
+            font-weight: 600;
+            text-transform: uppercase;
+            }
+        }//nav.terms
+    }//footer_bottom
 }//footer

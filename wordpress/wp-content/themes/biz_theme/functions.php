@@ -4,8 +4,8 @@ register_nav_menus(array(
     'menu' => 'menu',
 )); // 메뉴기능추가
 register_sidebar(array(
-    'name' => __('위젯이름'),
-    'id' => 'widjet1',  // 위젯 영역의 고유한 ID
+    'name' => __('search'),
+    'id' => 'search',  // 위젯 영역의 고유한 ID
 )); // 위젯추가
 add_filter('rwmb_meta_boxes', 'your_prefix_meta_boxes');
 function your_prefix_meta_boxes($meta_boxes)

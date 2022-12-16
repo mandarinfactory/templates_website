@@ -17,6 +17,7 @@
     mask-repeat: no-repeat;
     transition: -webkit-mask-size 1s, mask-size 1s;
     &.active {
+        pointer-events: all;
         -webkit-mask-size: 100% 100%,100% 100%;
         mask-size: 100% 100%,100% 100%;
     }
