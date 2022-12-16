@@ -23,7 +23,10 @@
       <li>      
       <figure>
         <img src="./img/museum/sub_visual/${v.pic}" alt>
-        <figcaption></figcaption>
+        <figcaption>
+          작품명 : ${v.title}
+          작가 : ${v.artist}
+        </figcaption>
       </figure>
       </li>
       `) //append

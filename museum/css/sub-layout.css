@@ -97,6 +97,7 @@
   cursor: pointer;
 }
 .sub-visual .slider .col_width .img_container li figure {
+  position: relative;
   height: 100%;
 }
 .sub-visual .slider .col_width .img_container li figure img {
@@ -104,6 +105,17 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+.sub-visual .slider .col_width .img_container li figure figcaption {
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  text-shadow: 0 0 3px white;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 /*sub-center ---------------------------------------------------- */
 div.sub-center{

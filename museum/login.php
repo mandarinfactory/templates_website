@@ -30,18 +30,14 @@
     </div>
 </div>
 <div class="SNS">
-    SNS로그인
     <div class="kakao">
         <i class="fa-solid fa-comment fa-2x"></i>
-        카카오계정으로 로그인
     </div>
     <div class="naver">
         <i class="fa-solid fa-n fa-2x"></i>
-        네이버계정으로 로그인
     </div>
     <div class="facebook">
         <i class="fa-brands fa-facebook fa-2x"></i>
-        페이스북계정으로 로그인
     </div>
 </div>
 <?php include 'footer.php' ?>

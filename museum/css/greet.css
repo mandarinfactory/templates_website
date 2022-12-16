@@ -1,3 +1,8 @@
+@media screen and (max-width:1850px) {
+    .silla {
+        display: none;
+    }
+}
 .silla {
     position: absolute;
     opacity: 0.5;
@@ -30,9 +35,6 @@
 @media screen and (max-width:700px) {
     .greet > div h2 {
         width: 35%;
-    }
-    .silla {
-        display: none;
     }
 }
 .greet > div ul li {

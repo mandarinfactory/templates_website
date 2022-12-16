@@ -2,7 +2,25 @@
 
 </div>
 <footer>
-  footer
+  footer <br>
+  footer <br>
+  footer <br>
+  footer <br>
+  footer <br>
+  footer <br>
+  footer <br>
+  footer <br>
+  footer <br>
+  footer <br>
+  footer <br>
+  footer <br>
+  footer <br>
+  footer <br>
+  footer <br>
+  footer <br>
+  footer <br>
+  footer <br>
+  footer <br>
 </footer>
 <!--site-footer -->
 <?php wp_footer(); ?>

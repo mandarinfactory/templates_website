@@ -60,3 +60,19 @@ table.board {
       display: none;
     }
   }
+  .btn_style1 {
+    background-color: var(--sub-color);
+    opacity: 0.8;
+    color: white;
+  }
+  form.search_form {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    border-top: 1px solid black;
+  }
+  form.search_form > * {
+    height: 40px;
+    padding: 5px 15px;
+    margin: 10px 5px;
+  }

@@ -4,10 +4,7 @@
     top: 20%;
     left: -40%;
 }
-@media screen and (min-width:850px){
-    
-} 
-@media screen and (max-width:850px){
+@media screen and (max-width:1850px){
     .sword {
         display: none;
     }

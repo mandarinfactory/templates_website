@@ -23,43 +23,43 @@ window.subVisualArr = [
     {
         pic : '1.jpg',
         title : 'Ipsum Lorem',
-        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        artist : 'Lorem ipsum dolor sit amet.',
         
     },
     {
         pic : '2.jpg',
         title : 'Ipsum Lorem',
-        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        artist : 'Lorem ipsum dolor sit amet.'
     },
     {
         pic : '3.jpg',
         title : 'Ipsum Lorem',
-        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        artist : 'Lorem ipsum dolor sit amet.'
     },
     {
         pic : '4.jpg',
         title : 'Ipsum Lorem',
-        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        artist : 'Lorem ipsum dolor sit amet.'
     },
     {
         pic : '5.jpg',
         title : 'Ipsum Lorem',
-        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        artist : 'Lorem ipsum dolor sit amet.'
     },
     {
         pic : '6.jpg',
         title : 'Ipsum Lorem',
-        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        artist : 'Lorem ipsum dolor sit amet.'
     },
     {
         pic : '7.jpg',
         title : 'Ipsum Lorem',
-        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        artist : 'Lorem ipsum dolor sit amet.'
     },
     {
         pic : '8.jpg',
         title : 'Ipsum Lorem',
-        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        artist : 'Lorem ipsum dolor sit amet.'
     },
 ]
 

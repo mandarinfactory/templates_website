@@ -1,7 +1,19 @@
 <?php include "sub-header.php" ?>
 <h2 class="sub_title"> 공지사항</h2>
 <section class="notice_section">
+    <form class="search_form">  
+        <select>
+            <option label="제목"></option>
+            <option label="내용"></option>
+            <option label="작성자"></option>
+        </select>
+        <input type="text">
+        <button class="form_btn btn_style1">
+            검색
+        </button>
+    </form>
 </section>
+
 <script>
     $('.notice_section').prepend(`
     <table class="board">

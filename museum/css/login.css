@@ -12,8 +12,7 @@
 .personnel {
     width: 500px;
     height: 300px;
-    margin: 0 auto;
-    margin-bottom: 0;
+    margin: 30px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,16 +66,14 @@ input:hover {
 }
 .SNS {
     width: 400px;
-    height: 300px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 20px;
+    margin: 30px auto;
+    margin-bottom: 50px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .SNS div {
-    width: 75%;
+    width: 15%;
     height: 55px;
     margin: 10px;
     display: flex;

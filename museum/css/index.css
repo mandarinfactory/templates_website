@@ -273,14 +273,28 @@ section.home_section3 > div {
 }
 /* section2 ----------------------------------------------------- */
 section.home_section3 {
+    width: 100%;
+    max-width: 1200px;
+    height: 60%;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
+    margin: 0 auto;
     margin-top: 40px;
 }
 section.home_section3 > div {
     width: 90%;
     max-width: 600px;
+}
+@media screen and (min-width:1000px){
+    section.home_section3 {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:1000px){
+    section.home_section3 {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 section.home_section3 > div:first-child {
     display: flex;
@@ -306,13 +320,6 @@ section.home_section3 > div:first-child .sm_board tbody tr td{
     margin-right: 5px;
 }
 /* section3 ----------------------------------------------------- */
-.home_section3 {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    height: 60%;
-    display: flex;
-}
 .home_section3 .slider {
     height: 100%;
     position: relative;
@@ -359,25 +366,18 @@ section.home_section3 > div:first-child .sm_board tbody tr td{
     background-color: var(--main-color);
     transform: scale(1.1);
 }
-@media screen and (min-width : 1200px) {
+@media screen and (min-width : 1000px) {
     section.home_section3 > div:first-child,
     .home_section3 .slider {
         width: 100%;
+        max-width: 600px;
     }
 }
-@media screen and (min-width : 800px) and (max-width : 1200px) {
+@media screen and (max-width : 1000px) {
     section.home_section3 > div:first-child,
     .home_section3 .slider {
         width: 100%;
-        max-width: 500px;
+        max-width: 720px;
     }
-}
-@media screen and (min-width : 600px) and (max-width : 800px) {
-    section.home_section3 > div:first-child,
-    .home_section3 .slider {
-        width: 100%;
-        max-width: 380px;
-    }
-    
 }
 /* section3-slider----------------------------------------------- */
