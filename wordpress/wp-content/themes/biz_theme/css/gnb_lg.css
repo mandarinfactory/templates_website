@@ -1,7 +1,7 @@
 .gnb_lg {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 46%;
   transform: translate(-50%, -50%);
 }
 .gnb_lg > div > ul > li > a {
