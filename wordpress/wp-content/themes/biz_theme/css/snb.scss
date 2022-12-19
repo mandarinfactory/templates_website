@@ -1,0 +1,23 @@
+@import 'mixin';
+.snb {
+    height: 60px;
+    transition: all 0.3s;
+    &.active {
+        background-color: white;
+    }
+    @media screen and (min-width:1000px) {
+        position: sticky;
+        top: 0;
+        margin-top: -61px;
+        border-bottom: 1px solid black;
+    }//lg
+    @media screen and (max-width:1000px) {
+    
+    }//sm
+    > div {
+        max-width: 1200px;
+        height: inherit;
+        margin: 0 auto;
+        background-color: white;
+    }//div
+}//snb

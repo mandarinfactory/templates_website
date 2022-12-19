@@ -1,1 +1,13 @@
-/*# sourceMappingURL=sub_visual.css.map */
+.sub_visual {
+  background-color: black;
+}
+@media screen and (min-width: 1100px) {
+  .sub_visual {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .sub_visual {
+    height: 250px;
+  }
+}/*# sourceMappingURL=sub_visual.css.map */

@@ -16,13 +16,14 @@
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/mixin.css">
   <!-- root_CSS -->
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/header.css">
-  <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/sub_visual.css">
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/footer.css">
   <!-- layout_CSS -->
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/logo.css">
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/menu_btn.css">
+  <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/sub_visual.css">
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/gnb.css">
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/gnb_lg.css">
+  <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/snb.css">
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/lang_menu.css">
   <!-- etc(mark,button,logo)_CSS -->
   <script src="https://kit.fontawesome.com/7d1f9ca95d.js" crossorigin="anonymous"></script>

@@ -1,8 +1,10 @@
 @import 'mixin';
-
-@media screen and (min-width:1100px){
-    
-}
-@media screen and (max-width:1100px){
-
-}
+.sub_visual {
+    background-color: black;
+    @media screen and (min-width:1100px){
+        height: 400px;
+    }//lg
+    @media screen and (max-width:1100px){
+        height: 250px;
+    }//sm
+}//sub_visual
