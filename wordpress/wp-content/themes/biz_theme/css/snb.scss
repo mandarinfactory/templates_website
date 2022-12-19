@@ -5,13 +5,13 @@
     &.active {
         background-color: white;
     }
-    @media screen and (min-width:1000px) {
+    @media screen and (min-width:1100px) {
         position: sticky;
         top: 0;
         margin-top: -61px;
         border-bottom: 1px solid black;
     }//lg
-    @media screen and (max-width:1000px) {
+    @media screen and (max-width:1100px) {
     
     }//sm
     > div {
@@ -19,5 +19,47 @@
         height: inherit;
         margin: 0 auto;
         background-color: white;
+        overflow: hidden;
+        overflow-x: auto;
+        /* 
+        먼저 -x,y둘중 하나만 사용하기 위해서는 'overflow:hidden'을 해놔야한다.
+        overflow-y는 body에서 적용되지 않는다.-x는 수평축, -y는 수직축 
+        */
+        >ul {
+            > li {
+                > a {
+                    display: none;
+                }//1dep a
+                > ul {
+                    @media screen and (min-width:1100px){
+                        display: flex;
+                    }//lg
+                    @media screen and (max-width:1100px){
+                        display: inline-flex;
+                        /* 고정된 크기에서 자율적으로 늘어나게 해준다.(width:200px로 고정되어있다.) */
+                        min-width: 100%;
+                        justify-content: center;
+                    }//sm
+                    > li {
+                        height: inherit;
+                        @media screen and (min-width:1100px){
+                            flex: 1;
+                        }//lg
+                        @media screen and (max-width:1100px){
+                            width: 200px;
+                        }//sm
+                        > a{
+                            display: block;
+                            height: inherit;
+                            text-align: center;
+                            line-height: 60px;
+                            color: black;
+                            font-size: 20px;
+                            font-weight: 800;
+                        }//2dep a
+                    }//2dep li
+                }//2dep ul
+            }//1dep li
+        }//1dep ul
     }//div
 }//snb
