@@ -70,6 +70,10 @@
         box-shadow: 0 0 30px rgba(#FFF, 0.1);
         > ul {
             > li {
+                &.current_page_ancestor {
+                    > a {
+                        color: var(--darkblue);
+                    }
                 > a {
                     display: block;
                     font-size: 1.3em;
@@ -118,6 +122,9 @@
                             color: rgba(182, 178, 178, 0.8);
                             font-size: 1.1em;
                             font-weight: 650;
+                            &[aria_current]{
+                                color: var(--orange) !important;
+                            }
                             &::before {
                                 content:'· ';
                                 color: rgba(182, 178, 178, 0.8);

@@ -7,6 +7,9 @@
     > div {
         > ul {
             > li {
+                &.current_page_ancestor > a > * {
+                    color: var(--orange) !important;
+                }
                 > a {
                     position: relative;
                     display: block;

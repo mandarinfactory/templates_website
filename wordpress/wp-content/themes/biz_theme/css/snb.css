@@ -1,21 +1,22 @@
 @charset "UTF-8";
 .snb {
+  position: sticky;
   height: 60px;
   transition: all 0.3s;
+  border-bottom: 1px solid rgb(229, 229, 229);
 }
 .snb.active {
   background-color: white;
 }
 @media screen and (min-width: 1100px) {
   .snb {
-    position: sticky;
-    top: 0;
     margin-top: -61px;
-    border-bottom: 1px solid black;
+    top: 0;
   }
 }
 @media screen and (max-width: 1100px) {
   .snb {
+    top: 70px;
     overflow: hidden;
     overflow-x: auto;
   }
@@ -30,8 +31,19 @@
   overflow-y는 body에서 적용되지 않는다.-x는 수평축, -y는 수직축 
   */
 }
+.snb > div > ul {
+  display: none;
+}
+.snb > div > ul > li.current_page_ancestor {
+  display: block;
+}
 .snb > div > ul > li > a {
   display: none;
+}
+.snb > div > ul > li > ul {
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
 }
 @media screen and (min-width: 1100px) {
   .snb > div > ul > li > ul {
@@ -47,7 +59,10 @@
   }
 }
 .snb > div > ul > li > ul > li {
+  position: relative;
   height: inherit;
+  box-sizing: border-box;
+  border-right: 1px solid var(--dark);
 }
 @media screen and (min-width: 1100px) {
   .snb > div > ul > li > ul > li {
@@ -62,9 +77,11 @@
 .snb > div > ul > li > ul > li > a {
   display: block;
   height: inherit;
-  text-align: center;
-  line-height: 60px;
-  color: black;
   font-size: 20px;
   font-weight: 800;
+  color: var(--dark);
+}
+.snb > div > ul > li > ul > li > a[aria_current] {
+  background-color: var(--dark);
+  color: white;
 }/*# sourceMappingURL=snb.css.map */

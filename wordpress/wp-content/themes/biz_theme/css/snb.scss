@@ -1,17 +1,18 @@
 @import 'mixin';
 .snb {
+    position: sticky;
     height: 60px;
     transition: all 0.3s;
+    border-bottom: 1px solid rgb(229,229,229);
     &.active {
         background-color: white;
     }
     @media screen and (min-width:1100px) {
-        position: sticky;
-        top: 0;
         margin-top: -61px;
-        border-bottom: 1px solid black;
+        top: 0;
     }//lg
     @media screen and (max-width:1100px) {
+        top: 70px;
         overflow: hidden;
         overflow-x: auto;
     }//sm
@@ -25,11 +26,18 @@
         overflow-y는 body에서 적용되지 않는다.-x는 수평축, -y는 수직축 
         */
         >ul {
+            display: none;
             > li {
+                &.current_page_ancestor{
+                    display: block;
+                }
                 > a {
                     display: none;
                 }//1dep a
                 > ul {
+                    height: 60px;
+                    text-align: center;
+                    line-height: 60px;
                     @media screen and (min-width:1100px){
                         display: flex;
                     }//lg
@@ -40,7 +48,10 @@
                         justify-content: center;
                     }//sm
                     > li {
+                        position: relative;
                         height: inherit;
+                        box-sizing: border-box;
+                        border-right: 1px solid var(--dark);
                         @media screen and (min-width:1100px){
                             flex: 1;
                         }//lg
@@ -50,11 +61,13 @@
                         > a{
                             display: block;
                             height: inherit;
-                            text-align: center;
-                            line-height: 60px;
-                            color: black;
                             font-size: 20px;
                             font-weight: 800;
+                            color: var(--dark);
+                            &[aria_current]{
+                                background-color: var(--dark);
+                                color: white;
+                            }
                         }//2dep a
                     }//2dep li
                 }//2dep ul

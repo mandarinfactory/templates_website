@@ -4,6 +4,9 @@
   top: 46%;
   transform: translate(-50%, -50%);
 }
+.gnb_lg > div > ul > li.current_page_ancestor > a > * {
+  color: var(--orange) !important;
+}
 .gnb_lg > div > ul > li > a {
   position: relative;
   display: block;
