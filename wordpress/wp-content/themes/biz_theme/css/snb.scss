@@ -12,15 +12,14 @@
         border-bottom: 1px solid black;
     }//lg
     @media screen and (max-width:1100px) {
-    
+        overflow: hidden;
+        overflow-x: auto;
     }//sm
     > div {
         max-width: 1200px;
         height: inherit;
         margin: 0 auto;
         background-color: white;
-        overflow: hidden;
-        overflow-x: auto;
         /* 
         먼저 -x,y둘중 하나만 사용하기 위해서는 'overflow:hidden'을 해놔야한다.
         overflow-y는 body에서 적용되지 않는다.-x는 수평축, -y는 수직축 

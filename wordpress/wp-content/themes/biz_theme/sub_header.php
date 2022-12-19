@@ -5,7 +5,7 @@
     <section class="sub_visual">
         sub_visual
     </section>
-    <nav class="snb">
+    <nav class="snb scroll_style4">
         <?php wp_nav_menu(array('theme_location' => 'menu')); ?>
     </nav>
     <main class="sub_content">
