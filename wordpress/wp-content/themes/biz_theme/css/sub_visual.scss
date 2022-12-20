@@ -28,15 +28,35 @@
             max-width: 400px;
             box-sizing: border-box;
             padding-left: 20px;
-            &::before {
+            color: white;
+            &::before,&::after {
                 content:'';
                 position: absolute;
                 left: 0;
-                top: 0;
-                width: 5px;
-                height: 100%;
-                background-color: #353535;
+                width: 2px;
             }
-        }
-    }
+            &::before {
+                top: 0;
+                height: 100%;
+                background-color: var(--orange);
+            }//before
+            &::after {
+                bottom: 0;
+                height: 40%;
+                background-color: var(--darkblue);
+            }//after
+            h5 {
+                text-transform: uppercase;
+                @media screen and (min-width:700px){
+                    font-size: 4em;
+                    font-weight: 200;
+                }//lg
+                @media screen and (max-width:700px){
+                    font-size: 7vw;
+                    font-weight: 900;
+
+                }//sm
+            }
+        }//figcaption
+    }//figure
 }//sub_visual
