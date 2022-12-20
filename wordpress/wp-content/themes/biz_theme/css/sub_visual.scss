@@ -38,16 +38,17 @@
             }
             &::before {
                 top: 0;
-                height: 100%;
+                height: 0%;
                 background-color: var(--orange);
             }//before
             &::after {
                 bottom: 0;
-                height: 40%;
+                height: 0%;
                 background-color: var(--darkblue);
             }//after
             h5 {
                 text-transform: uppercase;
+                margin-bottom: 10px;
                 @media screen and (min-width:700px){
                     font-size: 4em;
                     font-weight: 200;
@@ -60,4 +61,41 @@
             }
         }//figcaption
     }//figure
+    /* motion ------------------------------------------ */
+    figure {
+        overflow: hidden;
+        img {
+            transform: scale(1.3);
+            filter: brightness(0) blur(4px);
+        }//img
+        &.active {
+            img {
+                transform: scale(1.0);
+                filter: brightness(80%) blur(0px);
+                transition: transform 30s, filter 5s;
+            }
+            figcaption {
+                &::before {
+                    height: 60%;
+                    transition: all 1s;
+                }//before
+                &::after{
+                    height: 40%;
+                    transition: all 1s;
+                }
+            }
+        }//figure.active
+    }//figure
 }//sub_visual
+
+.myCursor::after {
+    position: absolute;
+    content: "|";
+    animation: cursor 0.2s infinite;
+  }
+  @keyframes cursor {
+    0% {opacity: 0;}
+    49% {opacity: 0;}
+    50% {opacity: 1;}
+    100% { opacity: 1;}
+  }
