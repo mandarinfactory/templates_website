@@ -5,6 +5,7 @@
     <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/app_particle_default.js"></script>
     <div id="particles-js"></div>
     <!-- particles.js container -->
+    <div id="noise"></div>
 </section>
 <script>
     menuCateArr.forEach(function(v) {

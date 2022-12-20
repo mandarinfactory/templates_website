@@ -1,4 +1,5 @@
 .sub_visual {
+  position: relative;
   background-color: black;
   /* motion ------------------------------------------ */
 }
@@ -12,8 +13,8 @@
     height: 250px;
   }
 }
-.sub_visual #particles-js {
-  position: absolute;
+.sub_visual #particles-js, .sub_visual #noise {
+  position: absolute !important;
   z-index: 1;
   left: 0;
   top: 0;

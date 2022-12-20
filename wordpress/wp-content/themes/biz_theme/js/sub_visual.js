@@ -14,4 +14,15 @@ $(function () {
     setTimeout(function () {
         $('.sub_visual_img' + menuNumber).addClass('active');
     }, 1000)//setTimeout
+
+    var options = {
+        "animate": true,
+        "patternWidth": 100,
+        "patternHeight": 100,
+        "grainOpacity": 0.15,
+        "grainDensity": 1,
+        "grainWidth": 1,
+        "grainHeight": 1
+    };
+    grained('#noise', options)//noise_animation
 })//document.ready

@@ -1,5 +1,6 @@
 @import 'mixin';
 .sub_visual {
+    position: relative;
     background-color: black;
     @media screen and (min-width:1100px){
         height: 400px;
@@ -7,8 +8,8 @@
     @media screen and (max-width:1100px){
         height: 250px;
     }//sm
-    #particles-js {
-        position: absolute;
+    #particles-js, #noise {
+        position: absolute !important;
         z-index: 1;
         left: 0;
         top: 0;

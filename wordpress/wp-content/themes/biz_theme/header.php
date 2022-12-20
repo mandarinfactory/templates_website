@@ -34,8 +34,8 @@
   <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/common.js"></script>
   <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/header.js"></script>
   <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/footer.js"></script>
-  <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/type_effect.js"></script>
-  <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/grained.min.js"></script>
+  <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/type_effect.js"></script><!-- plugin_01.default -->
+  <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/grained.min.js"></script><!-- plugin_06. noise -->
 </head>
 
 <body <?php body_class(); ?>>
