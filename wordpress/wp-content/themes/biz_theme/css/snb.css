@@ -31,7 +31,7 @@
   overflow-y는 body에서 적용되지 않는다.-x는 수평축, -y는 수직축 
   */
 }
-.snb > div > ul {
+.snb > div > ul > li {
   display: none;
 }
 .snb > div > ul > li.current_page_ancestor {
@@ -81,7 +81,7 @@
   font-weight: 800;
   color: var(--dark);
 }
-.snb > div > ul > li > ul > li > a[aria_current] {
+.snb > div > ul > li > ul > li > a[aria-current] {
   background-color: var(--dark);
   color: white;
 }/*# sourceMappingURL=snb.css.map */

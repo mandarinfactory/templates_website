@@ -75,6 +75,9 @@
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
   /* motion --------------------------------------- */
 }
+.gnb > div > ul > li.current_page_ancestor > a {
+  color: var(--darkblue);
+}
 .gnb > div > ul > li > a {
   display: block;
   font-size: 1.3em;
@@ -123,6 +126,9 @@
   color: rgba(182, 178, 178, 0.8);
   font-size: 1.1em;
   font-weight: 650;
+}
+.gnb > div > ul > li > ul > li > a[aria_current] {
+  color: var(--orange) !important;
 }
 .gnb > div > ul > li > ul > li > a::before {
   content: "· ";

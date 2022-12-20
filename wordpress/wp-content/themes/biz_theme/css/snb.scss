@@ -26,8 +26,8 @@
         overflow-y는 body에서 적용되지 않는다.-x는 수평축, -y는 수직축 
         */
         >ul {
-            display: none;
             > li {
+                display: none;
                 &.current_page_ancestor{
                     display: block;
                 }
@@ -64,7 +64,7 @@
                             font-size: 20px;
                             font-weight: 800;
                             color: var(--dark);
-                            &[aria_current]{
+                            &[aria-current]{
                                 background-color: var(--dark);
                                 color: white;
                             }
