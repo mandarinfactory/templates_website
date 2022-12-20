@@ -1,3 +1,4 @@
+<script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/sub_visual.js"></script>
 <section class="sub_visual">
 </section>
 <script>
