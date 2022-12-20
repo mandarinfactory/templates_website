@@ -10,4 +10,36 @@
   .sub_visual {
     height: 250px;
   }
+}
+.sub_visual figure {
+  position: relative;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sub_visual figure .bg_img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  text-align: left;
+}
+.sub_visual figure figcaption {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  box-sizing: border-box;
+  padding-left: 20px;
+}
+.sub_visual figure figcaption::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #353535;
 }/*# sourceMappingURL=sub_visual.css.map */
