@@ -35,6 +35,7 @@
   <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/header.js"></script>
   <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/footer.js"></script>
   <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/type_effect.js"></script>
+  <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/grained.min.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
