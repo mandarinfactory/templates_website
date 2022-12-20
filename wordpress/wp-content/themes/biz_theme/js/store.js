@@ -1,23 +1,28 @@
 window.menuCateArr = [
     {
         pageID: 1,
-        pageLabel: '/company/'
+        pageLabel: '/company/',
+        pageDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
     },
     {
         pageID: 2,
-        pageLabel: '/business/'
+        pageLabel: '/business/',
+        pageDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
     },
     {
         pageID: 3,
-        pageLabel: '/product/'
+        pageLabel: '/product/',
+        pageDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
     },
     {
         pageID: 4,
-        pageLabel: '/online/'
+        pageLabel: '/online/',
+        pageDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
     },
     {
         pageID: 5,
-        pageLabel: '/customer/'
+        pageLabel: '/customer/',
+        pageDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
     },
 ]//menuCateArr
 
