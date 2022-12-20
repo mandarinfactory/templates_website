@@ -12,6 +12,15 @@
     height: 250px;
   }
 }
+.sub_visual #particles-js {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
 .sub_visual figure {
   position: relative;
   height: inherit;
@@ -90,23 +99,14 @@
   transition: all 1s;
 }
 
-.myCursor::after {
-  position: absolute;
-  content: "|";
-  animation: cursor 0.2s infinite;
-}
-
-@keyframes cursor {
-  0% {
-    opacity: 0;
+/* .myCursor::after {
+    position: absolute;
+    content: "|";
+    animation: cursor 0.2s infinite;
   }
-  49% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}/*# sourceMappingURL=sub_visual.css.map */
+  @keyframes cursor {
+    0% {opacity: 0;}
+    49% {opacity: 0;}
+    50% {opacity: 1;}
+    100% { opacity: 1;}
+  } --> cursor animation *//*# sourceMappingURL=sub_visual.css.map */

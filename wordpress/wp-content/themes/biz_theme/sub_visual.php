@@ -1,5 +1,10 @@
 <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/sub_visual.js"></script>
 <section class="sub_visual">
+    <!-- particles.js container -->
+    <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/particles.js"></script>
+    <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/app_particle_default.js"></script>
+    <div id="particles-js"></div>
+    <!-- particles.js container -->
 </section>
 <script>
     menuCateArr.forEach(function(v) {
