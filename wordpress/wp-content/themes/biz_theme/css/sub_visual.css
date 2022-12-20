@@ -14,7 +14,8 @@
 .sub_visual figure {
   position: relative;
   height: inherit;
-  display: flex;
+  /* display: flex; */
+  display: none;
   justify-content: center;
   align-items: center;
 }
