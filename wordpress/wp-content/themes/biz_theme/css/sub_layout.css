@@ -16,13 +16,20 @@ main.sub_content {
 
 h2.sub_title em {
   position: relative;
+  display: inline-block;
   color: var(--darkblue);
 }
-h2.sub_title em::before {
+h2.sub_title em::before, h2.sub_title em::after {
   content: attr(data-title);
+  font-weight: 900;
+}
+h2.sub_title em::before {
   position: absolute;
   color: var(--orange);
-  font-weight: 900;
+}
+h2.sub_title em::after {
+  display: block;
+  color: var(--darkblue);
 }
 @media screen and (min-width: 1100px) {
   h2.sub_title em {

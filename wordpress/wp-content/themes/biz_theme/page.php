@@ -2,7 +2,11 @@
 <!--페이지 제목 출력-->
 <h2 class="sub_title">
     <em data-title="<?php the_title(); ?>">
-        <?php the_title(); ?>
+        <!-- before -->
+        <span class="hidden">
+            <?php the_title(); ?>
+        </span>
+        <!-- after -->
     </em>
 </h2>
 <!--페이지 출력 시작-->
