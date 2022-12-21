@@ -1,5 +1,14 @@
 <?php include "sub_header.php" ?>
 <section>
+    <h2 class="sub_title">
+        <em data-title="<?php echo $categoryName ?>">
+            <!-- before -->
+            <span class="hidden">
+                <?php echo $categoryName ?>
+            </span>
+            <!-- after -->
+        </em>
+    </h2>
     <!--포스트의 해당 카테고리 정보가져오기-->
     <?php
     $category = get_the_category();
