@@ -70,7 +70,7 @@
         box-shadow: 0 0 30px rgba(#FFF, 0.1);
         > ul {
             > li {
-                &.current_page_ancestor {
+                &.current-menu-ancestor {
                     > a {
                         color: var(--darkblue);
                     }

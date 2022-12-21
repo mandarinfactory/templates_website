@@ -75,7 +75,7 @@
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
   /* motion --------------------------------------- */
 }
-.gnb > div > ul > li.current_page_ancestor > a {
+.gnb > div > ul > li.current-menu-ancestor > a {
   color: var(--darkblue);
 }
 .gnb > div > ul > li > a {

@@ -1,36 +1,44 @@
 @import 'mixin';
 main.sub_content {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    h2.sub_title {
-        text-align: center;
-        em {
-            position: relative;
-            display: inline-block;
-            color: var(--darkblue);
-            &::before,&::after {
-                content: attr(data-title);
-                font-weight: 900;
-            }//before,after
-            &::before {
-                position: absolute;
-                left: 0;
-                color: var(--orange);
-                clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
-            }//before
-            &::after {
-                display: block;
+    padding-top: 1px;
+    background-image: url(../img/img/icon&logo/logo_title.png), linear-gradient(var(--blue), var(--dark));
+    background-size: 70px, cover;
+    article {
+        width: 95%;
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-top: 100px;
+        background-color: white;
+    }//article
+        h2.sub_title {
+            text-align: center;
+            transform: translateY(-50%);
+            em {
+                position: relative;
+                display: inline-block;
                 color: var(--darkblue);
-                clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
-            }//after
-            @media screen and (min-width:1100px){
-                font-size: 4em;
-            }//lg
-            @media screen and (max-width:1100px){
-                font-size: 2.5em;
-            }//sm
-        }//em
+                &::before,&::after {
+                    content: attr(data-title);
+                    font-weight: 900;
+                }//before,after
+                &::before {
+                    position: absolute;
+                    left: 0;
+                    color: var(--orange);
+                    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+                }//before
+                &::after {
+                    display: block;
+                    color: var(--darkblue);
+                    clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+                }//after
+                @media screen and (min-width:1100px){
+                    font-size: 4em;
+                }//lg
+                @media screen and (max-width:1100px){
+                    font-size: 2.5em;
+                }//sm
+            }//em
         /* motion ----------------------------------------------------------- */
         overflow: hidden;
         em {

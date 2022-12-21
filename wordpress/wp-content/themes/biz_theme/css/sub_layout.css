@@ -1,10 +1,18 @@
 main.sub_content {
-  width: 100%;
+  padding-top: 1px;
+  background-image: url(../img/img/icon&logo/logo_title.png), linear-gradient(var(--blue), var(--dark));
+  background-size: 70px, cover;
+}
+main.sub_content article {
+  width: 95%;
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: 100px;
+  background-color: white;
 }
 main.sub_content h2.sub_title {
   text-align: center;
+  transform: translateY(-50%);
   /* motion ----------------------------------------------------------- */
   overflow: hidden;
 }
