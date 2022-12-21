@@ -13,4 +13,12 @@ $(function () {
     }).scroll(function () {
         snbActive();
     })//window_event
+
+
+
+    /*  $('li.current-post-parent').parent().parent().show();
+     $('.snb>div>ul>li>ul>li.current-post-parent a').addClass('active'); */
+
+    var address = location.href
+    $(`.snb > div > ul > li > ul > li > a[href*=${address}]`)
 })//document.ready

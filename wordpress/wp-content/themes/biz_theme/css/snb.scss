@@ -58,11 +58,12 @@
                         }//sm
                         > a{
                             display: block;
-                            height: inherit;
+                            text-align: center;
+                            line-height: 60px;
                             font-size: 20px;
                             font-weight: 800;
                             color: var(--dark);
-                            &[aria-current]{
+                            &[aria-current],&.active{
                                 background-color: var(--dark);
                                 color: white;
                             }

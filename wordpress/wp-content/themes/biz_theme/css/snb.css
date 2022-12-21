@@ -74,12 +74,13 @@
 }
 .snb > div > ul > li > ul > li > a {
   display: block;
-  height: inherit;
+  text-align: center;
+  line-height: 60px;
   font-size: 20px;
   font-weight: 800;
   color: var(--dark);
 }
-.snb > div > ul > li > ul > li > a[aria-current] {
+.snb > div > ul > li > ul > li > a[aria-current], .snb > div > ul > li > ul > li > a.active {
   background-color: var(--dark);
   color: white;
 }/*# sourceMappingURL=snb.css.map */
