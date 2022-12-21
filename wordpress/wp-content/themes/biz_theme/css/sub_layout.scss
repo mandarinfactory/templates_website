@@ -1,37 +1,57 @@
 @import 'mixin';
 main.sub_content {
-    width: 95%;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    @media screen and (min-width:1100px){
-        margin: 150px auto;
-    }//lg
-    @media screen and (max-width:1100px){
-        margin: 100px auto;
-    }//sm
-}
-h2.sub_title {
-    em {
-        position: relative;
-        display: inline-block;
-        color: var(--darkblue);
-        &::before,&::after {
-            content: attr(data-title);
-            font-weight: 900;
-        }//before,after
-        &::before {
-            position: absolute;
-            color: var(--orange);
-        }//before
-        &::after {
-            display: block;
+    h2.sub_title {
+        text-align: center;
+        em {
+            position: relative;
+            display: inline-block;
             color: var(--darkblue);
-        }//after
-        @media screen and (min-width:1100px){
-            font-size: 4em;
-        }//lg
-        @media screen and (max-width:1100px){
-            font-size: 2.5em;
-        }//sm
-    }//em
-}//h2
+            &::before,&::after {
+                content: attr(data-title);
+                font-weight: 900;
+            }//before,after
+            &::before {
+                position: absolute;
+                left: 0;
+                color: var(--orange);
+                clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+            }//before
+            &::after {
+                display: block;
+                color: var(--darkblue);
+                clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+            }//after
+            @media screen and (min-width:1100px){
+                font-size: 4em;
+            }//lg
+            @media screen and (max-width:1100px){
+                font-size: 2.5em;
+            }//sm
+        }//em
+        /* motion ----------------------------------------------------------- */
+        overflow: hidden;
+        em {
+            &::before, &::after {
+                opacity: 0;
+                transition: all 1s;
+            }//before, after
+            &::before {
+                transform: translateX(-100px);
+            }//before
+            &::after {
+                transform: translateX(100px);
+            }//after
+        }//em
+        &.active {
+            em {
+                &::before, &::after {
+                    opacity: 1;
+                    transform: translate(0);
+                }//before, after
+            }//em
+        }//h2.active
+    }//h2
+}//sub_content

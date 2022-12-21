@@ -10,6 +10,12 @@
     </em>
 </h2>
 <!--페이지 출력 시작-->
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         <!--페이지 본문 출력-->
         <?php the_content(); ?>
