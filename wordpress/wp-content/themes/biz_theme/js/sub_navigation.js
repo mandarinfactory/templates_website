@@ -20,5 +20,11 @@ $(function () {
      $('.snb>div>ul>li>ul>li.current-post-parent a').addClass('active'); */
 
     var address = location.href
-    $(`.snb > div > ul > li > ul > li > a[href*=${address}]`)
+    $(`.snb > div > ul > li > ul > li > a`).each(function () {
+        var link = $(this).attr('href')
+        if (address.match(link)) {
+            $(this).parent().parent().parent().show()
+            $(this).addClass('active');
+        }//if
+    })//each
 })//document.ready
