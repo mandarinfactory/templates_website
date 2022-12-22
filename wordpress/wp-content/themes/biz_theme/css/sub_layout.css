@@ -75,6 +75,10 @@ main.sub_content h2.sub_title.active em::before, main.sub_content h2.sub_title.a
   background-color: var(--dark);
   color: lightgray;
 }
+.theme_guide.active {
+  padding: 0 15px 0 20px;
+  transition: padding 0.1s;
+}
 .theme_guide::before {
   content: "";
   position: absolute;

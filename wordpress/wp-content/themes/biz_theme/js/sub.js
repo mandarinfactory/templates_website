@@ -13,4 +13,8 @@ $(function () {
     }).scroll(function () {
         subMotion()
     })//window_event
+
+    $('.theme_guide button').click(function () {
+        $('.theme_guide').slideUp();
+    })//click_event
 })//document.ready
