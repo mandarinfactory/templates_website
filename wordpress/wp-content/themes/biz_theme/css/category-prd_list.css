@@ -1,1 +1,24 @@
-/*# sourceMappingURL=category-prd_list.css.map */
+.category_prd_list ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.category_prd_list ul li {
+  padding: 10px;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 1000px) {
+  .category_prd_list ul li {
+    width: 33.334%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+  .category_prd_list ul li {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .category_prd_list ul li {
+    width: 100%;
+  }
+}/*# sourceMappingURL=category-prd_list.css.map */

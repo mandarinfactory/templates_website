@@ -1,1 +1,38 @@
 @import 'mixin';
+.category_prd_list {
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li {
+            padding: 10px;
+            box-sizing: border-box;
+            @media screen and (min-width:1000px) {
+                width: 33.334%;
+            }//lg
+            @media screen and (min-width:500px) and (max-width:1000px) {
+                width: 50%;
+            }//md
+            @media screen and (max-width:500px) {
+                width: 100%;
+            }//sm
+            figure {
+                div {
+                    img {
+
+                    }//img
+                }//div
+                a {
+                    figcaption {
+                        h3 {
+
+                        }//h3
+                        p {
+
+                        }//p
+                    }//figcaption
+                }//a
+            }//figure
+        }//li
+    }//ul
+}//category_prd_list
