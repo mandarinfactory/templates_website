@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/gnb_lg.css">
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/snb.css">
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/lang_menu.css">
+  <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/isotope.css">
   <!-- etc(mark,button,logo)_CSS -->
   <script src="https://kit.fontawesome.com/7d1f9ca95d.js" crossorigin="anonymous"></script>
   <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -41,6 +42,7 @@
   <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/type_effect.js"></script><!-- plugin_01.default -->
   <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/grained.min.js"></script><!-- plugin_06. noise -->
   <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/hoverBox.js"></script><!-- plugin_hoverBox -->
+  <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/jquery.isotope.js"></script><!-- plugin_isotope -->
 </head>
 
 <body <?php body_class(); ?>>
