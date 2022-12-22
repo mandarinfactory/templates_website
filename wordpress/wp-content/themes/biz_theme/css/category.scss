@@ -1,5 +1,17 @@
 @import 'mixin';
+.category_desc {
+    padding: 20px 0;
+    text-align: center;
+    border: 1px dotted var(--blue);
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 18px;
+    p {
 
+    }//p
+}//category_desc
 @media screen and (min-width:1100px){
 
 }//lg

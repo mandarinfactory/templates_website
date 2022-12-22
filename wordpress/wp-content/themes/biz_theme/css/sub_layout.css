@@ -79,8 +79,9 @@ main.sub_content h2.sub_title.active em::before, main.sub_content h2.sub_title.a
   overflow: hidden;
   padding: 0 15px 0 20px;
   height: 0;
+  margin-bottom: 0;
   box-sizing: border-box;
-  transition: padding 0.1s;
+  transition: all 0.1s;
 }
 .theme_guide::before {
   content: "";
