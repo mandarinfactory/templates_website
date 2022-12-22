@@ -48,10 +48,29 @@ section.category_prd_list ul li figure a {
   left: 0;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+section.category_prd_list ul li figure a figcaption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 1px solid white;
 }
 section.category_prd_list ul li figure a figcaption h3 {
-  color: white;
+  position: absolute;
+  width: 100%;
+  padding: 10px 0;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--dark);
 }
 section.category_prd_list ul li figure a figcaption p {
-  color: var(--dark);
+  width: 90%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
 }/*# sourceMappingURL=category-prd_list.css.map */
