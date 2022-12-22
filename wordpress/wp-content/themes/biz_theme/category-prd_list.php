@@ -18,7 +18,7 @@
             <i class="fa-solid fa-xmark"></i>
         </button>
     </p>
-    <ul>
+    <ul class="list_container">
         <!--카테고리 설명 출력-->
         <div class="category_desc">
             <?php echo category_description(); ?>

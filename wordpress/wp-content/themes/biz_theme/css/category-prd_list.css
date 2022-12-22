@@ -34,6 +34,7 @@ section.category_prd_list ul li:nth-child(3n+3) {
 }
 section.category_prd_list ul li figure {
   position: relative;
+  overflow: hidden;
   padding: 5px;
   background-color: lightgray;
   border: 1px solid white;
