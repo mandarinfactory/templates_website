@@ -32,6 +32,17 @@ section.category_prd_list {
                 padding: 5px;
                 background-color: lightgray;
                 border: 1px solid white;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: 1;
+                    width: 0;
+                    height: 0;
+                    border: 10px solid transparent;
+                    border-top-color: firebrick;
+                }
                 div {
                     overflow: hidden;
                     img {
@@ -86,6 +97,7 @@ section.category_prd_list {
                 &:hover{
                     div {
                         transform: scale(1.2);
+                        transition: all 10s;
                         img {
                             filter: blur(3px) brightness(50%);
                         }//:hover_img

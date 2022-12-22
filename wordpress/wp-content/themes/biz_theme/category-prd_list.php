@@ -18,6 +18,12 @@
             <i class="fa-solid fa-xmark"></i>
         </button>
     </p>
+    <div class="btns">
+        <button value="상품분류1">상품분류1</button>
+        <button value="상품분류2">상품분류2</button>
+        <button value="상품분류3">상품분류3</button>
+        <button value="상품분류4">상품분류4</button>
+    </div>
     <ul class="list_container">
         <!--카테고리 설명 출력-->
         <div class="category_desc">
@@ -25,26 +31,36 @@
         </div>
         <!--카테고리 리스트 출력-->
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <li>
-                    <!--리스트 한개 출력-->
-                    <figure>
-                        <!--글 이미지-->
-                        <div>
-                            <?php if (has_post_thumbnail()) {
-                                the_post_thumbnail('thumbnail');
-                            } ?>
-                        </div>
-                        <!--해당글 링크-->
-                        <a href="<?php the_permalink(); ?>">
-                            <figcaption>
-                                <!--글 제목-->
-                                <?php the_title(); ?>
-                                <!--요약글 출력-->
-                                <?php the_excerpt(); ?>
-                            </figcaption>
-                        </a>
-                    </figure>
-                    <!--리스트 한개 끝-->
+                <?php
+                echo '<li';
+                $posttags = get_the_tags();
+                if ($posttags) {
+                    echo ' class="';
+                    foreach ($posttags as $tag) {
+                        echo $tag->name . " ";
+                    }
+                    echo '"';
+                }
+                echo '>';
+                ?>
+                <figure>
+                    <!--글 이미지-->
+                    <div>
+                        <?php if (has_post_thumbnail()) {
+                            the_post_thumbnail('thumbnail');
+                        } ?>
+                    </div>
+                    <!--해당글 링크-->
+                    <a href="<?php the_permalink(); ?>">
+                        <figcaption>
+                            <!--글 제목-->
+                            <?php the_title(); ?>
+                            <!--요약글 출력-->
+                            <?php the_excerpt(); ?>
+                        </figcaption>
+                    </a>
+                </figure>
+                <!--리스트 한개 끝-->
                 </li>
             <?php endwhile;
         else : ?>

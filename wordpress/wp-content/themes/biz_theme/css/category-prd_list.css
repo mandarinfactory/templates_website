@@ -39,6 +39,17 @@ section.category_prd_list ul li figure {
   background-color: lightgray;
   border: 1px solid white;
 }
+section.category_prd_list ul li figure::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: firebrick;
+}
 section.category_prd_list ul li figure div {
   overflow: hidden;
 }
@@ -83,6 +94,7 @@ section.category_prd_list ul.list_container li figure div img {
 }
 section.category_prd_list ul.list_container li figure:hover div {
   transform: scale(1.2);
+  transition: all 10s;
 }
 section.category_prd_list ul.list_container li figure:hover div img {
   filter: blur(3px) brightness(50%);
