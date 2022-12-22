@@ -14,6 +14,9 @@
         상품목록은 관리자 / 글메뉴에서 관리할 수 있습니다. <br>
         디자인 수정은 category-prd_list.php와 category-prd_list.scss에서
         수정편집 하실 수 있습니다.
+        <button>
+            <i class="fa-solid fa-xmark"></i>
+        </button>
     </p>
     <!--카테고리 설명 출력-->
     <?php echo category_description(); ?>
