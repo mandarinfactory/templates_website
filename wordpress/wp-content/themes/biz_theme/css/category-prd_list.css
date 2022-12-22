@@ -39,7 +39,10 @@ section.category_prd_list ul li figure {
   background-color: lightgray;
   border: 1px solid white;
 }
-section.category_prd_list ul li figure img {
+section.category_prd_list ul li figure div {
+  overflow: hidden;
+}
+section.category_prd_list ul li figure div img {
   width: 100%;
   height: auto;
 }
@@ -74,4 +77,13 @@ section.category_prd_list ul li figure a figcaption p {
   width: 90%;
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
+}
+section.category_prd_list ul.list_container li figure div img {
+  transition: filter 0.5s;
+}
+section.category_prd_list ul.list_container li figure:hover div {
+  transform: scale(1.2);
+}
+section.category_prd_list ul.list_container li figure:hover div img {
+  filter: blur(3px) brightness(50%);
 }/*# sourceMappingURL=category-prd_list.css.map */

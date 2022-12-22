@@ -32,10 +32,13 @@ section.category_prd_list {
                 padding: 5px;
                 background-color: lightgray;
                 border: 1px solid white;
-                img {
-                    width: 100%;
-                    height: auto;
-                }//img
+                div {
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }//img
+                }//div
                 a {
                     position: absolute;
                     top: -10000px;
@@ -72,4 +75,23 @@ section.category_prd_list {
         }//li
     }//ul
     //hover_motion
+    ul.list_container {
+        li {
+            figure {
+                div {
+                    img {
+                        transition: filter 0.5s;
+                    }//img
+                }//div
+                &:hover{
+                    div {
+                        transform: scale(1.2);
+                        img {
+                            filter: blur(3px) brightness(50%);
+                        }//:hover_img
+                    }//hover:_div
+                }//hover
+            }//figure
+        }//li
+    }//list_container
 }//category_prd_list

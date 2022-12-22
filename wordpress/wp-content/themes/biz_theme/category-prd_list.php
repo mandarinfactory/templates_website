@@ -29,9 +29,11 @@
                     <!--리스트 한개 출력-->
                     <figure>
                         <!--글 이미지-->
-                        <?php if (has_post_thumbnail()) {
-                            the_post_thumbnail('thumbnail');
-                        } ?>
+                        <div>
+                            <?php if (has_post_thumbnail()) {
+                                the_post_thumbnail('thumbnail');
+                            } ?>
+                        </div>
                         <!--해당글 링크-->
                         <a href="<?php the_permalink(); ?>">
                             <figcaption>
