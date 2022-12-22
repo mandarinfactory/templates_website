@@ -48,4 +48,10 @@ section.category_prd_list ul li figure a {
   left: 0;
   width: 100%;
   height: 100%;
+}
+section.category_prd_list ul li figure a figcaption h3 {
+  color: white;
+}
+section.category_prd_list ul li figure a figcaption p {
+  color: var(--dark);
 }/*# sourceMappingURL=category-prd_list.css.map */

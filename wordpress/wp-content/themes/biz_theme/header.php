@@ -39,6 +39,7 @@
   <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/footer.js"></script>
   <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/type_effect.js"></script><!-- plugin_01.default -->
   <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/grained.min.js"></script><!-- plugin_06. noise -->
+  <script src="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/js/hoverBox.js"></script><!-- plugin_hoverBox -->
 </head>
 
 <body <?php body_class(); ?>>
