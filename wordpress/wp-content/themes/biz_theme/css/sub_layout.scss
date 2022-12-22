@@ -69,8 +69,8 @@ main.sub_content {
 
 .theme_guide {
     position: relative;
-    display: inline-block;
-    max-width: 700px;
+    max-width: 800px;
+    margin: 0 auto;
     padding: 15px 15px 15px 20px;
     margin-bottom: 20px;
     font-size: 16px;
@@ -78,7 +78,10 @@ main.sub_content {
     background-color: var(--dark);
     color: lightgray;
     &.active {
+        overflow: hidden;
         padding: 0 15px 0 20px;
+        height: 0;
+        box-sizing: border-box;
         transition: padding 0.1s;
     }
     &::before {
@@ -91,8 +94,9 @@ main.sub_content {
     }//before
     button {
         position: absolute;
-        top: 7px;
-        right: 15px;
+        bottom: 100%;
+        right: 0%;
+        color: var(--dark);
         &:hover {
             color: var(--blue);
         }//hover

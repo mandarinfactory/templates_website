@@ -15,6 +15,6 @@ $(function () {
     })//window_event
 
     $('.theme_guide button').click(function () {
-        $('.theme_guide').slideUp();
+        $('.theme_guide').addClass('active').slideUp();
     })//click_event
 })//document.ready

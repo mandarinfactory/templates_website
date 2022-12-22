@@ -19,7 +19,9 @@
         </button>
     </p>
     <!--카테고리 설명 출력-->
-    <?php echo category_description(); ?>
+    <div class="category_desc">
+        <?php echo category_description(); ?>
+    </div>
     <!--카테고리 리스트 출력-->
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <!--리스트 한개 출력-->
