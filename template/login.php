@@ -1,8 +1,8 @@
 <?php include 'header.php' ?>
 <div class="personnel">
     <div class="title">
-    <h2 class="sunshine">선샤인</h2>
-    <h2 class="subtitle">사용자의 감성을 깨우는 새로운 스타일</h2>
+        <h2 class="sunshine">선샤인</h2>
+        <h2 class="subtitle">사용자의 감성을 깨우는 새로운 스타일</h2>
     </div>
     <div class="input">
         <input type="text" maxlength="20" placeholder="아이디를 입력해주십시오.">
@@ -24,18 +24,15 @@
     </button>
 </div>
 <div class="SNS">
-    SNS로그인
+    <span>SNS 로그인</span>
     <div class="kakao">
         <i class="fa-solid fa-comment fa-2x"></i>
-        카카오계정으로 로그인
     </div>
     <div class="naver">
         <i class="fa-solid fa-n fa-2x"></i>
-        네이버계정으로 로그인
     </div>
     <div class="facebook">
         <i class="fa-brands fa-facebook fa-2x"></i>
-        페이스북계정으로 로그인
     </div>
 </div>
 <?php include 'footer.php' ?>

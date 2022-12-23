@@ -71,7 +71,17 @@ input:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
+.SNS span {
+    position: absolute;
+    top: -25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2em;
+    font-weight: 700;
+    border-bottom: 1px solid black;
+} 
 .SNS div {
     width: 15%;
     height: 55px;

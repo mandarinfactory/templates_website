@@ -30,6 +30,7 @@
     </div>
 </div>
 <div class="SNS">
+    <span>SNS 로그인</span>
     <div class="kakao">
         <i class="fa-solid fa-comment fa-2x"></i>
     </div>
