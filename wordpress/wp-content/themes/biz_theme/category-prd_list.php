@@ -79,8 +79,8 @@
         'format'      => '?paged=%#%',
         'current'     => max(1, get_query_var('paged')),
         'total'       => $wp_query->max_num_pages,
-        'prev_text'   => __('<'),
-        'next_text'   => __('>'),
+        'prev_text'   => __('<i class="fa-solid fa-arrow-left"></i>'),
+        'next_text'   => __('<i class="fa-solid fa-arrow-right"></i>'),
     ));
     ?>
     <!--페이징출력끝-->

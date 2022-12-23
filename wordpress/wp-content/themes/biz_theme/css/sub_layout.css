@@ -9,6 +9,7 @@ main.sub_content article {
   margin: 0 auto;
   margin-top: 100px;
   padding: 0 20px;
+  padding-bottom: 30px;
   box-sizing: border-box;
   background-color: white;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.8);

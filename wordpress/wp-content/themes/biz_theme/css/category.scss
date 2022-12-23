@@ -8,10 +8,27 @@
     margin-bottom: 20px;
     font-weight: 600;
     font-size: 18px;
-    p {
-
-    }//p
 }//category_desc
+ul.page-numbers {
+    display: flex;
+    justify-content: center;
+    li {
+        margin: 0 5px;
+        background-color: white;
+        a, span {
+            display: block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            border: 1px solid white;
+            &.next, &.prev {
+                border: none;
+            }
+        }
+    }
+}//ul.page-numbers
 @media screen and (min-width:1100px){
 
 }//lg
