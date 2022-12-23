@@ -19,10 +19,11 @@
         </button>
     </p>
     <div class="btns">
-        <button value="상품분류1">상품분류1</button>
-        <button value="상품분류2">상품분류2</button>
-        <button value="상품분류3">상품분류3</button>
-        <button value="상품분류4">상품분류4</button>
+        <button value=".*"></button>
+        <button value=".상품분류1">상품분류1</button>
+        <button value=".상품분류2">상품분류2</button>
+        <button value=".상품분류3">상품분류3</button>
+        <button value=".상품분류4">상품분류4</button>
     </div>
     <ul class="list_container">
         <!--카테고리 설명 출력-->
