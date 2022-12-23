@@ -19,7 +19,7 @@
         </button>
     </p>
     <div class="btns">
-        <button value=".*"></button>
+        <button class="active" value=".*"></button>
         <button value=".상품분류1">상품분류1</button>
         <button value=".상품분류2">상품분류2</button>
         <button value=".상품분류3">상품분류3</button>

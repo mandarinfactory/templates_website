@@ -18,7 +18,6 @@ $(function () {
         var $container = $('.list_container');
         var filterSelect = "*"
         fn_isotope()
-        $('.list_container li img').children('img').css({ 'transform': `scale(1.3) translateY(0)` })
         function fn_isotope() {
             $container.isotope({
                 filter: filterSelect,
@@ -32,6 +31,9 @@ $(function () {
         $('.btns button').click(function () {
             filterSelect = $(this).val()
             fn_isotope()
+            $('.list_container li img').children('img').css({ 'transform': `scale(1.3) translateY(0)` });
+            $('.btns button').removeClass('active');
+            $(this).addClass('active');
         })//click	
         $(window).resize(function () {
             fn_isotope()

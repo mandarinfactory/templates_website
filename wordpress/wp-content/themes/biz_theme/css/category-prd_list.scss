@@ -1,6 +1,27 @@
 @import 'mixin';
 section.category_prd_list {
-    ul {
+    .btns {
+        margin: 30px 0;
+        display: flex;
+        justify-content: center;
+        button {
+            padding: 7px 15px;
+            margin: 0 3px;
+            border: 2px solid var(--dark);
+            color: var(--dark);
+            &:hover {
+                border: 2px solid var(--darkblue);
+                color: var(--darkblue);
+                &.active {
+                    border: 2px solid var(--darkblue);
+                    color: var(--darkblue);
+                    background-color: var(--darkblue);
+                    color: white;
+                }//.active    
+            }//:hover
+        }//button
+    }//.btns
+    ul.list_container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;

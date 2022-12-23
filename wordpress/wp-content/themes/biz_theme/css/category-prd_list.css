@@ -1,45 +1,66 @@
-section.category_prd_list ul {
+section.category_prd_list .btns {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+section.category_prd_list .btns button {
+  padding: 7px 15px;
+  margin: 0 3px;
+  border: 2px solid var(--dark);
+  color: var(--dark);
+}
+section.category_prd_list .btns button:hover {
+  border: 2px solid var(--darkblue);
+  color: var(--darkblue);
+}
+section.category_prd_list .btns button:hover.active {
+  border: 2px solid var(--darkblue);
+  color: var(--darkblue);
+  background-color: var(--darkblue);
+  color: white;
+}
+section.category_prd_list ul.list_container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-section.category_prd_list ul li {
+section.category_prd_list ul.list_container li {
   padding: 15px;
   box-sizing: border-box;
 }
 @media screen and (min-width: 1000px) {
-  section.category_prd_list ul li {
+  section.category_prd_list ul.list_container li {
     width: 33.3%;
   }
 }
 @media screen and (min-width: 500px) and (max-width: 1000px) {
-  section.category_prd_list ul li {
+  section.category_prd_list ul.list_container li {
     width: 49.5%;
   }
 }
 @media screen and (max-width: 500px) {
-  section.category_prd_list ul li {
+  section.category_prd_list ul.list_container li {
     width: 100%;
   }
 }
-section.category_prd_list ul li:nth-child(3n+1) {
+section.category_prd_list ul.list_container li:nth-child(3n+1) {
   background-color: rgba(129, 77, 49, 0.8);
 }
-section.category_prd_list ul li:nth-child(3n+2) {
+section.category_prd_list ul.list_container li:nth-child(3n+2) {
   background-color: rgba(49, 96, 128, 0.8);
 }
-section.category_prd_list ul li:nth-child(3n+3) {
+section.category_prd_list ul.list_container li:nth-child(3n+3) {
   background-color: rgba(35, 85, 42, 0.8);
 }
-section.category_prd_list ul li figure {
+section.category_prd_list ul.list_container li figure {
   position: relative;
   overflow: hidden;
   padding: 5px;
   background-color: lightgray;
   border: 1px solid white;
 }
-section.category_prd_list ul li figure::before {
+section.category_prd_list ul.list_container li figure::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -50,14 +71,14 @@ section.category_prd_list ul li figure::before {
   border: 10px solid transparent;
   border-top-color: firebrick;
 }
-section.category_prd_list ul li figure div {
+section.category_prd_list ul.list_container li figure div {
   overflow: hidden;
 }
-section.category_prd_list ul li figure div img {
+section.category_prd_list ul.list_container li figure div img {
   width: 100%;
   height: auto;
 }
-section.category_prd_list ul li figure a {
+section.category_prd_list ul.list_container li figure a {
   position: absolute;
   top: -10000px;
   left: 0;
@@ -66,7 +87,7 @@ section.category_prd_list ul li figure a {
   box-sizing: border-box;
   padding: 15px;
 }
-section.category_prd_list ul li figure a figcaption {
+section.category_prd_list ul.list_container li figure a figcaption {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,7 +96,7 @@ section.category_prd_list ul li figure a figcaption {
   box-sizing: border-box;
   border: 1px solid white;
 }
-section.category_prd_list ul li figure a figcaption h3 {
+section.category_prd_list ul.list_container li figure a figcaption h3 {
   position: absolute;
   width: 100%;
   padding: 10px 0;
@@ -84,7 +105,7 @@ section.category_prd_list ul li figure a figcaption h3 {
   background-color: rgba(0, 0, 0, 0.7);
   color: var(--dark);
 }
-section.category_prd_list ul li figure a figcaption p {
+section.category_prd_list ul.list_container li figure a figcaption p {
   width: 90%;
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
