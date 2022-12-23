@@ -166,3 +166,6 @@
       <?php include "menu.php" ?>
     </nav>
   </header>
+  <button class="top_btn">
+    <i class="fa-solid fa-circle-up"></i>
+  </button>

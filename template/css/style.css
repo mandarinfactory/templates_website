@@ -123,10 +123,6 @@ table.board a:hover {
   table.board tr > *:nth-child(4){
     width: 80px;
   }
-
-
-
-
   table.board td:nth-child(3),
   table.board th:nth-child(3),
   table.board td:nth-child(5),

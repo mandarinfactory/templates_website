@@ -328,9 +328,6 @@ main.sub-content{
 }/* lg */
 
 @media screen and (max-width:1000px){
-  div.sub-center{
-    
-  }
   aside.sidebar{
     height: 45px;
     background: #333;
