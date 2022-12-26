@@ -3,5 +3,21 @@
     ul.tag-cloud {
         margin: 30px;
         padding: 10px 0;
+        li p {
+            text-align: center;
+            a {
+                display: inline-block;
+                padding: 5px 7px;
+                border-radius: 30px;
+                border: 1px solid white;        
+                font-size: 0.8em !important;
+                transition: all 0.5s;
+                &:hover {
+                    background-color: var(--orange);
+                    border-color: var(--orange);
+                    color: white;
+                }//hover
+            }//a
+        }//p
     }//tag-cloud
 }//category-prd-gallery
