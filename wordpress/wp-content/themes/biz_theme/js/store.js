@@ -35,6 +35,12 @@ window.menuCateArr = [
         pageTitle: 'product',
         pageDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
     },
+    {
+        pageID: 7,
+        pageLabel: '/search/',
+        pageTitle: 'product',
+        pageDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
+    },
 ]//menuCateArr
 
 
