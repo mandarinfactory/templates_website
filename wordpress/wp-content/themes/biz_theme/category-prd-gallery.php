@@ -1,5 +1,5 @@
 <?php include "sub_header.php" ?>
-<section class="category_prd_list">
+<section class="category_prd-gallery">
     <h2 class="sub_title">
         <em data-title="<?php single_cat_title(' '); ?>">
             <!-- before -->
