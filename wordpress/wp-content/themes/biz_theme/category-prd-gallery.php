@@ -48,9 +48,19 @@
                         </figure>
                         <div class="textbox">
                             <!--글 제목-->
-                            <?php the_title(); ?>
-                            <!--요약글 출력-->
-                            <?php the_excerpt(); ?>
+                            <h3>
+                                <?php the_title(); ?>
+                            </h3>
+                            <dl>
+                                <dt></dt>
+                                <dd><?php echo rwmb_meta('producer'); ?></dd>
+                                <dt></dt>
+                                <dd><?php echo rwmb_meta('model_id'); ?></dd>
+                                <dt></dt>
+                                <dd><?php echo rwmb_meta('price'); ?></dd>
+                                <dt></dt>
+                                <dd><?php echo rwmb_meta('desc'); ?></dd>
+                            </dl>
                             <!--해당글 링크-->
                             <a href="<?php the_permalink(); ?>">해당글 보기</a>
                             <!--리스트 한개 끝-->

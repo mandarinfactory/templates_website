@@ -20,4 +20,78 @@
             }//a
         }//p
     }//tag-cloud
+    li {
+        @media screen and (min-width:1000px) {
+                div.inner {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                    figure {
+                        width: 30%;
+                    }//figure
+                    .textbox {
+                        width: 68%;
+                    }//textbox
+                }//inner
+            }//lg
+            @media screen and (min-width:500px) and (max-width:1000px) {
+                
+            }//md
+            @media screen and (max-width:500px) {
+                
+            }//sm
+            .inner {
+                figure {
+                    img {
+                        width: 100%;
+                    }//img
+                }//figure
+                .textbox {
+                    h3 {
+                        position: relative;
+                        padding-bottom: 7px;
+                        padding-left: 10px;
+                        margin-bottom: 5px;
+                        color: var(--dark);
+                        font-weight: 700;
+                        font-size: 1.5em;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            width: 3px;
+                            height: 70%;
+                            transform: translateY(-50%);
+                            background-color: var(--dark);
+                        }
+                    }//h3
+                    dl {
+                        display: flex;
+                        flex-wrap: wrap;
+                        dd,dt {
+                            padding-bottom: 5px;
+                            border-bottom: 1px dotted white;
+                        }//dd,dt
+                        dt {
+                            width: 100px;
+                            font-weight: 700;
+                        }//dt
+                        dd {
+                            width: calc(100% - 100px);
+                        }//dd
+                    }//dl
+                    a {
+                        display: block;
+                        max-width: 500px;
+                        margin: 0 auto;
+                        margin-top: 15px;
+                        padding: 7px;
+                        color: white;
+                        background-color: var(--dark);
+                        text-align: center;
+                    }//a
+                }//textbox
+            }//inner
+    }
 }//category-prd-gallery
