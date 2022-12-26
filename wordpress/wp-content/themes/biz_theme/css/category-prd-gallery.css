@@ -35,11 +35,19 @@
   .category-prd-gallery li {
     margin: 50px auto;
     max-width: 700px;
+    padding-top: 30px;
+    border-top: 1px solid var(--dark);
   }
-  .category-prd-gallery li margin img {
+  .category-prd-gallery li figure {
     max-width: 500px;
     margin: 0 auto;
+    margin-bottom: 30px;
   }
+}
+.category-prd-gallery li .inner figure {
+  box-sizing: border-box;
+  border: 5px solid var(--dark);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .category-prd-gallery li .inner figure img {
   width: 100%;
