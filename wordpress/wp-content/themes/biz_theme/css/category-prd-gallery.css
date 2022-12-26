@@ -31,6 +31,11 @@
     width: 68%;
   }
 }
+@media screen and (max-width: 1000px) {
+  .category-prd-gallery li {
+    margin: 20px 0;
+  }
+}
 .category-prd-gallery li .inner figure img {
   width: 100%;
 }

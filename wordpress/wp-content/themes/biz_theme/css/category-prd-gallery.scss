@@ -34,11 +34,8 @@
                     }//textbox
                 }//inner
             }//lg
-            @media screen and (min-width:500px) and (max-width:1000px) {
-                
-            }//md
-            @media screen and (max-width:500px) {
-                
+            @media screen and (max-width:1000px) {
+               margin: 20px 0;
             }//sm
             .inner {
                 figure {
