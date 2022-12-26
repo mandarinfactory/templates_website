@@ -33,7 +33,12 @@
 }
 @media screen and (max-width: 1000px) {
   .category-prd-gallery li {
-    margin: 20px 0;
+    margin: 50px auto;
+    max-width: 700px;
+  }
+  .category-prd-gallery li margin img {
+    max-width: 500px;
+    margin: 0 auto;
   }
 }
 .category-prd-gallery li .inner figure img {
