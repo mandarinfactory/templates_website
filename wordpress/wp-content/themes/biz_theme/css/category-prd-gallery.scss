@@ -46,12 +46,19 @@
                }//figure
             }//sm
             .inner {
+                &:hover {
+                    img {
+                        transform: scale(1.2);
+                    }//img
+                }//hover
                 figure {
                     box-sizing: border-box;
                     border: 5px solid var(--dark);
                     box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.3);
+                    overflow: hidden;
                     img {
                         width: 100%;
+                        transition: all 0.3s;
                     }//img
                 }//figure
                 .textbox {

@@ -44,13 +44,18 @@
     margin-bottom: 30px;
   }
 }
+.category-prd-gallery li .inner:hover img {
+  transform: scale(1.2);
+}
 .category-prd-gallery li .inner figure {
   box-sizing: border-box;
   border: 5px solid var(--dark);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 }
 .category-prd-gallery li .inner figure img {
   width: 100%;
+  transition: all 0.3s;
 }
 .category-prd-gallery li .inner .textbox h3 {
   position: relative;
