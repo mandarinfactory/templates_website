@@ -37,7 +37,7 @@ window.menuCateArr = [
     },
     {
         pageID: 7,
-        pageLabel: '/search/',
+        pageLabel: '?s=/',
         pageTitle: 'product',
         pageDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
     },
