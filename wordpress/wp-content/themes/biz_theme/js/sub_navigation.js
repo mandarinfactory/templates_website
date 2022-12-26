@@ -27,10 +27,7 @@ $(function () {
             $(this).addClass('active');
         }//if
     })//each
-    if (address.match('/tag/')) {
-        $(`.snb > div > ul:nth-child(3)`).show();
-    }//if
-    if (address.match('?s=')) {
+    if (address.match('/tag/') || address.match('/?s=')) {
         $(`.snb > div > ul:nth-child(3)`).show();
     }//if
 })//document.ready

@@ -4,16 +4,15 @@
         <em data-title="<?php single_cat_title(' '); ?>">
             <!-- before -->
             <span class="hidden">
-                태그목록
+                검색목록
             </span>
             <!-- after -->
         </em>
     </h2>
     <!-- 안내문 -->
     <p class="theme_guide">
-        태그목록은 관리자 / 글 / 태그메뉴에서 관리할 수 있습니다. <br>
-        디자인 수정은 tag.php에서
-        수정편집 하실 수 있습니다.
+        관리자 / 외모 / 위젯 메뉴를 이용해 구현했습니다. <br>
+        테마폴더의 search.php에서 구성내용을 편집 하실 수 있습니다.
         <button>
             <i class="fa-solid fa-xmark"></i>
         </button>
@@ -22,7 +21,7 @@
 
     <!--카테고리 설명 출력-->
     <div class="category_desc">
-        관련된 태그명의 상품 목록 결과입니다.
+        검색하신 상품명의 상품 목록 결과 입니다.
     </div>
     <!-- 태그 클라우드 출력 -->
     <ul class="tag-cloud">
