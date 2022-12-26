@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/footer.css">
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/category.css">
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/category-prd-list.css">
+  <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/category-prd-gallery.css">
   <!-- layout_CSS -->
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/logo.css">
   <link rel="stylesheet" href="<?php bloginfo('url'); ?>/wp-content/themes/biz_theme/css/menu_btn.css">

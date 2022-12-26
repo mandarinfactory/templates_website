@@ -25,5 +25,13 @@
             <?php echo category_description(); ?>
         </div>
 
+        <ul class="tag-cloud">
+            <?php
+            if (is_active_sidebar('tags')) {
+                dynamic_sidebar('tags');
+            }
+            ?>
+        </ul>
+
 </section>
 <?php include "sub_footer.php" ?>

@@ -7,6 +7,10 @@ register_sidebar(array(
     'name' => __('search'),
     'id' => 'search',  // 위젯 영역의 고유한 ID
 )); // 위젯추가
+register_sidebar(array(
+    'name' => __('태그클라우드'),
+    'id' => 'tags',  // 위젯 영역의 고유한 ID
+));
 add_filter('rwmb_meta_boxes', 'your_prefix_meta_boxes');
 function your_prefix_meta_boxes($meta_boxes)
 {
