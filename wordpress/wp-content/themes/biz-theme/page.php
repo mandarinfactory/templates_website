@@ -9,13 +9,15 @@
     </em>
   </h2>
 
-  <!--안내문-->
+  <!-- 안내문
   <p class="theme-guide">
     kboard 플러그인을 확용하여 구현했습니다. <br>
     게시글을 관리자/kboard/게시판목록에서 수정, 편집 하실 수 있습니다.
     <button><i class="fa-solid fa-circle-xmark"></i></button>
-  </p>
-
+  </p> -->
+  <!--  관리자 메뉴 페이지별로 설명을 추가해야함
+  <div class="theme-desc">
+  </div> -->
   <!--페이지 출력 시작-->
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <!--페이지 본문 출력-->

@@ -25,6 +25,7 @@
   } //ul.tag-colud
 
   ul.list-container {
+    overflow: hidden;
     li {
       @media screen and (min-width: 1000px) {
         padding: 30px 0;

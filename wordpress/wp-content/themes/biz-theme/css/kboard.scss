@@ -1,0 +1,11 @@
+#kboard-document {
+    .content-view {
+        img {
+            display: block !important;
+            margin: 0 auto !important;
+            box-sizing: border-box;
+            border: 5px solid white;
+            box-shadow: 0 0 10px black;
+        }//img
+    }//content-view
+}//kboard-document

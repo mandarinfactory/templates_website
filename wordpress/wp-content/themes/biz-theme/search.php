@@ -1,5 +1,5 @@
 <?php include "sub-header.php" ?>
-
+<script src="<?php bloginfo('template_directory'); ?>/js/category-prd-gallery.js"></script>
 <section class="category-prd-gallery">
   <!--카테고리 전체 제목 출력-->
   <h2 class="sub-title">

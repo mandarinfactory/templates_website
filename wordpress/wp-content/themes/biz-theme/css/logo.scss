@@ -2,7 +2,7 @@
 body{
   background: #FFF;
 }
-h1{
+h1.site-logo{
   @include logo;
   position: fixed;
   z-index: 11;

@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/category-prd-list.css">
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/category-prd-gallery.css">
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/single.css">
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/kboard.css">
   <script src="https://kit.fontawesome.com/7d1f9ca95d.js" crossorigin="anonymous"></script>
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="<?php bloginfo('template_directory'); ?>/js/common.js"></script>
@@ -42,7 +43,7 @@
 
 <body <?php body_class(); ?>>
   <script src="<?php bloginfo('template_directory'); ?>/js/header.js"></script>
-  <h1>
+  <h1 class="site-logo">
     <?php include "logo.php" ?>
   </h1>
   <header>
