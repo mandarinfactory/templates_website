@@ -18,7 +18,7 @@
   </p>
 
   <!--카테고리 설명 출력-->
-  <div class="category-desc">
+  <div class="theme-desc">
     <?php echo category_description(); ?>
   </div>
 
