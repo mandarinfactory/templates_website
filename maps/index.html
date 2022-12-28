@@ -14,19 +14,19 @@
 </head>
 
 <body>
-  <div id="map" style="width: 50%; height: 600px"></div>
-  <div class="button">
-    <button onclick="panTo()">여의도</button>
-    <button></button>
-    <button></button>
-    <button></button>
-    <button></button>
-    <button></button>
-    <button></button>
-    <button></button>
-    <button></button>
-    <button></button>
-  </div>
+  <div id="map" style="width: 50%; height: 700px"></div>
+  <p class="button">
+    <button onclick="panTo1()">여의도</button>
+    <button onclick="panTo2()">명동</button>
+    <button onclick="panTo3()">광화문</button>
+    <button onclick="panTo4()">삼청</button>
+    <button onclick="panTo5()">삼청한옥</button>
+    <button onclick="panTo6()">한남</button>
+    <button onclick="panTo7()">성수</button>
+    <button onclick="panTo8()">역삼</button>
+    <button onclick="panTo9()">압구정</button>
+    <button onclick="panTo10()">제주</button>
+  </p>
   <script>
     const yeoido = new naver.maps.LatLng(37.525817, 126.928338);
     const myungdong = new naver.maps.LatLng(37.563498, 126.983001);
@@ -39,15 +39,84 @@
     const apgujeong = new naver.maps.LatLng(37.525708, 127.02885);
     const jeju = new naver.maps.LatLng(33.433223, 126.750818);
 
-
-    const mapContainer = document.getElementById("map")
     const map = new naver.maps.Map("map", {
-      center: new naver.maps.LatLng(37.551048, 126.988012), //중심으로 하는 지도(서울시청으로...만만하니깐)
+      center: new naver.maps.LatLng(37.551048, 126.988012),
       zoom: 14,
       logoControl: false,
       mapDataControl: false,
       scaleControl: false,
-    });
+    })//중심으로 하는 지도(서울시청으로...만만하니깐)
+
+    function panTo1() {
+      // 이동할 위도 경도 위치를 생성합니다 
+      let moveLatLon1 = yeoido;
+      // 지도 중심을 부드럽게 이동시킵니다
+      // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+      map.panTo(moveLatLon1);
+    }//function_panTo1
+    function panTo2() {
+      // 이동할 위도 경도 위치를 생성합니다 
+      let moveLatLon2 = myungdong;
+      // 지도 중심을 부드럽게 이동시킵니다
+      // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+      map.panTo(moveLatLon2);
+    }//function_panTo2
+    function panTo3() {
+      // 이동할 위도 경도 위치를 생성합니다 
+      let moveLatLon3 = gwangha;
+      // 지도 중심을 부드럽게 이동시킵니다
+      // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+      map.panTo(moveLatLon3);
+    }//function_panTo3
+    function panTo4() {
+      // 이동할 위도 경도 위치를 생성합니다 
+      let moveLatLon4 = samchung;
+      // 지도 중심을 부드럽게 이동시킵니다
+      // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+      map.panTo(moveLatLon4);
+    }//function_panTo4
+    function panTo5() {
+      // 이동할 위도 경도 위치를 생성합니다 
+      let moveLatLon5 = samchungHanok;
+      // 지도 중심을 부드럽게 이동시킵니다
+      // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+      map.panTo(moveLatLon5);
+    }//function_panTo5
+    function panTo6() {
+      // 이동할 위도 경도 위치를 생성합니다 
+      let moveLatLon6 = hannam;
+      // 지도 중심을 부드럽게 이동시킵니다
+      // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+      map.panTo(moveLatLon6);
+    }//function_panTo6
+    function panTo7() {
+      // 이동할 위도 경도 위치를 생성합니다 
+      let moveLatLon7 = sungsu;
+      // 지도 중심을 부드럽게 이동시킵니다
+      // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+      map.panTo(moveLatLon7);
+    }//function_panTo7
+    function panTo8() {
+      // 이동할 위도 경도 위치를 생성합니다 
+      let moveLatLon8 = yeoksam;
+      // 지도 중심을 부드럽게 이동시킵니다
+      // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+      map.panTo(moveLatLon8);
+    }//function_panTo8
+    function panTo9() {
+      // 이동할 위도 경도 위치를 생성합니다 
+      let moveLatLon9 = apgujeong;
+      // 지도 중심을 부드럽게 이동시킵니다
+      // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+      map.panTo(moveLatLon9);
+    }//function_panTo9
+    function panTo10() {
+      // 이동할 위도 경도 위치를 생성합니다 
+      let moveLatLon10 = jeju;
+      // 지도 중심을 부드럽게 이동시킵니다
+      // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+      map.panTo(moveLatLon10);
+    }//function_panTo10
 
     let marker1ConStr = [
       '<div class="hj_inner">',
@@ -58,7 +127,7 @@
       '<a href="https://www.bluebottlecoffeekorea.com/" target="_blank">https://www.bluebottlecoffeekorea.com/</a>',
       '<a href="tel:1533-6906"><i class="fa-solid fa-headset"></i>1533-6906</a>',
       "</div>",
-    ].join(""); //marker1ConStr
+    ].join("")//marker1ConStr
     let marker1 = new naver.maps.Marker({
       position: yeoido,
       map: map,
@@ -67,19 +136,8 @@
         size: new naver.maps.Size(22, 35),
         origin: new naver.maps.Point(0, 0),
         anchor: new naver.maps.Point(11, 35)
-      }
-    }); //marker1
-
-    function panTo() {
-      // 이동할 위도 경도 위치를 생성합니다 
-      let moveLatLon = new naver.maps.LatLng({
-        position: yeoido
-      });
-
-      // 지도 중심을 부드럽게 이동시킵니다
-      // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
-      map.panTo(moveLatLon);
-    }//function_panTo
+      }//icon
+    })//marker1
 
     let infoWin1 = new naver.maps.InfoWindow({
       content: marker1ConStr,
@@ -108,6 +166,7 @@
         anchor: new naver.maps.Point(11, 35)
       }
     }); //marker2
+
     let infoWin2 = new naver.maps.InfoWindow({
       content: marker2ConStr,
     }); //infoWin2
