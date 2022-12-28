@@ -1,0 +1,116 @@
+@import 'mixin';
+
+
+section.section-single {
+    dl.post-meta {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 0.9em;
+        border-top: 2px solid var(--dark);
+        dt,dd {
+            box-sizing: border-box;
+            padding: 7px;
+            border-bottom: 1px solid black;
+        }//dt,dd
+        dt {
+            width: 100px;
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+        }//dt
+        dd {
+            width: calc(100% - 100px);
+            a {
+                a::before {
+                    content: '#';
+                }//before
+                a:hover {
+                    color: var(--orange);
+                }//hover
+            }//a
+        }//dd
+    }//dl
+    div.post {
+        margin: 30px auto;
+        img {
+            width: 90%;
+            max-width: 700px;
+            box-sizing: border-box;
+            padding: 5px;
+            background-color: white;
+            border: 1px solid white;
+            margin: 10px auto;
+        }//img
+        p {
+            max-width: 700px;
+            margin: 10px auto;
+            &:first-letter {
+                font-size: 1.4em;
+                color: var(--darkblue);
+            }//first-letter
+        }//p
+    }//div
+    ul.post-nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding-top: 20px;
+        border-top: 1px solid var(--darkblue);
+        li {
+           width: 70px;
+           height: 70px;
+           margin: 0 5px;
+           &.goto-list {
+            width: 100%;
+            margin-top: 10px;
+            text-align: center;
+            a {
+                padding: 5px 100px;
+                background-color: var(--dark);
+                color: white;
+                transition: all 0.3s;
+                &:hover {
+                    color: var(--darkblue);
+                }//a:hover
+            }//a
+           }//li.goto-list
+           &.indicator {
+            a {
+                display: block;
+                position: relative;
+                overflow: hidden;
+                &:hover {
+                    img {
+                        filter: brightness(0.5);
+                        transform: scale(1.2);
+                    }//img
+                    i {
+                        opacity: 1;
+                    }//i
+                }//a:hover
+                img, i {
+                    transition: all 0.3s ;
+                }//img, i
+                img {
+                    filter: brightness(0.8);
+                }//img
+                i {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    color: white;
+                    opacity: 0.7;
+                }//i
+            }//a
+           }//li.indicator
+            img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            }//img
+        }//li
+    }//ul
+}//section

@@ -1,0 +1,107 @@
+.sub-visual {
+  position: relative;
+  background: #000;
+  /* lg */
+  /* sm */
+  /* motion----------------------------------------- */
+}
+@media screen and (min-width: 1100px) {
+  .sub-visual {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .sub-visual {
+    height: 250px;
+  }
+}
+.sub-visual #particles-js, .sub-visual #noise {
+  pointer-events: none;
+  position: absolute !important;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: color-dodge;
+}
+.sub-visual figure {
+  position: relative;
+  height: inherit;
+  /* display: flex; */
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.sub-visual figure img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.sub-visual figure figcaption {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  box-sizing: border-box;
+  padding-left: 30px;
+  color: #FFF;
+}
+.sub-visual figure figcaption::before, .sub-visual figure figcaption::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 2px;
+}
+.sub-visual figure figcaption::before {
+  top: 0;
+  height: 0%;
+  background: var(--orange);
+}
+.sub-visual figure figcaption::after {
+  bottom: 0;
+  height: 0%;
+  background: var(--blue);
+}
+.sub-visual figure figcaption h5 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  /* lg */
+  /* sm */
+}
+@media screen and (min-width: 700px) {
+  .sub-visual figure figcaption h5 {
+    font-size: 4em;
+    font-weight: 100;
+  }
+}
+@media screen and (max-width: 700px) {
+  .sub-visual figure figcaption h5 {
+    font-size: 8vw;
+    font-weight: 900;
+  }
+}
+.sub-visual figure figcaption p {
+  font-weight: 600;
+}
+.sub-visual figure {
+  overflow: hidden;
+}
+.sub-visual figure img {
+  transform: scale(1.3);
+  filter: brightness(0) blur(10px);
+}
+.sub-visual figure.active img {
+  transform: scale(1);
+  filter: brightness(60%) blur(0px);
+  transition: transform 30s, filter 5s;
+}
+.sub-visual figure.active figcaption::after, .sub-visual figure.active figcaption::before {
+  height: 50%;
+  transition: all 1s;
+}
+
+/* lg */
+/* sm *//*# sourceMappingURL=sub-visual.css.map */

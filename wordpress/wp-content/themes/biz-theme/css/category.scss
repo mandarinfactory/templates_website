@@ -1,0 +1,56 @@
+@import 'mixin';
+.category-desc{
+  margin-bottom: 20px;
+  padding: 20px 0;
+  text-align: center;
+  border:1px dotted var(--blue);
+  border-left:none;
+  border-right:none;
+  font-weight: 600;
+  color:var(--blue);
+}
+ul.page-numbers{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  &::before{
+    content:"";
+    position: absolute;
+    width: 100%;
+    top:50%;
+    transform: translateY(-50%);
+    border-top:1px dotted rgba(#000,0.2);
+  }
+  li{
+    position: relative;
+    margin: 0 5px;
+    background: #FFF;  
+    a,span{
+      display: block;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      color:#999;
+      border:1px solid #CCC;
+      &.next,&.prev{
+        border:none;
+      } 
+      &.current{
+        border-color:var(--orange);
+        background: var(--orange);
+        color:#FFF;
+      }
+      &:hover:not(.current){
+        color:var(--orange);
+      }
+    }//a,span 
+  }
+}//page-number
+/////////////////////////////////////
+@media screen and (min-width:1100px) {
+  
+}//lg
+@media screen and (max-width:1100px) {
+  
+}//sm

@@ -1,0 +1,30 @@
+body,html{
+  height: 100%;
+  box-sizing: border-box;
+}
+*{/* user agent stylesheet 제거 : 컴퓨터가 자체적으로 지정한 기본값을 없앤다 */
+  margin: 0;
+  padding: 0;
+  word-break: keep-all; /* 단어 줄내림 방지 */
+}
+li{
+  list-style: none; /* 목록만들 때 ● 옆에뜨는 모양 없애기 */
+}
+img,svg,iframe,video{
+  display: block; /* 인라인 요소라서 컨테이너 안에 넣을 시 컨테이너의 높이와 다르게 간격이 발생한다. 따라서 컨테이너 하단사이의 간격을 없애기 위함 */
+}
+input,textarea,select{
+  box-sizing: border-box; /* 요소의 크기가 커지지않도록, 내부적으로 들어가게끔 (border, padding 속성들 사용시) */
+}
+table{
+  border-collapse: collapse; /* 테이블 안의 간격을 없애줌  */
+}
+button{
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+iframe{
+  border: none;
+}

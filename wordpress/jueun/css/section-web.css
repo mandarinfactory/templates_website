@@ -1,0 +1,106 @@
+.section-web {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2%;
+}
+@media screen and (min-width: 1400px) {
+  .section-web {
+    height: 100%;
+  }
+}
+.section-web .inner {
+  box-sizing: border-box;
+  border: 1px solid var(--main-color);
+  padding: 20px;
+}
+@media screen and (min-width: 1400px) {
+  .section-web .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  .section-web .inner .textbox {
+    width: 35%;
+  }
+  .section-web .inner .imgbox {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .section-web .inner .textbox {
+    margin-bottom: 50px;
+  }
+}
+.section-web .inner .textbox h3 {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  color: var(--main-color);
+  font-weight: 700;
+  border-bottom: 1px dotted var(--main-color);
+}
+.section-web .inner .textbox h3 small {
+  display: block;
+  text-transform: capitalize;
+  font-style: italic;
+  font-size: 1.2em;
+}
+.section-web .inner .textbox h3 em {
+  display: block;
+  margin-top: -10px;
+  font-size: 3em;
+  text-transform: uppercase;
+}
+.section-web .inner .textbox .desc {
+  margin: 20px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px dotted #CCC;
+}
+.section-web .inner .textbox .detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.section-web .inner .textbox .detail > div {
+  width: 32%;
+  margin-bottom: 20px;
+}
+.section-web .inner .textbox .detail > div h4 {
+  margin-bottom: 5px;
+  color: var(--main-color);
+  font-weight: 700;
+}
+.section-web .inner .textbox .detail > .duration ~ * {
+  width: 100%;
+  padding-top: 20px;
+  text-align: left;
+  border-top: 1px dotted #CCC;
+}
+.section-web .inner .textbox .detail .consept b::before {
+  content: "#";
+}
+.section-web .inner .imgbox figure img {
+  width: 100%;
+}
+.section-web .inner .imgbox .viewbox {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.section-web .inner .imgbox .viewbox a {
+  display: block;
+  width: 28%;
+  height: 150px;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.section-web .inner .imgbox .viewbox a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  box-sizing: border-box;
+  padding: 5px;
+  background: var(--light-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}/*# sourceMappingURL=section-web.css.map */

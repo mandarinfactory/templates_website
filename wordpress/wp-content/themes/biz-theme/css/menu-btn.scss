@@ -1,0 +1,79 @@
+@import 'mixin';
+.menu-btn{
+  position: absolute;
+  width: 60px;
+  height: 60px; 
+  @media screen and (min-width:1100px){
+    top:10px;
+    left:30px;
+    i{
+      background: var(--dark);
+    }
+    b{
+      color: var(--dark);
+    }
+  }//lg
+  @media screen and (max-width:1100px){
+    right: 5%;
+    top:5px;
+    mix-blend-mode: difference; 
+    i{
+      background: #FFF;
+    }
+    b{
+      color: #FFF;
+    }
+  }//sm
+  i{
+   position: absolute;
+   height: 2px;
+   transition: all 0.5s;
+   &.bar1{
+    right: 10%;
+    top:10px;
+    width: 40%;
+   }//1 
+   &.bar2{
+    left: 10%;
+    top:20px;
+    width: 80%;
+   }//2 
+   &.bar3{
+    left: 10%;
+    top:30px;
+    width: 40%;
+   }//3 
+  }//i
+  b{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }//b
+  /* hover motion */
+  &:hover{
+    i{
+      width: 80%;
+    }//i
+  }//hover
+  /* active motion */
+  &.active{
+    i{
+      width: 80%;
+      top:20px; 
+      &.bar1{
+        transform: rotate(45deg);
+      }
+      &.bar2{
+        transform: translateX(-20px);
+        opacity: 0;
+      }
+      &.bar3{
+        transform: rotate(-45deg);
+      }
+    }
+  }//btn.active
+}//menu-btn

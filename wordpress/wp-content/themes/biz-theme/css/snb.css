@@ -1,0 +1,81 @@
+.snb {
+  position: sticky;
+  z-index: 1;
+  height: 60px;
+  transition: all 1s;
+}
+@media screen and (min-width: 1100px) {
+  .snb {
+    margin-top: -61px;
+    top: 0;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .snb {
+    top: 70px;
+    overflow: hidden;
+    overflow-x: auto;
+  }
+}
+.snb > div {
+  max-width: 1200px;
+  height: inherit;
+  margin: 0 auto;
+  background: #FFF;
+  border-bottom: 1px solid var(--blue);
+}
+.snb > div > ul > li {
+  display: none;
+}
+.snb > div > ul > li.current-menu-ancestor {
+  display: block;
+}
+.snb > div > ul > li > a {
+  display: none;
+}
+.snb > div > ul > li > ul {
+  height: 60px;
+  text-align: center;
+}
+@media screen and (min-width: 1100px) {
+  .snb > div > ul > li > ul {
+    display: flex;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .snb > div > ul > li > ul {
+    display: inline-flex;
+    min-width: 100%;
+    justify-content: center;
+  }
+}
+.snb > div > ul > li > ul > li {
+  position: relative;
+  height: inherit;
+  box-sizing: border-box;
+  border-right: 1px solid var(--dark);
+}
+.snb > div > ul > li > ul > li:last-child {
+  border: none;
+}
+@media screen and (min-width: 1100px) {
+  .snb > div > ul > li > ul > li {
+    flex: 1;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .snb > div > ul > li > ul > li {
+    width: 200px;
+  }
+}
+.snb > div > ul > li > ul > li > a {
+  display: block;
+  text-align: center;
+  line-height: 60px;
+  font-weight: 600;
+  color: var(--dark);
+}
+.snb > div > ul > li > ul > li > a[aria-current], .snb > div > ul > li > ul > li > a.active {
+  color: #FFF;
+  background-color: var(--blue);
+}/*# sourceMappingURL=snb.css.map */

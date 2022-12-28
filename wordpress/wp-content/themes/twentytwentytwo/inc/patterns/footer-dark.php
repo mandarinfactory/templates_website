@@ -1,6 +1,6 @@
 <?php
 /**
- * Dark footer with title and citation
+ * Dark footer wtih title and citation
  */
 return array(
 	'title'      => __( 'Dark footer with title and citation', 'twentytwentytwo' ),

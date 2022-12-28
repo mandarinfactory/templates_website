@@ -1,0 +1,132 @@
+@charset "UTF-8";
+.gnb {
+  pointer-events: none;
+  position: fixed;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark);
+  -webkit-mask-image: url(../img/icon&logo/gnb-mask-left.png), url(../img/icon&logo/gnb-mask-right.png);
+  -webkit-mask-size: 0% 100%, 0% 100%;
+  -webkit-mask-position: left 0, right 0;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: url(../img/icon&logo/gnb-mask-left.png), url(../img/icon&logo/gnb-mask-right.png);
+  mask-size: 0% 100%, 0% 100%;
+  mask-position: left 0, right 0;
+  mask-repeat: no-repeat;
+  transition: -webkit-mask-size 1s, mask-size 1s;
+}
+.gnb.active {
+  pointer-events: all;
+  -webkit-mask-size: 100% 100%, 100% 100%;
+  mask-size: 100% 100%, 100% 100%;
+}
+@media screen and (min-width: 1100px) {
+  .gnb {
+    right: 95px;
+    width: calc(100% - 95px);
+    height: 100%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .gnb {
+    top: 70px;
+    width: 100%;
+    height: calc(100% - 70px);
+  }
+}
+.gnb svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  max-width: 700px;
+  opacity: 0.5;
+}
+.gnb svg path {
+  fill: none;
+  stroke: var(--orange);
+  stroke-width: 1px;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 10s infinite linear;
+}
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  100% {
+    stroke-dashoffset: -1;
+  }
+}
+.gnb > div {
+  position: relative;
+  width: 80%;
+  max-width: 300px;
+  box-sizing: border-box;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  /* motion-------------------- */
+}
+.gnb > div > ul > li.current-menu-ancestor > a {
+  color: var(--blue);
+}
+.gnb > div > ul > li > a {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 10px 0;
+  text-transform: uppercase;
+  color: #FFF;
+  font-weight: 900;
+  font-size: 1.3em;
+}
+.gnb > div > ul > li > a i {
+  margin-right: 10px;
+  font-size: 0.7em;
+}
+.gnb > div > ul > li > a span.ko {
+  display: none;
+}
+.gnb > div > ul > li > a::after {
+  content: "+";
+  margin-left: auto;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 0.8em;
+}
+.gnb > div > ul > li > a.active::after {
+  content: "\f068";
+}
+.gnb > div > ul > li > a:hover {
+  color: var(--blue);
+}
+.gnb > div > ul > li > ul {
+  display: none;
+  padding-bottom: 2px;
+}
+.gnb > div > ul > li > ul > li > a {
+  display: block;
+  padding: 5px 20px;
+  color: #AAA;
+}
+.gnb > div > ul > li > ul > li > a[aria-current] {
+  color: var(--orange) !important;
+}
+.gnb > div > ul > li > ul > li > a::before {
+  content: "· ";
+}
+.gnb > div > ul > li > ul > li > a:hover {
+  color: #FFF;
+}
+.gnb > div > ul > li > a.active {
+  color: var(--orange);
+}/*# sourceMappingURL=gnb.css.map */

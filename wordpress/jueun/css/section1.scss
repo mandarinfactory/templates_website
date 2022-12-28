@@ -1,0 +1,31 @@
+.section1 {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 5%;
+  background: var(--main-color);
+  .about {
+    width: 60%;
+    max-width: 700px;
+    h2 {
+      font-weight:700;
+      font-size: 15em;
+
+      text-transform: uppercase;
+      color: #fff;
+      @media screen and (max-width:1300px){
+        font-size: 18vw;
+      }
+    }
+    .desc {
+      font-weight: 400;
+      font-size: 0.9em;
+      color: var(--dark-color);
+    }
+    .desc-top {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+  } //about
+}

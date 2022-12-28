@@ -1,0 +1,117 @@
+.section-web {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2%;
+  @media screen and (min-width: 1400px) {
+    height: 100%;
+  } //lg
+  .inner {
+    box-sizing: border-box;
+    border: 1px solid var(--main-color);
+    padding: 20px;
+    @media screen and (min-width: 1400px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      .textbox {
+        width: 35%;
+      }
+      .imgbox {
+        width: 60%;
+      }
+    } //inner lg
+    @media screen and (min-width: 1400px) {
+      .textbox {
+        margin-bottom: 50px;
+      }
+    } //inner sm
+    .textbox {
+      h3 {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        color: var(--main-color);
+        font-weight: 700;
+        border-bottom: 1px dotted var(--main-color);
+        small {
+          display: block;
+          text-transform: capitalize;
+          font-style: italic;
+          font-size: 1.2em;
+        }
+        em {
+          display: block;
+          margin-top: -10px;
+          font-size: 3em;
+          text-transform: uppercase;
+        }
+      }//h3
+      .desc{
+        margin: 20px 0;
+        padding-bottom: 20px;
+        border-bottom: 1px dotted #CCC;
+      }
+      .detail{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        >div{
+          width: 32%;
+          margin-bottom: 20px;
+          h4{
+            margin-bottom: 5px;
+            color:var(--main-color);
+            font-weight: 700;
+          }
+        }
+        >.duration~*{
+          width: 100%;
+          padding-top: 20px;
+          text-align: left;
+          border-top:1px dotted #CCC;
+        }
+        .consept b::before{
+          content: '#';
+        }
+        
+      }//detail
+
+    } //textbox
+    .imgbox {
+      figure {
+        img {
+          width: 100%;
+        }
+      } //figure
+      .viewbox {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        a {
+          display: block;
+          width: 28%;
+          height: 150px;
+          box-sizing: border-box;
+          padding: 15px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            box-sizing: border-box;
+            padding: 5px;
+            background: var(--light-color);
+            box-shadow: 0 0 10px rgba(#000, 0.2);
+          }
+        }
+      }
+    } //imgbox
+  } //inner
+} //setion
+
+
+
+@media screen and (min-width: 1000px) {
+}
+@media screen and (max-width: 1000px) {
+}

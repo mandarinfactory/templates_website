@@ -1,0 +1,105 @@
+section.section-single dl.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.9em;
+  border-top: 2px solid var(--dark);
+}
+section.section-single dl.post-meta dt, section.section-single dl.post-meta dd {
+  box-sizing: border-box;
+  padding: 7px;
+  border-bottom: 1px solid black;
+}
+section.section-single dl.post-meta dt {
+  width: 100px;
+  background-color: var(--dark);
+  color: white;
+  text-align: center;
+}
+section.section-single dl.post-meta dd {
+  width: calc(100% - 100px);
+}
+section.section-single dl.post-meta dd a a::before {
+  content: "#";
+}
+section.section-single dl.post-meta dd a a:hover {
+  color: var(--orange);
+}
+section.section-single div.post {
+  margin: 30px auto;
+}
+section.section-single div.post img {
+  width: 90%;
+  max-width: 700px;
+  box-sizing: border-box;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid white;
+  margin: 10px auto;
+}
+section.section-single div.post p {
+  max-width: 700px;
+  margin: 10px auto;
+}
+section.section-single div.post p:first-letter {
+  font-size: 1.4em;
+  color: var(--darkblue);
+}
+section.section-single ul.post-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--darkblue);
+}
+section.section-single ul.post-nav li {
+  width: 70px;
+  height: 70px;
+  margin: 0 5px;
+}
+section.section-single ul.post-nav li.goto-list {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
+section.section-single ul.post-nav li.goto-list a {
+  padding: 5px 100px;
+  background-color: var(--dark);
+  color: white;
+  transition: all 0.3s;
+}
+section.section-single ul.post-nav li.goto-list a:hover {
+  color: var(--darkblue);
+}
+section.section-single ul.post-nav li.indicator a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+section.section-single ul.post-nav li.indicator a:hover img {
+  filter: brightness(0.5);
+  transform: scale(1.2);
+}
+section.section-single ul.post-nav li.indicator a:hover i {
+  opacity: 1;
+}
+section.section-single ul.post-nav li.indicator a img, section.section-single ul.post-nav li.indicator a i {
+  transition: all 0.3s;
+}
+section.section-single ul.post-nav li.indicator a img {
+  filter: brightness(0.8);
+}
+section.section-single ul.post-nav li.indicator a i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0.7;
+}
+section.section-single ul.post-nav li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}/*# sourceMappingURL=single.css.map */

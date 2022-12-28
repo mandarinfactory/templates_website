@@ -1,0 +1,221 @@
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  font-size: 0.85em;
+  color: #888;
+  background: #333;
+}
+@media screen and (min-width: 1100px) {
+  footer {
+    width: calc(100% - 120px);
+  }
+}
+@media screen and (max-width: 1100px) {
+  footer {
+    width: 100%;
+  }
+}
+footer > div {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+footer .footer-top {
+  box-sizing: border-box;
+  padding: 30px;
+  background: var(--dark);
+}
+@media screen and (min-width: 1200px) {
+  footer .footer-top {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 1200px) {
+  footer .footer-top {
+    text-align: center;
+  }
+}
+footer .footer-top .company h6 {
+  transition: filter 1s;
+  transform-origin: left top;
+  margin-bottom: 20px;
+  transform: scale(0.7);
+}
+footer .footer-top .company h6:hover {
+  filter: brightness(0) invert(1);
+  mix-blend-mode: difference;
+}
+footer .footer-top .company h6:hover figure {
+  animation-direction: reverse !important;
+  animation-iteration-count: 1 !important;
+  animation-duration: 1.5s !important;
+}
+footer .footer-top .company h6 a {
+  display: flex;
+  align-items: flex-end;
+}
+footer .footer-top .company h6 a div.logo {
+  perspective: 500px;
+  width: 50px;
+  height: 50px;
+}
+footer .footer-top .company h6 a div.logo figure {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  transform-style: preserve-3d;
+  transform: rotateX(-135deg) rotateY(-45deg) rotateZ(-90deg);
+  animation: rotate 20s linear infinite;
+  transition: all 1s;
+}
+footer .footer-top .company h6 a div.logo figure img {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  backface-visibility: hidden;
+}
+footer .footer-top .company h6 a div.logo figure img.front {
+  transform: translateZ(25px);
+}
+footer .footer-top .company h6 a div.logo figure img.back {
+  transform: rotateY(180deg) translateZ(25px);
+}
+footer .footer-top .company h6 a div.logo figure img.left {
+  transform: rotateY(90deg) translateZ(25px);
+}
+footer .footer-top .company h6 a div.logo figure img.right {
+  transform: rotateY(-90deg) translateZ(25px);
+}
+footer .footer-top .company h6 a div.logo figure img.top {
+  transform: rotateX(90deg) translateZ(25px);
+}
+footer .footer-top .company h6 a div.logo figure img.bottom {
+  transform: rotateX(-90deg) translateZ(25px);
+}
+footer .footer-top .company h6 a .logo-type {
+  margin-left: 20px;
+  width: 150px;
+}
+@media screen and (max-width: 1200px) {
+  footer .footer-top .company h6 {
+    display: inline-block;
+    transform-origin: center;
+  }
+}
+@media screen and (max-width: 1200px) {
+  footer .footer-top .company address {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    padding: 15px 0;
+    border: 1px dotted #666;
+    border-left: none;
+    border-right: none;
+  }
+}
+footer .footer-top .company address p:first-child {
+  margin-bottom: 20px;
+}
+footer .footer-top .company address p {
+  font-weight: 600;
+  margin-top: 7px;
+}
+footer .footer-top .company address p i {
+  margin-right: 10px;
+}
+footer .footer-top .company address p a {
+  color: var(--orange);
+}
+footer .footer-top .company address p a:hover {
+  text-decoration: underline;
+}
+footer .footer-top .sitemap > div > ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+footer .footer-top .sitemap > div > ul > li:hover > a {
+  color: var(--orange);
+}
+footer .footer-top .sitemap > div > ul > li > a {
+  display: block;
+  padding: 0 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+footer .footer-top .sitemap > div > ul > li > a i {
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+footer .footer-top .sitemap > div > ul > li > a .ko {
+  display: none;
+}
+@media screen and (max-width: 1200px) {
+  footer .footer-top .sitemap > div > ul > li > ul {
+    display: none;
+  }
+}
+footer .footer-top .sitemap > div > ul > li > ul > li {
+  text-align: center;
+}
+footer .footer-top .sitemap > div > ul > li > ul > li a:hover {
+  color: #CCC;
+}
+footer .footer-bottom {
+  position: relative;
+}
+@media screen and (min-width: 1100px) {
+  footer .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+  footer .footer-bottom .search-widjet {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media screen and (max-width: 1100px) {
+  footer .footer-bottom {
+    text-align: center;
+  }
+  footer .footer-bottom .search-widjet {
+    margin: 10px auto !important;
+  }
+}
+footer .footer-bottom .search-widjet {
+  max-width: 500px;
+  margin: 0 auto;
+}
+footer .footer-bottom .search-widjet div {
+  height: 35px;
+  border: none;
+}
+footer .footer-bottom .search-widjet div input {
+  background: var(--dark);
+  transition: background-color 0.5s;
+}
+footer .footer-bottom .search-widjet div input:focus {
+  background: #FFF;
+}
+footer .footer-bottom .search-widjet div button {
+  transition: color 0.5s;
+}
+footer .footer-bottom .search-widjet div button:hover {
+  color: #FFF;
+}
+footer .footer-bottom nav a:hover {
+  color: #DDD;
+}
+footer .footer-bottom nav a:first-child::after {
+  content: " |";
+  margin: 0 5px;
+}
+footer .footer-bottom p {
+  font-weight: 600;
+}/*# sourceMappingURL=footer.css.map */
