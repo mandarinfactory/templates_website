@@ -97,4 +97,15 @@ main.sub-content h2.sub-title.active em::before, main.sub-content h2.sub-title.a
 }
 .theme-guide button:hover {
   color: var(--blue);
+}
+
+.theme-desc {
+  margin-bottom: 20px;
+  padding: 20px 0;
+  text-align: center;
+  border: 1px dotted var(--blue);
+  border-left: none;
+  border-right: none;
+  font-weight: 600;
+  color: var(--blue);
 }/*# sourceMappingURL=sub-layout.css.map */

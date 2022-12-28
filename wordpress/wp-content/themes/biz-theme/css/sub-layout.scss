@@ -83,7 +83,7 @@ main.sub-content {
     margin-bottom: 0;
     box-sizing: border-box;
     transition: all 0.3s; 
-  } 
+  }//active 
   &::before{
     content: "";
     position: absolute;
@@ -91,7 +91,7 @@ main.sub-content {
     width: 3px;
     height: calc(100% - 30px);
     background: var(--blue);
-  }
+  }//::before
   button{
     position: absolute;
     right: 0;
@@ -99,13 +99,17 @@ main.sub-content {
     color:var(--dark);
     &:hover{
       color:var(--blue);
-    }
-  }
-}
+    }//:hover
+  }//button
+}//theme-guide
 
-
-
-@media screen and (min-width: 1100px) {
-} //lg
-@media screen and (max-width: 1100px) {
-} //sm
+.theme-desc{
+  margin-bottom: 20px;
+  padding: 20px 0;
+  text-align: center;
+  border:1px dotted var(--blue);
+  border-left:none;
+  border-right:none;
+  font-weight: 600;
+  color:var(--blue);
+}//theme-desc
