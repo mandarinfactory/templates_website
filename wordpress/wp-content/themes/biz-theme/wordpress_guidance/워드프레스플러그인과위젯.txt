@@ -43,7 +43,14 @@
   ● 사용법
     - 설치 후 대시보드/연락체 메뉴가 추가됨
     - 제공되는 shortcode를 해당 페이지에서 출력
+    - 연락처양식 쇼트코드를 이용해 출력
+  ● 메일 설정
+    - 양식(메일 작성 양식)
+      [text* your-name autocomplete:name] 
+       └-> 데이터명이 your-name인 input type text
 
+    - 메일(메일 수신 양식)
+      보내신분 : [your-name]
 ■ kboard
   ● 게시판 플러그인
   ● 대시보드/kboard메뉴

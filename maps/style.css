@@ -9,15 +9,14 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
-  padding-top: 70px;
+  height: 100%;
   margin: 0 auto;
 }
 
 .hj_photo {
   position: relative;
   width: 50%;
-  height: 700px;
+  height: 935px;
   box-sizing: border-box;
   background-color: #333;
 }
@@ -53,8 +52,8 @@ body {
   margin-right: 20px;
   background-color: rgba(0, 0, 0, 0);
   color: #fdfbf7;
-  font-size: 1.6em;
-  font-weight: 800;
+  font-size: 1.2em;
+  font-weight: 600;
   transition: all 0.3s;
   cursor: pointer;
   z-index: 1;
@@ -62,17 +61,28 @@ body {
 .hj_photo p button:hover {
   color: #bebebe;
 }
+.hj_photo p button::after {
+  position: absolute;
+  display: none;
+  content: "";
+  top: 40%;
+  right: -7%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00a9e0;
+  transition: all 0.05s;
+}
 .hj_photo p button.active {
   color: #00a9e0;
   text-shadow: 1px 1px 3px #333;
 }
 .hj_photo p button.active::after {
-  content: "";
-  border-bottom: 2px solid #00a9e0;
+  display: block;
 }
 
 #map {
-  margin: 100px auto;
+  margin: 0 auto;
 }
 
 div.hj_inner {
@@ -89,7 +99,7 @@ div.hj_inner {
   box-shadow: 2px 2px 0 black;
 }
 div.hj_inner h3 {
-  font-weight: 800;
+  font-weight: 600;
   color: black;
   text-shadow: 2px 2px 0 rgb(0, 169, 224);
   margin-bottom: 0;
