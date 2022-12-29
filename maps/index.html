@@ -24,19 +24,21 @@
       <img src="#" alt />
     </figure>
     <script>
-      /*   let imgSrc = document.querySelector('.hj_photo figure img').getAttribute('src')
-        document.addEventListener("DOMContentLoaded", function (event) {
-          console.log(imgSrc)
-          if (imgSrc == '#') {
-            document.querySelectorAll('.hj_photo figure img').forEach(img => {
-              img.onerror = function () { this.style.display = 'none'; };
-            })//forEach
-          }  else {
-            document.querySelectorAll('.hj_photo figure img').forEach(img => {
-              img.onerror = function () { this.style.display = 'block'; };
-            })//forEach
-          }//if-else 
-        })//addEventListener */
+
+      let imgSrc = document.querySelector('.hj_photo figure img').getAttribute('src')
+      document.addEventListener("DOMContentLoaded", function (event) {
+        console.log(imgSrc)
+        if (imgSrc == '#') {
+          document.querySelectorAll('.hj_photo figure img').forEach(img => {
+            img.onerror = function () { this.style.display = 'none'; };
+          })//forEach
+        } else {
+          document.querySelectorAll('.hj_photo figure img').forEach(img => {
+            img.onerror = function () { this.style.display = 'block'; };
+          })//forEach
+        }//if-else 
+      })//addEventListener
+      /* broken img 지우기! --------------------------------------------------------------------- */
 
       $(function () {
         let num = 0;
@@ -47,9 +49,11 @@
             /* indexOf 확인해서 if-else문 array랑 같이 써서 완성할것!!! */
             $(this).parent().parent().children("figure").children("img").attr("src", "./img/location/" + imageName[btnNum] + ".jpg");
           }//if
+          console.log(imgSrc);//왜 '#'이 나오는걸까..? img_src가 안바뀌는 이유는 뭐지 ㅠ ㅡㅜ 뀽
         })//click_event
       }); //document.ready
-    /* button을 click하면 해당 location으로 사진이 계속 변경되게 해줌 ----------------------------- */
+      /* button을 click하면 해당 location으로 사진이 계속 변경되게 해줌 ----------------------------- */
+
     </script>
     <p class="button">
       <button onclick="panTo1()" data-num="0">여의도</button>
