@@ -51,10 +51,13 @@ $(function () {
             $(this).parent().siblings('figure').children('figcaption').children('p').text(window.locationDescArr[descNum].desc)
         }//if_img 변경되면서 desc까지 변경되게 하기!
     })//click_event
+    /* -------------------------------- img 깨지는거 none으로 만들고 --> click시 block으로 변경해줌 
+    button을 click하면 해당 location으로 사진이 계속 변경되게 해줌 ----------------------------- 
+    ------------------------------------------------ 사진변경되면서 같이 세부사항도 변경시키게 해줌 */
+
+    $('div.hj_inner').parent().siblings('div').addClass('activeDiv')
+
 }); //document.ready
-/* -------------------------------- img 깨지는거 none으로 만들고 --> click시 block으로 변경해줌 
-button을 click하면 해당 location으로 사진이 계속 변경되게 해줌 ----------------------------- 
------------------------------------------------- 사진변경되면서 같이 세부사항도 변경시키게 해줌 */
 
 document.querySelectorAll(".hj_photo .button button").forEach((v) => {
     v.addEventListener("click", (e) => {
@@ -144,8 +147,6 @@ let marker1ConStr = [
     "<p>서울 영등포구 여의대로 108 더현대서울점 5층 <br>",
     "운영시간 : 10 : 30 ~ 21 : 00 <br>",
     "</p>",
-    '<a href="https://www.bluebottlecoffeekorea.com/" target="_blank">https://www.bluebottlecoffeekorea.com/</a>',
-    '<a href="tel:1533-6906"><i class="fa-solid fa-headset"></i>1533-6906</a>',
     "</div>",
 ].join(""); //marker1ConStr
 
@@ -190,8 +191,6 @@ let marker2ConStr = [
     "<p>서울특별시 중구 명동길 14 1층 <br>",
     "운영시간 : 08 : 00 ~ 21 : 00 <br>",
     "</p>",
-    '<a href="https://www.bluebottlecoffeekorea.com/" target="_blank">https://www.bluebottlecoffeekorea.com/</a>',
-    '<a href="tel:1533-6906"><i class="fa-solid fa-headset"></i>1533-6906</a>',
     "</div>",
 ].join(""); //marker2ConStr
 let marker2 = new naver.maps.Marker({
@@ -216,10 +215,8 @@ let marker3ConStr = [
     '<div class="hj_inner">',
     "<h3>블루보틀 광화문 카페</h3>",
     "<p>서울특별시 종로구 청계천로 11 <br>",
-    "운영시간 : 10 : 30 ~ 21 : 00(주중) | 09 : 00 ~ 20 : 00(주말) <br>",
+    "운영시간 : 10 : 30 ~ 21 : 00(주중) <br> 09 : 00 ~ 20 : 00(주말)",
     "</p>",
-    '<a href="https://www.bluebottlecoffeekorea.com/" target="_blank">https://www.bluebottlecoffeekorea.com/</a>',
-    '<a href="tel:1533-6906"><i class="fa-solid fa-headset"></i>1533-6906</a>',
     "</div>",
 ].join(""); //marker3ConStr
 let marker3 = new naver.maps.Marker({
@@ -245,8 +242,6 @@ let marker4ConStr = [
     "<p>서울특별시 종로구 북촌로5길 76 <br>",
     "운영시간 : 09 : 00 ~ 20 : 00 <br>",
     "</p>",
-    '<a href="https://www.bluebottlecoffeekorea.com/" target="_blank">https://www.bluebottlecoffeekorea.com/</a>',
-    '<a href="tel:1533-6906"><i class="fa-solid fa-headset"></i>1533-6906</a>',
     "</div>",
 ].join(""); //marker4ConStr
 let marker4 = new naver.maps.Marker({
@@ -272,8 +267,6 @@ let marker5ConStr = [
     "<p>서울특별시 종로구 삼청로2길 40-3 <br>",
     "운영시간 : 12 : 00 ~ 20 : 00 <br>",
     "</p>",
-    '<a href="https://www.bluebottlecoffeekorea.com/" target="_blank">https://www.bluebottlecoffeekorea.com/</a>',
-    '<a href="tel:1533-6906"><i class="fa-solid fa-headset"></i>1533-6906</a>',
     "</div>",
 ].join(""); //marker5ConStr
 let marker5 = new naver.maps.Marker({
@@ -297,10 +290,8 @@ let marker6ConStr = [
     '<div class="hj_inner">',
     "<h3>블루보틀 한남 카페</h3>",
     "<p>서울특별시 용산구 한남대로 91 <br>",
-    "운영시간 : 09 : 00 ~ 20 : 00(주중) | 08 : 00 ~ 20 : 00(주말) <br>",
+    "운영시간 : 09 : 00 ~ 20 : 00(주중) <br> 08 : 00 ~ 20 : 00(주말)",
     "</p>",
-    '<a href="https://www.bluebottlecoffeekorea.com/" target="_blank">https://www.bluebottlecoffeekorea.com/</a>',
-    '<a href="tel:1533-6906"><i class="fa-solid fa-headset"></i>1533-6906</a>',
     "</div>",
 ].join(""); //marker6ConStr
 let marker6 = new naver.maps.Marker({
@@ -326,8 +317,6 @@ let marker7ConStr = [
     "<p>서울특별시 성동구 아차산로 7 <br>",
     "운영시간 : 08 : 00 ~ 20 : 00 <br>",
     "</p>",
-    '<a href="https://www.bluebottlecoffeekorea.com/" target="_blank">https://www.bluebottlecoffeekorea.com/</a>',
-    '<a href="tel:1533-6906"><i class="fa-solid fa-headset"></i>1533-6906</a>',
     "</div>",
 ].join(""); //marker7ConStr
 let marker7 = new naver.maps.Marker({
@@ -353,8 +342,6 @@ let marker8ConStr = [
     "<p>서울특별시 강남구 테헤란로 129 강남N타워 <br>",
     "운영시간 : 08 : 00 ~ 20 : 00 <br>",
     "</p>",
-    '<a href="https://www.bluebottlecoffeekorea.com/" target="_blank">https://www.bluebottlecoffeekorea.com/</a>',
-    '<a href="tel:1533-6906"><i class="fa-solid fa-headset"></i>1533-6906</a>',
     "</div>",
 ].join(""); //marker8ConStr
 let marker8 = new naver.maps.Marker({
@@ -380,8 +367,6 @@ let marker9ConStr = [
     "<p>서울특별시 강남구 논현로 854 <br>",
     "운영시간 : 08 : 00 ~ 20 : 00 <br>",
     "</p>",
-    '<a href="https://www.bluebottlecoffeekorea.com/" target="_blank">https://www.bluebottlecoffeekorea.com/</a>',
-    '<a href="tel:1533-6906"><i class="fa-solid fa-headset"></i>1533-6906</a>',
     "</div>",
 ].join(""); //marker9ConStr
 let marker9 = new naver.maps.Marker({
@@ -407,8 +392,6 @@ let marker10ConStr = [
     "<p>제주특별자치도 제주시 구좌읍 번영로 2133-30 <br>",
     "운영시간 : 09 : 00 ~ 19 : 00 <br>",
     "</p>",
-    '<a href="https://www.bluebottlecoffeekorea.com/" target="_blank">https://www.bluebottlecoffeekorea.com/</a>',
-    '<a href="tel:1533-6906"><i class="fa-solid fa-headset"></i>1533-6906</a>',
     "</div>",
 ].join(""); //marker10ConStr
 let marker10 = new naver.maps.Marker({
