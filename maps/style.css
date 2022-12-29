@@ -53,7 +53,7 @@ body {
   margin-right: 20px;
   background-color: rgba(0, 0, 0, 0);
   color: #fdfbf7;
-  font-size: 1.5em;
+  font-size: 1.6em;
   font-weight: 800;
   transition: all 0.3s;
   cursor: pointer;
@@ -64,7 +64,7 @@ body {
 }
 .hj_photo p button.active {
   color: #00a9e0;
-  text-shadow: 1px 1px 3px black;
+  text-shadow: 1px 1px 3px #333;
 }
 .hj_photo p button.active::after {
   content: "";
