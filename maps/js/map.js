@@ -49,11 +49,12 @@ $(function () {
         })//descNum
         if (btnNum == descNum) {
             $(this).parent().siblings('figure').children('figcaption').children('p').text(window.locationDescArr[descNum].desc)
-        }//if
+        }//if_img 변경되면서 desc까지 변경되게 하기!
     })//click_event
 }); //document.ready
 /* -------------------------------- img 깨지는거 none으로 만들고 --> click시 block으로 변경해줌 
-button을 click하면 해당 location으로 사진이 계속 변경되게 해줌 ----------------------------- */
+button을 click하면 해당 location으로 사진이 계속 변경되게 해줌 ----------------------------- 
+------------------------------------------------ 사진변경되면서 같이 세부사항도 변경시키게 해줌 */
 
 document.querySelectorAll(".hj_photo .button button").forEach((v) => {
     v.addEventListener("click", (e) => {
