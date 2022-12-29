@@ -33,16 +33,23 @@ const map = new naver.maps.Map("map", {
 /* 첫 화면에서 기준이 되는 경,위도 ---------------------------------------- */
 
 $(function () {
-    $('.hj_photo figure img').css({ 'display': 'none' })
-    let imageName = ["location_blue1", "location_blue2", "location_blue3", "location_blue4", "location_blue5", "location_blue6", "location_blue7", "location_blue8", "location_blue9", "location_blue10"];
+    $('.hj_photo figure img').css({ 'display': 'none' })//깨진img지움
+    const imageName = [
+        "location_blue1", "location_blue2", "location_blue3", "location_blue4", "location_blue5",
+        "location_blue6", "location_blue7", "location_blue8", "location_blue9", "location_blue10"
+    ]//imageName_Array
     $(".hj_photo p.button button").click(function () {
-        $('.hj_photo figure img').css({ 'display': 'block' })
+        $('.hj_photo figure img').css({ 'display': 'block' })//img 변경되니까 img 살림
         let btnNum = $(this).attr("data-num")
         if (btnNum == imageName.indexOf(imageName[btnNum])) {
-            /* indexOf 확인해서 if-else문 array랑 같이 써서 완성할것!!! */
             $(this).parent().parent().children("figure").children("img").attr("src", "./img/location/" + imageName[btnNum] + ".jpg");
+        }//if_img나오게하기!
+        const descNum = locationDescArr.findIndex(v => {
+            return (v.num === btnNum) && v.num
+        })//descNum
+        if (btnNum == descNum) {
+            $(this).parent().siblings('figure').children('figcaption').children('p').text(window.locationDescArr[descNum].desc)
         }//if
-        console.log(imgSrc);//왜 '#'..? img_src가 안바뀜......
     })//click_event
 }); //document.ready
 /* -------------------------------- img 깨지는거 none으로 만들고 --> click시 block으로 변경해줌 

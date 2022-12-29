@@ -35,6 +35,30 @@ body {
   object-position: center;
   filter: brightness(50%) blur(3px);
 }
+.hj_photo figure figcaption {
+  position: absolute;
+  top: 25%;
+  left: 36%;
+  transform: translateX(-50%);
+  width: 400px;
+}
+.hj_photo figure figcaption p {
+  line-height: 25px;
+  color: white;
+  font-size: 0.9em;
+  text-shadow: 1px 1px 5px #333;
+}
+.hj_photo figure figcaption::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  color: white;
+  z-index: 3;
+}
 .hj_photo p {
   height: 100%;
   display: flex;
@@ -49,7 +73,7 @@ body {
   font-family: inherit;
   border: 0;
   margin-bottom: 20px;
-  margin-right: 20px;
+  margin-right: 40px;
   background-color: rgba(0, 0, 0, 0);
   color: #fdfbf7;
   font-size: 1.2em;
@@ -66,7 +90,7 @@ body {
   display: none;
   content: "";
   top: 40%;
-  right: -7%;
+  right: -10%;
   width: 7px;
   height: 7px;
   border-radius: 50%;
