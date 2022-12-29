@@ -15,36 +15,56 @@ body {
 }
 
 .hj_photo {
+  position: relative;
   width: 50%;
-  height: 100%;
+  height: 700px;
   box-sizing: border-box;
   background-color: #333;
 }
+.hj_photo figure {
+  position: absolute;
+  font-family: inherit;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: 0;
+}
+.hj_photo figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(50%) blur(3px);
+}
 .hj_photo p {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  padding: 50px 0;
+  padding: 60px 0;
   box-sizing: border-box;
 }
 .hj_photo p button {
+  position: relative;
   font-family: inherit;
   border: 0;
   margin-bottom: 20px;
   margin-right: 20px;
   background-color: rgba(0, 0, 0, 0);
   color: #fdfbf7;
-  font-size: 1.4em;
+  font-size: 1.5em;
   font-weight: 800;
   transition: all 0.3s;
   cursor: pointer;
+  z-index: 1;
 }
 .hj_photo p button:hover {
   color: #bebebe;
 }
 .hj_photo p button.active {
   color: #00a9e0;
+  text-shadow: 1px 1px 3px black;
 }
 .hj_photo p button.active::after {
   content: "";

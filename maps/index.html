@@ -21,7 +21,7 @@
 <body>
   <div class="hj_photo">
     <figure>
-      <img src="" alt />
+      <img src="#" alt />
     </figure>
     <script>
       $(function () {
@@ -29,21 +29,11 @@
         let imageName = ["location_blue1", "location_blue2", "location_blue3", "location_blue4", "location_blue5", "location_blue6", "location_blue7", "location_blue8", "location_blue9", "location_blue10"];
         $(".hj_photo p.button button").click(function () {
           let btnNum = $(this).attr("data-num")
-          if (btnNum === indexOf(btnNum)) {
+          if (btnNum == imageName.indexOf(imageName[btnNum])) {
             /* indexOf 확인해서 if-else문 array랑 같이 써서 완성할것!!! */
-            $(this).parent().parent().children("figure").children("img").attr("src", "./img/location" + imageName[num] + ".jpg");
-          }
-          else {
-          }
-        });
-        /* $(".hj_photo p.button button").each(function () {
-          $(this).click(function () {
-            let btnNum = $(this).attr("data-num");
-            $(".hj_photo figure").prepend(`
-          <img src="./img/location/location_blue${btnNum}.jpg" alt/>
-          `); //prepend
-          }); //click_event
-        }); //button.forEach */
+            $(this).parent().parent().children("figure").children("img").attr("src", "./img/location/" + imageName[btnNum] + ".jpg");
+          }//if
+        })//click_event
       }); //document.ready
     </script>
     <p class="button">
@@ -71,6 +61,7 @@
     const yeoksam = new naver.maps.LatLng(37.499717, 127.032378);
     const apgujeong = new naver.maps.LatLng(37.525708, 127.02885);
     const jeju = new naver.maps.LatLng(33.433223, 126.750818);
+    /* 블루보틀 매장들의 경,위도들 ------------------------------------------- */
 
     const map = new naver.maps.Map("map", {
       center: new naver.maps.LatLng(37.551048, 126.988012),
@@ -79,6 +70,8 @@
       mapDataControl: false,
       scaleControl: false,
     }); //중심으로 하는 지도(남산타워로...만만하니깐)
+    /* 첫 화면에서 기준이 되는 경,위도 ---------------------------------------- */
+
 
     document.querySelectorAll(".hj_photo .button button").forEach((v) => {
       v.addEventListener("click", (e) => {
@@ -88,6 +81,7 @@
         e.target.classList.add("active");
       }); //click_event
     }); //forEach
+    /* button에 active-motion ------------------------------------------------ */
 
     function panTo1() {
       // 이동할 위도 경도 위치를 생성합니다
@@ -159,6 +153,7 @@
       // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
       map.panTo(moveLatLon10);
     } //function_panTo10
+    /* button을 click하면 해당 marker로 움직이게끔 하게 해줌 ---------------------------------- */
 
     let marker1ConStr = [
       '<div class="hj_inner">',
