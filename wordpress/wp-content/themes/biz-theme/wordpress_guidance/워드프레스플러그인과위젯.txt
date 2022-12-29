@@ -68,6 +68,11 @@
   ● function.php
   add_filter( 'rwmb_meta_boxes', 'your_prefix_meta_boxes' );
 
+■ Ultimate FAQs
+  ● 대시보드 메뉴에 추가됨
+  ● FAQ category를 만들어야함
+  ● add New (질문글 작성)
+
 function your_prefix_meta_boxes( $meta_boxes ) {
   ● 함수!
   add_filter( 'rwmb_meta_boxes', 'your_prefix_meta_boxes' );
