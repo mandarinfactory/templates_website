@@ -1,0 +1,42 @@
+@import 'mixin';
+
+.wpcf7 {//메일보내기 container
+    form {//메일폼양식
+        div {//label 폼양식 한줄
+            br {display: none;}//br --> 지우기!
+            @media screen and (min-width:900px){
+                display: flex;
+                p {
+                    &:first-child {//label포함 p
+                        width: 130px;
+                    }//first-child
+                    &:last-child {//form객체포함 p
+                        flex: 1;
+                    }//last-child
+                }//p
+            }//lg
+            p:first-child {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--orange);
+                color: white;
+                label {
+                    margin: 5px;
+                }//label
+            }//p:first-child
+            p:last-child {//form객체를 포함하는 p
+                display: flex;
+                > span {//input, textarea, ··· wrap
+                    flex: 1;
+                    margin: 5px;
+                    * {//input, textarea, ···
+                        display: block;
+                        width: 100%;
+                        padding: 5px;
+                    }//all
+                }//span
+            }//p:last-child
+        }//div
+    }//form
+}//메일보내기 container
