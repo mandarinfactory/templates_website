@@ -33,11 +33,12 @@ const map = new naver.maps.Map("map", {
 /* 첫 화면에서 기준이 되는 경,위도 ---------------------------------------- */
 
 $(function () {
-    $('.hj_photo figure img').css({ 'display': 'none' })//깨진img지움
+    let imgSrc = $('')
     const imageName = [
         "location_blue1", "location_blue2", "location_blue3", "location_blue4", "location_blue5",
         "location_blue6", "location_blue7", "location_blue8", "location_blue9", "location_blue10"
     ]//imageName_Array
+    $('.hj_photo figure img').css({ 'display': 'none' })//깨진img지움
     $(".hj_photo p.button button").click(function () {
         $('.hj_photo figure img').css({ 'display': 'block' })//img 변경되니까 img 살림
         let btnNum = $(this).attr("data-num")
@@ -57,7 +58,7 @@ $(function () {
 
     $('div.hj_inner').parent().siblings('div').addClass('activeDiv')
 
-}); //document.ready
+}); //document.ready(jQuery)
 
 document.querySelectorAll(".hj_photo .button button").forEach((v) => {
     v.addEventListener("click", (e) => {
@@ -144,7 +145,7 @@ function panTo10() {
 let marker1ConStr = [
     '<div class="hj_inner">',
     "<h3>블루보틀 여의도 카페</h3>",
-    "<p>서울 영등포구 여의대로 108 더현대서울점 5층 <br>",
+    "<p>서울 영등포구 여의대로 108 <br> 더현대서울점 5층 <br>",
     "운영시간 : 10 : 30 ~ 21 : 00 <br>",
     "</p>",
     "</div>",
@@ -339,7 +340,7 @@ naver.maps.Event.addListener(marker7, "click", (e) => {
 let marker8ConStr = [
     '<div class="hj_inner">',
     "<h3>블루보틀 역삼 카페</h3>",
-    "<p>서울특별시 강남구 테헤란로 129 강남N타워 <br>",
+    "<p>서울특별시 강남구 테헤란로 129 <br> 강남N타워 <br>",
     "운영시간 : 08 : 00 ~ 20 : 00 <br>",
     "</p>",
     "</div>",
