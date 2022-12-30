@@ -9,7 +9,7 @@ window.locationArr = [
     { name: 'yeoksam', lat: '37.499717', lng: '127.032378' },
     { name: 'apgujeong', lat: '37.525708', lng: '127.02885' },
     { name: 'jeju', lat: '33.433223', lng: '126.750818' },
-]
+]//--> 이거 배열 만들어놨는데 쓰려나..? 뀽
 
 const yeoido = new naver.maps.LatLng(37.525817, 126.928338);
 const myungdong = new naver.maps.LatLng(37.563498, 126.983001);
@@ -33,7 +33,6 @@ const map = new naver.maps.Map("map", {
 /* 첫 화면에서 기준이 되는 경,위도 ---------------------------------------- */
 
 $(function () {
-    let imgSrc = $('')
     const imageName = [
         "location_blue1", "location_blue2", "location_blue3", "location_blue4", "location_blue5",
         "location_blue6", "location_blue7", "location_blue8", "location_blue9", "location_blue10"
@@ -52,13 +51,10 @@ $(function () {
             $(this).parent().siblings('figure').children('figcaption').children('p').text(window.locationDescArr[descNum].desc)
         }//if_img 변경되면서 desc까지 변경되게 하기!
     })//click_event
-    /* -------------------------------- img 깨지는거 none으로 만들고 --> click시 block으로 변경해줌 
-    button을 click하면 해당 location으로 사진이 계속 변경되게 해줌 ----------------------------- 
-    ------------------------------------------------ 사진변경되면서 같이 세부사항도 변경시키게 해줌 */
-
-    $('div.hj_inner').parent().siblings('div').addClass('activeDiv')
-
 }); //document.ready(jQuery)
+/* -------------------------------- img 깨지는거 none으로 만들고 --> click시 block으로 변경해줌 
+button을 click하면 해당 location으로 사진이 계속 변경되게 해줌 ----------------------------- 
+------------------------------------------------ 사진변경되면서 같이 세부사항도 변경시키게 해줌 */
 
 document.querySelectorAll(".hj_photo .button button").forEach((v) => {
     v.addEventListener("click", (e) => {
@@ -71,77 +67,52 @@ document.querySelectorAll(".hj_photo .button button").forEach((v) => {
 /* button에 active-motion ------------------------------------------------ */
 
 function panTo1() {
-    // 이동할 위도 경도 위치를 생성합니다
+    // 이동할 위도 경도 위치를 생성합니다.
     let moveLatLon1 = yeoido;
-    // 지도 중심을 부드럽게 이동시킵니다
-    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+    // 지도 중심을 부드럽게 이동시킵니다.
+    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다.(제주도 누르면 효과 X)
     map.panTo(moveLatLon1);
 } //function_panTo1
 function panTo2() {
-    // 이동할 위도 경도 위치를 생성합니다
     let moveLatLon2 = myungdong;
-    // 지도 중심을 부드럽게 이동시킵니다
-    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
     map.panTo(moveLatLon2);
 } //function_panTo2
 function panTo3() {
-    // 이동할 위도 경도 위치를 생성합니다
     let moveLatLon3 = gwangha;
-    // 지도 중심을 부드럽게 이동시킵니다
-    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
     map.panTo(moveLatLon3);
 } //function_panTo3
 function panTo4() {
-    // 이동할 위도 경도 위치를 생성합니다
     let moveLatLon4 = samchung;
-    // 지도 중심을 부드럽게 이동시킵니다
-    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
     map.panTo(moveLatLon4);
 } //function_panTo4
 function panTo5() {
-    // 이동할 위도 경도 위치를 생성합니다
     let moveLatLon5 = samchungHanok;
-    // 지도 중심을 부드럽게 이동시킵니다
-    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
     map.panTo(moveLatLon5);
 } //function_panTo5
 function panTo6() {
-    // 이동할 위도 경도 위치를 생성합니다
     let moveLatLon6 = hannam;
-    // 지도 중심을 부드럽게 이동시킵니다
-    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
     map.panTo(moveLatLon6);
 } //function_panTo6
 function panTo7() {
-    // 이동할 위도 경도 위치를 생성합니다
     let moveLatLon7 = sungsu;
-    // 지도 중심을 부드럽게 이동시킵니다
-    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
     map.panTo(moveLatLon7);
 } //function_panTo7
 function panTo8() {
-    // 이동할 위도 경도 위치를 생성합니다
     let moveLatLon8 = yeoksam;
-    // 지도 중심을 부드럽게 이동시킵니다
-    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
     map.panTo(moveLatLon8);
 } //function_panTo8
 function panTo9() {
-    // 이동할 위도 경도 위치를 생성합니다
     let moveLatLon9 = apgujeong;
-    // 지도 중심을 부드럽게 이동시킵니다
-    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
     map.panTo(moveLatLon9);
 } //function_panTo9
 function panTo10() {
-    // 이동할 위도 경도 위치를 생성합니다
     let moveLatLon10 = jeju;
-    // 지도 중심을 부드럽게 이동시킵니다
-    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
     map.panTo(moveLatLon10);
 } //function_panTo10
 /* button을 click하면 해당 marker로 움직이게끔 하게 해줌 ---------------------------------- */
 
+
+/* ↓ 아래서 부터는 다 marker들 관련! */
 let marker1ConStr = [
     '<div class="hj_inner">',
     "<h3>블루보틀 여의도 카페</h3>",
